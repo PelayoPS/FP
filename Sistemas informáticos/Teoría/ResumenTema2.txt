@@ -1,0 +1,100 @@
+Arquitectura Von Neumann:
+    - Año: 1945
+    - Describió los fundamentos de todo ordenador electrónico con programas almacenados.
+    - Describía un ordenador con sus unidades conectadas permanentemente y funciones coordinadas desde la unidad de control.
+
+CPU:
+    - Conjunto de circuitos integrados en un microprocesador.
+    - Funciones:
+        -. Ejecución de instrucciones
+        -. Unidad de control
+        -. Unidad aritmético-lógica
+    - Colección de instrucciones se denomina juego de instrucciones
+    - Las instrucciones se representan con mnemónicos
+    - Se maneja en código máquina que se traduce a binario con el ensamblador
+    -Arquitecturas:
+        -. CISC: Complex Instruction Set Computer
+        -. RISC: Reduced Instruction Set Computer
+    - Partes:
+        -. Unidad de control
+        -. Unidad aritmético-lógica
+        -. Registros:
+            .-. MAR: Memory Address Register
+            .-. MBR: Memory Buffer Register
+            .-. PC: Program Counter
+            .-. IR: Instruction Register
+            .-. SR: Status Register
+            .-. RN: Registros de propósito general
+            .-. TMPE-TMPS: Registros temporales de entrada y salida
+    - Unidad de control partes:
+        -. Decodificador de instrucciones
+        -. Secuenciador
+        -. Registro de instrucciones
+        -. Contador de programa
+        -. Reloj
+    - Firmware:
+        -. Establece la lógica de más bajo nivel que controla los circuitos electrónicos de un dispositivo.
+    - Tipos de instrucciones:
+        -. Transferencia de datos
+        -. Aritméticas
+        -. Lógicas
+        -. De control de flujo
+        -. Entrada y salida
+    - ALU:
+        -. Realiza operaciones aritméticas y lógicas
+        -. Partes:
+            .-. Circuito Operacional
+            .-. Registro de estado
+            .-. Registro de entrada
+            .-. Registro acumulador
+            .-. Bus de sistema
+    - Partes microprocesador:
+        -. Unidad de coma flotante
+        -. Unidad de gestión de memoria
+        -. Memoria caché
+    - Frecuencia de Reloj: velocidad en Hz
+    - Núcleos/Cores
+    - Memoria chaché: almacena instruciones
+        -. L1: más rápida
+        -. L2: más lenta
+        -. L3: más lenta
+    - Socket: comunica procesador con placa base
+
+Memoria:
+    - Memoria primaria: RAM es volátil, estructura de stack
+        -. Registro de dirección de memoria
+        -. Registro de información de memoria
+    - Ancho de banda: cantidad de datos que se pueden transmitir en un periodo de tiempo
+    - Latencia: tiempo que tarda en llegar un dato
+    - SRAM: Static Random Access Memory basadas en biestables
+    - DRAM: Dynamic Random Access Memory basadas en condensadores
+    - Memoria secundaria: ROM, no volátil, estructura de árbol
+        -. ROM: Read Only Memory
+        -. PROM: Programmable Read Only Memory
+        -. EPROM: Erasable Programmable Read Only Memory
+        -. EEPROM: Electrically Erasable Programmable Read Only Memory
+        -. Flash
+
+Placa base:
+    - Circuito impreso que conecta todos los componentes que constituyen el ordenador
+    - Factor de forma: tamaño y forma de la placa base
+    - Chipset: conjunto de circuitos integrados que se encargan de controlar el flujo de datos entre el procesador, la memoria y los periféricos
+        -. Northbridge: controla el procesador, la memoria RAM y la tarjeta gráfica
+        -. Southbridge: controla los periféricos
+    - Reloj del sistema: sincroniza las operaciones de todos los componentes
+    - CMOS: pila que mantiene la configuración de la BIOS
+    - BIOS: Basic Input Output System
+    - Buses: vías por donde circulan los datos
+    - Tarjetas que se introducen en los slots cumplen diferentes funciones como gráficas, sonido...
+
+Periféricos:
+    - Tipos: 
+        -. Entrada
+        -. Salida
+        -. Entrada/salida
+        -. Almacenamiento
+    - Drivers: software que permite la comunicación entre el sistema operativo y el periférico
+    
+
+
+
