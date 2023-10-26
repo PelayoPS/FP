@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"
+<!DOCTYPE alumnos>
+<alumnos>
+	<nombre>Fernando Fernández González</nombre>
+	<nombre>Isabel González Fernández</nombre>
+	<nombre>Ricardo Martínez López</nombre>
+</alumnos>
+	
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+<!DOCTYPE profesores>
+<profesores>
+	<nombre>Pilar Ruiz Pérez</nombre>
+	<nombre>Tomás Rodríguez Hernández</nombre>
+</profesores>
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+package Actividades;
+
+import java.util.Scanner;
+
+public class Actividad1 {
+
+	public static void main(String[] args) {
+		/*
+		 * Calcular la superficie y el perímetro de un cuadrado cuyo lado
+		 * pediremos por teclado
+		 */
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Introduce el lado del cuadrado");
+		float value = keyboard.nextFloat();
+		//Si el valor es correcto lo calcula con el formato correcto, sino avisa
+		if(value > 0) {
+			System.out.printf("Superficie: %.2f, Perímetro: %.2f", value*value,4*value);
+		} else {
+			System.err.println("El lado tiene un valor negativo o cero");
+		}
+		keyboard.close();
+	}
+
+}

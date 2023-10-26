@@ -1,0 +1,28 @@
+Modelo Entidad/Relación de pedido de artículos:
+
+Una base de datos para una pequeña empresa debe contener
+información acerca de clientes, artículos y pedidos.
+
+Se necesita almacenar la siguiente información:
+
+• Para cada cliente: número de cliente (único), direcciones de envío
+(varias por cliente), saldo, límite de crédito (depende del cliente, pero
+en ningún caso debe superar los 6.000 euros), descuento.
+
+• Para cada artículo: número de artículo (único), fábricas que lo
+distribuyen, existencias de ese artículo en cada fábrica,
+ descripción del artículo.
+
+• Para cada pedido: cada pedido tiene una cabecera y el cuerpo del
+pedido.
+
+La cabecera está formada por el número de cliente, dirección de envío y
+fecha del pedido. El cuerpo del pedido son varias líneas, en cada línea se
+especifican el número del artículo pedido y la cantidad.
+Además, se ha determinado que se debe almacenar la información de las
+fábricas.
+Sin embargo, dado el uso de distribuidores, se usará: número de la
+fábrica (único) y teléfono de contacto.
+Y se desean ver cuántos artículos (en total) puede distribuir una determinada fábrica (la suma de las existencias de cada artículo)
+
+Una dirección se entenderá como número, calle, provincia y ciudad.

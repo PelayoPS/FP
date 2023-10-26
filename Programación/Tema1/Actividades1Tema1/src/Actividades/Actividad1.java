@@ -1,0 +1,57 @@
+package Actividades;
+
+public class Actividad1 {
+	@SuppressWarnings(value = { "unused" })
+	public static void main(String[] args) {
+		
+		int A = 0;
+		int B = 1;
+		double C = 1.0;
+		double D = 1.0;
+		
+		char E = 'e';
+		char F = 'f';
+		boolean G = true;
+
+		A = 20;
+		System.out.println("A = 20 funciona");
+		
+		B = 12;
+		System.out.println("B = 12 funciona");
+		
+		F = 'C';
+		System.out.println("F = 'C' funciona");
+		
+		B = 5500;
+		System.out.println("B = 5500 funciona");
+		
+		C = 0;
+		System.out.println("C = 0 funciona");
+		
+		D = C;
+		System.out.println("D = C funciona");
+		
+		E = F;
+		System.out.println("E = F funciona");
+		
+		E = 'F';
+		System.out.println("E = 'F' funciona");
+		
+		//A = 12.56;
+		System.out.println("A = 12.56 no funciona porque tipo double no se puede reducir a tipo int");
+
+		G = true;
+		System.out.println("G = true funciona");
+		
+		G = false;
+		System.out.println("G = false funciona");
+		
+		//F = G;
+		System.out.println("F = G no funciona porque tipo boolean no se puede guardar en variable de tipo double");
+		
+		
+	
+	
+	}
+
+}

@@ -1,0 +1,24 @@
+package Actividades;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Actividad12 {
+
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		List<Float> floats = new ArrayList<Float>();
+		float num = 0f;
+		for(int i = 0; i < 5; i++) {
+			System.out.println("Introduce el primer número");
+			num = keyboard.nextFloat();
+			floats.add(num);
+		}
+		floats.sort(null);
+		for(int i = 0; i<floats.size();i++) {
+			
+		}
+		
+	}
+}

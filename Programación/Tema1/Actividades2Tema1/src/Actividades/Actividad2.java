@@ -1,0 +1,31 @@
+package Actividades;
+
+import java.util.Scanner;
+
+public class Actividad2 {
+	
+	public static void main(String[] args) {
+		
+		/*
+		 * Calcular la superficie y el perímetro de un rectángulo cuyos datos
+		 * pediremos por teclado
+		 */
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Introduce la base del rectángulo");
+		float base = keyboard.nextFloat();
+		System.out.println("Introduce la altura del rectángulo");
+		float height = keyboard.nextFloat();
+		//Comprueba los valores y avisa en caso de no estar en el rango correcto
+		if(base > 0 && height > 0) {
+			System.out.printf("Superficie: %.2f, Perímetro: %.2f", base*height,2*base+2*height);
+		} else {			
+			if(base <= 0) {
+				System.err.println("Base incorrecta");
+			}
+			if(height <= 0) {
+				System.err.println("Altura incorrecta");
+			}
+		}
+		keyboard.close();
+	}
+}

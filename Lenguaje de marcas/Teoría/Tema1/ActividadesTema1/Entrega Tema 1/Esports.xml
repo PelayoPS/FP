@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<equipos>
+    <equipo nombre="Equipo1">
+        <jugador nombre="Jugador1">
+            <posicion>Top</posicion>
+            <elo>Master</elo>
+            <tier>Primera</tier>
+        </jugador>
+        <jugador nombre="Jugador2">
+            <posicion>Jungla</posicion>
+            <elo>Master</elo>
+            <tier>Primera</tier>
+        </jugador>
+        <jugador nombre="Jugador3">
+            <posicion>Mid</posicion>
+            <elo>Master</elo>
+            <tier>Primera</tier>
+        </jugador>
+        <jugador nombre="Jugador4">
+            <posicion>ADC</posicion>
+            <elo>Master</elo>
+            <tier>Primera</tier>
+        </jugador>
+        <jugador nombre="Jugador5">
+            <posicion>Support</posicion>
+            <elo>Master</elo>
+            <tier>Primera</tier>
+        </jugador>
+    </equipo>
+    <equipo nombre="Equipo2">
+        <jugador nombre="Jugador6">
+            <posicion>Top</posicion>
+            <elo>Diamante</elo>
+            <tier>Segunda</tier>
+        </jugador>
+        <jugador nombre="Jugador7">
+            <posicion>Jungla</posicion>
+            <elo>Diamante</elo>
+            <tier>Segunda</tier>
+        </jugador>
+        <jugador nombre="Jugador8">
+            <posicion>Mid</posicion>
+            <elo>Diamante</elo>
+            <tier>Segunda</tier>
+        </jugador>
+        <jugador nombre="Jugador9">
+            <posicion>ADC</posicion>
+            <elo>Diamante</elo>
+            <tier>Segunda</tier>
+        </jugador>
+        <jugador nombre="Jugador10">
+            <posicion>Support</posicion>
+            <elo>Diamante</elo>
+            <tier>Segunda</tier>
+        </jugador>
+    </equipo>
+    <equipo nombre="Equipo3">
+        <jugador nombre="Jugador11">
+            <posicion>Top</posicion>
+            <elo>Platino</elo>
+            <tier>Academia</tier>
+        </jugador>
+        <jugador nombre="Jugador12">
+            <posicion>Jungla</posicion>
+            <elo>Platino</elo>
+            <tier>Academia</tier>
+        </jugador>
+        <jugador nombre="Jugador13">
+            <posicion>Mid</posicion>
+            <elo>Platino</elo>
+            <tier>Academia</tier>
+        </jugador>
+        <jugador nombre="Jugador14">
+            <posicion>ADC</posicion>
+            <elo>Platino</elo>
+            <tier>Academia</tier>
+        </jugador>
+        <jugador nombre="Jugador15">
+            <posicion>Support</posicion>
+            <elo>Platino</elo>
+            <tier>Academia</tier>
+        </jugador>
+    </equipo>
+</equipos>

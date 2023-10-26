@@ -1,0 +1,24 @@
+package Actividades;
+
+public class Actividad6 {
+
+	public static void main(String[] args) {
+		/*
+		 * Conseguir que:
+		 * 	B tome el valor original de A
+		 * 	C tome el valor original de B
+		 * 	A tome el valor original de C
+		 */
+		Object a = 'a';
+		Object b = 'b';
+		Object c = 'c';
+		System.err.printf("Valores antes: a = %s, b = %s, c = %s \n",a,b,c);
+		Object temp = null;
+		temp = b;
+		b = a;
+		a = c;
+		c = temp;
+		
+		
+	}
+}

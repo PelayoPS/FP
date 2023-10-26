@@ -1,0 +1,36 @@
+Fields of study and use of chatgpt:
+1. Programming:
+    - Advantages:
+        -. Gives a general idea of the program.
+        -. Speeds up the creation of programs.
+        -. Lets us ask the ai for explanations of each part of the program.
+        -. You can use almost all languages in the market.
+
+    - Disadvantages:
+        -. Not very precise.
+        -. Can contain erros that can be hard to find unless you are a experienced programmer.
+        -. You cant just copy and paste without knowledge.
+        -. You have to tell it every part of the progress to avoid incongruences.
+
+2. Graphic design:
+    - Advantages:
+        -. Gives you a reference or sketch of what you want to do.
+        -. You can get ideas of what you can do.(themes, colors, etc.)
+        -. Helps with colors, chromatic ranges, etc.
+        -. Can be usefull in small projects to avoid paying a designer, translator, ...
+
+    - Disadvantages:
+        -. Where does the ai get the images from?
+        -. Ethic of the AI.
+        -. Not very precise.
+        -. Not very usefull for inexperienced designers since it can contain errors.
+
+Reasons to choose programming:
+    - We can use it in our day to day and it helps a lot to learn how to solve abstract problems.
+    - It is a very demanded job.
+
+Reasons to choose graphic design:
+    - Its a interesting topic because of the controversy with the use of generative images.
+    - Apolion is an expert in graphic design.
+
+

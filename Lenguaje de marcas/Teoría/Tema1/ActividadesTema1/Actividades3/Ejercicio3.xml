@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<personas nacimiento="1999-10-20">
+    <nombre>
+        <nombre>Pepe</nombre>
+        <apellidos>Garcia</apellidos>
+        <dni>25390952</dni>
+    </nombre>
+    <comentario>buena gente...</comentario>
+    <nombre>
+        <nombre>David</nombre>
+        <apellidos>Rodriguez</apellidos>
+        <dni>234234234</dni>
+    </nombre>
+    <comentario>Responsable</comentario>
+    <nombre>
+        <nombre>Marta</nombre>
+        <apellidos>Lopez</apellidos>
+        <dni>1234234952</dni>
+    </nombre>
+    <comentario>Trabjadora</comentario>
+</personas>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Comentario de una línea --><!--
+    Comentario de varias líneas
+<?xml version="1.0" encoding="UTF-8"?> es una etiquta de configuración
+-->
+<persona>
+    <nombre>Luis</nombre>
+    <edad>14</edad>
+</persona>

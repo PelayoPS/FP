@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pedido destinatario = "María López Gómez">
+    <articulo>Bicicleta BM4566</articulo>
+    <direccion>
+        <calle>Juan Álvarez 4</calle>
+        <portal>4</portal>
+        <piso>5</piso>
+        <puerta>A</puerta>
+    </direccion>
+    <fecha>22-11-2021</fecha>
+</pedido>

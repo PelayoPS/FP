@@ -1,0 +1,26 @@
+Enunciado:
+    Escribe un programa que pida el límite inferior y superior de un 
+intervalo.    Si  el  límite  inferior  es  mayor  que  el  superior  lo  tiene  que 
+volver  a  pedir.    A  continuación,  se  van  introduciendo  números  hasta 
+que introduzcamos el 0.  
+
+Cuando termine el programa dará las siguientes informaciones:
+    –La  suma  de  los  números  que  están  dentro  del  intervalo  (intervalo 
+    abierto). 
+    –Cuantos números están fuera del intervalo. 
+    –Informa  si  hemos  introducido  algún  número  igual  a  los  límites  del 
+    intervalo
+
+pseudocódigo java:
+    inicializar variables
+    pedir limite inferior
+    pedir limite superior
+    si limite inferior es mayor que limite superior
+        pedir limite inferior
+        pedir limite superior
+        hasta que inferior sea menor que superior
+    pedir numero hasta que sea 0
+    al acabar informa de
+        suma de numeros dentro del intervalo
+        cuantos numeros estan fuera del intervalo
+        si hemos introducido algun numero igual a los limites del intervalo

@@ -1,0 +1,33 @@
+package Actividades;
+
+import java.util.Scanner;
+
+public class Actividad10 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * Transformador de C a F en ambos sentidos
+		 */
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Introduce la unidad que quieras transformar (C | F)");
+		String unit = keyboard.next();
+		System.out.println("Introduce los grados");
+		float degrees = keyboard.nextFloat();
+		String result = unit.equals("C") ? 
+				String.format("%.2f C -> %.2f F", fromCtoF(degrees)) :
+				String.format("%.2f F -> %.2f C", fromFtoC(degrees));	
+		System.out.printf("Resultado %s", result);
+		
+		keyboard.close();
+		
+	}
+	
+	private static float fromCtoF(float degrees) {
+		return ((9/5)*degrees)+32;
+	}
+	
+	private static float fromFtoC(float degrees) {
+		return (degrees-32)*(5/9);
+	}
+}

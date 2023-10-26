@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<equipos>
+    <equipo nombre="Equipo1">
+        <entrenador></entrenador>
+        <estadio>Estadio1</estadio>
+        <jugador posicion="delantero">
+            <nombre>Pepe</nombre>
+            <nacionalidad>España</nacionalidad>
+        </jugador>
+        <jugador posicion="defensa">
+            <nombre>Luis</nombre>
+            <nacionalidad>España</nacionalidad>
+        </jugador>
+    </equipo>
+    <equipo nombre="Equipo2">
+        <entrenador></entrenador>
+        <estadio>Estadio2</estadio>
+        <jugador posicion="medio">
+            <nombre>Juan</nombre>
+            <nacionalidad>España</nacionalidad>
+        </jugador>
+        <jugador posicion="portero">
+            <nombre>Andrés</nombre>
+            <nacionalidad>España</nacionalidad>
+        </jugador>
+    </equipo>
+    <equipo nombre="Equipo3">
+        <entrenador></entrenador>
+        <estadio>Estadio3</estadio>
+        <jugador posicion="delantero">
+            <nombre>Manuel</nombre>
+            <nacionalidad>España</nacionalidad>
+        </jugador>
+        <jugador posicion="defensa">
+            <nombre>Antonio</nombre>
+            <nacionalidad>España</nacionalidad>
+        </jugador>
+    </equipo>
+
+</equipos>

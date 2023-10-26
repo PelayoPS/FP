@@ -1,0 +1,32 @@
+//Primera línea define el paquete en el que se encuentra nuestra clase
+//Es necesario ponerlo siempre
+package Actividades;
+//Zona donde se colocan los imports
+//Un import es enlazar clases a la nuestra para usar sus funcionalidades
+import java.lang.System;
+
+public class Ejemplo {
+	//Zona de atributos(variables que conserva la clase)
+	
+	
+	//Zona de funciones
+	
+	/*
+	*	Una función se define con:
+	*		Por acceso:
+	*			public: cualquier clase dentro de un proyecto la puede usar
+	*			protected: cualquier clase dentro del mismo paquete la puede usar
+	*			private: sólo la propia clase la puede usar
+	*		Por creación de instancia o no:
+	*			static: no hay que crear una instancia de la clase
+	*			sin static: hay que acceder mediante una instancia de la clase
+	*		Por acción:
+	*			void: ejecuta algo pero no devuelve ningún tipo
+	*			String, int, boolean... : devuelve el tipo indicado
+	*		Parámetros:
+	*			variables que se necesitan dentro de esta función en exclusivo
+	*/
+	public static void main(String[] args) {
+		//zona donde se ejecuta lo que requiera la función
+	}
+}

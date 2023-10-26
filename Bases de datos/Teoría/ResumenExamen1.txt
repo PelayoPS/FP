@@ -1,0 +1,100 @@
+TEMA 1: INTRODUCCIÓN A LAS BASES DE DATOS
+
+Definición informática:
+    - Conjunto de conocimientos científicos y técnicos 
+    que hacen posible el tratamiento de la información
+    por medio de ordenadores.
+Definición sistemas de información:
+    - Conjunto de procedimientos y funciones dirigidos
+    a la recogida, elaboración, evaluación...
+Problemas antes de las bases de datos:
+    - Redundancia de datos
+    - Inconsistencia de datos
+    - Dificultad de acceso a los datos(Aislamiento de datos)
+    - Mal aprovechamiento del espacio de almacenamiento
+
+Ficheros:
+    Tipos:
+        - Texto: se abren con el block de notas
+        - Binarios: no son legibles por el usuario
+    Según el acceso:
+        - Secuenciales: los datos se leen o escriben en orden
+        - Aleatorios: permiten acceso no secuencial(no hay que leer todo el archivo)
+        - Indexados: usan índices para acelerar el acceso a los datos
+    Según la organización de sus datos:
+        - Texto plano: sin estructura
+        - Estructurados: con estructura
+
+Soportes de almacenamiento:
+    - Secuenciales: hay que recorrer todo el archivo
+    - Direccionales: no hay que recorrer todo el archivo
+
+Definición metadatos:
+    - datos que proporcionan información sobre otros datos
+
+Elementos de una base de datos:
+    - Entidades: objetos real o abstractos de los que se almacena información
+    - Atributos: características de las entidades
+    - Registros: datos que se almacenan de una entidad(filas)
+    - Campos: donde se almacenan los atributos(columnas)
+
+Tipos de bases de datos:
+    - Jerárquicas: los datos se organizan en forma de árbol
+    - Red: los datos se organizan en forma de grafo
+    - Relacionales: los datos se organizan en tablas
+    - Orientadas a objetos: los datos se organizan en objetos
+
+Sistemas de gestión de bases de datos:
+    - DBMD: Data Base Management System
+    - SGBD: Sistema Gestor de Bases de Datos
+Funciones SGBD:
+    - Definición: dDL
+        - Creación: CREATE
+        - Modificación: ALTER
+        - Eliminación: DROP
+    - Manipulación: dML
+        - Consulta: SELECT
+        - Inserción: INSERT
+        - Modificación: UPDATE
+        - Eliminación: DELETE
+    - Control: dCL
+        - Permisos: GRANT
+        - Revocar permisos: REVOKE
+
+SQL:
+    - Lenguaje de programación para gestionar bases de datos
+    - Lenguaje declarativo
+
+===================================================================================================
+TEMA 2: MODELO ENTIDAD RELACIÓN
+
+Fases de trabajo:
+    - Análisis: se identifican las entidades y sus relaciones
+    - Diseño: se definen las tablas y sus relaciones
+    - Implementación: se implementa la base de datos
+
+1976 y 1977 se desarrolla el modelo E-R Peter Chen
+
+Tipos de entidades:
+    - Fuertes: pueden existir por sí mismas
+    - Débiles: no pueden existir por sí mismas, dependen de otras entidades
+        - Dependen en existencia o identificación
+
+Tipos de atributos:
+    - Obligatorios: no pueden ser nulos
+    - Opcionales: pueden ser nulos
+    - Simples o atómicos: no se pueden dividir
+    - Compuestos: se pueden dividir
+    - Almacenados: se almacenan en la base de datos
+    - Derivados: se calculan a partir de otros atributos
+    - Clave: identifica a la entidad
+        - Clave candidata: atributo o conjunto de ellos que identifica a la entidad
+        - Clave primaria: clave candidata elegida para identificar a la entidad
+        - Clave alternativa: resto de claves candidatas que no son la primaria
+
+Relaciones:
+    - Grado: número de entidades que participan en una relación
+    - Cardinalidad de una relación: número máximo de ocurrencias de cada entidad
+        - Cardinalidad mínima(números pequeños)
+        - Cardinalidad máxima(números grandes)
+        

@@ -1,0 +1,84 @@
+package Actividades;
+
+import java.util.Scanner;
+
+public class Actividad17 {
+	public static void main(String[] args) {
+		/**
+		 * Realiza un algoritmo que resuelva una ecuación de segundo grado. El programa
+		 * pedirá por teclado los 3 coeficientes y mostrará las posibles soluciones: no
+		 * tiene solución, una única solución ( y su valor) o dos soluciones ( y sus
+		 * valores)
+		 */
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Introduce el primer coeficiente");
+		double c0 = keyboard.nextDouble();
+		System.out.println("Introduce el segundo coeficiente");
+		double c1 = keyboard.nextDouble();
+		System.out.println("Introduce el tercer coeficiente");
+		double c2 = keyboard.nextDouble();
+		int solutions = numberOfSolutions(c0, c1, c2);
+		if (solutions != 0) {
+			double[] result = secondDegree(c0, c1, c2);
+			System.out.println("Las soluciones son: " + result[0] +" and "+ result[1]);
+		} else {
+			System.out.println("La ecuación no tiene solución real");
+			String[] result = secondDegreeNotReal(c0, c1, c2);
+			System.out.println("Las soluciones son: " + result[0] +" and "+ result[1]);
+		}
+
+	}
+
+	/**
+	 * Para no ocupar mucho texto
+	 * 
+	 * @param c0
+	 * @param c1
+	 * @param c2
+	 * @return
+	 */
+	private static int numberOfSolutions(double c0, double c1, double c2) {
+		double D = c1 * 2 - 4 * c0 * c2;// el número de soluciones depende del discriminante
+		if (D > 0) {
+			return 2;
+		}
+		if (D == 0) {
+			return 1;
+		}
+		if (D < 0) {
+			return 0;
+		}
+		return -1; // will never happen
+	}
+
+	/**
+	 * Calcula la solución cuando exista
+	 * 
+	 * @param c0
+	 * @param c1
+	 * @param c2
+	 * @return
+	 */
+	private static double[] secondDegree(double c0, double c1, double c2) {
+		double[] result = new double[2];
+		double x1 = (-c1 + Math.sqrt(c1 * c1 - (4 * c0 * c2)) / (2 * c0));
+		double x2 = (-c1 - Math.sqrt(c1 * c1 - (4 * c0 * c2)) / (2 * c0));
+		result[0] = x1;
+		result[1] = x2;
+		return result;
+	}
+
+	private static String[] secondDegreeNotReal(double c0, double c1, double c2) {
+		String[] result = new String[2];
+		String x1 = (c1 * c1 - (4 * c0 * c2)) < 0
+				? (-c1 + Math.sqrt(Math.abs(c1 * c1 - (4 * c0 * c2))) / (2 * c0)) + "i"
+				: (-c1 + Math.sqrt(c1 * c1 - (4 * c0 * c2)) / (2 * c0)) + "";
+		String x2 = (c1 * c1 - (4 * c0 * c2)) < 0
+				? (-c1 - Math.sqrt(Math.abs(c1 * c1 - (4 * c0 * c2))) / (2 * c0)) + "i"
+				: (-c1 - Math.sqrt(c1 * c1 - (4 * c0 * c2)) / (2 * c0)) + "";
+		result[0] = x1;
+		result[1] = x2;
+		return result;
+	}
+
+}

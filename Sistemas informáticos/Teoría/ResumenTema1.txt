@@ -1,0 +1,95 @@
+Definición de informática:
+    - disciplina encargada del estudio y desarrollo de las máquinas y métodos que nos permiten
+    recoger, tratar, almacenar y mostrar información.
+Telecomunicaciones:
+    - disciplina que estudia los métodos y tecnologías para la transmisión de información.
+Telemática:
+    - estudiar el ordenador como medio de comunicación.
+
+Tareas básicas de los sistemas informáticos:
+    - Entrada
+    - Procesamiento
+    - Salida
+    Estas tres se conocen como algoritmo.
+
+Conceptos básicos:
+    - ordenador: máquina capaz de resolver problemas mediante la ejecución de instrucciones.
+    - programa: conjunto de instrucciones que le indican al ordenador cómo resolver un problema.
+    - aplicación informática: programas junto con su documentación.
+    - hardware: conjunto de componentes físicos que forman el ordenador.
+    - software: parte lógica del ordenador.  
+    - información
+    - dato: valores, magnitudes...
+    - instrucciones: órdenes que actuan sobre otros datos.
+
+Elementos necesarios para que exista transmisión de información:
+    - emisor: origen de la información.
+    - medio de transmisión: canal por el que se transmite la información.
+    - receptor: destino de la información.
+
+Cómo saber características de un equipo:
+    - Carpetas de windows: propiedades
+    - Herramientas de windows: dxdiag
+    - Software externo: Everest
+
+Componentes de un ordenador:
+    - Cpu
+        - Unidad de control: controla el funcionamiento del ordenador.
+        - Unidad de proceso: realiza las operaciones.
+            - ALU: unidad aritmético-lógica.
+            - Registros: memoria interna de la CPU.
+        - Memoria caché: memoria de alta velocidad que almacena datos e instrucciones.
+    - Memorias:
+        - RAM: memoria de acceso aleatorio.
+        - ROM: memoria de sólo lectura.
+        - Memoria externa.
+    - Buses: conjunto de cables que conectan los distintos componentes del ordenador.
+    - Placabase: conecta todos los componentes
+    - Periféricos:
+        - Entrada: teclado, ratón, escáner...
+        - Salida: monitor, impresora...
+        - Entrada/salida: disco duro, CD-ROM...
+
+Bit, byte y múltiplos:
+    - bit: unidad mínima de información. (0 o 1)
+    - byte: 8 bits.
+    - múltiplos:
+        - 1 kilobyte = 1024 bytes
+        - 1 megabyte = 1024 kilobytes
+        - 1 gigabyte = 1024 megabytes
+        - 1 terabyte = 1024 gigabytes
+        - 1 petabyte = 1024 terabytes
+
+Sistemas posicionales:
+    - Cada dígito tiene un valor dependiendo de su posición.
+    - Sistema decimal: base 10. (0, 1, 2, 3, 4, 5, 6, 7, 8, 9) Base 10.
+    - Sistema binario: base 2. (0, 1) Base 2.
+    
+    Para pasar de binario a decimal:
+        - Se multiplica cada dígito por 2 elevado a la posición que ocupa empezando en 0.
+        - Se suman los resultados.
+        - Ejemplo: 1011 = 1*2^3 + 0*2^2 + 1*2^1 + 1*2^0 = 8 + 0 + 2 + 1 = 11
+    Para pasar de decimal a binario:
+        - Se divide el número entre 2 y se anota el resto.
+        - Se vuelve a dividir el cociente entre 2 y se anota el resto.
+        - Se repite hasta que el cociente sea 1.
+        - Se anotan los restos y el último cociente en orden inverso.
+        - Ejemplo: 12 = 1100
+            - 12/2 = 6 resto 0
+            - 6/2 = 3 resto 0
+            - 3/2 = 1 resto 1
+            - 1/2 = 0 resto 1
+            - 1100
+
+Circuitos integrados:
+    - Def: combinación de elementos que forman parte de un mismo chip.
+    - Recibe entradas y devuelve salidas.
+    - Tienen concepto modular.
+
+Puertas lógicas:
+    - Realizan operaciones lógicas básicas.
+    - Tipos:
+        - And: A*B sólo devuelve 1 si todas las entradas son 1. (el cilindro con pico redondo)
+        - Or: A+B devuelve 1 si alguna de las entradas es 1. (la flecha)
+        - Not: A' devuelve 1 si la entrada es 0. (la bolita o el tríangulo con bolita)
+        - Nand y nor: combinaciones de las anteriores.

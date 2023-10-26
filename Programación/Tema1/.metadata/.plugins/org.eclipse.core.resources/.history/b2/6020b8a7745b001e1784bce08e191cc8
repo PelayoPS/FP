@@ -1,0 +1,26 @@
+package Actividades;
+
+import java.math.BigDecimal;
+import java.util.Scanner;
+
+import javax.swing.plaf.basic.BasicScrollPaneUI.HSBChangeListener;
+
+public class Actividad8 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * Determinar si un número introducido por teclado tiene decimales o no
+		 */
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Introduce el número");
+		float num = keyboard.nextFloat();
+		BigDecimal bd = new BigDecimal(num);
+		int decimals = bd.scale();
+		if(decimals > 1) {
+			System.out.println("El número tiene cifras decimales");
+		} else {
+			System.out.println("El número no tiene cifras decimales");
+		}
+		keyboard.close();
+	}
+}

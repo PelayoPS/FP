@@ -1,0 +1,17 @@
+Tareas básicas sistemas informáticos:
+    - Entrada y salida de datos
+    - Entrada, procesamiento y salida de datos
+    - Lectura y escritura de ficheros
+    - Gestión de errores
+
+Elementos necesarios para la transmisión de información:
+    - Emisor, medio y receptor
+    - Código, canal y mensaje
+    - Lenguaje, código y emisor
+    - Software, hardware y firmware
+
+El sistema binario es un sistema de numeración en base:
+    - 2
+    - 10
+    - 6
+    - 16

@@ -1,0 +1,10 @@
+Todo lo que dice el profe:
+    Def de algoritmo entra
+    Def lenguaje máquina
+    Def lenguaje ensamblador
+    Def lenguaje alto nivel
+    Saber que hace un sistema operativo(permite comunicar al usuario con el hardware)
+    Identificar lenguajes de alto nivel y bajo nivel
+    Que es un sistema operativo
+    Tema drivers
+    1 pregunta html

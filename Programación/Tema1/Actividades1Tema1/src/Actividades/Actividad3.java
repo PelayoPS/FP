@@ -1,0 +1,12 @@
+package Actividades;
+
+public class Actividad3 {
+
+	public static void main(String[] args) {
+		double x = 2.0;
+		//ver valor final de x
+		x = (x * x) * 2;
+		x = Math.sqrt(x + Math.sqrt(x) + 5);
+		System.out.printf("Valor de x = %f", x);
+	}
+}

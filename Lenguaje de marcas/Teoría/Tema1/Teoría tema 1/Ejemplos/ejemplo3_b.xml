@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+<!DOCTYPE miembros>
+<alumnos xmlns:alumnos=”http://DAM/alumnos”>
+<profesores xmlns:profesores=”http://DAM/profesores”>
+<asistentes>
+	<alumnos:nombre>Fernando Fernández González</alumnos:nombre>
+	<alumnos:nombre>Isabel González Fernández</alumnos:nombre>
+	<alumnos:nombre>Ricardo Martínez López</alumnos:nombre>
+	<profesores:nombre>Pilar Ruiz Pérez</profesores:nombre>
+	<profesores:nombre>Tomás Rodríguez Hernández</profesores:nombre>
+</asistentes>
+
+
+
+

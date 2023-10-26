@@ -1,0 +1,23 @@
+package Actividades;
+
+import java.util.Scanner;
+
+public class Actividad14 {
+
+	public static void main(String[] args) {
+		//Determinar las cifras de un número
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Introduce un número");
+		//La longitud de una string es el número de cifras porque no se contemplan casos decimales
+		float value = keyboard.nextFloat();
+		int result = 0;
+		if((value+"").contains(".")) {
+			result = (value+"").split(".")[0].length();
+			result = (value+"").split(".")[1].length();
+		} else {
+			result = (value+"").length();
+		}
+		System.out.printf("%f tiene %d cifras", value, result);
+		keyboard.close();
+	}
+}

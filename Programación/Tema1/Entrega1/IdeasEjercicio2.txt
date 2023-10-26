@@ -1,0 +1,2 @@
+Enunciado:
+    Diseñar un algoritmo que calcule el número de mensualidades

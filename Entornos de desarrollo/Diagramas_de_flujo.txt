@@ -1,0 +1,24 @@
+Algoritmo computacional:
+    Definición: instrucciones sistemáticas y definidas previamente que se utilizan
+    para realizar una determinada tarea y que están ordenadas en pasos a seguir para
+    alcanzar un objetivo.
+    Partes: 
+        Input
+        Proceso
+        Output
+    Características:
+        Precisos
+        Ordenados
+        Finitos
+        Concretos
+        Definidos
+    Tipos:
+        Búscqueda: localizan uno o varios elementos que presentan una serie de propiedades
+        dentro de una estructura de datos
+        Ordenamiento: reorganizan los elementos de un listado
+        Voraces: eligen la mejor opción en cada paso local con el objetivo de llegar a una 
+        solución general óptima
+        Programación dinámica: divide el problema complejo en subproblemas
+        Algoritmos probabilísticos: llegan a una solución que puede no ser totalmente óptima
+        mediante un muestreo aleatorio
+    

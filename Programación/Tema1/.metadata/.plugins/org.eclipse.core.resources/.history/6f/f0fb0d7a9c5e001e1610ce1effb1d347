@@ -1,0 +1,13 @@
+package Actividades;
+
+public class Actividad17 {
+	public static void main(String[] args) {
+		/**
+		 * Realiza un algoritmo que resuelva una ecuación de segundo grado. El 
+		 * programa pedirá por teclado los 3 coeficientes y mostrará las posibles 
+		 * soluciones: no tiene solución, una única solución ( y su valor) o dos 
+		 * soluciones ( y sus valores)
+		 */
+	}
+
+}

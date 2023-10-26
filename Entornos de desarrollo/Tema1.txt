@@ -1,0 +1,107 @@
+Tema 1
+Concepto de algoritmo:
+	Conjunto finito y ordenado de operaciones para conseguir una solución a un problema
+	Tiene que ser legible, concreto, eficiente, finito, definido, preciso, no ambiguo...
+
+Concepto de software:
+	Conjunto de programas informáticos que actúan sobre el hardware para ejecutar lo que el
+	usuario desea obtener.
+	
+Tipos de software:
+	- Software operativo
+		Instalado y configurado, permite que nuestras aplicaciones se puedan ejecutar y 
+		funcionen
+	-Software de programación
+		Conjunto de herramientas que nos permiten desarrollar programas informáticos
+	-Aplicaciones informáticas
+		Conjunto de programas con una finalidad completa
+		Programa: conjunto de instrucciones en un lenguaje de programación
+		
+Relación software-hardware:
+	Desde el S.O. : 
+		Encargado de coordinar el hardware durante el funcionamiento del ordenador y actúa
+		como intermediario entre el hardware y las aplicaciones
+	Desde las aplicaciones:
+		Utilizando lenguajes de programación
+
+Desarrollo de software:
+	Definición: proceso desde la idea hasta el programa instalado
+	Ciclos de vida del software:
+		análisis, diseño, codificación, pruebas, mantenimiento
+
+	Modelo cascada con realimentación:
+		- Análisis de requisitos
+		- Diseño
+		- Codificación
+		- Pruebas
+		- Mantenimiento
+		- Realimentación
+	
+	Modelo evolutivos:
+		Modelo iterativo incremental:
+			Cada estapa se mejora y propaga al resto de las fases
+
+		Modelo en espiral:
+			Se van añadiendo funcionalidades en cada iteración
+
+Lenguajes de programación
+	Lenguaje máquina:
+		-Instrucciones son combinaciones de 0 y 1
+		-Único lenguaje que entiende directamente el ordenador
+		-Primer lenguaje Utilizando
+		-Dependiente del hardware
+	
+	Lenguaje ensamblador:
+		-Sustituyó al lenguaje máquina para facilitar la programación
+		-Utiliza mnemotécnicos para representar las instrucciones
+		-Necesita traducción al lenguaje máquina para poder ejecutarse
+		-Sus instrucciones son sentencias que hacen referencia a la ubicación física
+		de los archivos en el equipo
+		-Difícil de usuario
+	
+	Lenguajes de alto nivel basados en código:
+		-Sustituyen al lenguaje ensamblador para facilitar la programación
+		-Utilizan sentencias y órdenes derivadas del inglés aunque serán traducidas a lenguaje máquina
+		
+	Características de los lenguajes de programación:
+		-La elección de un determinado lenguaje depende del problema a resolver
+		-Clasificación:
+			Alto nivel: más cercanos al razonamiento humano
+			Bajo nivel: más cercanos al lenguaje máquina
+			Estructurados: usan programación estructurada
+			OOP: programación orientada a objetos
+			Visuales: el código se genera de forma automática
+		
+	Lenguajes de programación estructurados:
+		-Sólo se permiten tres sentencias o estructuras de control:
+			-secuencia
+			-selección
+			-iteración
+		-Ventajas:
+			-Fáciles de leer y entender
+			-Fáciles de mantener
+			-Estructura clara
+		-Inconvenientes:
+			-Programa centrado en un bloque, difícil de manejar
+			-No permite reutilizar código
+	
+	Lenguajes de programación orientados a objetos:
+		-Trata el programa como un conjunto de objetos interrelacionados
+		-Los objetos tienen atributos que los hace diferenciarse
+		-Clase: contenedor de objetos similares
+		Ventajas:
+			-Código reutilizable
+			-Errores más fáciles de localizar
+		Inconvenientes:
+			-No es intuitiva
+
+	
+
+
+
+
+
+
+
+
+		

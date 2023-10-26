@@ -1,0 +1,73 @@
+Definición lenguaje de marcas:
+    modo de codificar un documento
+Todo lenguaje de marcas está definido en un Document Type Definition
+donde se establecen los elementos del lenguaje
+
+Clasificación:
+    -Presentación: define el formato
+    -De procedimientos: interpreta el código en orden de aparición
+    -Descriptivo o semántico: define el significado de los elementos
+
+Agrupación según ámbito de aplicación:
+    -Documentación electrónica:
+        -RTF: Rich Text Format
+            Por microsoft 1987
+            Permite el intercambio de documentos entre diferentes aplicaciones
+        -TeX: ecuaciones matemáticas complejas
+        -Wikitexto: páginas wiki
+        -DocBook: separa estructura y contenido
+    -Tecnologías de internet:
+        -HTML,XHTML: páginas web
+        -RSS: difusión de contenidos
+    -Otros lenguajes especializados:
+        -MathML: ecuaciones matemáticas
+        -VoiceXML: aplicaciones de voz
+        -MusicXML: partituras musicales
+
+Evolución de los sistemas de marcas:
+    años 70 primeros lenguajes de marcas
+    paralelamente surgen los lenguajes y sistemas de bases de datos
+    Posteriormente se añaden como medio de presentación en pantalla y no sólo impresora
+    los códigos de estilo de visualización anteriores ya no aparecen y se emplean otros 
+    medios para marcados
+    se automatiza el proceso
+    sólo es una abstracción porque las aplicaciones siguen usando marcas para indicar formatos espaciales
+    
+    GML(Generic Markup Language):
+        hay falta de estandarización
+        años 60 IBM encarga a Charles Goldfarb la construcción de un sistema de edición,
+        almacenamiento y búsqueda de documentos legales
+        para hacer funcionar bien la empresa hacía falta un estándar para todos los documentos
+        se crea GML para que los documentos sean independientes de la plataforma y aplicación
+        evolucionó hasta 1986 dando lugar al estándar ISO 8879 denominado SGML
+    
+    SGML(Standard Generalized Markup Language):
+        muy caro y complejo sólo para grandes aplicaciones industriales
+    
+    HTML(HyperText Markup Language):
+        1989/90 Tim Berners-Lee crea WWW y HTML
+        HTML combinación de ASCII y SGML
+        HTML versión simplificada de SGML
+        Desventajas:
+            no soporta impresión y diseño
+            no flexible(etiquetas limitadas)
+            no soporta contenido dinámico
+            estructura y diseño mezclados
+
+    XML(eXtensible Markup Language):
+        WEC 1998 establece el estándar XML lenguaje puramente estructural
+        las etiquetas indican el significado de los datos en lugar del formato
+        Características:
+            permite etiquetas custom
+            permite atributos en etiquetas
+            un esquema para definir de forma exacta etiquetas y atributos
+            estructura y diseño separados
+        
+        XML como combinación de:
+            XSL(Extensible Stylesheet Language): define la presentación
+            XML(Linking Language): define los enlaces entre .XML
+            XML Namespaces: define los espacios de nombres
+            XML Schema: define la estructura de los documentos XML
+
+
+

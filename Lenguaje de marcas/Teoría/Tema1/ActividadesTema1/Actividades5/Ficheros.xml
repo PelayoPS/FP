@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <fichero>index.html</fichero>
+    <fichero>contactar.html</fichero>
+    <folder name="imagenes">
+        <fichero>impresora.gif</fichero>
+        <fichero>monitor.gif</fichero>
+        <fichero>teclado.gif</fichero>
+    </folder>
+    <folder name="productos">
+        <fichero>impresora.html</fichero>
+        <fichero>monitor.html</fichero>
+        <fichero>teclado.html</fichero>
+    </folder>
+</root>

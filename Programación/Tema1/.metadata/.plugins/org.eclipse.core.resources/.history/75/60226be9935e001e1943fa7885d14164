@@ -1,0 +1,19 @@
+package Actividades;
+
+import java.util.Scanner;
+
+public class Actividad16 {
+	
+	public static void main(String[] args) {
+		/*
+		 * Dada una hora por teclado (horas, minutos y segundos) realizar un 
+		 * algoritmo que muestre la hora después de incrementar un segundo. 
+		 */
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Introduce la hora en formato hh:mm:ss");
+		//ask in console for the time with the format hh:mm:ss in keyboard.next(format)
+		String time = keyboard.next( "([01]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]" );
+		
+	}
+
+}

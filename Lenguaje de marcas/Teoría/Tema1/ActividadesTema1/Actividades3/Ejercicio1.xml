@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<news-article>
+    <entry no="1">
+        <title>Article no="1"</title>
+        <information>Información primer articulo </information>
+    </entry>
+    <entry no="2">
+        <title>Article no="2"</title>
+        <information>And here should been inserted the content of the second article!</information>
+    </entry>
+</news-article>

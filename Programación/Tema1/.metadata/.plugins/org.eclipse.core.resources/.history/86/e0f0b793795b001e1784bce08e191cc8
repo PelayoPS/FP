@@ -1,0 +1,27 @@
+package Actividades;
+
+import java.util.Scanner;
+
+public class Actividad13 {
+
+	public static void main(String[] args) {
+		/*
+		 * Dados dos números leídos por teclado calcular el cociente y el resto mediante
+		 * restas sucesivas
+		 */
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Introduce el primer número");
+		int num = keyboard.nextInt();
+		System.out.println("Introduce el segundo número");
+		int num1 = keyboard.nextInt();
+		int resta = num;
+		int counter = 0;
+		while(resta >= num1) {
+			resta = num-num1;
+			System.out.println(resta);
+			counter++;
+		}
+		System.out.printf("El cociente es %f y el resto %f", counter, resta);
+		keyboard.close();
+	}
+}

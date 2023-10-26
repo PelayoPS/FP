@@ -1,0 +1,25 @@
+package Actividades;
+
+import java.util.Scanner;
+
+public class Actividad3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * Calcular el área y la circunferencia de un círculo cuyo radio se
+		 * debe preguntar al usuario
+		 */
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Introduce el radio del círculo");
+		float radius = keyboard.nextFloat();
+		if (radius <= 0) {
+			System.err.println("El radio es negativo");
+			System.exit(0);
+		}
+		double area = Math.PI*radius*radius;
+		double circunference = 2*Math.PI*radius;
+		System.out.printf("Área: %.2f, Circunferencia: %.2f",area,circunference);
+		keyboard.close();
+	}
+}

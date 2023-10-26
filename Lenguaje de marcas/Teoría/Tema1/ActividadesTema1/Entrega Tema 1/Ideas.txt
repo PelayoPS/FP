@@ -1,0 +1,17 @@
+El problema planteado es el siguiente: se tiene un equipo de esports que pretende organizar
+toda su plantilla en un sistema de gestión de equipos. Para ello necesita que se puedan 
+diferencias los jugadores de primera y segunda división y los de la academia, también sería 
+necesario poder identificar las posiciones y elo de cada jugador
+
+## Modelo de datos
+<jugadores>
+    <tier id = "primera segunda o academia">
+        <jugador> 
+            <nombre>nombre del jugador</nombre>
+            <posicion>posicion del jugador</posicion>
+            <elo>elo del jugador</elo>
+        </jugador>
+    </tier>
+</jugadores>
+
+## Ejemplo tabla

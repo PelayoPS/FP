@@ -1,0 +1,23 @@
+package Actividades;
+
+import java.util.Scanner;
+
+public class Actividad7 {
+
+	public static void main(String[] args) {
+		double defaultYear = 2004;
+		// TODO Auto-generated method stub
+		/*
+		 * Determinar si un año pedido por teclado es bisiesto
+		 */
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Introduce el año");
+		int year = keyboard.nextInt();
+		double substraction = Math.abs(defaultYear - year);
+		String msg = substraction != ((int) substraction) ?
+				"El año no es bisiesto" :
+				"El año es bisiesto";
+		System.out.println(msg);
+		keyboard.close();
+	}
+}

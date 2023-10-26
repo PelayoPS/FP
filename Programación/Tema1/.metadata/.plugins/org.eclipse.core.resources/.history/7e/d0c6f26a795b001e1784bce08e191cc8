@@ -1,0 +1,11 @@
+package Actividades;
+
+public class Actividad13 {
+
+	public static void main(String[] args) {
+		/*
+		 * Dados dos números leídos por teclado calcular el cociente y el resto mediante
+		 * restas sucesivas
+		 */
+	}
+}

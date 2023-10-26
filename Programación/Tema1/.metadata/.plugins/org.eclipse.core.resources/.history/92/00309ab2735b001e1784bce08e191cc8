@@ -1,0 +1,25 @@
+package Actividades;
+
+import java.util.Scanner;
+
+public class Actividad8 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * Determinar si un número introducido por teclado tiene decimales o no
+		 */
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Introduce el número");
+		float num = keyboard.nextFloat();
+		String temp = num+"";
+		int decimals = temp.split(",").length;
+		int decimals1 = temp.split(".").length;
+		System.out.println(temp.split(",")+"");
+		if(decimals > 1 || decimals1 > 1) {
+			System.out.println("El número tiene cifras decimales");
+		} else {
+			System.out.println("El número no tiene cifras decimales");
+		}
+		keyboard.close();
+	}
+}

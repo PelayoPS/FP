@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <archivo>
+        <nombre>index.html</nombre>
+        <fecha>4 de octubre de 2022</fecha>
+        <prioridad>3</prioridad>
+    </archivo>
+    <archivo>
+        <nombre>ayuda.html</nombre>
+        <fecha>4 de octubre de 2022</fecha>
+        <prioridad>5</prioridad>
+    </archivo>
+    <folder nombre = "animales">
+        <archivo>
+            <nombre>peces.html</nombre>
+            <fecha>30 de septiembre de 2022</fecha>
+            <prioridad>1</prioridad>
+        </archivo>
+    </folder>
+    <folder nombre = "minerales">
+        <archivo>
+            <nombre>preciosos.html</nombre>
+            <fecha>29 de septiembre de 2022</fecha>
+            <prioridad>3</prioridad>
+        </archivo>
+    </folder>
+    <folder nombre = "vegetales">
+        <archivo>
+            <nombre>lechuga.html</nombre>
+            <fecha>28 de septiembre de 2022</fecha>
+            <prioridad>2</prioridad>
+        </archivo>
+        
+    </folder>
+    <folder nombre = "imágenes">
+        <archivo>
+            <nombre>sardina.gif</nombre>
+            <title>Sardina mar Cantábrico</title>
+        </archivo>
+        <archivo>
+            <nombre>trucha.gif</nombre>
+            <title>Trucha marrón</title>
+        </archivo>
+        <archivo>
+            <nombre>plata.gif</nombre>
+            <title>Mina de plata</title>
+        </archivo>
+    </folder>
+</root>

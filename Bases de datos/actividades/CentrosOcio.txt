@@ -1,0 +1,26 @@
+Entidades:
+
+    Centro de Ocio
+    Socio
+    Sala
+    Actividad
+
+Atributos:
+
+    Centro de Ocio: Código de centro, nombre, dirección, ciudad, teléfono, email.
+    Socio: DNI, nombre, primer apellido, segundo apellido, número de cuenta corriente, número de teléfono, email, fecha de nacimiento.
+    Sala: Nombre, número de metros cuadrados, características especiales.
+    Actividad: Código, fecha, nombre, explicación.
+
+Relaciones:
+
+    -Un centro de ocio tiene muchos socios.
+    -Un socio puede ser miembro de muchos centros de ocio.
+    -Un socio puede reservar muchas salas en diferentes centros de ocio.
+    -Una sala puede ser reservada por muchos socios.
+    -Una actividad puede tener muchos socios inscritos.
+    -Un socio puede inscribirse en muchas actividades.
+    -Una actividad se realiza en un lugar diferente al centro de ocio donde se matriculan los socios.
+    -Un socio se matricula en una actividad en un centro de ocio específico.
+
+    
