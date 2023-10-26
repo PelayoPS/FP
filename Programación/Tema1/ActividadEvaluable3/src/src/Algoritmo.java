@@ -24,12 +24,12 @@ public class Algoritmo {
         System.out.println("El número invertido es: " + invertNumber(number));
     }
 
-    private static String invertNumber(int number){
-        String invertedNumber = "";
+    private static int invertNumber(int number){
+        int invertedNumber = 0;
         while(number > 0){
-            invertedNumber += number % 10;
+            invertedNumber = invertedNumber * 10 + number % 10;
             number /= 10;
         }
-        return invertedNumber+"";
+        return invertedNumber;
     }
 }
