@@ -1,0 +1,21 @@
+erdiagram Model
+
+notation=chen
+
+entity Usuarios {
+    id key
+    
+    
+}
+entity Videos {
+    id key
+    nombre
+   
+}
+relationship Rel {
+   Videos[N] -> Usuarios[1..1]
+
+}
+
+
+
