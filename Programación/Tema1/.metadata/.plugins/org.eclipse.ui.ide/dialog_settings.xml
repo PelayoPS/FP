@@ -12,6 +12,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\pelay\Downloads\entrega2"/>
 			<item value="C:\Users\pelay\Desktop\FP\Programación\Tema1\ActividadEvaluable_1"/>
 			<item value="C:\Users\pelay\Desktop\FP\Programación\Tema1\Actividades3Tema1"/>
 		</list>
