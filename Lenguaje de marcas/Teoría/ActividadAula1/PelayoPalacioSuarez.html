@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad de aula 1</title>
+    <style>
+        .body {
+            background-color: #e692f3c9;
+        }
+
+        .title {
+            color: red;
+        }
+
+        .fieldset1 {
+            background-color: #a3e6f3;
+            width: 55%;
+        }
+
+        .fieldset2 {
+            background-color: #00ffd9;
+            width: 55%;
+        }
+
+        .enviar {
+            background-color: rgb(0, 255, 0);
+        }
+
+        .reset {
+            background-color: rgb(255, 0, 0);
+        }
+
+        .buttons {
+            width: 55%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="body">
+    <center>
+        <h1 class="title"><i>Datos de interés</i></h1>
+    </center>
+
+    <p>Rellena el formulario para que podamos saber más de tí</p>
+    <form>
+        <fieldset class="fieldset1">
+            <legend>Datos </legend>
+            <p><i>Selecciona un idioma:</i></p>
+            <input type="radio" name="idioma" value="ingles"> Inglés<br>
+            <input type="radio" name="idioma" value="español"> Español<br>
+            <input type="radio" name="idioma" value="frances"> Francés<br>
+            <p>
+                <i>Nombre </i> <input type="text">
+                <i>Apellidos </i> <input type="text">
+                <i>Selecciona tipo de estudios: </i>
+                <select>
+                    <option value="bachillerato">Bachillerato</option>
+                    <option value="superiores">Superiores</option>
+                    <option value="otros">Otros</option>
+                </select>
+            </p>
+            <p>
+                <i>Cuentanos algo sobre ti</i><br>
+                <textarea rows="10" cols="50"></textarea>
+            </p>
+
+        </fieldset>
+        <br>
+        <fieldset class="fieldset2">
+            <legend><i>Mis datos</i></legend>
+            <p><i>Seleccione sus deportes favoritos</i></p>
+            <select multiple name="deportes" size="6">
+                <option value="futbol">Fútbol</option>
+                <option value="baloncesto">Baloncesto</option>
+                <option value="snowboard">Snowboard</option>
+                <option value="surf">Surf</option>
+                <option value="balonmano">Balonmano</option>
+                <option value="otros">Otros</option>
+            </select>
+            <p><i>Seleccione su estado civil</i></p>
+            <input type="checkbox" name="estadoCivil" value="soltero"> Soltero/a
+            <input type="checkbox" name="estadoCivil" value="casado"> Casado/a
+            <input type="checkbox" name="estadoCivil" value="divorciado"> Divorciado/a
+            <input type="checkbox" name="estadoCivil" value="viudo"> Viudo/a
+        </fieldset>
+        <br>
+        <div class="buttons">
+            <input type="submit" value="Enviar" class="enviar">
+            <input type="reset" value="Comenzar de nuevo" class="reset">
+        </div>
+    </form>
+
+</html>
