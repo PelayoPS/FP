@@ -42,6 +42,5 @@ public class Ejercicio2 {
             }
         }
         
-
     }
 }
