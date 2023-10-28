@@ -1,5 +1,6 @@
 package src;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Ejercicio2 {
@@ -25,22 +26,25 @@ public class Ejercicio2 {
         double price = 0;
         System.out.println("Introduce el precio del producto: ");
         price = keyboard.nextDouble();
+        while (price <= 0) {
+            System.out.println("El precio debe ser mayor que 0.");
+            System.out.println("Introduce el precio del producto: ");
+            price = keyboard.nextDouble();
+        }
         double finalPrice = price * 1.05;
         int month = 10;
         int counter = 1;
         keyboard.close();
-        while (finalPrice > 0) {
-            if (finalPrice < month) {
-                System.out.println("Mes " + counter + ": " + finalPrice + "€ (cantidad pendiente " + 0 + ")");
-                System.out.println("Se paga en " + counter + " cuotas.");
-                System.exit(0);
-            } else {
-                System.out.println("Mes " + counter + ": " + month + "€ (cantidad pendiente " + finalPrice + ")");
-                finalPrice -= month;
-                month *= 2;
-                counter++;
-            }
+        while (finalPrice >= month) {
+            System.out.println("Mes " + counter + ": " + month + "€ (cantidad pendiente " + finalPrice + ")");
+            finalPrice -= month;
+            month *= 2;
+            counter++;
         }
+        DecimalFormat df = new DecimalFormat("#.00");
+        System.out.println("Mes " + counter + ": " + df.format(finalPrice) + "€ (cantidad pendiente " + 0 + ")");
+        System.out.println("Se paga en " + counter + " cuotas.");
+        System.exit(0);
         
     }
 }

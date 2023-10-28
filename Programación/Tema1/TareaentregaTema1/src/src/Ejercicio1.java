@@ -20,8 +20,8 @@ public class Ejercicio1 {
         int lowerLimit = keyboard.nextInt();
         System.out.println("Introduce el límite superior del intervalo");
         int upperLimit = keyboard.nextInt();
-        while (lowerLimit > upperLimit) {
-            System.out.println("El límite inferior no puede ser mayor que el superior");
+        while (lowerLimit >= upperLimit) {
+            System.out.println("El límite inferior no puede ser mayor o igual que el superior");
             System.out.println("Introduce el límite inferior del intervalo");
             lowerLimit = keyboard.nextInt();
             System.out.println("Introduce el límite superior del intervalo");
