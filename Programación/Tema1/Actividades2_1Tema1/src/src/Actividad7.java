@@ -7,13 +7,12 @@ public class Actividad7 {
          * que pueden hacerse con los números 1,2,3 y 4. También que muestre
          * el número de estas.
          */
-        int[] numbers = {1, 2, 3, 4};
         //bucle que muestra las permutaciones
-        for (int i = 0; i < numbers.length; i++) {
-            for (int j = 0; j < numbers.length; j++){
-                for (int k = 0; k < numbers.length; k++){
-                    for (int l = 0; l < numbers.length; l++){
-                        System.out.print(numbers[i] + " " + numbers[j] + " " + numbers[k] + " " + numbers[l] + "  ");
+        for (int i = 1; i < 5; i++) {
+            for (int j = 1; j < 5; j++){
+                for (int k = 1; k < 5; k++){
+                    for (int l = 1; l < 5; l++){
+                        System.out.print(i + " " + j + " " + k + " " + l + "  ");
                     }
                     System.out.println();
                 }
