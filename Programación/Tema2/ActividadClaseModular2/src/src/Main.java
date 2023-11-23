@@ -15,7 +15,7 @@ public class Main {
         keyboard.close();
         switch (option) {
             case 1:
-                if (Libreria.numeroDeDigitos(1) == Libreria.numeroDeDigitos(2)
+                if (Libreria.numeroDeDigitos(num1) == Libreria.numeroDeDigitos(num2)
                         && Libreria.numeroInverso(num2) == num1) {
                     System.out.println("Los números son cuñados");
                 } else {
