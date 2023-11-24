@@ -1,41 +1,89 @@
 .body {
-    background-color: black;
+    background-color: #303030;
     color: white;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+.index {
+    background-color: #303030;
+    border: 2px solid white;
+    padding: 10px;
 }
 
-.toplane {}
+.toplane {
+    background-color: #303030;
+    border: 2px solid white;
+    padding: 10px;
+}
 
-.jungle {}
+.jungle {
+    background-color: #303030;
+    border: 2px solid white;
+    padding: 10px;
+}
 
-.midlane {}
+.table_jungle {
+    vertical-align: top;
+    width: 50%;
+    border: 3px solid white;
+    display: inline-block;
+}
+
+.table_jungle td {
+    border: 3px solid white;
+}
+
+.table_jungle th {
+    border: 3px solid white;
+}
+
+.midlane {
+    background-color: #303030;
+    border: 2px solid white;
+    padding: 10px;
+}
 
 .botlane {
     display: flex;
-    background-color: cadetblue;
-    border: 2px solid blueviolet;
+    background-color: #303030;
+    border: 2px solid white;
+    padding: 10px;
 }
 
 .adc {
     float: left;
-    width: 33%;
+    width: 33vw;
+    margin-right: 20px;
 }
 
 .botlane_image {
     float: center;
-    width: 33%;
+    width: 33vw;
 }
 
 .support {
     float: right;
-    width: 33%;
+    width: 33vw;
 }
 
 .right_pos_botimage {
-    float: left;
+    float: top;
     width: 50%;
 }
 
 .left_pos_botimage {
-    float: right;
+    float: bottom;
     width: 50%;
+}
+
+.feedback {
+    background-color: #303030;
+    border: 2px solid white;
+    padding: 30px;
+    text-align: left;
+    width: 33vw;
+    float: center;
+    margin-left: 33vw;
+    display: flex;
 }
