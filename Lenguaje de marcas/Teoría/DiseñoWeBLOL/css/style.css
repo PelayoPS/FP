@@ -1,0 +1,41 @@
+.body {
+    background-color: black;
+    color: white;
+}
+
+.toplane {}
+
+.jungle {}
+
+.midlane {}
+
+.botlane {
+    display: flex;
+    background-color: cadetblue;
+    border: 2px solid blueviolet;
+}
+
+.adc {
+    float: left;
+    width: 33%;
+}
+
+.botlane_image {
+    float: center;
+    width: 33%;
+}
+
+.support {
+    float: right;
+    width: 33%;
+}
+
+.right_pos_botimage {
+    float: left;
+    width: 50%;
+}
+
+.left_pos_botimage {
+    float: right;
+    width: 50%;
+}
