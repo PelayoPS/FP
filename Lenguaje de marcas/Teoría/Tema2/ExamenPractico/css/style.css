@@ -1,0 +1,57 @@
+.title {
+    font-family: Georgia;
+    color: white;
+}
+
+.table {
+    font-family: Verdana;
+    width: 25%;
+    color: white;
+}
+
+.body {
+    background-color: orange;
+}
+    
+.main {
+    display: flex;
+}
+
+.green_rectangle {
+    background-color: green;
+    width: 75%;
+    height: 150px;
+    font-size: 28px;
+    float: left;
+    color: white;
+    padding: 50px;
+}
+
+.purple_table {
+    background-color: purple;
+    float: right;
+    width: 25%;
+    font-size: small;
+    color: white;
+}
+
+.purple_table td, td {
+    width: 2000px;
+    height: 25px;
+    color: white;
+}
+
+.red_rectangle {
+    float: right;
+    background-color: red;
+    width: 55%;
+    height: 300px;
+    font-size: 28px;
+    padding: 50px;
+    color: white;
+}
+
+.border {
+    border: 3px solid rgb(38, 6, 71);
+    color: white;
+}
