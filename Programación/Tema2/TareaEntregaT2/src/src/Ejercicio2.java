@@ -17,7 +17,7 @@ public class Ejercicio2 {
         int month = keyboard.nextInt();
         System.out.println("Introduce el año: ");
         int year = keyboard.nextInt();
-        while (!isValidDate(day, month, year)) {
+        while (!validarFecha(day, month, year)) {
             System.out.println("Fecha no válida. Introduce otra fecha: ");
             System.out.println("Introduce el día: ");
             day = keyboard.nextInt();
@@ -26,6 +26,9 @@ public class Ejercicio2 {
             System.out.println("Introduce el año: ");
             year = keyboard.nextInt();
         }
+        System.out.println("Fecha válida");
+
+        keyboard.close();
     }
 
     /**
@@ -36,10 +39,10 @@ public class Ejercicio2 {
      * @param year
      * @return
      */
-    public static boolean isValidDate(int day, int month, int year) {
+    public static boolean validarFecha(int day, int month, int year) {
         boolean isValid = false;
         if (year > 1978 && month > 0 && month < 13) {
-            int daysOfMonth = getDaysOfMonth(month, year);
+            int daysOfMonth = calcularDias(month, year);
             if (day > 0 && day <= daysOfMonth) {
                 isValid = true;
             }
@@ -53,14 +56,14 @@ public class Ejercicio2 {
      * @param year
      * @return
      */
-    public static int getDaysOfMonth(int month, int year) {
+    public static int calcularDias(int month, int year) {
         int daysOfMonth = 0;
         switch (month) {
             case 1:
                 daysOfMonth = 31;
                 break;
             case 2:
-                if (isLeapYear(year)) {
+                if (anioBisiesto(year)) {
                     daysOfMonth = 29;
                 } else {
                     daysOfMonth = 28;
@@ -105,7 +108,7 @@ public class Ejercicio2 {
      * @param year
      * @return
      */
-    public static boolean isLeapYear(int year) {
+    public static boolean anioBisiesto(int year) {
         boolean isLeap = false;
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             isLeap = true;
