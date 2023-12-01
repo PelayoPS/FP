@@ -26,7 +26,7 @@ public class Ejercicio2 {
             System.out.println("Introduce el año: ");
             year = keyboard.nextInt();
         }
-        System.out.println("Fecha válida");
+        
 
         keyboard.close();
     }
@@ -101,6 +101,29 @@ public class Ejercicio2 {
                 break;
         }
         return daysOfMonth;
+    }
+
+    /**
+     * calcula los días que hay desde el 01/01/1978 hasta la fecha introducida
+     * @param day
+     * @param month
+     * @param year
+     * @return
+     */
+    public static int calcularDias(int day, int month, int year){
+        int days = 0;
+        for (int i = 1978; i < year; i++) {
+            if (anioBisiesto(i)) {
+                days += 366;
+            } else {
+                days += 365;
+            }
+        }
+        for (int i = 1; i < month; i++) {
+            days += calcularDias(i, year);
+        }
+        days += day;
+        return days;
     }
 
     /**

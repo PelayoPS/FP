@@ -1,0 +1,6 @@
+/**
+ * 
+ */
+module ExamenModular {
+	requires junit;
+}
