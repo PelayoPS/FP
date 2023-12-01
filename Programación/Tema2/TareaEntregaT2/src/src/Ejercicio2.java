@@ -26,7 +26,30 @@ public class Ejercicio2 {
             System.out.println("Introduce el año: ");
             year = keyboard.nextInt();
         }
-        
+        int dayOfWeek = calcularDias(day, month, year) % 7;
+        switch (dayOfWeek) {
+            case 0:
+                System.out.println("El día de la semana es sábado");
+                break;
+            case 1:
+                System.out.println("El día de la semana es domingo");
+                break;
+            case 2:
+                System.out.println("El día de la semana es lunes");
+                break;
+            case 3:
+                System.out.println("El día de la semana es martes");
+                break;
+            case 4:
+                System.out.println("El día de la semana es miércoles");
+                break;
+            case 5:
+                System.out.println("El día de la semana es jueves");
+                break;
+            case 6:
+                System.out.println("El día de la semana es viernes");
+                break;
+        }
 
         keyboard.close();
     }

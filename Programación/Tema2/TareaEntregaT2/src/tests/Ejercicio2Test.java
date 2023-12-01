@@ -2,12 +2,16 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import org.junit.Test;
 
 import src.Ejercicio2;
 
 public class Ejercicio2Test {
-    //personal use class ignore it
+    // personal use class ignore it
 
     // Happy path test with a non-leap year
     @Test
@@ -158,4 +162,29 @@ public class Ejercicio2Test {
         // Assert
         assertEquals(31, days);
     }
+
+    // test for date 1/12/2023 getting the console output
+    @Test
+    public void testConsoleOutput() {
+        // log the console output
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        //save the original console output
+        PrintStream originalOut = System.out;
+        System.setOut(new PrintStream(outContent));
+        //make keyboard input
+        System.setIn(new ByteArrayInputStream("1\n12\n2023".getBytes()));
+        //use the keyboard input
+        Ejercicio2.main(new String[] {});
+        // get the console output without all the \n so we only get the last line
+        String consoleOutput = outContent.toString();
+        consoleOutput = consoleOutput.split("\n")[3];
+        consoleOutput = consoleOutput.substring(0, consoleOutput.length() - 1);
+        String expectedOutput = "El día de la semana es viernes";
+        // get last line of console output
+        assertEquals(expectedOutput, consoleOutput);
+
+        // reset the console output
+        System.setOut(originalOut);
+    }
+
 }

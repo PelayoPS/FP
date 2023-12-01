@@ -2,7 +2,6 @@ package src;
 
 public class Main {
     public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("esPrimo(17)"+
 		                             Funciones.esPrimo(17));
 		System.out.println("esPrimo(20)"+
