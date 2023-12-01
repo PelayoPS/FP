@@ -30,7 +30,7 @@ public class Ejercicio1 {
      * @return
      */
     public static boolean comprobarDNI(int dni) {
-        return (dni > 0 && dni <= 99999999 && dni > 9999999) ? true : false;
+        return (dni <= 99999999 && dni > 9999999) ? true : false;
     }
 
     /**
