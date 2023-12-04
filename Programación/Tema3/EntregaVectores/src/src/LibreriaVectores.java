@@ -87,7 +87,7 @@ public class LibreriaVectores {
                 if (v[j] == i) {
                     ausentes[j] = ausente;
                 } else {
-                    ausentes[j] = v[j]+"";
+                    ausentes[j] = v[j] + "";
                 }
             }
         }
@@ -108,6 +108,7 @@ public class LibreriaVectores {
      * para ello se calcula el valor medio como (max+min)/2
      * y se busca el elemento más cercano a ese valor
      * siendo |valorMedio - elemento| mínimo
+     * 
      * @param v: int[] vector de enteros
      * @return promedio: int valor medio del vector
      */
@@ -126,8 +127,11 @@ public class LibreriaVectores {
         return promedio;
     }
 
+    // =================== FUNCIONES PRIVADAS ===================
+
     /**
      * Función que recibe un vector y devuelve el valor mínimo
+     * 
      * @param int[] v: vector de enteros
      * @return int min: valor mínimo del vector
      */
@@ -142,9 +146,9 @@ public class LibreriaVectores {
         return min;
     }
 
-
     /**
      * Función que recibe un vector y devuelve el valor máximo
+     * 
      * @param int[] v: vector de enteros
      * @return int max: valor máximo del vector
      */
