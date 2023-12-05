@@ -11,26 +11,26 @@ public class LibreriaVectores {
      * Función que lee el tamaño de un vector y pide sus datos al
      * usuario por teclado
      * 
-     * @param v: int[]vector de enteros
-     * @return n: int tamaño del vector
+     * @return int[] v: vector de enteros
      */
-    public static int leerVector(int[] v) {
+    public static int[] leerVector() {
         int n;
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Introduce el tamaño del vector: ");
         n = keyboard.nextInt();
+        int[] v = new int[n];
         for (int i = 0; i < n; i++) {
             System.out.println("Introduce el elemento " + (i + 1) + ": ");
             v[i] = keyboard.nextInt();
         }
         keyboard.close();
-        return n;
+        return v;
     }
 
     /**
      * Función que imprime por pantalla los elementos de un vector
      * 
-     * @param v: int[] vector de enteros
+     * @param int[]: v vector de enteros
      */
     public static void imprimirVector(int[] v) {
         for (int i = 0; i < v.length; i++) {
@@ -42,7 +42,7 @@ public class LibreriaVectores {
      * Función que recibe un vector y devuelve el número de
      * veces que cada elemento aparece repetido
      * 
-     * @param v: int[] vector de enteros
+     * @param int[]: v vector de enteros
      */
     public static void mostrarRepetidos(int[] v) {
         int[] repetidos = new int[v.length];// vector auxiliar para contar los repetidos
@@ -74,7 +74,7 @@ public class LibreriaVectores {
      * max = 10
      * resultado = 5,6,7
      * 
-     * @param v: int[] vector de enteros
+     * @param int[]: v vector de enteros
      */
     public static void buscarAusentes(int[] v) {
         int min = buscarMinimo(v);// se inicializa el mínimo con el primer elemento del vector
@@ -109,8 +109,8 @@ public class LibreriaVectores {
      * y se busca el elemento más cercano a ese valor
      * siendo |valorMedio - elemento| mínimo
      * 
-     * @param v: int[] vector de enteros
-     * @return promedio: int valor medio del vector
+     * @param int[]: v vector de enteros
+     * @return int: promedio valor medio del vector
      */
     public static int promedio(int[] v) {
         int min = buscarMinimo(v);// se inicializa el mínimo con el primer elemento del vector
