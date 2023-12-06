@@ -10,15 +10,15 @@ public class LibreriaVectores {
     /**
      * Función que lee el tamaño de un vector y pide sus datos al
      * usuario por teclado
-     * 
+     * @param int[] v: vector de enteros
      * @return int[] v: vector de enteros
      */
-    public static int[] leerVector() {
+    public static int[] leerVector(int[] v) {
         int n;
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Introduce el tamaño del vector: ");
         n = keyboard.nextInt();
-        int[] v = new int[n];
+        v = new int[n];
         for (int i = 0; i < n; i++) {
             System.out.println("Introduce el elemento " + (i + 1) + ": ");
             v[i] = keyboard.nextInt();
