@@ -84,7 +84,7 @@ public class LibreriaMatrices {
      * @param fila: int[] fila de la matriz
      * @return int mínimo de la fila
      */
-    public static int postMax(int[] fila) {
+    public static int posMax(int[] fila) {
         int maximo = fila[0];
         int postMax = 0;
         for (int i = 1; i < fila.length; i++) {
@@ -128,15 +128,13 @@ public class LibreriaMatrices {
         imprimeMatriz(m);
     }
 
-    // =================== FUNCIONES PRIVADAS ===================
-
     /**
      * determina si los elementos de una fila son distintos
      * 
      * @param fila: int[] fila de la matriz
      * @return boolean true si los elementos son distintos, false si no lo son
      */
-    private static boolean todosDistintos(int[] fila) {
+    public static boolean todosDistintos(int[] fila) {
         boolean result = true;
         for (int i = 0; i < fila.length; i++) {
             for (int j = i + 1; j < fila.length; j++) {
@@ -147,6 +145,8 @@ public class LibreriaMatrices {
         }
         return result;
     }
+
+    // =================== FUNCIONES PRIVADAS ===================
 
     /**
      * imprime por pantalla una fila
