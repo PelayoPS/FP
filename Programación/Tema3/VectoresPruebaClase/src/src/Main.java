@@ -109,13 +109,12 @@ public class Main {
 	}
 
 	/**
-	 * Método que cuenta el número de mesetas en el vector
-	 * 
+	 * Método que cuenta el número de mesetas en el vectorS
 	 * @param int[] : v vector de enteros
 	 * @return int : número de mesetas
 	 */
 	public static int numeroMesetas(int[] v) {
-		if (tieneMeseta(v)) {// si no hay meseta, devolvemos 0
+		if (!tieneMeseta(v)) {// si no hay meseta, devolvemos 0
 			return 0;			
 		}
 		int numMesetas = 0;// variable de control
