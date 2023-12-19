@@ -115,6 +115,9 @@ public class Main {
 	 * @return int : número de mesetas
 	 */
 	public static int numeroMesetas(int[] v) {
+		if (tieneMeseta(v)) {// si no hay meseta, devolvemos 0
+			return 0;			
+		}
 		int numMesetas = 0;// variable de control
 		boolean esMeseta = false;// variable de control
 		for (int i = 0; i < v.length - 1; i++) {// bucle sobre el vector
