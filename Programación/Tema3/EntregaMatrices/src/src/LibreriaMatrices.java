@@ -42,14 +42,13 @@ public class LibreriaMatrices {
         }
 
         // comprobamos que en cada columna sólo puede aparecer un máximo de cada fila
-        // crea una fila con los máximos de cada columna
-        // si para cada elemento de la fila element!=maximoFila(element) result será
-        // false
-        int[] maximosColumnas = new int[matriz[0].length];
-        for (int i = 0; i < maximosColumnas.length; i++) {// recorre las columnas
-            maximosColumnas[i] = posMax(matriz[i]);// guarda la posición del máximo de la fila
+        // si las posiciones de los maximos no se repiten
+        // no hay más de uno por columna
+        int[] posMaximosColumnas = new int[matriz[0].length];
+        for (int i = 0; i < posMaximosColumnas.length; i++) {
+            posMaximosColumnas[i] = posMax(matriz[i]);
         }     
-        result = todosDistintos(maximosColumnas);
+        result = todosDistintos(posMaximosColumnas);
 
         return result;
     }
