@@ -1,7 +1,8 @@
 package src;
 
 /**
- * 
+ * Clase que contiene los métodos para trabajar con vectores
+ * @author Pelayo Palacio Suárez
  */
 public class Main {
 
