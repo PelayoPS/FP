@@ -9,7 +9,7 @@ public class Main {
 	/**
 	 * Main method that tests the methods of this class
 	 * 
-	 * @param String[] args
+	 * @param args : String[] arguments of the program
 	 */
 	public static void main(String[] args) {
 		int[] relieve = { 2, 4, 3, 5, 5, 5, 5, 7, 9, 8, 6, 5, 7, 8, 8, 8, 10, 9, 7, 6, 4, 3, 4, 4, 4, 2, 0 };
@@ -23,8 +23,8 @@ public class Main {
 	 * Método que devuelve true si el vector es un valle, false en caso contrario
 	 * Un vector es un valle si existe un elemento que es menor que sus dos vecinos
 	 * 
-	 * @param int[] : v vector de enteros
-	 * @param int   pos : posición del vector
+	 * @param v : int[] vector de enteros
+	 * @param pos : int posición del vector
 	 * @return boolean : true si es un valle, false en caso contrario
 	 */
 	public static boolean esValle(int[] v, int pos) {
@@ -41,8 +41,8 @@ public class Main {
 	 * Método que devuelve true si el vector es un pico, false en caso contrario
 	 * Un vector es un pico si existe un elemento que es mayor que sus dos vecinos
 	 * 
-	 * @param int[] : v vector de enteros
-	 * @param int   pos : posición del vector
+	 * @param v : int[] vector de enteros
+	 * @param pos : int posición del vector
 	 * @return boolean : true si es un pico, false en caso contrario
 	 */
 	public static boolean esPico(int[] v, int pos) {
@@ -58,7 +58,7 @@ public class Main {
 	/**
 	 * Método que devuelve el número de valles que hay en el vector
 	 * 
-	 * @param int[] : v vector de enteros
+	 * @param v : int[] vector de enteros
 	 * @return int : número de valles
 	 */
 	public static int numeroValle(int[] v) {
@@ -74,7 +74,7 @@ public class Main {
 	/**
 	 * Devuelve el valor del pico más alto del vector
 	 * 
-	 * @param int[] : v vector de enteros
+	 * @param v : int[] vector de enteros
 	 * @return int : valor del pico más alto
 	 */
 	public static int valorPicoMasAlto(int[] v) {
@@ -94,7 +94,7 @@ public class Main {
 	 * Se define meseta como una secuencia de elementos consecutivos que tienen el
 	 * mismo valor
 	 * 
-	 * @param int[] : v vector de enteros
+	 * @param v : int[] vector de enteros
 	 * @return boolean : true si tiene meseta, false en caso contrario
 	 */
 	public static boolean tieneMeseta(int[] v) {
@@ -109,7 +109,7 @@ public class Main {
 
 	/**
 	 * Método que cuenta el número de mesetas en el vectorS
-	 * @param int[] : v vector de enteros
+	 * @param v : int[] vector de enteros
 	 * @return int : número de mesetas
 	 */
 	public static int numeroMesetas(int[] v) {
