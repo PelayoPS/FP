@@ -47,21 +47,10 @@ public class LibreriaMatrices {
         // false
         int[] maximosColumnas = new int[matriz[0].length];
         for (int i = 0; i < maximosColumnas.length; i++) {// recorre las columnas
-            maximosColumnas[i] = maximo(matriz[i]);// guarda el máximo de la fila
-        }
-        int counter = 0;// contador de veces que aparece un máximo en una columna
-        for (int i = 0; i < maximosColumnas.length; i++) {// recorre las filas
-            for (int j = 0; j < matriz.length; j++) {// recorre las columnas
-                if (maximosColumnas[i] == matriz[j][i]) {// si el máximo de la columna es igual al elemento
-                                                         // de la matriz
-                    counter++;// aumenta el contador
-                }
-            }
-            if (counter > 1) {// si el contador es mayor que 1, result será false
-                result = false;// hay más de un máximo en la columna
-            }
-            counter = 0;// reinicia el contador
-        }
+            maximosColumnas[i] = posMax(matriz[i]);// guarda la posición del máximo de la fila
+        }     
+        result = todosDistintos(maximosColumnas);
+
         return result;
     }
 
