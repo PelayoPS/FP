@@ -46,19 +46,22 @@ public class LibreriaMatrices {
         // si para cada elemento de la fila element!=maximoFila(element) result será
         // false
         int[] maximosColumnas = new int[matriz[0].length];
-        for (int i = 0; i < maximosColumnas.length; i++) {
-            int[] columna = new int[matriz.length];
-            for (int j = 0; j < columna.length; j++) {
-                columna[j] = matriz[j][i];
-            }
-            maximosColumnas[i] = maximo(columna);
+        for (int i = 0; i < maximosColumnas.length; i++) {// recorre las columnas
+            maximosColumnas[i] = maximo(matriz[i]);// guarda el máximo de la fila
         }
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < maximosColumnas.length; j++) {
-                result = result && matriz[i][j] != maximosColumnas[j];
+        int counter = 0;// contador de veces que aparece un máximo en una columna
+        for (int i = 0; i < maximosColumnas.length; i++) {// recorre las filas
+            for (int j = 0; j < matriz.length; j++) {// recorre las columnas
+                if (maximosColumnas[i] == matriz[j][i]) {// si el máximo de la columna es igual al elemento
+                                                         // de la matriz
+                    counter++;// aumenta el contador
+                }
             }
+            if (counter > 1) {// si el contador es mayor que 1, result será false
+                result = false;// hay más de un máximo en la columna
+            }
+            counter = 0;// reinicia el contador
         }
-
         return result;
     }
 
@@ -109,7 +112,8 @@ public class LibreriaMatrices {
 
     /**
      * lee por teclado los valores de una matriz
-     * sabiendo sus dimensiones 
+     * sabiendo sus dimensiones
+     * 
      * @param m: int[][] matriz de la que se sacan las dimensiones
      */
     public static void leerMatriz(int[][] m) {
