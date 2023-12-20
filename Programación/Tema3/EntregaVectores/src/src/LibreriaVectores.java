@@ -1,5 +1,6 @@
 package src;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -10,15 +11,15 @@ public class LibreriaVectores {
     /**
      * Función que lee el tamaño de un vector y pide sus datos al
      * usuario por teclado
-     * @param int[] v: vector de enteros
+     * 
      * @return int[] v: vector de enteros
      */
-    public static int[] leerVector(int[] v) {
+    public static int[] leerVector() {
         int n;
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Introduce el tamaño del vector: ");
         n = keyboard.nextInt();
-        v = new int[n];
+        int[] v = new int[n];
         for (int i = 0; i < n; i++) {
             System.out.println("Introduce el elemento " + (i + 1) + ": ");
             v[i] = keyboard.nextInt();
@@ -79,28 +80,15 @@ public class LibreriaVectores {
     public static void buscarAusentes(int[] v) {
         int min = buscarMinimo(v);// se inicializa el mínimo con el primer elemento del vector
         int max = buscarMaximo(v);// se inicializa el máximo con el primer elemento del vector
-        // mostramos los elementos que no están en el vector
-        String[] ausentes = new String[v.length];
-        String ausente = "a";
-        for (int i = min + 1; i < max; i++) {
-            for (int j = 0; j < v.length; j++) {
-                if (v[j] == i) {
-                    ausentes[j] = ausente;
-                } else {
-                    ausentes[j] = v[j] + "";
-                }
+        // bucle sobre el vector buscando valores que estén entre el min y el max y que
+        // no estén en el vector
+        System.out.println(min + " " + max);
+        for(int i=min; i<max; i++){
+            System.out.println(i);
+            if(!Arrays.asList(v).contains(i)){
+                System.out.println("El elemento " + i + " no está en el vector");
             }
         }
-        System.out.println("Los elementos que no están en el vector son: ");
-        System.out.println("min: " + min);
-        System.out.println("max: " + max);
-        System.out.print("[ ");
-        for (int i = 0; i < ausentes.length; i++) {
-            if (ausentes[i] != ausente) {
-                System.out.print(ausentes[i] + " ");
-            }
-        }
-        System.out.print("]");
     }
 
     /**

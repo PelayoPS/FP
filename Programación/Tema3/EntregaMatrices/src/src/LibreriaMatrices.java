@@ -1,5 +1,6 @@
 package src;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -49,7 +50,6 @@ public class LibreriaMatrices {
             posMaximosColumnas[i] = posMax(matriz[i]);
         }     
         result = todosDistintos(posMaximosColumnas);
-
         return result;
     }
 
