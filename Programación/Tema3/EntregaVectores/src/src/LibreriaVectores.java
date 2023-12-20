@@ -74,7 +74,7 @@ public class LibreriaVectores {
      * min = 1
      * max = 10
      * resultado = 5,6,7
-     * 
+     * (testeando programación funcional)
      * @param int[]: v vector de enteros
      */
     public static void buscarAusentes(int[] v) {
