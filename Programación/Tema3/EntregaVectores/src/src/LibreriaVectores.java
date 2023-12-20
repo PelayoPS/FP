@@ -83,12 +83,17 @@ public class LibreriaVectores {
         // bucle sobre el vector buscando valores que estén entre el min y el max y que
         // no estén en el vector
         System.out.println(min + " " + max);
-        for(int i=min; i<max; i++){
-            System.out.println(i);
-            if(!Arrays.asList(v).contains(i)){
-                System.out.println("El elemento " + i + " no está en el vector");
+        int[] ausentes = new int[max - min];
+        // para la lista ausentes llena con valores entre el min y el max
+        Arrays.setAll(ausentes, i -> i + min);
+        Arrays.stream(ausentes).forEach(System.out::println);
+        // para cada elemento del vector
+        Arrays.stream(ausentes).forEach(j -> {
+            // si el elemento no está en el vector
+            if (Arrays.stream(v).noneMatch(i -> i == j)) {
+                System.out.println("El elemento " + j + " no está en el vector");
             }
-        }
+        });        
     }
 
     /**
