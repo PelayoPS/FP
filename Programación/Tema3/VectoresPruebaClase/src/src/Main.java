@@ -63,7 +63,7 @@ public class Main {
 	 */
 	public static int numeroValle(int[] v) {
 		int numValles = 0;// variable de control
-		for (int i = 0; i < v.length; i++) {// bucle sobre el vector
+		for (int i = 1; i < v.length-1; i++) {// bucle sobre el vector
 			if (esValle(v, i)) {// condición de valle
 				numValles++;// si es valle, incrementamos el valor de la variable de control
 			}
@@ -78,8 +78,8 @@ public class Main {
 	 * @return int : valor del pico más alto
 	 */
 	public static int valorPicoMasAlto(int[] v) {
-		int valorPicoMasAlto = 0;// variable de control
-		for (int i = 0; i < v.length; i++) {// bucle sobre el vector
+		int valorPicoMasAlto = -1;// variable de control
+		for (int i = 1; i < v.length-1; i++) {// bucle sobre el vector
 			if (esPico(v, i)) {// condición de pico
 				if (v[i] > valorPicoMasAlto) {// si es pico y su valor es mayor que el valor del pico más alto
 					valorPicoMasAlto = v[i];// cambiamos el valor de la variable de control
