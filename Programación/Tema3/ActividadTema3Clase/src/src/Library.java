@@ -7,6 +7,7 @@ public class Library {
      * @param notas : int[][] matriz de notas
      */
     public static void notaMasAlta(int notas[][]){
+        matrixError(notas);
         for (int i = 0; i < notas.length; i++) {
             for (int j = 0; j < notas[i].length; j++) {
                 if (notas[i][j] == 10){
@@ -22,6 +23,8 @@ public class Library {
      * @param notas : int[][] matriz de notas
      */
     public static void calcularMediaCurso(char curso, int notas[][]){
+        courseError(curso);
+        matrixError(notas);
         int suma = 0;
         int contador = 0;
         for (int j = 0; j < notas[getRow(curso)].length; j++) {
@@ -37,6 +40,8 @@ public class Library {
      * @param notas : int[][] matriz de notas
      */
     public static void numeroAprobados(char curso, int notas[][]){
+        courseError(curso);
+        matrixError(notas);
         int contador = 0;
         for (int j = 0; j < notas[getRow(curso)].length; j++) {
             if (notas[getRow(curso)][j] >= 5){
@@ -52,6 +57,8 @@ public class Library {
      * @param notas : int[][] matriz de notas
      */
     public static void numeroSuspensos(char curso, int notas[][]){
+        courseError(curso);
+        matrixError(notas);
         int contador = 0;
         for (int j = 0; j < notas[getRow(curso)].length; j++) {
             if (notas[getRow(curso)][j] < 5){
@@ -66,6 +73,7 @@ public class Library {
      * @param notas : int[][] matriz de notas
      */
     public static void mostrarEstadistica(int notas[][]){
+        matrixError(notas);
         for (int i = 0; i < notas.length; i++) {
             System.out.println("Curso " + getRow(i));
             numeroAprobados(getRow(i), notas);
@@ -114,4 +122,36 @@ public class Library {
                 return 0;
         }
     }
+    
+    /**
+     * Comprueba que la matriz no sea nula y que tenga 4 filas y 10 columnas
+     * @param notas
+     * @throws IllegalArgumentException : si la matriz es nula o no tiene 4 filas o 10 columnas
+     */
+    private static void matrixError(int[][] notas) {
+        if (notas == null) {
+            throw new IllegalArgumentException("La matriz no puede ser nula");
+        }
+        if (notas.length != 4) {
+            throw new IllegalArgumentException("La matriz debe tener 4 filas");
+        }
+        for (int[] is : notas) {
+            if (is.length != 10) {
+                throw new IllegalArgumentException("La matriz debe tener 10 columnas");
+            }
+        }
+    }
+
+    /**
+     * Comprueba que el curso sea A, B, C o D
+     * @param curso : char curso que se quiere comprobar
+     * @throws IllegalArgumentException : si el curso no es A, B, C o D
+     */
+    private static void courseError(char curso) {
+        if (curso != 'A' && curso != 'B' && curso != 'C' && curso != 'D') {
+            throw new IllegalArgumentException("El curso debe ser A, B, C o D");
+        }
+    }
+
+    
 }
