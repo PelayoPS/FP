@@ -49,6 +49,8 @@ public class Library {
                 contador++;
             }
         }
+        // usado para mostrar por pantalla el resultado
+        // no se pide en el ejericicio que no haya salidas por pantalla
         System.out.println("El número de aprobados del curso " + curso + " es " + contador);
         return contador;
     }
@@ -68,6 +70,8 @@ public class Library {
                 contador++;
             }
         }
+        // usado para mostrar por pantalla el resultado
+        // no se pide en el ejericicio que no haya salidas por pantalla
         System.out.println("El número de suspensos del curso " + curso + " es " + contador);
         return contador;
     }
