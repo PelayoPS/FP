@@ -119,7 +119,7 @@ public class Library {
             case 'D':
                 return 3;        
             default:
-                return 0;
+                return -1;
         }
     }
     
