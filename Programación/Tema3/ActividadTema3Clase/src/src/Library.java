@@ -38,6 +38,7 @@ public class Library {
      * Indica el número de aprobados de un curso
      * @param curso : char curso que se quiere calcular el número de aprobados
      * @param notas : int[][] matriz de notas
+     * @return int : número de aprobados del curso
      */
     public static int numeroAprobados(char curso, int notas[][]){
         courseError(curso);
@@ -56,6 +57,7 @@ public class Library {
      * Indica el número de suspensos de un curso
      * @param curso : char curso que se quiere calcular el número de suspensos
      * @param notas : int[][] matriz de notas
+     * @return int : número de suspensos del curso
      */
     public static int numeroSuspensos(char curso, int notas[][]){
         courseError(curso);
