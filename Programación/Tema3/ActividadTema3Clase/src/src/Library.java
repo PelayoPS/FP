@@ -39,7 +39,7 @@ public class Library {
      * @param curso : char curso que se quiere calcular el número de aprobados
      * @param notas : int[][] matriz de notas
      */
-    public static void numeroAprobados(char curso, int notas[][]){
+    public static int numeroAprobados(char curso, int notas[][]){
         courseError(curso);
         matrixError(notas);
         int contador = 0;
@@ -49,6 +49,7 @@ public class Library {
             }
         }
         System.out.println("El número de aprobados del curso " + curso + " es " + contador);
+        return contador;
     }
 
     /**
@@ -56,7 +57,7 @@ public class Library {
      * @param curso : char curso que se quiere calcular el número de suspensos
      * @param notas : int[][] matriz de notas
      */
-    public static void numeroSuspensos(char curso, int notas[][]){
+    public static int numeroSuspensos(char curso, int notas[][]){
         courseError(curso);
         matrixError(notas);
         int contador = 0;
@@ -66,6 +67,7 @@ public class Library {
             }
         }
         System.out.println("El número de suspensos del curso " + curso + " es " + contador);
+        return contador;
     }
 
     /**
@@ -87,6 +89,7 @@ public class Library {
     /**
      * Devuelve el curso
      * @param i : int fila de la matriz
+     * @return char : curso de la matriz
      */
     private static char getRow(int i){
         switch (i) {
@@ -106,7 +109,7 @@ public class Library {
     /**
      * Devuelve la fila de la matriz
      * @param curso : char curso que indica la fila de la matriz
-     * @return
+     * @return int : fila de la matriz
      */
     private static int getRow(char curso){
         switch (curso) {
