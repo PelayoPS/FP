@@ -5,6 +5,13 @@ public class Main {
     // Ejercicio 1 data
     private static int[] v = { 4, 6, 9, 3, 19, 10, 15, 2, 14, 12 };
 
+    // Ejercicio 2 data
+    private static int[][] vuelos = { { 0, 2, 0, 1, 0, 0, 2, 0, 0 },
+            { 1, 0, 0, 4, 0, 1, 0, 0, 0 },
+            { 0, 2, 0, 0, 1, 0, 3, 0, 0 },
+            { 0, 3, 0, 0, 0, 0, 0, 0, 0 },
+            { 0, 1, 0, 0, 5, 0, 0, 1, 0 } };
+
     // Ejercicio 3 data
     private static int[][] matriz = { { 5, 7, 5, 4, 2 },
             { 5, 3, 9, 6, 5 },
@@ -19,6 +26,13 @@ public class Main {
         System.out.println("Expected:");
         System.out.println("Punto de luz en la posición 2 con valor 9");
         System.out.println("Punto de luz en la posición 6 con valor 15");
+
+        // Ejercicio 2
+        System.out.println("Ejercicio 2 output:");
+        Ejercicio2.mostrarAviso(vuelos);
+        System.out.println("Expected:");
+        System.out.println("WARNING(5,8)");
+        System.out.println("WARNING(2,6)");
 
         // Ejercicio 3
         System.out.println("Ejercicio 3 output:");
