@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #2e2e2e;
+}
+
+
+#header {
+    height: auto;
+    background-color: #2e2e2e;
+    text-align: center;
+}
+
+#nav {
+    height: auto;
+    background-color: #2e2e2e;
+    text-align: center;
+    list-style-type: none;
+    margin-bottom: 1%;
+}
+
+#nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+#nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+#nav a:hover {
+    text-decoration: underline;
+}
+
+#articlePrincipal {
+    text-align: justify;
+    margin: 10%;
+    margin-top: 0%;
+    color: #fff;
+}
+
+#articlePrincipal h1 {
+    text-align: left;
+    font-size: 30px;
+    background-color: #2e2e2e;
+    color: #ff0000;
+}
+
+#articlePrincipal h2 {
+    text-align: center;
+    font-size: 25px;
+    background-color: #2e2e2e;
+    color: #ff0000;
+}
+
+
+
+#blink {
+    color: #ff0000;
+    animation: blinking 0.5s infinite alternate;
+    animation-duration: 5s;
+    animation-name: blinking;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blinking {
+    from {
+        margin-left: 0%;
+    }
+    to {
+        margin-left: 80%;
+    }
+
+}
+
+#video {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+
+#aLaIzquierda {
+    width: 20%;
+    height: auto;
+    float: left;
+    background-color: #2e2e2e;
+    position: fixed;
+}
+
+#contenidoPrincipal {
+    width: 70%;
+    float: left;
+    background-color: #2e2e2e;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#aLaDerecha {
+    width: 20%;
+    margin-left: 80%;
+    height: auto;
+    float: right;
+    background-color: #2e2e2e;
+    position: fixed;
+}
+
+#footer {
+    clear: both;
+    height: auto;
+    background-color: #2e2e2e;
+    text-align: center;
+}
