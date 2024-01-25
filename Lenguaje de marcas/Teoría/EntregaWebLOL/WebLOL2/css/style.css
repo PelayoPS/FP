@@ -87,14 +87,23 @@
     width: 100%;
     aspect-ratio: 16/9;
 }
-
-
 #aLaIzquierda {
     width: 20%;
     height: auto;
     float: left;
     background-color: #2e2e2e;
     position: fixed;
+    
+}
+
+@media screen and (max-width: 800px){
+    #aLaIzquierda {
+        display: none;
+    }
+    #aLaDerecha {
+        display: none;
+    }
+    
 }
 
 #contenidoPrincipal {
