@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html class="html">
+<!-- Plantilla de sitio de tres columnas en HTML5 -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="JMSR">
+    <meta name="description" content="League of legends wiki">
+    <meta name="keywords" content="HTML, CSS">
+
+    <title>Form</title>
+    <link rel="icon" type="image/png" href="../../img/ratata.png">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+</head>
+
+
+<body>
+    <header id="header">
+        <h1>Inting guide League of Legends</h1>
+    </header>
+    <nav id="nav">
+        <ul>
+            <li><a href="../index.html">Start</a></li>
+            <li><a href="./info.html">About us</a></li>
+            <li><a href="./roles.html">Roles</a></li>
+            <li><a href="./form.html">Boosting form</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+
+    </nav>
+    <aside id="aLaIzquierda">
+        <img src="../../img/match_proof.png" width="100%" height="100%">
+        <img src="../../img/duo.png" width="100%" height="100%">
+    </aside>
+    <section id="contenidoPrincipal">
+        <article id="articlePrincipal">
+            <h1 style="text-align: center;">Form to get boosted</h1>
+            <form id="formulario">
+                <label for="nombre">Name:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br>
+                <label for="discord">Discord:</label><br>
+                <input type="text" id="discord" name="discord" required><br>
+                <label for="servidor">Server:</label><br>
+                <select id="server" name="servidor" required>
+                    <option value="">No selection</option>
+                    <option value="NA">NA</option>
+                    <option value="EUW">EUW</option>
+                    <option value="EUNE">EUNE</option>
+                </select><br>
+                <label for="mail">Mail:</label><br>
+                <input type="email" id="mail" name="mail" required><br>
+                <label for="telefono">Phone:</label><br>
+                <input type="tel" id="telefono" name="telefono" required><br>
+                <label for="rango">Rank:</label><br>
+                <input type="text" id="rango" name="rango" required><br>
+                <label for="rol">Rol:</label><br>
+                <select id="rol" name="rol" required>
+                    <option value="">Fill</option>
+                    <option value="top">Top</option>
+                    <option value="jgl">Jungle</option>
+                    <option value="mid">Mid</option>
+                    <option value="supp">Support</option>
+                    <option value="adc">ADC</option>
+                </select><br>
+                <label for="cuenta">Account:</label><br>
+                <input type="text" id="cuenta" name="cuenta" required><br>
+                <input type="submit" value="Enviar">
+            </form>
+        </article>
+    </section>
+    <aside id="aLaDerecha">
+        <img src="../../img/master.png" width="100%" height="100%">
+        <img src="../../img/master_proof.png" width="100%" height="100%">
+    </aside>
+    <footer id="footer">
+        <p>© 2024 League of Legends Fan Page. Todos los derechos reservados.</p>
+    </footer>
+
+
+    <script>
+        document.getElementById('formulario').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var nombre = document.getElementById('nombre').value;
+            var discord = document.getElementById('discord').value;
+            var servidor = document.getElementById('server').value;
+            var mail = document.getElementById('mail').value;
+            var telefono = document.getElementById('telefono').value;
+            var rango = document.getElementById('rango').value;
+            var rol = document.getElementById('rol').value;
+            var cuenta = document.getElementById('cuenta').value;
+
+            var info = 'Nombre: ' + nombre + '\n' +
+                'Discord: ' + discord + '\n' +
+                'Servidor: ' + servidor + '\n' +
+                'Mail: ' + mail + '\n' +
+                'Teléfono: ' + telefono + '\n' +
+                'Rango: ' + rango + '\n' +
+                'Rol: ' + rol + '\n' +
+                'Cuenta: ' + cuenta;
+
+            window.open('', '', 'width=500,height=700')
+                .document.write('<pre>' + info + '</pre>');
+            
+        });
+    </script>
+</body>
+
+</html>
