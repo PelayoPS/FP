@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xml -->
+<!DOCTYPE personas SYSTEM "persona.dtd">
+<personas>
+    <persona>
+        <nombre>Pelayo</nombre>
+        <apellidos>
+            <apellido>Palacio</apellido>
+            <apellido>Suárez</apellido>
+        </apellidos>
+        <nacimiento dia="9" mes="Octubre" anio="2001" />
+        <direccion>  
+            <calle>Calle Falsa 123</calle>
+            <poblacion>Oviedo</poblacion>
+            <provincia>Asturias</provincia>
+            <cpostal>33011</cpostal>
+        </direccion>
+        <varon></varon>
+    </persona>
+    <persona>
+        <nombre>Nombre</nombre>
+        <apellidos>
+            <apellido>Apellido1</apellido>
+        </apellidos>
+        <direccion>
+            <calle>Calle Falsa 123</calle>
+            <poblacion>Oviedo</poblacion>
+            <provincia>Asturias</provincia>
+            <cpostal>33011</cpostal>
+        </direccion>
+        <direccion>
+            <calle>Calle Falsa 123</calle>
+            <poblacion>Oviedo</poblacion>
+            <provincia>Asturias</provincia>
+            <cpostal></cpostal>
+        </direccion>
+    </persona>
+</personas>

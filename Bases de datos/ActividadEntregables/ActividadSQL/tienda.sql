@@ -1,59 +1,52 @@
-USE tienda;
-DROP TABLE IF EXISTS producto;
-DROP TABLE IF EXISTS fabricante;
-CREATE TABLE fabricante (
-    id INT PRIMARY KEY,
-    nombre VARCHAR(100)
-);
-CREATE TABLE producto (
-    id INT PRIMARY KEY,
+USE instituto;
+#Apartado 1
+DROP DATABASE IF EXISTS instituto;
+CREATE DATABASE instituto;
+#Apartado 2-4
+DROP TABLE IF EXISTS PROFESOR;
+DROP TABLE IF EXISTS CURSO;
+DROP TABLE IF EXISTS DEPTO;
+CREATE TABLE DEPTO (
+    Depto_ID INT PRIMARY KEY,
     nombre VARCHAR(100),
-    precio DECIMAL(10,2),
-    FOREIGN KEY (id) REFERENCES fabricante(id)
+    director VARCHAR(100),
+    descripcion TEXT
 );
 
-SHOW TABLES;
-DESCRIBE fabricante;
-DESCRIBE producto;
-RENAME TABLE producto TO productos_informaticos;
-SHOW TABLES;
-ALTER TABLE fabricante ADD COLUMN provincia VARCHAR(20) AFTER id;
-ALTER TABLE fabricante ADD COLUMN garantia VARCHAR(20) AFTER nombre;
-ALTER TABLE fabricante DROP COLUMN garantia;
-
-CREATE TABLE alumnos (
-    idAlumnos INT PRIMARY KEY,
-    nombre VARCHAR(50)
+CREATE TABLE PROFESOR (
+    Prof_ID INT PRIMARY KEY,
+    Depto_ID INT,
+    nombre VARCHAR(100),
+    direccion VARCHAR(100),
+    telefono VARCHAR(15),
+    FOREIGN KEY (Depto_ID) REFERENCES DEPTO(Depto_ID)
 );
 
-INSERT INTO alumnos (idAlumnos, nombre) VALUES (1, 'Alumno 1');
-INSERT INTO alumnos (idAlumnos, nombre) VALUES (2, 'Alumno 2');
+CREATE TABLE CURSO (
+    Curso_ID INT PRIMARY KEY,
+    Prof_ID INT,
+    nombre VARCHAR(100),
+    nivel INT,
+    descripcion TEXT,
+    FOREIGN KEY (Prof_ID) REFERENCES PROFESOR(Prof_ID)
+);
 
-INSERT INTO alumnos (idAlumnos, nombre) VALUES 
-(3, 'Alumno 3'), 
-(4, 'Alumno 4');
+#Apartado 5
+INSERT INTO DEPTO (Depto_ID, nombre, director, descripcion) VALUES 
+(1, 'Informatica', 'Manuel', 'departamento de Informática'),
+(2, 'Lengua Extranjera', 'Andrés', 'departamento de Lengua Extranjera');
 
-INSERT INTO alumnos VALUES 
-(5, 'Alumno 5'), 
-(6, 'Alumno 6');
+#Apartado 6
+ALTER TABLE DEPTO ADD COLUMN subdirector VARCHAR(100) AFTER director;
 
-SELECT * FROM alumnos;
+#Apartado 7
+SHOW DATABASES;
 
-ALTER TABLE alumnos ADD COLUMN notas DECIMAL(6,2);
+#Apartado 8
+SHOW TABLES;
 
-UPDATE alumnos SET notas = 8.5 WHERE idAlumnos = 1;
-UPDATE alumnos SET notas = 7.2 WHERE idAlumnos = 2;
-UPDATE alumnos SET notas = 9.1 WHERE idAlumnos = 3;
-UPDATE alumnos SET notas = 6.7 WHERE idAlumnos = 4;
-UPDATE alumnos SET notas = 8.9 WHERE idAlumnos = 5;
-UPDATE alumnos SET notas = 7.4 WHERE idAlumnos = 6;
+#Apartado 9
+DESCRIBE PROFESOR;
 
-ALTER TABLE alumnos DROP COLUMN notas;
-
-DROP TABLE alumnos;
-
-
-
-
-
-
+#Apartado 10
+RENAME TABLE DEPTO TO DEPARTAMENTO;

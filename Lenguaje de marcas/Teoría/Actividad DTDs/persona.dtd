@@ -1,0 +1,16 @@
+<!-- persona.dtd -->
+<!ELEMENT personas (persona+)>
+<!ELEMENT persona (nombre+, apellidos?, nacimiento?, direccion+, varon?)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (apellido?, apellido?)>
+<!ELEMENT apellido (#PCDATA)>
+<!ELEMENT nacimiento EMPTY>
+<!ATTLIST nacimiento dia CDATA #REQUIRED
+                      mes CDATA #REQUIRED
+                      anio CDATA #REQUIRED>
+<!ELEMENT direccion (calle, poblacion, provincia, cpostal)>
+<!ELEMENT calle (#PCDATA)>
+<!ELEMENT poblacion (#PCDATA)>
+<!ELEMENT provincia (#PCDATA)>
+<!ELEMENT cpostal (#PCDATA)>
+<!ELEMENT varon EMPTY>
