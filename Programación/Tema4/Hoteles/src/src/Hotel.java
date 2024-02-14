@@ -168,4 +168,13 @@ public class Hotel {
         System.out.println(mensaje);
     }
 
+    // =======================GETTERS==========================================
+
+    /**
+     * @return Habitacion[] array de habitaciones
+     */
+    public Habitacion[] getHabitaciones() {
+        return habitaciones;
+    }
+
 }

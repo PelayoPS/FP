@@ -5,4 +5,5 @@
  * 
  */
 module Hoteles {
+	requires junit;
 }
