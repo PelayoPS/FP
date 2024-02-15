@@ -1,0 +1,8 @@
+<!-- hardware.dtd -->
+<!ELEMENT hardwareCatalog (item*)>
+<!ELEMENT item (id,tipo, marca, modelo, especificaciones)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT tipo (#PCDATA)>
+<!ELEMENT marca (#PCDATA)>
+<!ELEMENT modelo (#PCDATA)>
+<!ELEMENT especificaciones (#PCDATA)>

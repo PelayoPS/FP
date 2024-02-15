@@ -1,0 +1,33 @@
+/* hardware.css */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial;
+}
+
+item {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 5px;
+    display: block;
+}
+
+id {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+tipo {
+    color: blue;
+}
+
+marca {
+    color: green;
+}
+
+modelo {
+    color: #b24bb2;
+}
+
+especificaciones {
+    font-weight: italic;
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="./estilo.css"?>
+<!DOCTYPE hardwareCatalog SYSTEM "./componentes.dtd">
+<hardwareCatalog>
+    <item>
+        <id>1</id>
+        <tipo>Procesador</tipo>
+        <marca>Intel</marca>
+        <modelo>i7-9700K</modelo>
+        <especificaciones>8 núcleos, 3.6 GHz</especificaciones>
+    </item>
+    <item>
+        <id>2</id>
+        <tipo>Placa base</tipo>
+        <marca>Asus</marca>
+        <modelo>ROG Strix Z390-E</modelo>
+        <especificaciones>Socket LGA1151, DDR4, USB 3.1</especificaciones>
+    </item>
+    <item>
+        <id>3</id>
+        <tipo>Memoria RAM</tipo>
+        <marca>Corsair</marca>
+        <modelo>Vengeance LPX</modelo>
+        <especificaciones>16 GB, DDR4, 3000 MHz</especificaciones>
+    </item>
+</hardwareCatalog>
