@@ -53,6 +53,6 @@ SELECT nombreCompañia FROM clientes WHERE region IS NULL;
 
 
 # 15 Mostrar el nombre de la compañía (nombreCompañia) de todos los proveedores cuya region sea Oviedo, Madrid, Berlin
-SELECT nombreCompañía FROM proveedores WHERE region IN ('Oviedo', 'Madrid', 'Berlín');
+SELECT nombreCompañia FROM proveedores WHERE ciudad IN ('Oviedo', 'Madrid', 'Berlín');
 
 
