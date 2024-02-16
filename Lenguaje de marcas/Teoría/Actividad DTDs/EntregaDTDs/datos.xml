@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<!DOCTYPE sistema SYSTEM "model.dtd">
+
+<sistema>
+    <jugadores>
+        <jugador>
+            <nombre>Nombre</nombre>
+            <roles>
+                <rol>Roles</rol>
+            </roles>
+            <edad>Edad</edad>
+            <campeones>
+                <campeon>Campeones</campeon>
+            </campeones>
+            <suplente>Suplente</suplente>
+        </jugador>
+        <!-- Resto de jugadores aquí -->
+
+        <jugador>
+            <nombre>Pelayo</nombre>
+            <roles>
+                <rol>Top</rol>
+                <rol>Jungla</rol>
+                <rol>Mid</rol>
+                <rol>ADC</rol>
+                <rol>Support</rol>
+            </roles>
+            <edad>22</edad>
+            <campeones>
+                <campeon>Draven</campeon>
+                <campeon>Twitch</campeon>
+            </campeones>
+            <suplente>Pedro</suplente>
+        </jugador>
+        <jugador>
+            <nombre>Pelayo</nombre>
+            <roles>
+                <rol>Top</rol>
+            </roles>
+            <edad>22</edad>
+            <campeones>
+                <campeon>Draven</campeon>
+                <campeon>Twitch</campeon>
+            </campeones>
+            <suplente></suplente>
+        </jugador>
+        <jugador>
+            <nombre>Pelayo</nombre>
+            <roles>
+                <rol>Top</rol>
+                <rol>Support</rol>
+            </roles>
+            <edad>22</edad>
+            <campeones>
+                <campeon>Twitch</campeon>
+            </campeones>
+            <suplente>Pedro</suplente>
+        </jugador>
+        <jugador>
+            <nombre>Pelayo</nombre>
+            <roles>
+                <rol>Top</rol>
+                <rol>Jungla</rol>
+                <rol>Mid</rol>
+                <rol>ADC</rol>
+            </roles>
+            <edad>22</edad>
+            <campeones>
+                <campeon>Draven</campeon>
+            </campeones>
+            <suplente></suplente>
+        </jugador>
+    </jugadores>
+    <equipos>
+        <equipo>
+            <codigo>Código</codigo>
+            <coach>Coach</coach>
+        </equipo>
+        <equipo>
+            <codigo>001</codigo>
+            <coach>XPeke</coach>
+        </equipo>
+    </equipos>
+</sistema>

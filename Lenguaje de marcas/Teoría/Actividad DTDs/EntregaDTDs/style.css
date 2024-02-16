@@ -1,0 +1,22 @@
+sistema {
+    display: table;
+  }
+  
+  jugadores, equipo {
+    display: table-row-group;
+  }
+  
+  jugador, codigo, coach {
+    display: table-row;
+  }
+  
+  jugador:first-child, equipo:first-child{
+    font-weight: bold;
+    background-color: #ccc;
+  }
+  
+  nombre, roles, edad, campeones, suplente, rol, campeon, codigo, coach {
+    display: table-cell;
+    padding: 10px;
+    border: 1px solid black;
+  }
