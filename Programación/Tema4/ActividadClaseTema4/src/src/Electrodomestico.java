@@ -9,8 +9,7 @@ package src;
 public class Electrodomestico {
 
     // Constantes
-    private final String[] COLORES = { "blanco", "negro", "verde", "gris" };
-    private final String DEFAULT_COLOR = COLORES[0];
+    private final Color DEFAULT_COLOR = Color.BLANCO;
     private final char[] CONSUMOS_ENERGETICOS = { 'A', 'B', 'C', 'D', 'E', 'F' };
     private final char DEFAULT_CONSUMO = CONSUMOS_ENERGETICOS[5];
     private final double DEFAULT_PRECIO = 100;
@@ -18,9 +17,15 @@ public class Electrodomestico {
 
     // Atributos
     private double precioBase = DEFAULT_PRECIO;
-    private String color = DEFAULT_COLOR;
+    private Color color = DEFAULT_COLOR;
     private char consumoEnergetico = DEFAULT_CONSUMO;
     private double peso = DEFAULT_PESO;
+
+    // Enums
+    public enum Color {
+        BLANCO, NEGRO, VERDE, GRIS;
+    }
+
 
     // Constructores
     /**
@@ -96,43 +101,6 @@ public class Electrodomestico {
         }
     }
 
-    // Métodos de verificación
-
-    /**
-     * Se asegura que el color esté dentro de los permitidos
-     * 
-     * @param String : color
-     * @return boolean : true si es válido, false si no
-     */
-    private boolean isValidColor(String color) {
-        color = color.toLowerCase();
-        for (String c : COLORES) {
-            if (c.equals(color)) {
-                return true;// si está en la lista es válido
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Se asegura que el consumo energético esté dentro de los permitidos
-     * si no lo está, se asigna el valor por defecto
-     * 
-     * @param char : consumo energético
-     * @return boolean : true si es válido, false si no
-     */
-    private boolean comprobarConsumoEnergetico(char consumo) {
-        consumo = Character.toUpperCase(consumo);
-        for (char c : CONSUMOS_ENERGETICOS) {
-            if (c == consumo) {
-                this.consumoEnergetico = consumo;
-                return true;// si está en la lista es válido
-            }
-        }
-        this.consumoEnergetico = DEFAULT_CONSUMO;
-        return false;
-    }
-
     // Getters
 
     /**
@@ -149,7 +117,7 @@ public class Electrodomestico {
      * 
      * @return String : color
      */
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
