@@ -22,17 +22,18 @@ public class Electrodomestico {
     private double peso = DEFAULT_PESO;
 
     // Enums
+    /**
+     * Permite que sólo pueda tener esos colores
+     */
     public enum Color {
         BLANCO, NEGRO, VERDE, GRIS;
     }
-
 
     // Constructores
     /**
      * Constructor por defecto
      */
     public Electrodomestico() {
-        precioFinal();
     }
 
     /**
@@ -44,7 +45,6 @@ public class Electrodomestico {
     public Electrodomestico(double precio, double peso) {
         this.peso = peso;
         this.precioBase = precio;
-        precioFinal();
     }
 
     // Métodos
@@ -52,7 +52,7 @@ public class Electrodomestico {
     /**
      * Aumenta el precio en base al consumo energético y al peso
      */
-    private void precioFinal() {
+    public void precioFinal() {
         switch (consumoEnergetico) {
             case 'A':
                 precioBase += 100;
@@ -148,8 +148,5 @@ public class Electrodomestico {
     public void setPrecioBase(double precio) {
         this.precioBase = precio;
     }
-
-
-
 
 }

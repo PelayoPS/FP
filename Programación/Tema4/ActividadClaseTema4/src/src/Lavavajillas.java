@@ -19,8 +19,7 @@ public class Lavavajillas extends Electrodomestico {
      * Constructor por defecto
      */
     public Lavavajillas() {
-        super();//aplica los aumentos de precio de electrodomestico
-        precioFinal();
+        super();
     }
 
     /**
@@ -30,13 +29,13 @@ public class Lavavajillas extends Electrodomestico {
      * @param double : peso
      */
     public Lavavajillas(double precio, double peso) {
-        super(precio, peso);//aplica los aumentos de precio de electrodomestico
-        precioFinal();
+        super(precio, peso);
     }
 
     // Getters
     /**
      * Devuelve la carga
+     * 
      * @return double : carga
      */
     public double getCarga() {
@@ -47,12 +46,11 @@ public class Lavavajillas extends Electrodomestico {
     /**
      * Aumenta el precio en base a la carga
      */
-    private void precioFinal() {
+    public void precioFinal() {
+        super.precioFinal();//aplica el aumento de precio de electrodomestico
         if (carga > 10) {
             setPrecioBase(getPrecioBase() + 50);
         }
     }
-
-
 
 }

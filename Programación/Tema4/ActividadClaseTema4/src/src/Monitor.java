@@ -19,8 +19,7 @@ public class Monitor extends Electrodomestico {
      * Constructor por defecto
      */
     public Monitor() {
-        super();// aplica los aumentos de precio de electrodomestico
-        precioFinal();
+        super();
     }
 
     /**
@@ -30,8 +29,7 @@ public class Monitor extends Electrodomestico {
      * @param double : peso
      */
     public Monitor(double precio, double peso) {
-        super(precio, peso);// aplica los aumentos de precio de electrodomestico
-        precioFinal();
+        super(precio, peso);
     }
 
     // Getters
@@ -48,7 +46,8 @@ public class Monitor extends Electrodomestico {
     /**
      * Aumenta el precio en base a las pulgadas
      */
-    private void precioFinal() {
+    public void precioFinal() {
+        super.precioFinal();//aplica el aumento de precio de electrodomestico
         if (pulgadas > 30) {
             setPrecioBase(getPrecioBase() + 50);
         }
