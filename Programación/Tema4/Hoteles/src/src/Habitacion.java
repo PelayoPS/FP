@@ -1,5 +1,11 @@
 package src;
 
+/**
+ * Clase que representa una habitación de un hotel
+ * 
+ * @version 1.1, 28/02/2021
+ * @autor Pelayo Palacio Suárez
+ */
 public class Habitacion {
 
     // =======================ATRIBUTOS========================================
@@ -126,6 +132,8 @@ public class Habitacion {
      * - Doble: D + planta + identificador
      * - Matrimoniales: M + planta + identificador
      * - Especiales: E + planta + identificador
+     * 
+     * @return String valor del localizador de la habitación
      */
     public String asignarLocalizador() {
         String localizador = "";// Inicializamos la variable localizador
@@ -151,6 +159,8 @@ public class Habitacion {
     // =======================TO STRING==========================================
     /**
      * Método que devuelve una cadena con la información de la habitación
+     * 
+     * @return String valor con la información de la habitación
      */
     @Override
     public String toString() {

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PetSphere</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+        .chat-area {
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+            overflow-y: scroll;
+        }
+
+        .message-usuario {
+            align-self: flex-end;
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .message-respuesta {
+            align-self: flex-start;
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="PetSphere.html">PetSphere</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="Login.html">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Chat.html">Chat</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Profile.html">Profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <br>
+        <h1 style="text-align: center;">Chat</h1>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="chat-area">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Escribe tu mensaje">
+                    <button class="btn btn-primary">Enviar</button>
+                    <button class="btn btn-secondary">Simular respuesta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script>
+        // Función para enviar un mensaje
+        function enviarMensaje() {
+            // Obtener el texto del mensaje
+            const mensaje = document.querySelector('.form-control').value;
+
+            // Agregar el mensaje al área de chat
+            const chatArea = document.querySelector('.chat-area');
+            chatArea.innerHTML += `<div class="message">${mensaje}</div>`;
+
+            // Limpiar el campo de entrada
+            document.querySelector('.form-control').value = '';
+        }
+
+        // Función para simular una respuesta
+        function simularRespuesta() {
+            // Obtener el último mensaje del usuario
+            const ultimoMensaje = document.querySelector('.chat-area .message:last-child');
+            const mensajeUsuario = ultimoMensaje.textContent;
+
+            // Crear un mensaje de respuesta con nombre y avatar
+            const mensajeRespuesta = `respuesta de test .`;
+
+            // Agregar el mensaje de respuesta al área de chat
+            const chatArea = document.querySelector('.chat-area');
+            chatArea.innerHTML += `<div class="message message-respuesta">${mensajeRespuesta}</div>`;
+        }
+
+        // Agregar eventos a los botones
+        document.querySelector('.btn-primary').addEventListener('click', enviarMensaje);
+        document.querySelector('.btn-secondary').addEventListener('click', simularRespuesta);
+
+    </script>
+
+
+</body>
+
+</html>

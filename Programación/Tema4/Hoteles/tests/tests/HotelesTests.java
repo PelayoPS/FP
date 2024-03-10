@@ -1,11 +1,16 @@
 package tests;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
 import src.Habitacion;
 import src.Hotel;
+
+/**
+ * Clase de test para la clase Hotel
+ * 
+ * @version 1.1, 28/02/2021
+ * @autor Pelayo Palacio Suárez
+ */
 
 public class HotelesTests {
 	// Instancia de la clase Hotel
@@ -23,6 +28,9 @@ public class HotelesTests {
 	private Habitacion habitacion9 = new Habitacion(9, 1, "especial", 150, false, true);
 	private Habitacion habitacion10 = new Habitacion(10, 1, "especial", 150, false, true);
 
+	/**
+	 * Test añadir habitación
+	 */
 	@Test
 	public void testNuevaHabitacion() {
 		// añade una habitación
@@ -57,6 +65,9 @@ public class HotelesTests {
 
 	}
 
+	/**
+	 * Test borrar habitación
+	 */
 	@Test
 	public void testBorrarHabitacion() {
 		// intenta borrar primera habitación

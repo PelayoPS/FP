@@ -2,6 +2,13 @@ package src;
 
 import java.util.Scanner;
 
+/**
+ * Clase que representa un hotel
+ * 
+ * @version 1.1, 28/02/2021
+ * @autor Pelayo Palacio Suárez
+ */
+
 public class Hotel {
     // =======================ATRIBUTOS========================================
     private Habitacion[] habitaciones = { null, null, null, null, null,
@@ -13,9 +20,11 @@ public class Hotel {
      * Método que busca la posición libre en el array de habitaciones
      * e inserta una habitación en esa posición, si no hay posiciones libres
      * no inserta la habitación y avisará de que no hay habitaciones libres
+     * 
+     * @param habitacion Habitacion a insertar
      */
     public void nuevaHabitacion(Habitacion habitacion) {
-        // Recorre el array de habitaciones 
+        // Recorre el array de habitaciones
         for (int i = 0; i < habitaciones.length; i++) {
             if (habitaciones[i] == null) {// Si encuentra una posición libre
                 habitaciones[i] = habitacion;// Inserta la habitación
@@ -33,6 +42,8 @@ public class Hotel {
      * No elimina la habitación si:
      * - No existe ninguna con ese identificador
      * - La habitación está ocupada
+     * 
+     * @param identificador Identificador de la habitación a eliminar
      */
     public void borrarHabitacion(int identificador) {
         // Recorre el array de habitaciones
