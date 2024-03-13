@@ -1,0 +1,27 @@
+Objetivo: Crear una base de datos con tres tablas, cada una con tres atributos, incluyendo al menos una relación (m:n).
+
+Esquema:
+
+Tabla 1: Libros
+ID_Libro (PK): Número entero, clave primaria
+Titulo: Cadena de caracteres
+Autor: Cadena de caracteres
+
+Tabla 2: Categorías
+ID_Categoria (PK): Número entero, clave primaria
+Nombre: Cadena de caracteres
+Descripcion: Cadena de caracteres
+
+Tabla 3: Libros_Categorias (m:n)
+ID_Libro (FK): Número entero, clave foránea a Libros.ID_Libro
+ID_Categoria (FK): Número entero, clave foránea a Categorias.ID_Categoria
+
+Tabla4: Compradores
+ID_Comprador (PK): Número entero, clave primaria
+Nombre: Cadena de caracteres
+Apellido: Cadena de caracteres
+Email: Cadena de caracteres
+
+Relaciones:
+Libros (1:n) Libros_Categorias: Un libro puede pertenecer a varias categorías.
+Categorias (n:m) Libros_Categorias: Una categoría puede tener varios libros asociados.

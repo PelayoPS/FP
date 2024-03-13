@@ -1,0 +1,33 @@
+erdiagram Model
+
+notation=crowsfoot
+
+entity Libro {
+  id key 
+  Titulo 
+  Autor 
+  ID_Comprador 
+}
+
+entity Comprador {
+  id key
+  Nombre 
+  Apellido 
+  Email 
+}
+
+entity Categoria {
+  id key
+  Nombre
+  Descripcion 
+}
+
+relationship Compra{
+  Libro[1] -> Comprador[N]
+
+}
+
+relationship Pertenece{
+  Libro[N] -> Categoria[N]
+}
+
