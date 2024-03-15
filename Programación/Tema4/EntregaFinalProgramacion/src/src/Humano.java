@@ -2,6 +2,7 @@ package src;
 
 public interface Humano {
 
+
     String getNombre();
 
     void setNombre(String nombre);
@@ -18,7 +19,4 @@ public interface Humano {
 
     Direccion getDireccion();
 
-    void identificarse();
-
 }
-
