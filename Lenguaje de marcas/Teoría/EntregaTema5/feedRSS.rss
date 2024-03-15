@@ -1,31 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
-<channel>
+  <channel>
     <title>Sección de noticias</title>
     <link>https://www.misitioWeb.com/index.html</link>
     <description>Prueba</description>
     <language>es-ES</language>
     <item>
-	  <title>pagina</title>
+      <title>pagina</title>
       <link>https://www.misitioWeb/pagina1.html</link>
       <description>
         pagina 1
       </description>
-   
-	</item>
-	<item>
-	  <title>pagina2</title>
+    </item>
+    <item>
+      <title>pagina2</title>
       <link>https://www.misitioWeb/pagina2.html</link>
       <description>
-       Pagina 2
+        Pagina 2
       </description>
-	</item>
-	<item>
-	  <title>pagina 3</title>
+    </item>
+    <item>
+      <title>pagina 3</title>
       <link>https://www.misitioWeb/pagina3.html</link>
       <description>
-       pagina 3
+        pagina 3
       </description>
-	</item>
-</channel>
+    </item>
+    <item>
+      <title>pagina4</title>
+      <link>https://www.misitioWeb/pagina2.html</link>
+      <description>
+        Pagina 4
+      </description>
+    </item>
+    <item>
+      <title>pagina 5</title>
+      <link>https://www.misitioWeb/pagina3.html</link>
+      <description>
+        pagina 5
+      </description>
+    </item>
+  </channel>
 </rss>

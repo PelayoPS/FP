@@ -25,3 +25,4 @@ Email: Cadena de caracteres
 Relaciones:
 Libros (1:n) Libros_Categorias: Un libro puede pertenecer a varias categorías.
 Categorias (n:m) Libros_Categorias: Una categoría puede tener varios libros asociados.
+
