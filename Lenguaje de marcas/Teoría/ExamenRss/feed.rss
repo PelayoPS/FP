@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Noticias de Oviedo</title>
+        <link>https://www.elcomercio.es/oviedo/</link>
+        <description>Las últimas noticias de Oviedo, Asturias.</description>
+        <language>es-es</language>
+        <item>
+            <title>El Teatro Campoamor de Oviedo presenta una nueva temporada de ópera</title>
+            <link>https://www.beckmesser.com/opera-de-oviedo-programacion-proxima-temporada/</link>
+            <description>La programación incluye obras clásicas como "La Traviata" y "Carmen", así
+                como estrenos absolutos.</description>
+            <category>Cultura</category>
+            <pubDate>2023-12-23</pubDate>
+        </item>
+        <item>
+            <title>Oviedo se prepara para la celebración de la Semana Santa</title>
+            <link>https://www.lne.es/oviedo/2024/01/23/semana-santa-oviedo-prepara-demostrar-97248186.html</link>
+            <description>La ciudad acogerá diversas procesiones y actos religiosos.</description>
+            <category>Sociedad</category>
+            <pubDate>2024-01-23</pubDate>
+        </item>
+    </channel>
+</rss>
