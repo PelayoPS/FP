@@ -88,4 +88,110 @@ BEGIN
 END
 &&	
 
+/* 1.2.6 Escriba una función llamada contar_productos que reciba como entrada el codFamilia de un producto
+ y devuelva el número de productos que existen dentro de esa familia.*/
+DELIMITER $$
+DROP FUNCTION IF EXISTS contar_productos$$
+CREATE FUNCTION contar_productos(codFamilia VARCHAR(50)) RETURNS INT
+BEGIN
+  DECLARE numProductos INT;
+  SELECT COUNT(*)
+  INTO numProductos
+  FROM producto
+  WHERE producto.codFamilia = codFamilia;
+  RETURN numProductos;
+END
+$$
+
+/* Ejemplo de estructura if-then-else */
+DELIMITER $$
+DROP FUNCTION IF EXISTS contar_productos$$
+CREATE FUNCTION contar_productos(codFamilia VARCHAR(50)) RETURNS INT
+BEGIN
+  DECLARE numProductos INT;
+  SELECT COUNT(*)
+  INTO numProductos
+  FROM producto
+  WHERE producto.codFamilia = codFamilia;
+  IF numProductos > 0 THEN
+    RETURN numProductos;
+  ELSE
+    RETURN 0;
+  END IF;
+END
+$$
+
+/* ejemplo estructura case */
+DELIMITER $$
+DROP FUNCTION IF EXISTS contar_productos$$
+CREATE FUNCTION contar_productos(codFamilia VARCHAR(50)) RETURNS INT
+BEGIN
+  DECLARE numProductos INT;
+  SELECT COUNT(*)
+  INTO numProductos
+  FROM producto
+  WHERE producto.codFamilia = codFamilia;
+  CASE
+    WHEN numProductos > 0 THEN
+      RETURN numProductos;
+    ELSE
+      RETURN 0;
+  END CASE;
+END
+$$
+
+/* ejemplo estructura loop end loop*/
+DELIMITER $$
+DROP FUNCTION IF EXISTS contar_productos$$
+CREATE FUNCTION contar_productos(codFamilia VARCHAR(50)) RETURNS INT
+BEGIN
+  DECLARE numProductos INT;
+  DECLARE contador INT;
+  SET contador = 0;
+  LOOP
+    SET contador = contador + 1;
+    IF contador = 10 THEN
+      LEAVE;
+    END IF;
+  END LOOP;
+  RETURN contador;
+END
+$$
+
+/* ejemplo estructura repeat until*/
+DELIMITER $$
+DROP FUNCTION IF EXISTS contar_productos$$
+CREATE FUNCTION contar_productos(codFamilia VARCHAR(50)) RETURNS INT
+BEGIN
+  DECLARE numProductos INT;
+  DECLARE contador INT;
+  SET contador = 0;
+  REPEAT
+    SET contador = contador + 1;
+    IF contador = 10 THEN
+      LEAVE;
+    END IF;
+  UNTIL contador = 10
+  END REPEAT;
+  RETURN contador;
+END
+$$
+
+/* ejemplo estructura while do*/
+DELIMITER $$
+DROP FUNCTION IF EXISTS contar_productos$$
+CREATE FUNCTION contar_productos(codFamilia VARCHAR(50)) RETURNS INT
+BEGIN
+  DECLARE numProductos INT;
+  DECLARE contador INT;
+  SET contador = 0;
+  WHILE contador < 10 DO
+    SET contador = contador + 1;
+  END WHILE;
+  RETURN contador;
+END
+$$
+
+
+
 
