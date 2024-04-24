@@ -140,6 +140,21 @@ Procedimiento que suba el precio a todos los productos
 el tanto por ciento pasado como parámetro
 */
 
+DELIMITER $$
+DROP PROCEDURE IF EXISTS subir_precio$$
+CREATE PROCEDURE subir_precio(IN porcentaje INT)
+BEGIN
+  UPDATE productos
+  SET precio = precio + precio * porcentaje / 100;
+END
+$$
+
+/* usa el procedimiento subir_precio */
+DELIMITER ??
+CALL subir_precio(10);
+SELECT * FROM productos;
+??
+
 
 
 
