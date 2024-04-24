@@ -19,7 +19,7 @@
             <xsl:value-of select="titulo" />
           </div>
         </xsl:for-each>
-        <h2>Lista de libros</h2>
+        <h2>Tabla 1: Ordenada por precio</h2>
         <table border="1">
           <tr>
             <th>Año de publicación</th>
@@ -50,7 +50,7 @@
             </tr>
           </xsl:for-each>
         </table>
-        <h2>Lista de libros</h2>
+        <h2>Tabla 2: Ordenada por título</h2>
         <table border="1">
           <tr>
             <th>Título</th>
