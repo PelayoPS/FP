@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<florencia>
+  <museos>
+    <museo nombre="Uffizi">
+      <arquitecto>Vasari</arquitecto>
+      <construccion>16</construccion>
+    </museo>
+    <museo nombre="Bargello">
+      <arquitecto>NA</arquitecto>
+      <construccion>13</construccion>
+    </museo>
+    <museo nombre="Accademia">
+      <arquitecto>NA</arquitecto>
+      <construccion>18</construccion>
+    </museo>
+  </museos>
+  <artistas>
+    <artista nombre="Miguel Angel">
+      <nombre>Miguel Ángel Buonarroti</nombre>
+      <nacimiento>1475</nacimiento>
+      <muerte>1564</muerte>
+      <pintor />
+      <escultor />
+      <arquitecto />
+    </artista>
+    <artista nombre="Vasari">
+      <nombre>Giorgio Vasari</nombre>
+      <nacimiento>1511</nacimiento>
+      <muerte>1574</muerte>
+      <pintor />
+      <arquitecto />
+    </artista>
+    <artista nombre="Ghiberti">
+      <nombre>Lorenzo Ghiberti </nombre>
+      <nacimiento>1378</nacimiento>
+      <muerte>1455</muerte>
+      <orfebre />
+      <escultor />
+    </artista>
+    <artista nombre="Donatello">
+      <nombre>Donato di Niccolò di Betto Bardi</nombre>
+      <nacimiento>1386</nacimiento>
+      <muerte>1466</muerte>
+      <escultor />
+    </artista>
+  </artistas>
+  <obras>
+    <obra autor="Miguel Angel" museo="Bargello">Baco</obra>
+    <obra autor="Miguel Angel" museo="Accademia">David</obra>
+    <obra autor="Donatello" museo="Bargello">David</obra>
+    <obra autor="Ghiberti" museo="Bargello">Sacrificio de Isaac</obra>
+    <obra autor="Miguel Angel" museo="Uffizi">Tondo Doni</obra>
+    <obra autor="Vasari" museo="Uffizi">Uffizi</obra>
+  </obras>
+</florencia>

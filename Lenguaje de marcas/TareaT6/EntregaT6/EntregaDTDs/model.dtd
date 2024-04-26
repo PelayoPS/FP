@@ -1,0 +1,14 @@
+<!ELEMENT sistema (jugadores,equipos)>
+<!ELEMENT equipos (equipo+)>
+<!ELEMENT jugadores (jugador+)>
+<!ELEMENT jugador (nombre,roles,edad,campeones,suplente?)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT roles (rol+)>
+<!ELEMENT rol (#PCDATA)>
+<!ELEMENT edad (#PCDATA)>
+<!ELEMENT campeones (campeon+)>
+<!ELEMENT campeon (#PCDATA)>
+<!ELEMENT suplente (#PCDATA)>
+<!ELEMENT equipo (codigo, coach)>
+<!ELEMENT codigo (#PCDATA)>
+<!ELEMENT coach (#PCDATA)>
