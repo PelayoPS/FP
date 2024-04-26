@@ -33,12 +33,10 @@ public class GestorApartamentos {
             System.err.println("Error en la referencia");
             valid = false;
         }
-        
         if (valid) {
             // Se añade el apartamento
             Apartamento apart = new Apartamento(piso, letra, capacidadMax, precio);
             apartamentos.put(ref, apart);
-            System.out.println("Apartamento añadido: " + apart.toString());
         }
     }
 
@@ -75,6 +73,11 @@ public class GestorApartamentos {
     public void eliminarApartamento(String ref) {
         Referencia referencia = new Referencia(
                 Integer.parseInt(ref.substring(4, 5)), ref.charAt(11));
+        // comprobar si la referencia existe
+        if (!apartamentos.containsKey(referencia)) {
+            System.err.println("Error al eliminar el apartamento");
+            return;
+        }
         apartamentos.remove(referencia);
     }
 
@@ -87,7 +90,7 @@ public class GestorApartamentos {
      * 
      * @param String : referencia del apartamento a reservar
      */
-    public void hacerReserva(String ref) {
+    public void hacerReserva(String ref, int personas) {
         // Se comprueba si la referencia es correcta
         Referencia referencia = new Referencia(
                 Integer.parseInt(ref.substring(4, 5)), ref.charAt(11));
@@ -95,13 +98,15 @@ public class GestorApartamentos {
             System.err.println("Error en la referencia");
             return;
         }
-        // Se incrementa el contador de reservas si encuentra el apartamento
+        // Se busca el apartamento en el listado
         if (apartamentos.containsKey(referencia)) {
             Apartamento apart = apartamentos.get(referencia);
             // Si el apartamento tiene capacidad suficiente, se incrementa el contador de
             // reservas
-            if (apart.getContadorDeReservas() < apart.getCapacidadMax()) {
+            if (apart.getCapacidadMax() >= personas) {
                 apart.incrementarContadorDeReservas();
+            } else {
+                System.err.println("Error capacidad insuficiente");
             }
         } else {
             System.err.println("Error apartamento no encontrado");

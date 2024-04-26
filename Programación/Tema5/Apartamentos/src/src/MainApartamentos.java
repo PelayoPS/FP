@@ -39,18 +39,19 @@ public class MainApartamentos {
 		System.out.println("********************************************");
 		System.out.println("Despues de eliminar Piso1-LetraC");
 		gestor.eliminarApartamento("Piso1-LetraC");
+		gestor.eliminarApartamento("Piso1-LetraC");
 		gestor.mostrarApartamentos();
 		
-		gestor.hacerReserva("Piso3-LetraC");
-		gestor.hacerReserva("Piso3-LetraC");
-		gestor.hacerReserva("Piso3-LetraC");
+		gestor.hacerReserva("Piso3-LetraC",2);
+		gestor.hacerReserva("Piso3-LetraC",2);
+		gestor.hacerReserva("Piso3-LetraC",2);
 		
-		gestor.hacerReserva("Piso1-LetraA");
-		gestor.hacerReserva("Piso1-LetraA");
+		gestor.hacerReserva("Piso1-LetraA",2);
+		gestor.hacerReserva("Piso1-LetraA",2);
 		
-		gestor.hacerReserva("Piso2-LetraA");
-		gestor.hacerReserva("Piso2-LetraA");
-		gestor.hacerReserva("Piso2-LetraA");
+		gestor.hacerReserva("Piso2-LetraA",2);
+		gestor.hacerReserva("Piso2-LetraA",2);
+		gestor.hacerReserva("Piso2-LetraA",2);
 		
 		System.out.println("********************************************");
 		System.out.println("Despues de hacer reservas");
@@ -58,11 +59,13 @@ public class MainApartamentos {
 		
 		//control de errores
 		//Error en el piso
-		gestor.hacerReserva("Piso8-LetraA");
+		gestor.hacerReserva("Piso8-LetraA",2);
 		//Error en la letra
-		gestor.hacerReserva("Piso1-LetraX");
+		gestor.hacerReserva("Piso1-LetraX",2);
 		//Error apartamento no encontrado
-		gestor.hacerReserva("Piso2-LetraF");
+		gestor.hacerReserva("Piso2-LetraF",2);
+		//Error apartamento sin capacidad
+				gestor.hacerReserva("Piso1-LetraA",10);
 		
 		
 		System.out.println("********************************************");
