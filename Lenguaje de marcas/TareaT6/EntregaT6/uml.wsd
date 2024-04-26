@@ -1,0 +1,44 @@
+@startuml xml_diagram
+entity "league_of_legends" as league {
+  ..
+}
+
+entity "equipos" as teams {
+  ..
+}
+
+entity "equipo" as team {
+  nombre : string
+}
+
+entity "jugador" as player {
+  nombre : string
+  rol : string
+}
+
+entity "campeones" as champions {
+  ..
+}
+
+entity "campeon" as champion {
+  nombre : string
+  rol : string
+}
+
+entity "partidas" as matches {
+  ..
+}
+
+entity "partida" as match {
+  equipo : string
+  oponente : string
+  resultado : string
+}
+league --> teams : contains
+league --> champions : contains
+league --> matches : contains
+teams --> team : contains
+team --> player : contains
+champions --> champion : contains
+matches --> match : contains
+@enduml

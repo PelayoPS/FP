@@ -169,6 +169,23 @@ Procedimiento que suba el precio a todos los productos de la familia
 con el codigo que se le pasa como parámetro, el tanto por ciento pasado como parámetro
 */
 
+DELIMITER $$
+DROP PROCEDURE IF EXISTS subir_precio_familia$$
+CREATE PROCEDURE subir_precio_familia(IN codFamilia INT, IN porcentaje INT)
+BEGIN
+  UPDATE productos
+  SET precio = precio + precio * porcentaje / 100
+  WHERE productos.codFamilia = codFamilia;
+END
+$$
+
+/* usa el procedimiento subir_precio_familia */
+DELIMITER ??
+CALL subir_precio_familia(1, 10);
+SELECT * FROM productos;
+??
+
+
 
 
 
@@ -184,6 +201,31 @@ Se subirá el precio si recibe un 1 en el parámetro modificar y
 se bajará el precio si recibe un 0 en el prámetro modificar.
 */
 
+DELIMITER $$
+DROP PROCEDURE IF EXISTS modificar_precio_familia$$
+CREATE PROCEDURE modificar_precio_familia(IN codFamilia INT, IN porcentaje INT, IN modificar INT)
+BEGIN
+  IF modificar = 1 THEN
+    UPDATE productos
+    SET precio = precio + precio * porcentaje / 100
+    WHERE productos.codFamilia = codFamilia;
+  ELSE
+    UPDATE productos
+    SET precio = precio - precio * porcentaje / 100
+    WHERE productos.codFamilia = codFamilia;
+  END IF;
+END
+$$
+
+/* usa el procedimiento modificar_precio_familia */
+DELIMITER ??
+CALL modificar_precio_familia(1, 10, 1);
+SELECT * FROM productos;
+CALL modificar_precio_familia(1, 10, 0);
+SELECT * FROM productos;
+??
+
+
 
 
 
@@ -197,6 +239,26 @@ En cada iteración irá acumulando el valor del contador en una variable llamada
 En el punto de llamada se mostrará el valor final de la variable suma
 */
 
+DELIMITER $$
+DROP PROCEDURE IF EXISTS sumar$$
+CREATE PROCEDURE sumar(IN numIteraciones INT)
+BEGIN
+  DECLARE contador INT DEFAULT 0;
+  DECLARE suma INT DEFAULT 0;
+  WHILE contador < numIteraciones DO
+    SET suma = suma + contador;
+    SET contador = contador + 1;
+  END WHILE;
+  SELECT suma;
+END
+$$
+
+/* usa el procedimiento sumar */
+DELIMITER ??
+CALL sumar(10);
+??
+
+
 
 
 
@@ -206,7 +268,18 @@ En el punto de llamada se mostrará el valor final de la variable suma
 se le pasará como parámetro la base y la altura
 */
 
+DELIMITER $$
+DROP FUNCTION IF EXISTS area_triangulo$$
+CREATE FUNCTION area_triangulo(base DOUBLE, altura DOUBLE) RETURNS DOUBLE
+BEGIN
+  RETURN base * altura / 2;
+END
+$$
 
+/* usa la función area_triangulo */
+DELIMITER ??
+SELECT area_triangulo(10, 5);
+??
 
 
 
