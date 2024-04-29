@@ -3,7 +3,6 @@ package src;
 public class MainApartamentos {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		GestorApartamentos gestor=new GestorApartamentos();
 		
 		gestor.añadirApartamento(1,'A',6,1500.0);

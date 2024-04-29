@@ -7,7 +7,6 @@ public class Principal {
 	public static int cps[]={33203,33204,33025,33207};
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		Empresa empresa=new Empresa();
 		cargarDatos(empresa);
@@ -22,7 +21,6 @@ public class Principal {
 	}
 
 	private static void cargarDatos(Empresa empresa) {
-		// TODO Auto-generated method stub
 		
 		for(int i=1;i<=NUM_PAQUETES;i++) {
 			int posCp=i%cps.length;

@@ -9,7 +9,6 @@ public class PrincipalConErrores {
 	public static int cps[]={33203,33204,33025,33207};
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		Empresa empresa=new Empresa();
 		cargarDatos(empresa);
@@ -23,7 +22,6 @@ public class PrincipalConErrores {
 	}
 
 	private static void cargarDatos(Empresa empresa) {
-		// TODO Auto-generated method stub
 
 		empresa.añadirPaquete(new Paquete("paq1","dir1",cps[0]));
 		empresa.añadirPaquete(new Paquete("paq2","dir1",cps[1]));
