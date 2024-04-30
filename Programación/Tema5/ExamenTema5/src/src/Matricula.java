@@ -35,7 +35,7 @@ public class Matricula {
     private String validarMatricula(String matricula) {
         boolean correcto = true;
         // longitud
-        if (matricula.length() != 8) {
+        if (matricula.length() != 9) {
             System.err.println("La matrícula debe tener 8 caracteres");
             correcto = false;
         } else {

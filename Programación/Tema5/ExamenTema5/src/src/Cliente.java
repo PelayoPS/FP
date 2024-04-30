@@ -98,8 +98,8 @@ public class Cliente implements Comparable<Cliente> {
             correcto = false;
         }
         // verificar letra
-        if (!Character.isDigit(dni.charAt(8))) {
-            System.err.println("La última posición debe ser un dígito");
+        if (Character.isDigit(dni.charAt(8))) {
+            System.err.println("La última posición debe no ser un digito");
             correcto = false;
         }
         // 1 a 8 dígitos

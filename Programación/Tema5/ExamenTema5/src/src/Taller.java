@@ -118,9 +118,11 @@ public class Taller {
             if (c.getDni().equals(dni)) {
                 // Si lo encuentra muestra las reparaciones
                 int contador = 0;
+                System.out.println("Reparaciones para el cliente con DNI " + dni);
+                String result = "";
                 for (Reparacion r : reparaciones) {
                     if (r.getDni().equals(dni)) {
-                        System.out.println(r.toString());
+                        result += r.toString() + "\n";
                         // contador para saber si hay reparaciones
                         contador++;
                     }
@@ -128,6 +130,8 @@ public class Taller {
                 // Si no hay reparaciones
                 if (contador == 0) {
                     System.err.println("No hay reparaciones para el cliente con DNI " + dni);
+                } else {
+                    System.out.println(result);
                 }
                 return;
             }
