@@ -1,0 +1,89 @@
+@startuml UML
+left to right direction
+
+
+together {
+  class Paquete
+  class Direccion
+}
+
+together {
+  class Almacen
+  class Direccion
+}
+
+class Paquete {
+  - id: int
+  - ruta: LinkedList<Direccion>
+
+  + getId(): int
+  + getRuta(): LinkedList<Direccion>
+  + toString(): String
+}
+
+class Direccion {
+  - calle: String
+  - numero: String
+  - ciudad: String
+  - pais: String
+
+  + getCalle(): String
+  + setCalle(String calle)
+  + getNumero(): String
+  + setNumero(String numero)
+  + getCiudad(): String
+  + setCiudad(String ciudad)
+  + getPais(): String
+  + setPais(String pais)
+  + toString(): String
+}
+
+class Conductor {
+  - id: int
+  - nombre: String
+  - paquetesAsignados: List<Paquete>
+  - prioridad: int
+
+  + getId(): int
+  + setId(int id)
+  + getNombre(): String
+  + setNombre(String nombre)
+  + getPaquetesAsignados(): List<Paquete>
+  + setPaquetesAsignados(List<Paquete> paquetesAsignados)
+  + getPrioridad(): int
+  + setPrioridad(int prioridad)
+  + addPaquete(Paquete paquete)
+  + toString(): String
+  + compareTo(Conductor o): int
+}
+
+class Almacen {
+  - paquetes: HashMap<int, Paquete>
+  - conductores: TreeSet<Conductor>
+
+  + addPaquete(Paquete paquete)
+  + getPaquete(int id): Paquete
+  + addConductor(Conductor conductor)
+  + getConductor(int prioridad): Conductor
+  + getPaquetes(): HashMap<int, Paquete>
+  + getConductores(): TreeSet<Conductor>
+  + removeConductor(Conductor conductor)
+
+}
+
+class ConductorComparator {
+  + compare(Conductor c1, Conductor c2): int
+}
+
+class Main {
+  + main(String[] args): void
+}
+
+Paquete "1" o-- "ruta" Direccion
+Conductor "1" o-- "paquetesAsignados" Paquete
+Almacen "1" o-- "paquetes" Paquete
+Almacen "1" o-- "conductores" Conductor
+Main "1" *-- "1" Almacen
+ConductorComparator "1" o-- "compare" Conductor
+
+@enduml
