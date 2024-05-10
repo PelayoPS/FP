@@ -1,4 +1,4 @@
-package main;
+package interfaz;
 
 // clase principal que mediante el menú ejecuta
 public class Main {
