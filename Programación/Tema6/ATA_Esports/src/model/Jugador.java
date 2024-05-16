@@ -63,4 +63,13 @@ public class Jugador extends Persona {
     public void addEquipo(Equipo equipo) {
         equipos.add(equipo);
     }
+
+    /**
+     * Elimina el equipo
+     * 
+     * @param equipo El equipo a eliminar
+     */
+    public void removeEquipo(Equipo equipo) {
+        equipos.remove(equipo);
+    }
 }

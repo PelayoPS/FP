@@ -3,6 +3,8 @@ package interfaz;
 import java.util.Scanner;
 
 import logic.Gestor;
+import logic.exceptions.ExcepcionMaxJugadores;
+import logic.exceptions.ExceptionJugadorNoEncontrado;
 import model.Coach;
 import model.Equipo;
 import model.Jugador;
@@ -47,11 +49,18 @@ public class Main {
 		}
 	}
 
+	/**
+	 * Agrupa los métodos del menú que sirven para agregar
+	 * 
+	 * @param scanner input
+	 */
 	private static void agregar(Scanner scanner) {
 		System.out.println("1. Agregar Equipo");
 		System.out.println("2. Agregar Penalizacion");
 		System.out.println("3. Agregar Jugador");
 		System.out.println("4. Agregar Coach");
+		System.out.println("5. Agregar Jugador a Equipo");
+		System.out.println("6. Agregar Coach a Equipo");
 
 		System.out.print("Ingrese una opción: ");
 		int option = scanner.nextInt();
@@ -69,11 +78,22 @@ public class Main {
 			case 4:
 				agregarCoach(scanner);
 				break;
+			case 5:
+				agregarJugadorAEquipo(scanner);
+				break;
+			case 6:
+				agregarCoachAEquipo(scanner);
+				break;
 			default:
 				System.out.println("Opción inválida");
 		}
 	}
 
+	/**
+	 * Agrupa los métodos de obtener
+	 * 
+	 * @param scanner input
+	 */
 	private static void obtener(Scanner scanner) {
 		System.out.println("1. Obtener Equipo");
 		System.out.println("2. Obtener Penalizacion");
@@ -101,11 +121,18 @@ public class Main {
 		}
 	}
 
+	/**
+	 * Agrupa los métodos de eliminar
+	 * 
+	 * @param scanner input
+	 */
 	private static void eliminar(Scanner scanner) {
 		System.out.println("1. Eliminar Equipo");
 		System.out.println("2. Eliminar Penalizacion");
 		System.out.println("3. Eliminar Jugador");
 		System.out.println("4. Eliminar Coach");
+		System.out.println("5. Eliminar Jugador de Equipo");
+		System.out.println("6. Eliminar Coach de Equipo");
 
 		System.out.print("Ingrese una opción: ");
 		int option = scanner.nextInt();
@@ -123,11 +150,22 @@ public class Main {
 			case 4:
 				eliminarCoach(scanner);
 				break;
+			case 5:
+				eliminarJugadorEquipo(scanner);
+				break;
+			case 6:
+				eliminarCoachEquipo(scanner);
+				break;
 			default:
 				System.out.println("Opción inválida");
 		}
 	}
 
+	/**
+	 * Utiliza el gestor para agregar un equipo
+	 * 
+	 * @param scanner input
+	 */
 	private static void agregarEquipo(Scanner scanner) {
 		System.out.print("Ingrese el ID del equipo: ");
 		int equipoId = scanner.nextInt();
@@ -137,6 +175,11 @@ public class Main {
 		Gestor.addEquipo(equipo);
 	}
 
+	/**
+	 * Utiliza el gestor para agregar una penalizacion
+	 * 
+	 * @param scanner input
+	 */
 	private static void agregarPenalizacion(Scanner scanner) {
 		System.out.print("Ingrese el ID de la penalizacion: ");
 		int penalizacionId = scanner.nextInt();
@@ -146,6 +189,11 @@ public class Main {
 		Gestor.addPenalizacion(penalizacion);
 	}
 
+	/**
+	 * Utiliza el gestor para agregar un jugador
+	 * 
+	 * @param scanner input
+	 */
 	private static void agregarJugador(Scanner scanner) {
 		System.out.print("Ingrese el ID del jugador: ");
 		int jugadorId = scanner.nextInt();
@@ -159,6 +207,54 @@ public class Main {
 		Gestor.agregarJugador(jugador);
 	}
 
+	/**
+	 * Agregar jugador a equipo
+	 * 
+	 * @param scanner input
+	 */
+	private static void agregarJugadorAEquipo(Scanner scanner) {
+		System.out.print("Ingrese el ID del jugador: ");
+		int jugadorId = scanner.nextInt();
+		System.out.print("Ingrese el ID del equipo: ");
+		int equipoId = scanner.nextInt();
+		Jugador jugador = Gestor.getJugador(jugadorId);
+		Equipo equipo = Gestor.getEquipo(equipoId);
+		if (jugador != null && equipo != null) {
+			try {
+				equipo.addJugador(jugador);
+				jugador.addEquipo(equipo);
+			} catch (ExcepcionMaxJugadores e) {
+				System.out.println("No se puede agregar el jugador al equipo: " + e.getMessage());
+			}
+		} else {
+			System.out.println("Jugador o equipo no encontrado");
+		}
+	}
+
+	/**
+	 * Agrega un coach al equipo
+	 * 
+	 * @param scanner input
+	 */
+	private static void agregarCoachAEquipo(Scanner scanner) {
+		System.out.print("Ingrese el ID del coach: ");
+		int coachId = scanner.nextInt();
+		System.out.print("Ingrese el ID del equipo: ");
+		int equipoId = scanner.nextInt();
+		Coach coach = Gestor.getCoach(coachId);
+		Equipo equipo = Gestor.getEquipo(equipoId);
+		if (coach != null && equipo != null) {
+			equipo.setCoach(coach);
+		} else {
+			System.out.println("Coach o equipo no encontrado");
+		}
+	}
+
+	/**
+	 * Utiliza el gestor para agregar un coach
+	 * 
+	 * @param scanner input
+	 */
 	private static void agregarCoach(Scanner scanner) {
 		System.out.print("Ingrese el ID del coach: ");
 		int coachId = scanner.nextInt();
@@ -174,6 +270,11 @@ public class Main {
 		Gestor.agregarEntrenador(coach);
 	}
 
+	/**
+	 * Obtiene el equipo por id
+	 * 
+	 * @param scanner input
+	 */
 	private static void obtenerEquipo(Scanner scanner) {
 		System.out.print("Ingrese el ID del equipo a obtener: ");
 		int equipoIdToGet = scanner.nextInt();
@@ -185,6 +286,11 @@ public class Main {
 		}
 	}
 
+	/**
+	 * Obtiene la penalización por id
+	 * 
+	 * @param scanner input
+	 */
 	private static void obtenerPenalizacion(Scanner scanner) {
 		System.out.print("Ingrese el ID de la penalizacion a obtener: ");
 		int penalizacionIdToGet = scanner.nextInt();
@@ -196,6 +302,11 @@ public class Main {
 		}
 	}
 
+	/**
+	 * Obtiene el jugador por id
+	 * 
+	 * @param scanner input
+	 */
 	private static void obtenerJugador(Scanner scanner) {
 		System.out.print("Ingrese el ID del jugador a obtener: ");
 		int jugadorIdToGet = scanner.nextInt();
@@ -207,6 +318,11 @@ public class Main {
 		}
 	}
 
+	/**
+	 * Obtiene el coach por id
+	 * 
+	 * @param scanner input
+	 */
 	private static void obtenerCoach(Scanner scanner) {
 		System.out.print("Ingrese el ID del coach a obtener: ");
 		int coachIdToGet = scanner.nextInt();
@@ -218,27 +334,91 @@ public class Main {
 		}
 	}
 
+	/**
+	 * Elimina el equipo por id
+	 * 
+	 * @param scanner input
+	 */
 	private static void eliminarEquipo(Scanner scanner) {
 		System.out.print("Ingrese el ID del equipo a eliminar: ");
 		int equipoIdToDelete = scanner.nextInt();
 		Gestor.removeEquipo(equipoIdToDelete);
 	}
 
+	/**
+	 * Elimina la penalización por id
+	 * 
+	 * @param scanner input
+	 */
 	private static void eliminarPenalizacion(Scanner scanner) {
 		System.out.print("Ingrese el ID de la penalizacion a eliminar: ");
 		int penalizacionIdToDelete = scanner.nextInt();
 		Gestor.removePenalizacion(penalizacionIdToDelete);
 	}
 
+	/**
+	 * Elimina el jugador por id
+	 * 
+	 * @param scanner input
+	 */
 	private static void eliminarJugador(Scanner scanner) {
 		System.out.print("Ingrese el ID del jugador a eliminar: ");
 		int jugadorIdToDelete = scanner.nextInt();
 		Gestor.eliminarJugador(Gestor.getJugador(jugadorIdToDelete));
 	}
 
+	/**
+	 * Elimina el coach por id
+	 * 
+	 * @param scanner input
+	 */
 	private static void eliminarCoach(Scanner scanner) {
 		System.out.print("Ingrese el ID del coach a eliminar: ");
 		int coachIdToDelete = scanner.nextInt();
 		Gestor.eliminarEntrenador(Gestor.getCoach(coachIdToDelete));
+	}
+
+	/**
+	 * Elimina el jugador del equipo
+	 * 
+	 * @param scanner input
+	 */
+	private static void eliminarJugadorEquipo(Scanner scanner) {
+		System.out.print("Ingrese el ID del jugador a eliminar: ");
+		int jugadorIdToDelete = scanner.nextInt();
+		System.out.print("Ingrese el ID del equipo: ");
+		int equipoId = scanner.nextInt();
+		Jugador jugador = Gestor.getJugador(jugadorIdToDelete);
+		Equipo equipo = Gestor.getEquipo(equipoId);
+		if (jugador != null && equipo != null) {
+			try {
+				equipo.removeJugador(jugador);
+				jugador.removeEquipo(equipo);
+			} catch (ExceptionJugadorNoEncontrado e) {
+				System.out.println("No se puede eliminar el jugador del equipo: " + e.getMessage());
+
+			}
+		} else {
+			System.out.println("Jugador o equipo no encontrado");
+		}
+	}
+
+	/**
+	 * Elimina el coach del equipo
+	 * 
+	 * @param scanner input
+	 */
+	private static void eliminarCoachEquipo(Scanner scanner) {
+		System.out.print("Ingrese el ID del coach a eliminar: ");
+		int coachIdToDelete = scanner.nextInt();
+		System.out.print("Ingrese el ID del equipo: ");
+		int equipoId = scanner.nextInt();
+		Coach coach = Gestor.getCoach(coachIdToDelete);
+		Equipo equipo = Gestor.getEquipo(equipoId);
+		if (coach != null && equipo != null) {
+			equipo.setCoach(null);
+		} else {
+			System.out.println("Coach o equipo no encontrado");
+		}
 	}
 }
