@@ -3,16 +3,12 @@ package interfaz;
 import java.util.Scanner;
 
 import logic.Gestor;
-import logic.exceptions.ExcepcionMaxJugadores;
-import logic.exceptions.ExceptionJugadorNoEncontrado;
-import model.Coach;
-import model.Equipo;
-import model.Jugador;
-import model.Penalizacion;
 
 /**
  * La clase Main es la clase principal del programa. Contiene el método main que
  * inicia la ejecución del programa.
+ * 
+ * !! PROVISIONAL IMPLEMENTATION DEPENDS ON FINISHED DOCUMENTATION
  * 
  * TODO:Equals and hashcode where needed
  */
