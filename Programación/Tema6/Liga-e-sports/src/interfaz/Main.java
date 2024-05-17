@@ -13,6 +13,8 @@ import model.Penalizacion;
 /**
  * La clase Main es la clase principal del programa. Contiene el método main que
  * inicia la ejecución del programa.
+ * 
+ * TODO:Equals and hashcode where needed
  */
 public class Main {
 
