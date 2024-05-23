@@ -1,0 +1,50 @@
+@startuml diagrama
+
+enum RankedRank {
+}
+
+enum Role {
+}
+
+class LolPlayer {
+}
+
+class ADC
+class Jungler
+class MidLaner
+class Support
+class TopLaner
+class Client {
+    List<Contract> contracts
+}
+class Contract
+class Manager {
+    Set<Client> clients;
+    Map<String, LolPlayer> players;
+    Map<Integer, Contract> contracts;
+    List<Contract> activeContracts;
+}
+class Main
+class MyException
+
+LolPlayer <-- ADC
+LolPlayer <-- Jungler
+LolPlayer <-- MidLaner
+LolPlayer <-- Support
+LolPlayer <-- TopLaner
+
+Client "1" o-- "*" Contract
+Client --> LolPlayer
+
+Manager o-- Client
+Manager o-- LolPlayer
+Manager o-- Contract
+Manager o-- Contract
+
+Main --> Manager
+Manager --> MyException
+
+RankedRank --> LolPlayer
+Role --> LolPlayer
+
+@enduml
