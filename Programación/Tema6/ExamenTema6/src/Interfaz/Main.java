@@ -11,13 +11,13 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//pruebaFecha();
-		//pruebaMatricula();
-		//pruebaAutobus();
-		//pruebaListarAlquileresAutobus(cargarDatos());
-		//pruebaListarAlquileresCliente(cargarDatos());
-		//pruebaAutocaresDisponibles(cargarDatos());
-		//pruebaGenerarFactura(cargarDatos());
+		pruebaFecha();
+		pruebaMatricula();
+		pruebaAutobus();
+		pruebaListarAlquileresAutobus(cargarDatos());
+		pruebaListarAlquileresCliente(cargarDatos());
+		pruebaAutocaresDisponibles(cargarDatos());
+		pruebaGenerarFactura(cargarDatos());
 	}
 
 	private static void pruebaGenerarFactura(GestorAutobus gestor) {

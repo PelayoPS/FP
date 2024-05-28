@@ -55,13 +55,13 @@ public class GestorAutobus {
 
 		// generar un listado de todos los autobuses disponibles
 		// para la fecha y número de días indicados
-		String result = "";
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("Autobuses disponibles\n");
 		autobuses.values()
 				.stream()
-				.filter(a -> {
+				.filter(a ->
+				{
 					try {
-						// siempre va a salir correcto porque se comprueba arriba
-						// necesario para poder compilarlo
 						return a.estaDisponible(fecha, numDias) && a.getNumPlazas() >= numPlazas;
 					} catch (FormatoExcepcion e) {
 						// TODO Auto-generated catch block
@@ -69,8 +69,11 @@ public class GestorAutobus {
 					}
 					return false;
 				})
-				.forEach(a -> result.concat(a.toString() + "\n"));
-		return result;
+				.forEach(a -> {
+					stringBuilder.append(a.toString());
+					stringBuilder.append("\n");
+				});
+		return stringBuilder.toString();
 	}
 
 	public void alquilarAutocar(String matricula, String nif, String fecha,
