@@ -16,7 +16,7 @@ public class Main {
 		//pruebaAutobus();
 		//pruebaListarAlquileresAutobus(cargarDatos());
 		//pruebaListarAlquileresCliente(cargarDatos());
-		pruebaAutocaresDisponibles(cargarDatos());
+		//pruebaAutocaresDisponibles(cargarDatos());
 		//pruebaGenerarFactura(cargarDatos());
 	}
 

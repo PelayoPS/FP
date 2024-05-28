@@ -17,14 +17,16 @@ import Modelo.Matricula;
 public class GestorAutobus {
 
 	// hashmap autobuses con matricula como key
-	private Map<Matricula, Autobus> autobuses = new HashMap<Matricula, Autobus>();
+	private Map<Matricula, Autobus> autobuses;
 	// treeset clientes
-	private Set<Cliente> clientes = new TreeSet<Cliente>();
+	private Set<Cliente> clientes;
 	// arraylist alquileres
-	private List<Alquiler> alquileres = new ArrayList<Alquiler>();
+	private List<Alquiler> alquileres;
 
 	public GestorAutobus() {
-
+		this.autobuses = new HashMap<Matricula, Autobus>();
+		this.clientes = new TreeSet<Cliente>();
+		this.alquileres = new ArrayList<Alquiler>();
 	}
 
 	public String generarFactura(String nif) throws ExamenExcepcion {
@@ -50,7 +52,6 @@ public class GestorAutobus {
 		if (!fecha.matches("\\d{2}/\\d{2}/\\d{4}")) {
 			throw new FormatoExcepcion("Formato de fecha incorrecto");
 		}
-
 
 		// generar un listado de todos los autobuses disponibles
 		// para la fecha y número de días indicados
@@ -96,11 +97,9 @@ public class GestorAutobus {
 
 	public String listarTodosLosAutobuses() {
 		// generar un listado de todos los autobuses
-		StringBuilder strBuilder = 
-				new StringBuilder();
+		StringBuilder strBuilder = new StringBuilder();
 		strBuilder.append(
-			"Autobuses " + autobuses.values().size()
-		);
+				"Autobuses " + autobuses.values().size());
 		strBuilder.append("\n");
 		autobuses.values()
 				.stream()
@@ -118,13 +117,15 @@ public class GestorAutobus {
 			throw new ExamenExcepcion(
 					"Autobus no existe");
 		}
-		String result = "";
+		StringBuilder stringBuilder = new StringBuilder();
 		alquileres.stream()
-				.filter(a -> a.getAutobus().getMatricula().equals(matricula))
-				.forEach(a -> result.concat(
-						"Cliente: " + a.getNifCliente() + " Fecha: " + a.getFechaAlquiler() + " Dias: "
-								+ a.getNumDiasAlquiler() + "\n"));
-		return result;
+				.filter(a -> a.getAutobus().getMatricula().toString().equals(matricula))
+				.forEach(a -> {
+					stringBuilder.append(
+							"Cliente: " + a.getNifCliente() + " Fecha: " + a.getFechaAlquiler() + " Dias: "
+									+ a.getNumDiasAlquiler() + "\n");
+				});
+		return stringBuilder.toString();
 	}
 
 	public String listarAlquileresCliente(String nif) throws ExamenExcepcion {
@@ -132,15 +133,15 @@ public class GestorAutobus {
 		if (!clientes.contains(new Cliente(nif, ""))) {
 			throw new ExamenExcepcion("Cliente no existe");
 		}
-		String result = "";
+		StringBuilder stringBuilder = new StringBuilder();
 		alquileres.stream()
 				.filter(a -> a.getNifCliente().equals(nif))
-				.forEach(a -> result.concat(
-						"Autobus: " + a.getAutobus().getMatricula() + " Fecha: " + a.getFechaAlquiler() + " Dias: "
-								+ a.getNumDiasAlquiler()
-								+ "Importe: " +
-								a.calcularImporte() + "\n"));
-		return result;
+				.forEach(a -> {
+					stringBuilder.append(
+							"Autobus: " + a.getAutobus().getMatricula() + " Fecha: " + a.getFechaAlquiler() + " Dias: "
+									+ a.getNumDiasAlquiler() + "\n");
+				});
+		return stringBuilder.toString();
 	}
 
 	/**
