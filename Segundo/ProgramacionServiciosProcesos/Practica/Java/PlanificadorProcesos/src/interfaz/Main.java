@@ -7,6 +7,7 @@ public class Main {
 		//genera un menu que en base a un código ejecuta cada algoritmo
 		//posteriormente recibe los datos y los pasa a forma de gráfica
 		//e imprime la tabla con los valores de tiempo de espera y tiempo de respuesta
+		System.out.println("hey");
 
 	}
 
