@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Film library</string>
+    <string name="creador">Created by Pelayo</string>
+    <string name="btn_web">Go to the web</string>
+    <string name="btn_soporte">Get support</string>
+    <string name="btn_volver">Back</string>
+</resources>
