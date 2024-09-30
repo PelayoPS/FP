@@ -1,0 +1,6 @@
+Idea de negocio: Consultoría orientada a señores mayores(RetireTech/Timeless Tech/Boomer Tech)
+Resumen del proyecto: 
+    - Una consultoría informática orientada a señores mayores que necesiten ayuda con sus dispositivos electrónicos.
+    - Con servicios de asesoramiento, reparación, mantenimiento y formación.
+Datos de la empresa:
+    
