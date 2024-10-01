@@ -1,0 +1,52 @@
+package listenners.ai_chat;
+
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.hooks.ListenerAdapter;
+
+public class aiChat extends ListenerAdapter {
+
+    // Cliente de Gemini inicializado a null
+    private GeminiClient client = null;
+
+    /**
+     * Constructor que recibe el cliente de Gemini
+     * @param GeminiClient cliente de Gemini
+     */
+    public aiChat(GeminiClient client) {
+        this.client = client;
+    }
+
+    
+    @Override
+    public void onMessageReceived(MessageReceivedEvent event) {
+        // Si el mensaje no es de un bot
+        if (!event.getAuthor().isBot()) {
+            // Si el mensaje menciona al bot
+            if (event.getMessage().getContentRaw().contains(event.getJDA().getSelfUser().getAsMention())
+                    || event.getMessage().getReferencedMessage() != null) {
+                // Responder con la respuesta de openAI
+                
+                try {
+                    String answer = client.generateContent(event.getMessage().getContentRaw()
+                            .replace(event.getJDA().getSelfUser().getAsMention(), ""));
+
+                    if (answer.length() >= 2000) {
+                        // loop over chunks of 1999
+                        for (int i = 0; i < answer.length(); i += 1999) {
+                            // get the next chunk
+                            String chunk = answer.substring(i, Math.min(answer.length(), i + 1999));
+                            // send it
+                            event.getChannel().sendMessage(chunk).queue();
+                        }
+
+                    } else {
+                        event.getChannel().sendMessage(answer).queue();
+                    }
+                } catch (Exception e) {
+                    event.getChannel().sendMessage(e.getMessage()).queue();
+                }
+            }
+        }
+    }
+
+}
