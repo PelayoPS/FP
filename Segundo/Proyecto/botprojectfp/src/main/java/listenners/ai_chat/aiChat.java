@@ -10,22 +10,28 @@ public class aiChat extends ListenerAdapter {
 
     /**
      * Constructor que recibe el cliente de Gemini
+     * 
      * @param GeminiClient cliente de Gemini
      */
     public aiChat(GeminiClient client) {
         this.client = client;
     }
 
-    
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
+
+        /*
+         * !TODO: crear un sistema de logs
+         * para por si fuera necesario guardar los prompts y las respuestas
+         */
+
         // Si el mensaje no es de un bot
         if (!event.getAuthor().isBot()) {
             // Si el mensaje menciona al bot
             if (event.getMessage().getContentRaw().contains(event.getJDA().getSelfUser().getAsMention())
                     || event.getMessage().getReferencedMessage() != null) {
                 // Responder con la respuesta de openAI
-                
+
                 try {
                     String answer = client.generateContent(event.getMessage().getContentRaw()
                             .replace(event.getJDA().getSelfUser().getAsMention(), ""));
