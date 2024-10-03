@@ -1,4 +1,6 @@
-package listenners.ai_chat;
+package logic.listenners.ai_chat;
+
+import org.jetbrains.annotations.NonNls;
 
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -18,7 +20,7 @@ public class aiChat extends ListenerAdapter {
     }
 
     @Override
-    public void onMessageReceived(MessageReceivedEvent event) {
+    public void onMessageReceived(@NonNls MessageReceivedEvent event) {
 
         /*
          * !TODO: crear un sistema de logs

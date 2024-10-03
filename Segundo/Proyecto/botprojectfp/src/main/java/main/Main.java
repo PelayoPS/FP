@@ -1,9 +1,9 @@
-
+package main;
 
 import java.util.Scanner;
 
-import listenners.ai_chat.GeminiClient;
-import listenners.ai_chat.aiChat;
+import logic.listenners.ai_chat.GeminiClient;
+import logic.listenners.ai_chat.aiChat;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
