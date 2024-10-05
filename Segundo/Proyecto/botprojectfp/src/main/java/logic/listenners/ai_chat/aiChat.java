@@ -19,6 +19,11 @@ public class aiChat extends ListenerAdapter {
         this.client = client;
     }
 
+    /**
+     * Método que se ejecuta cuando se recibe un mensaje
+     * 
+     * @param MessageReceivedEvent event con la información del mensaje
+     */
     @Override
     public void onMessageReceived(@NonNls MessageReceivedEvent event) {
 
@@ -35,22 +40,26 @@ public class aiChat extends ListenerAdapter {
                 // Responder con la respuesta de openAI
 
                 try {
+                    // Generar la respuesta
                     String answer = client.generateContent(event.getMessage().getContentRaw()
                             .replace(event.getJDA().getSelfUser().getAsMention(), ""));
 
                     if (answer.length() >= 2000) {
-                        // loop over chunks of 1999
+                        // bucle para enviar el mensaje en trozos de 2000 caracteres
                         for (int i = 0; i < answer.length(); i += 1999) {
-                            // get the next chunk
+                            // obtener el trozo
                             String chunk = answer.substring(i, Math.min(answer.length(), i + 1999));
-                            // send it
+                            // enviar el trozo
                             event.getChannel().sendMessage(chunk).queue();
                         }
 
                     } else {
+                        // enviar el mensaje
                         event.getChannel().sendMessage(answer).queue();
                     }
                 } catch (Exception e) {
+                    // Enviar el mensaje de error
+                    // !TODO: crear un sistema de logs
                     event.getChannel().sendMessage(e.getMessage()).queue();
                 }
             }
