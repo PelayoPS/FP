@@ -1,15 +1,21 @@
 package logic.slash.commands;
 
-import net.dv8tion.jda.api.interactions.commands.Command;
+import java.util.ArrayList;
+import java.util.List;
+
+import net.dv8tion.jda.api.interactions.commands.Command.Option;
+import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.SlashCommandInteraction;
 
-public interface ICommand extends Command {
+public interface ICommand {
 
     // attributes
 
-    String name = null;
+    String name = "default";
 
-    String description = null;
+    String description = "default";
+
+    List<Option> options = new ArrayList<>();
 
     // methods
 
@@ -21,10 +27,15 @@ public interface ICommand extends Command {
 
     String getDescription();
 
+    List<Option> getOptions();
+
     // setters
 
     void setName(String name);
 
     void setDescription(String description);
+
+    void setOptions(List<Option> options);
+
 
 }

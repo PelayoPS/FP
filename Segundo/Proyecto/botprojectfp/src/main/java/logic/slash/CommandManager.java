@@ -1,5 +1,6 @@
 package logic.slash;
 
+import java.util.EventListener;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,13 +8,11 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 
 import logic.slash.commands.ICommand;
 
-
 /**
- * Clase que gestiona los comandos de barra
- * Guarda un mapa con los comandos y su nombre
- * para poder ejecutarlos en el slashCmdListenner
+ * Clase que gestiona los comandos de barra Guarda un mapa con los comandos y su
+ * nombre para poder ejecutarlos en el slashCmdListenner
  */
-public class CommandManager {
+public class CommandManager implements EventListener {
 
     // Mapa con los comandos y su nombre
     private Map<String, ICommand> commands = new HashMap<>();
@@ -21,7 +20,7 @@ public class CommandManager {
     /**
      * Método que añade un comando al mapa
      * 
-     * @param String name nombre del comando
+     * @param String  name nombre del comando
      * @param Command command comando a añadir
      */
     public void addCommand(String name, ICommand command) {
@@ -31,12 +30,23 @@ public class CommandManager {
     /**
      * Método que ejecuta un comando
      * 
-     * @param String name nombre del comando
-     * @param SlashCommandInteractionEvent event evento de interacción de comando de barra
+     * @param String                       name nombre del comando
+     * @param SlashCommandInteractionEvent event evento de interacción de comando de
+     *                                     barra
      */
     public void execute(String name, SlashCommandInteractionEvent event) {
         commands.get(name).handle(event);
     }
+
+    /**
+     * Método que devuelve el mapa de comandos
+     * 
+     * @return Map<String, Command> mapa de comandos
+     */
+    public Map<String, ICommand> getCommands() {
+        return commands;
+    }
+
     
 
 }

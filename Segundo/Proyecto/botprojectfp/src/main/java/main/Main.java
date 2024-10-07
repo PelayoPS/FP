@@ -2,18 +2,32 @@ package main;
 
 import java.util.Scanner;
 
+
 import logic.listenners.ai_chat.GeminiClient;
 import logic.listenners.ai_chat.aiChat;
+import logic.listenners.slash.SlashCmdListenner;
+import logic.slash.CommandManager;
+import logic.slash.commands.moderation.Ban;
+import logic.slash.commands.moderation.Kick;
+import logic.slash.commands.user_related.Avatar;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.interactions.commands.Command.Option;
+import net.dv8tion.jda.api.interactions.commands.build.Commands;
+import net.dv8tion.jda.api.interactions.commands.build.OptionData;
+import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
+
 	/**
 	 * Método principal
+	 * 
 	 * @param String[] args argumentos de la línea de comandos
 	 */
 	public static void main(String[] args) {
@@ -42,11 +56,72 @@ public class Main {
 				.setToken(token).build();
 
 		// Elimina todos los comandos
-		jda.updateCommands().queue();
+		// jda.updateCommands().queue();
 
-		// Añade los comandos
-		jda.addEventListener(new aiChat(gemini));
+		// Añade los comandos usando la clase CommandManager
+		CommandManager manager = new CommandManager();
+		manager.addCommand("ban", new Ban());
+		manager.addCommand("kick", new Kick());
+		manager.addCommand("avatar", new Avatar());
 
+		// El manager es un listenner que llama al execute correspondiente según el
+		// comando
+		jda.addEventListener(new aiChat(gemini), new SlashCmdListenner(manager));
+
+		// Añade los comandos a la lista de comandos de barra
+		jda.updateCommands().addCommands(getSlashCommandList(manager)).queue();
+
+		// Muestra los comandos actualizados
+		showUpdatedCommands(jda);
+
+	}
+
+	/**
+	 * Método que muestra los comandos actualizados
+	 * 
+	 * @param JDA jda instancia de JDA
+	 */
+	private static void showUpdatedCommands(JDA jda) {
+		jda.retrieveCommands().queue(commands -> {
+			System.out.println("Loaded commands:");
+			commands.forEach(command -> {
+				// shows the command name, description and options with the logger format of jda
+				System.out.println("Command: " + command.getName() + " - " + command.getDescription()
+						+ " - Options: " + command.getOptions());
+
+			});
+		});
+
+	}
+
+	/**
+	 * Método que devuelve un array de OptionData a partir de una lista de opciones
+	 * 
+	 * @param List<Option> options lista de opciones
+	 * @return OptionData[] array de OptionData
+	 */
+	private static OptionData[] getOptionData(List<Option> options) {
+		OptionData[] optionData = new OptionData[options.size()];
+		for (int i = 0; i < options.size(); i++) {
+			optionData[i] = new OptionData(options.get(i).getType(), options.get(i).getName(),
+					options.get(i).getDescription());
+		}
+		return optionData;
+	}
+
+	/**
+	 * Método que devuelve una lista de comandos de barra
+	 * 
+	 * @param manager manager de comandos
+	 * @return List<SlashCommandData> lista de comandos de barras
+	 */
+	private static List<SlashCommandData> getSlashCommandList(CommandManager manager) {
+		List<SlashCommandData> slashCommandList = new ArrayList<>();
+		manager.getCommands().forEach((name, command) -> {
+			slashCommandList.add(
+					Commands.slash(name, command.getDescription()).addOptions(getOptionData(command.getOptions())));
+		});
+		return slashCommandList;
 	}
 
 }

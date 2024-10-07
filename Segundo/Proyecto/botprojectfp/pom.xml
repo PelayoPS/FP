@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>me.pelayo.botprojectfp</groupId>
   <artifactId>botprojectfp</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.4-SNAPSHOT</version>
   <name>BotProjectFP</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -66,7 +66,7 @@
 
 
   <dependencyManagement>
-  
+
 
     <dependencies>
 
@@ -76,7 +76,6 @@
         <version>1.9.10</version>
       </dependency>
 
-    
 
       <dependency>
         <groupId>org.slf4j</groupId>

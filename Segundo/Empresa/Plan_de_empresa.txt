@@ -22,6 +22,28 @@ Colaboradores y alianzas. Proveedores:
 
 DAFO:
 
+Debilidades:
+    - Rango de edad con riesgo de rechazo tecnológico.
+    - Poca demanda de aparatos y servicios tecnológicos por parte de la población mayor.
+    - Difícil acceso a ciertas zonas rurales
+
+
+Fortalezas:
+    - Reducción de la brecha digital entre generaciones.
+    - Llevar el avance tecnológico a zonas rurales.
+    - Creación de actividades didácticas (talleres, cursos...) con el objetivo de evitar el estancamiento en los hogares de las personas de avanzada edad.
+
+Oportunidades:
+    - Sector por explorar y con gran potencial de crecimiento por falta de conocimiento para acceder a los recursos tecnológicos.
+    - Crecimiento de la población mayor.
+    - Poca competencia en el sector.
+    - Posibilidad de colaboración con residencias de ancianos.
+
+Amenazas:
+    - Poca demanda de servicios tecnológicos por parte de la población mayor(generalmente por falta de conocimiento o interés).
+    - Competencia de empresas de reparación de dispositivos electrónicos(en contraposición de la formación y asesoramiento que ofrecemos).
+    - Posible miedo al cambio por parte de los clientes.
+
 =============================================================================
 
 Plan de Marketing. Cómo vamos a darnos a conocer:
