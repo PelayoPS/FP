@@ -27,7 +27,7 @@ public interface ICommand {
 
     String getDescription();
 
-    List<Option> getOptions();
+    List<OptionData> getOptions();
 
     // setters
 
@@ -35,7 +35,7 @@ public interface ICommand {
 
     void setDescription(String description);
 
-    void setOptions(List<Option> options);
+    void setOptions(List<OptionData> options);
 
 
 }

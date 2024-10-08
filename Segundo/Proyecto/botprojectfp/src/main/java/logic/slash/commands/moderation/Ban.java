@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import logic.slash.commands.ICommand;
-import net.dv8tion.jda.api.interactions.commands.Command.Option;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.SlashCommandInteraction;
@@ -18,11 +17,15 @@ public class Ban implements ICommand {
 
     private String description = "Bans a user from the server it was executed on.";
 
-    private List<Option> options = new ArrayList<>() {
-        {
-            new OptionData(OptionType.USER, "user", "The user to ban.").setRequired(true);
-        }
-    };
+    private List<OptionData> options = new ArrayList<>();
+
+    /**
+     * Constructor de la clase Ban
+     */
+    public Ban() {
+        // añade la opción de usuario
+        options.add(new OptionData(OptionType.USER, "user", "The user to ban.").setRequired(true));
+    }
 
     /**
      * Método que ejecuta el comando de ban
@@ -73,10 +76,10 @@ public class Ban implements ICommand {
     /**
      * Método que devuelve las opciones del comando
      * 
-     * @return List<Option> opciones del comando
+     * @return List<OptionData> opciones del comando
      */
     @Override
-    public List<Option> getOptions() {
+    public List<OptionData> getOptions() {
         return options;
     }
 
@@ -105,10 +108,10 @@ public class Ban implements ICommand {
     /**
      * Método que establece las opciones del comando
      * 
-     * @param List<Option> options opciones del comando
+     * @param List<OptionData> options opciones del comando
      */
     @Override
-    public void setOptions(List<Option> options) {
+    public void setOptions(List<OptionData> options) {
         this.options = options;
     }
 

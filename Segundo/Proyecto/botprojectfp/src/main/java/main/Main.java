@@ -8,11 +8,11 @@ import logic.listenners.ai_chat.aiChat;
 import logic.listenners.slash.SlashCmdListenner;
 import logic.slash.CommandManager;
 import logic.slash.commands.moderation.Ban;
+import logic.slash.commands.moderation.InviteInfo;
 import logic.slash.commands.moderation.Kick;
 import logic.slash.commands.user_related.Avatar;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.interactions.commands.Command.Option;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
@@ -60,9 +60,7 @@ public class Main {
 
 		// Añade los comandos usando la clase CommandManager
 		CommandManager manager = new CommandManager();
-		manager.addCommand("ban", new Ban());
-		manager.addCommand("kick", new Kick());
-		manager.addCommand("avatar", new Avatar());
+		addCommands(manager);
 
 		// El manager es un listenner que llama al execute correspondiente según el
 		// comando
@@ -70,6 +68,9 @@ public class Main {
 
 		// Añade los comandos a la lista de comandos de barra
 		jda.updateCommands().addCommands(getSlashCommandList(manager)).queue();
+		jda.getGuilds().forEach(guild -> {
+			guild.updateCommands().addCommands(getSlashCommandList(manager)).queue();
+		});
 
 		// Muestra los comandos actualizados
 		showUpdatedCommands(jda);
@@ -88,7 +89,6 @@ public class Main {
 				// shows the command name, description and options with the logger format of jda
 				System.out.println("Command: " + command.getName() + " - " + command.getDescription()
 						+ " - Options: " + command.getOptions());
-
 			});
 		});
 
@@ -97,10 +97,10 @@ public class Main {
 	/**
 	 * Método que devuelve un array de OptionData a partir de una lista de opciones
 	 * 
-	 * @param List<Option> options lista de opciones
+	 * @param List<OptionData> options lista de opciones
 	 * @return OptionData[] array de OptionData
 	 */
-	private static OptionData[] getOptionData(List<Option> options) {
+	private static OptionData[] getOptionData(List<OptionData> options) {
 		OptionData[] optionData = new OptionData[options.size()];
 		for (int i = 0; i < options.size(); i++) {
 			optionData[i] = new OptionData(options.get(i).getType(), options.get(i).getName(),
@@ -122,6 +122,18 @@ public class Main {
 					Commands.slash(name, command.getDescription()).addOptions(getOptionData(command.getOptions())));
 		});
 		return slashCommandList;
+	}
+
+	/**
+	 * Método que añade los comandos al manager
+	 * 
+	 * @param CommandManager manager manager de comandos
+	 */
+	private static void addCommands(CommandManager manager) {
+		manager.addCommand("ban", new Ban());
+		manager.addCommand("kick", new Kick());
+		manager.addCommand("avatar", new Avatar());
+		manager.addCommand("inviteinfo", new InviteInfo());
 	}
 
 }

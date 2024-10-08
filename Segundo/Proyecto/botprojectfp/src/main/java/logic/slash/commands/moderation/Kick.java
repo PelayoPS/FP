@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import logic.slash.commands.ICommand;
-import net.dv8tion.jda.api.interactions.commands.Command.Option;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.SlashCommandInteraction;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
@@ -17,11 +16,15 @@ public class Kick implements ICommand {
 
     private String description = "Kicks a user from the server it was executed on.";
 
-    private List<Option> options = new ArrayList<>() {
-        {
-            new OptionData(OptionType.USER, "user", "The user to kick.").setRequired(true);
-        }
-    };
+    private List<OptionData> options = new ArrayList<>();
+
+    /**
+     * Constructor de la clase Kick
+     */
+    public Kick() {
+        // añade la opción de usuario
+        options.add(new OptionData(OptionType.USER, "user", "The user to kick.").setRequired(true));
+    }
 
     /**
      * Método que ejecuta el comando de kick
@@ -72,10 +75,10 @@ public class Kick implements ICommand {
     /**
      * Método que devuelve las opciones del comando
      * 
-     * @return List<Option> opciones del comando
+     * @return List<OptionData> opciones del comando
      */
     @Override
-    public List<Option> getOptions() {
+    public List<OptionData> getOptions() {
         return options;
     }
 
@@ -104,10 +107,10 @@ public class Kick implements ICommand {
     /**
      * Método que establece las opciones del comando
      * 
-     * @param List<Option> options opciones del comando
+     * @param List<OptionData> options opciones del comando
      */
     @Override
-    public void setOptions(List<Option> options) {
+    public void setOptions(List<OptionData> options) {
         this.options = options;
     }
 

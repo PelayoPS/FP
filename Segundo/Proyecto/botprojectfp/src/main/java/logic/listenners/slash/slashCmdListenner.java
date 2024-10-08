@@ -28,7 +28,6 @@ public class SlashCmdListenner extends ListenerAdapter {
      */
     @Override
     public void onSlashCommandInteraction(@NonNls SlashCommandInteractionEvent event) {
-        
-        
+        manager.execute(event);
     }
 }

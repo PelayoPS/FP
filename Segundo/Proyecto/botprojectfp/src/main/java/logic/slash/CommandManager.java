@@ -30,12 +30,11 @@ public class CommandManager implements EventListener {
     /**
      * Método que ejecuta un comando
      * 
-     * @param String                       name nombre del comando
      * @param SlashCommandInteractionEvent event evento de interacción de comando de
      *                                     barra
      */
-    public void execute(String name, SlashCommandInteractionEvent event) {
-        commands.get(name).handle(event);
+    public void execute(SlashCommandInteractionEvent event) {
+        commands.get(event.getName()).handle(event);
     }
 
     /**
