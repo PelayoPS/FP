@@ -1,0 +1,6 @@
+Título: Discord bot Manager
+
+Introducción:
+    - Se pretende crear un bot de discord con diferentes módulos que permitan la administración de un servidor de discord.
+    - Se creará una aplicación de escritorio que permita la configuración del bot y la administración de los módulos.
+    - Se creará una aplicación móvil que permita la administración de los módulos.
