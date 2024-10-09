@@ -29,7 +29,7 @@ def juego50():
     suma, turno_jugador = bucle_principal(dificultad, suma, turno_jugador)
 
     # determinar el ganadora
-    if suma >= 50 and not turno_jugador:
+    if suma > 50 and turno_jugador:
         print("¡Has ganado!")
     else:
         print("¡Has perdido!")
@@ -64,10 +64,11 @@ def bucle_principal(dificultad, suma, turno_jugador):
         turno_jugador = False
         ordenador = run_dificultad(dificultad, jugador)
         print("Ordenador: ", ordenador)
+        turno_jugador = True
         suma = suma + jugador + ordenador
         print("Suma: ", suma)
         print("")
-        turno_jugador = True
+        
     return suma, turno_jugador
 
 def run_dificultad(dificultad, jugador):
