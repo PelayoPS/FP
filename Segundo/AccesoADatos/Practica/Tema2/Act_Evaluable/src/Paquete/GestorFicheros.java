@@ -1,8 +1,6 @@
 package Paquete;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -95,6 +93,7 @@ public class GestorFicheros {
 			// itera sobre los ficheros y si son un archivo busca el fichero a crear
 			// sabiendo la carpeta donde se encuentra
 			Files.walk(root).filter(Files::isRegularFile).forEach(f -> {
+				// si el fichero ya existe en la carpeta se manda un mensaje de error
 				if (f.getParent().getFileName().toString().equals(carpeta) && f.getFileName().toString().equals(fichero)) {
 					System.out.println("El fichero ya existe");
 					return;
@@ -125,8 +124,10 @@ public class GestorFicheros {
 			Path root = Paths.get("Carp1");
 			// itera sobre los ficheros y si son un archivo busca el fichero a borrar
 			Files.walk(root).filter(Files::isRegularFile).forEach(f -> {
+				// si encuentra el fichero se borra
 				if (f.getFileName().toString().equals(fichero)) {
 					try {
+						// se borra el fichero
 						Files.delete(f);
 						return;
 					} catch (IOException e) {
@@ -169,9 +170,10 @@ public class GestorFicheros {
 						
 						// se crea la carpeta destino
 						Files.createDirectory(f.resolveSibling(destino));
-						// copia los archivos de la carpeta origen en la carpeta destino
+						// irea sobre los ficheros 
 						Files.walk(f).filter(Files::isRegularFile).forEach(file -> {
 							try {
+								// se copian los ficheros en la carpeta destino como carpetas hermanas
 								Files.copy(file, Paths.get(f.resolveSibling(destino).toString(), file.getFileName().toString()));
 							} catch (IOException e) {
 								e.printStackTrace();
