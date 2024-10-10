@@ -97,23 +97,20 @@ public class GestorFicheros {
 				if (f.getFileName().toString().equals(carpeta)) {
 					// sabiendo la carpeta donde se encuentra
 					try {
-						Object[] files = Files.walk(root).filter(Files::isRegularFile).toArray();
-						for (Object file : files) {
-							// si el fichero ya existe se manda un mensaje de error
-							if (file.toString().contains(fichero)) {
-								System.out.println("El fichero ya existe");
-								return;
-							}
-						}						
-						// se crea el fichero
+						// guarda si el fichero ya existe
+						boolean existe = Files.walk(root).filter(Files::isRegularFile).anyMatch(file -> file.getFileName().toString().equals(fichero));
+						// si el fichero ya existe se manda un mensaje de error
+						if (existe) {
+							System.out.println("El fichero ya existe");
+							return;
+						}
+						// como la carpeta existe y el fichero no, se crea
 						Files.createFile(f.resolve(fichero));
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
 				}
 			});
-			
-					
 
 		} catch (IOException e) {
 			e.printStackTrace();
