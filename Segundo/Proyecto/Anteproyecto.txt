@@ -1,6 +1,55 @@
 Título: Discord bot Manager
 
 Introducción:
-    - Se pretende crear un bot de discord con diferentes módulos que permitan la administración de un servidor de discord.
-    - Se creará una aplicación de escritorio que permita la configuración del bot y la administración de los módulos.
-    - Se creará una aplicación móvil que permita la administración de los módulos.
+    - En la actualidad se pueden encontrar una gran cantidad de bots de discord con diferentes funcionalidades, desde bots de música hasta bots de moderación. Aunque la mayoría de esos bots se ejecutan mediante una web dentro de los propios servidores de los desarrolladores haciendo que se tenga menos control y privacidad sobre los datos que se manejan.
+    - Este proyecto busca crear un bot de discord que se pueda ejecutar en un servidor propio, permitiendo tener un mayor control sobre los datos que se manejan y las funcionalidades que se pueden añadir. Todo esto sin que el usuario tenga que preocuparse por la infraestructura necesaria para ejecutar el bot ya que el bot proporcionará una interfaz gráfica para la gestión de los servidores tanto de escritorio como de móvil.
+Finalidad:
+    - Este proyecto será usado para la administración de servidores de discord, permitiendo a los usuarios tener un mayor control sobre los datos que se manejan y las funcionalidades que se pueden añadir mediante un sistema modular.
+    - El bot permitirá a los usuarios tener una interfaz gráfica para la gestión de los servidores de discord, permitiendo a los usuarios tener un mayor control sobre los datos que se manejan y las funcionalidades que se pueden añadir.
+    - Tener la capacidad de controlar cuando se ejecuta el bot y que funcionalidades se pueden añadir.
+Objetivo:
+    - Funciones específicas:
+        -. Creación de canales de voz y texto especificando categoría.
+        -. Creación de roles con permisos específicos.
+        -. Obtención de información de los usuarios.
+        -. Moderación de mensajes con reglas personalizadas.
+        -. Banear usuarios.
+        -. Kick de usuarios.
+        -. Creación de eventos.
+        -. Creación de encuestas.
+        -. Creación de roles automáticos.
+        -. Creación de canales de voz temporales.
+        -. Creación de canales de texto temporales.
+        -. Creación de canales de texto con permisos específicos.
+        -. Creación de canales de voz con permisos específicos.
+        ...
+Medios hardware y software a utilizar:
+    - Hardware:
+        -. Pc de escritorio.
+        -. Móvil.
+    - Software:
+        -. vscode.
+        -. Java
+        -. Discord API(JDA)
+        -. Discord
+        -. Git
+        -. Github
+        -. Maven
+        -. Librerías para interfaz gráfica
+        -. Librerías para base de datos
+        -. Android Studio
+Bibliografía:
+    - https://discord.com/developers/docs/intro
+    - https://jda.wiki
+    - https://www.apa7.org
+    - https://www.discord.com
+    - https://www.github.com
+    - https://docs.oracle.com/en/java/javase/21/docs/
+Planificación:
+    - 1. Creación del proyecto en github.
+    - 2. Creación de la lógica del bot.
+    - 3. Creación de la base de datos.
+    - 4. Creación de la interfaz gráfica.
+    - 5. Pruebas de funcionamiento.
+    
+
