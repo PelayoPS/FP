@@ -91,14 +91,26 @@ public class GestorFicheros {
 			// se crea el path de la carpeta raíz
 			Path root = Paths.get("Carp1");
 			// itera sobre los ficheros y si son un archivo busca el fichero a crear
-			// sabiendo la carpeta donde se encuentra
-			Files.walk(root).filter(Files::isRegularFile).forEach(f -> {
-				// si el fichero ya existe en la carpeta se manda un mensaje de error
-				if (f.getParent().getFileName().toString().equals(carpeta) && f.getFileName().toString().equals(fichero)) {
-					System.out.println("El fichero ya existe");
-					return;
+			
+			// si la carpeta no existe se manda un mensaje de error
+			Files.walk(root).filter(Files::isDirectory).forEach(f -> {
+				if (f.getFileName().toString().equals(carpeta)) {
+					// sabiendo la carpeta donde se encuentra
+					try {
+						Files.walk(root).filter(Files::isRegularFile).forEach(file -> {
+							// si el fichero ya existe en la carpeta se manda un mensaje de error
+							if (file.getParent().getFileName().toString().equals(carpeta) && f.getFileName().toString().equals(fichero)) {
+								System.out.println("El fichero ya existe");
+								return;
+							}
+						});
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 				}
-			});			
+			});
+			
+					
 
 		} catch (IOException e) {
 			e.printStackTrace();
