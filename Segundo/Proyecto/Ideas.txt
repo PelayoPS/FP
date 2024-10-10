@@ -1,6 +1,0 @@
-Se pretende unir todo lo aprendido, aplicación de escritorio con acceso a base de datos y visualización en móvil.
-Recomendable empezar por la parte de escritorio.
-Sobre la documentación:
-    - Justificación del proyecto y referencias usando apa-7
-    
-
