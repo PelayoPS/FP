@@ -2,14 +2,15 @@ package main;
 
 import java.util.Scanner;
 
-
 import logic.listenners.ai_chat.GeminiClient;
 import logic.listenners.ai_chat.aiChat;
 import logic.listenners.slash.SlashCmdListenner;
 import logic.slash.CommandManager;
+import logic.slash.commands.ICommand;
 import logic.slash.commands.moderation.Ban;
 import logic.slash.commands.moderation.InviteInfo;
 import logic.slash.commands.moderation.Kick;
+import logic.slash.commands.owner_only.OnwerSendAiText;
 import logic.slash.commands.user_related.Avatar;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -23,7 +24,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-
 
 	/**
 	 * Método principal
@@ -60,7 +60,7 @@ public class Main {
 
 		// Añade los comandos usando la clase CommandManager
 		CommandManager manager = new CommandManager();
-		addCommands(manager);
+		addCommands(manager, gemini);
 
 		// El manager es un listenner que llama al execute correspondiente según el
 		// comando
@@ -87,8 +87,8 @@ public class Main {
 			System.out.println("Loaded commands:");
 			commands.forEach(command -> {
 				// shows the command name, description and options with the logger format of jda
-				System.out.println("Command: " + command.getName() + " - " + command.getDescription()
-						+ " - Options: " + command.getOptions());
+				System.out.println("Command: " + command.getName() + " - " + command.getDescription() + " - Options: "
+						+ command.getOptions());
 			});
 		});
 
@@ -129,11 +129,21 @@ public class Main {
 	 * 
 	 * @param CommandManager manager manager de comandos
 	 */
-	private static void addCommands(CommandManager manager) {
-		manager.addCommand("ban", new Ban());
-		manager.addCommand("kick", new Kick());
-		manager.addCommand("avatar", new Avatar());
-		manager.addCommand("inviteinfo", new InviteInfo());
+	private static void addCommands(CommandManager manager, GeminiClient gemini) {
+		// owner only commands
+		ICommand ownerSendAiText = new OnwerSendAiText(gemini);
+		manager.addCommand(ownerSendAiText.getName(), ownerSendAiText);
+		
+		// mod commands
+		ICommand ban = new Ban();
+		manager.addCommand(ban.getName(), ban);
+		ICommand kick = new Kick();
+		manager.addCommand(kick.getName(), kick);
+		ICommand inviteInfo = new InviteInfo();
+
+		// user related commands
+		ICommand avatar = new Avatar();
+		manager.addCommand(avatar.getName(), avatar);
 	}
 
 }
