@@ -23,7 +23,7 @@ public class OnwerSendAiText implements ICommand {
 
     private String description = "Ai chat with owner's acc, only owner can use this command.";
 
-    List<OptionData> options = new ArrayList<>();
+    private List<OptionData> options = new ArrayList<>();
 
     private GeminiClient client = null;
 
