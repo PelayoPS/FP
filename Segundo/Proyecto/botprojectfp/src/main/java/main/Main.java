@@ -140,6 +140,7 @@ public class Main {
 		ICommand kick = new Kick();
 		manager.addCommand(kick.getName(), kick);
 		ICommand inviteInfo = new InviteInfo();
+		manager.addCommand(inviteInfo.getName(), inviteInfo);
 
 		// user related commands
 		ICommand avatar = new Avatar();
