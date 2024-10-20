@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Film library</string>
-    <string name="creador">Created by Pelayo</string>
+    <string name="app_name">Filmoteca</string>
+    <string name="obtener_soporte">Get support</string>
+    <string name="volver">back</string>
+    <string name="ver_película">Read film</string>
+    <string name="acerca_de">About</string>
+    <string name="escribir_pelicula">Write film</string>
+    <string name="editarPelicula">Edit film</string>
+    <string name="guardar">Save</string>
+    <string name="cancelar">Cancel</string>
+    <string name="editando">Editing film</string>
+    <string name="editada">Film edited correctly</string>
+    <string name="todo">Todo</string>
     <string name="btn_web">Go to the web</string>
-    <string name="btn_soporte">Get support</string>
+    <string name="btn_soporte">Support</string>
     <string name="btn_volver">Back</string>
 </resources>

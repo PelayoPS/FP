@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FilmDataActivity">
+
+    <ImageView
+        android:id="@+id/imagen_pelicula"
+        android:layout_width="151dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="108dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DatosPelicula"
+        app:srcCompat="@android:drawable/ic_menu_camera"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/EditarPelicula"
+        android:layout_width="194dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/editarPelicula"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagen_pelicula" />
+
+    <Button
+        android:id="@+id/volverPrincipal"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/volver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditarPelicula" />
+
+    <TextView
+        android:id="@+id/DatosPelicula"
+        android:layout_width="243dp"
+        android:layout_height="38dp"
+        android:text="DatosPelicula"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

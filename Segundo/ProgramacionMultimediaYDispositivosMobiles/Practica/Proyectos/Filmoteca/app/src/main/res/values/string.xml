@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Filmoteca</string>
+    <string name="obtener_soporte">Obtener soporte</string>
+    <string name="volver">volver</string>
+    <string name="ver_película">Ver película</string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="escribir_pelicula">Escribe película</string>
+    <string name="editarPelicula">Editar pelicula</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="editando">Editando Pelicula:</string>
+    <string name="editada">Pelicula editada correctamente</string>
+    <string name="todo">Todo</string>
+    <string name="creador" translatable="false">Pelayo Palacio Suárez</string>
+    <string name="btn_web">Ir al sitio web</string>
+    <string name="btn_soporte">Soporte</string>
+    <string name="btn_volver">Volver</string>
+</resources>
