@@ -6,6 +6,10 @@ public class Ejercicio9 {
 public static void mostrarVariablesEntorno() {
         try {
             ProcessBuilder builder = new ProcessBuilder("cmd", "/c", "echo %MI_VARIABLE%");
+
+            // usando Runtime
+            // Process proceso = Runtime.getRuntime().exec("cmd /c echo %MI_VARIABLE%");
+
             // Modifica las variables de entorno del proceso
             java.util.Map<String, String> environment = builder.environment();
             environment.put("MI_VARIABLE", "VALOR_PERSONALIZADO");
@@ -24,9 +28,6 @@ public static void mostrarVariablesEntorno() {
             // Espera a que el proceso termine
             int exitCode = proceso.waitFor();
             System.out.println("El proceso terminó con el código de salida: " + exitCode);
-
-           
-
 
         } catch (IOException | InterruptedException e) {
             System.out.println("Error al intentar modificar las variables de entorno.");

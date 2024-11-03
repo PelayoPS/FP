@@ -9,6 +9,10 @@ public class Ejercicio7 {
             // Ruta al archivo de texto en el escritorio
             String rutaArchivo = System.getProperty("user.home") + "\\Desktop\\texto.txt";
             ProcessBuilder builder = new ProcessBuilder("cmd", "/c", "start", rutaArchivo);
+
+            // usando Runtime
+            // Process proceso = Runtime.getRuntime().exec("cmd /c start " + rutaArchivo);
+
             Process proceso = builder.start();
             int exitCode = proceso.waitFor();
             System.out.println("El proceso para abrir el documento de texto terminó con el código de salida: " + exitCode);

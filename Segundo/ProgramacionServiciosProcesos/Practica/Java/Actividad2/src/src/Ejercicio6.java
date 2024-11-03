@@ -9,6 +9,9 @@ public class Ejercicio6 {
     public static void ejecutarArchivoJAR() {
         try {
             ProcessBuilder builder = new ProcessBuilder("cmd", "/c", "java -jar src\\src\\Ejercicio3.jar");
+
+            // usando Runtime
+            // Process proceso = Runtime.getRuntime().exec("cmd /c java -jar src\\src\\Ejercicio3.jar");
             
             Process proceso = builder.start();
 
@@ -39,6 +42,10 @@ public class Ejercicio6 {
     public static void lanzarPrograma(String programa) {
         try {
             ProcessBuilder builder = new ProcessBuilder("cmd", "/c", programa);
+
+            // usando Runtime
+            // Process proceso = Runtime.getRuntime().exec(programa);
+
             Process proceso = builder.start();
             int exitCode = proceso.waitFor();
             System.out.println("El proceso " + programa + " terminó con el código de salida: " + exitCode);

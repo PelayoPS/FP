@@ -11,6 +11,10 @@ public class Ejercicio13 {
         try {
             // Crear el primer proceso
             ProcessBuilder builder1 = new ProcessBuilder("cmd", "/c", "echo Proceso1");
+
+            // usando Runtime
+            // Process proceso1 = Runtime.getRuntime().exec("cmd /c echo Proceso1");
+
             Process proceso1 = builder1.start();
             // imprime el resultado del proceso 1
             InputStream salida = proceso1.getInputStream();
@@ -26,6 +30,10 @@ public class Ejercicio13 {
             if (exitCode1 == 0) {
                 // Crear y ejecutar el proceso 1.1
                 ProcessBuilder builder1_1 = new ProcessBuilder("cmd", "/c", "echo Proceso1.1");
+
+                // usando Runtime
+                // Process proceso1_1 = Runtime.getRuntime().exec("cmd /c echo Proceso1.1");
+
                 Process proceso1_1 = builder1_1.start();
                 // imprime el resultado del proceso 1.1
                 salida = proceso1_1.getInputStream();
@@ -38,6 +46,10 @@ public class Ejercicio13 {
             } else {
                 // Crear y ejecutar el proceso 1.2
                 ProcessBuilder builder1_2 = new ProcessBuilder("cmd", "/c", "echo Proceso1.2");
+
+                // usando Runtime
+                // Process proceso1_2 = Runtime.getRuntime().exec("cmd /c echo Proceso1.2");
+
                 Process proceso1_2 = builder1_2.start();
                 // imprime el resultado del proceso 1.2
                 salida = proceso1_2.getInputStream();

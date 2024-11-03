@@ -10,6 +10,9 @@ public class Ejercicio15 {
             // Crear el ProcessBuilder para ejecutar el comando en PowerShell
             ProcessBuilder builder = new ProcessBuilder("powershell.exe", "/c", "Get-Process | Sort-Object -Property CPU");
 
+            // usando Runtime
+            // Process proceso = Runtime.getRuntime().exec("powershell.exe /c Get-Process | Sort-Object -Property CPU");
+
             // Redirigir la salida al fichero cpu.txt
             File outputFile = new File("cpu.txt");
             builder.redirectOutput(outputFile);

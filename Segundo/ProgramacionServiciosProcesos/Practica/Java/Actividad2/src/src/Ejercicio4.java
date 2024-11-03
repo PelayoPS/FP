@@ -32,7 +32,32 @@ public class Ejercicio4 {
         }
     }
 
+    public static void ejecutarArchivoJARConRuntime() {
+        try {
+            Process proceso = Runtime.getRuntime().exec("cmd /c java -jar src\\src\\Ejercicio3.jar");
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(proceso.getInputStream()));
+
+            String linea;
+            System.out.println("Salida del archivo JAR:");
+            while ((linea = reader.readLine()) != null) {
+                System.out.println(linea);
+            }
+
+            int exitCode = proceso.waitFor();
+            System.out.println("El proceso JAR terminó con el código de salida: " + exitCode);
+
+        } catch (IOException e) {
+            System.out.println("Error al intentar ejecutar el archivo JAR.");
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            System.out.println("El proceso fue interrumpido.");
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         ejecutarArchivoJAR();
+        ejecutarArchivoJARConRuntime();
     }
 }

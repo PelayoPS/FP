@@ -20,6 +20,9 @@ public class Ejercicio14 {
                 // Crear el ProcessBuilder para ejecutar el comando Stop-Process en PowerShell
                 ProcessBuilder builder = new ProcessBuilder("powershell.exe", "/c", "Stop-Process -Name " + proceso);
 
+                // usando Runtime
+                // Process proceso = Runtime.getRuntime().exec("powershell.exe /c Stop-Process -Name " + proceso);
+
                 // Iniciar el proceso
                 Process procesoFinalizar = builder.start();
 

@@ -11,6 +11,9 @@ public class Ejercicio12 {
             // Crear el ProcessBuilder para ejecutar el comando Start-Process en PowerShell
             ProcessBuilder builder = new ProcessBuilder("powershell.exe", "/c", "Start-Process", "notepad.exe");
 
+            // usando Runtime
+            // Process proceso = Runtime.getRuntime().exec("powershell.exe /c Start-Process notepad.exe");
+
             // Iniciar el proceso
             Process proceso = builder.start();
 

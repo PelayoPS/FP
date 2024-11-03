@@ -11,6 +11,9 @@ public class Ejercicio11 {
             // Crear el ProcessBuilder para ejecutar el comando Get-Process en PowerShell
             ProcessBuilder builder = new ProcessBuilder("powershell.exe", "/c", "Get-Process");
 
+            // usando Runtime
+            // Process proceso = Runtime.getRuntime().exec("powershell.exe /c Get-Process");
+
             // Iniciar el proceso
             Process proceso = builder.start();
 

@@ -11,6 +11,9 @@ public class Ejercicio10 {
 
             ProcessBuilder builder = new ProcessBuilder("cmd", "/c", "dir", directorio);
 
+            // usando Runtime
+            // Process proceso = Runtime.getRuntime().exec("cmd /c dir " + directorio);
+
             File outputFile = new File("output.txt");
             builder.redirectOutput(outputFile);
 
