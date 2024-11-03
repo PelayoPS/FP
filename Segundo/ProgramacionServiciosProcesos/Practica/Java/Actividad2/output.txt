@@ -1,0 +1,20 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 1010-4AEF
+
+ Directory of C:\Users\pelay\Desktop\FP\Segundo\ProgramacionServiciosProcesos\Practica\Java\Actividad2\src\src
+
+03/11/2024  19:37    <DIR>          .
+03/11/2024  18:18    <DIR>          ..
+03/11/2024  18:52               670 Ejercicio1.java
+03/11/2024  19:38             1,200 Ejercicio10.java
+03/11/2024  18:57               713 Ejercicio2.java
+03/11/2024  19:11             1,530 Ejercicio3.jar
+03/11/2024  19:01             1,308 Ejercicio3.java
+03/11/2024  19:23             1,238 Ejercicio4.java
+03/11/2024  19:24             1,592 Ejercicio5.java
+03/11/2024  19:28             2,099 Ejercicio6.java
+03/11/2024  19:36               887 Ejercicio7.java
+03/11/2024  19:33               618 Ejercicio8.java
+03/11/2024  19:36             1,439 Ejercicio9.java
+              11 File(s)         13,294 bytes
+               2 Dir(s)  1,649,549,369,344 bytes free
