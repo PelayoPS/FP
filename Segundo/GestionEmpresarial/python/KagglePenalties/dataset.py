@@ -24,7 +24,34 @@ print(data_zones_efficiency)
 
 # create the heatmap and show it
 sns.heatmap(data_zones_efficiency, vmin=60, vmax=100, annot=True, cmap='Oranges_r', xticklabels=['Left', 'Center', 'Right'], yticklabels=['Top', 'Center', 'Bottom'], fmt=".2f")
+plt.title('Efficiency by Zone')
 plt.show()
+
+# heatmap of penalties by zone
+data_zones_penalties = data_zones['OnTarget']
+
+data_zones_penalties = data_zones_penalties.to_numpy().reshape(3,3)
+print(data_zones_penalties)
+
+sns.heatmap(data_zones_penalties, annot=True, cmap='Blues', xticklabels=['Left', 'Center', 'Right'], yticklabels=['Top', 'Center', 'Bottom'])
+plt.title('Penalties by Zone')
+plt.show()
+
+# bar plot of % of goals by the Penalty_Number
+
+data_penalties = data.groupby(['Penalty_Number']).agg({'Goal': 'sum', 'OnTarget': 'sum'})
+
+data_penalties['Efficiency'] = data_penalties['Goal'] / data_penalties['OnTarget'] * 100
+print(data_penalties)
+
+data_penalties_efficiency = data_penalties['Efficiency']
+
+data_penalties_efficiency.plot(kind='bar', color='skyblue')
+plt.ylabel('Efficiency (%)')
+plt.xlabel('Penalty Number')
+plt.title('Efficiency by Penalty Number')
+plt.show()
+
 
 
 
