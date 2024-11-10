@@ -5,7 +5,6 @@ import src.excepciones.PersistenciaException;
 import src.modelo.Libro;
 
 import java.util.List;
-import java.util.Optional;
 
 public class LibroPersistencia {
     private static final String FILE_PATH = "libros.dat";

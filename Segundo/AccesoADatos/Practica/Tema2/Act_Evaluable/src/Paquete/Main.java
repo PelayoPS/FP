@@ -3,7 +3,6 @@ package Paquete;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		GestorFicheros gestor=new GestorFicheros();
 		gestor.crearEstructura();
 		gestor.crearFichero("Carp2","Fich6");

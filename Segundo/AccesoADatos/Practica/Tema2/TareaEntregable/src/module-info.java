@@ -6,4 +6,5 @@
  *
  */
 module TareaEntregable {
+	requires org.junit.jupiter.api;
 }

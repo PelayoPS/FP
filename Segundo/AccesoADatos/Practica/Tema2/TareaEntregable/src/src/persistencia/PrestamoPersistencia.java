@@ -5,7 +5,6 @@ import src.excepciones.PrestamoNoEncontradoException;
 import src.modelo.Prestamo;
 
 import java.util.List;
-import java.util.Optional;
 
 public class PrestamoPersistencia {
     private static final String FILE_PATH = "prestamos.dat";
@@ -50,9 +49,9 @@ public class PrestamoPersistencia {
      * @return un Optional que contiene el préstamo si se encuentra, o vacío si no
      * @throws PersistenciaException si ocurre un error al obtener el préstamo por ID
      */
-    public Optional<Prestamo> obtenerPrestamoPorId(int id) throws PersistenciaException {
+    public Prestamo obtenerPrestamoPorId(int id) throws PersistenciaException {
         try {
-            return listarPrestamos().stream().filter(p -> p.getId() == id).findFirst();
+            return listarPrestamos().stream().filter(p -> p.getId() == id).findFirst().get();
         } catch (Exception e) {
             throw new PersistenciaException("Error al obtener el préstamo por ID", e);
         }
@@ -66,23 +65,18 @@ public class PrestamoPersistencia {
      * @throws PersistenciaException si ocurre un error al actualizar el préstamo
      * @throws PrestamoNoEncontradoException si el préstamo no se encuentra
      */
-    public boolean actualizarPrestamo(Prestamo prestamo) throws PersistenciaException, PrestamoNoEncontradoException {
+    public boolean actualizarPrestamo(Prestamo prestamo) throws PersistenciaException {
         try {
             List<Prestamo> prestamos = listarPrestamos();
-            boolean found = false;
             for (int i = 0; i < prestamos.size(); i++) {
                 if (prestamos.get(i).getId() == prestamo.getId()) {
                     prestamos.set(i, prestamo);
-                    found = true;
-                    break;
+                    persistencia.guardarObjetosEnArchivo(prestamos, FILE_PATH);
+                    return true;
                 }
             }
-            if (!found) {
-                throw new PrestamoNoEncontradoException("Préstamo no encontrado con ID: " + prestamo.getId());
-            }
-            persistencia.guardarObjetosEnArchivo(prestamos, FILE_PATH);
-            return found;
-        } catch (PersistenciaException e) {
+            return false;
+        } catch (Exception e) {
             throw new PersistenciaException("Error al actualizar el préstamo", e);
         }
     }

@@ -40,10 +40,10 @@ public class PrestamoService {
      * @throws PrestamoNoEncontradoException si el préstamo no se encuentra
      */
     public boolean devolverLibro(int idPrestamo) throws PersistenciaException, PrestamoNoEncontradoException {
-        if (persistencia.obtenerPrestamoPorId(idPrestamo).get() == null) {
+        if (persistencia.obtenerPrestamoPorId(idPrestamo) == null) {
             return false;
         } else {
-            Prestamo prestamo = persistencia.obtenerPrestamoPorId(idPrestamo).get();
+            Prestamo prestamo = persistencia.obtenerPrestamoPorId(idPrestamo);
             if (prestamo != null && prestamo.getFechaDevolucion() == null) {
                 prestamo.setFechaDevolucion(new Date());
                 persistencia.actualizarPrestamo(prestamo);
