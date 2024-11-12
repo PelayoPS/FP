@@ -63,6 +63,7 @@ public class Logger {
                     System.out.println(line);
                 }
             }
+            reader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -86,6 +87,7 @@ public class Logger {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(LOG_FILE_PATH, true))) {
             writer.write(logMessage);
             writer.newLine();
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
