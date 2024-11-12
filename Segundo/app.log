@@ -1,8 +1,0 @@
-[2024-11-12 09:11:19] [INFO] Aplicación arrancada
-[2024-11-12 09:11:24] [INFO] Mostrar logs
-[2024-11-12 09:11:34] [ERROR] Autor no encontrado con ID: 1
-[2024-11-12 09:11:40] [INFO] Mostrar logs
-[2024-11-12 09:15:18] [INFO] Aplicación arrancada
-[2024-11-12 09:15:20] [INFO] Mostrar logs
-[2024-11-12 09:15:39] [INFO] Autor agregado: Autor{id=1, nombre='p', fechaNacimiento='09/10/2001', nacionalidad='espa�a'}
-[2024-11-12 09:15:43] [INFO] Mostrar logs
