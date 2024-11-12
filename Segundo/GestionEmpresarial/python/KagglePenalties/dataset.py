@@ -40,6 +40,7 @@ print(data_zones_efficiency)
 # using the cmap parameter to set the color map with the '_r' to reverse the color scale
 # using the xticklabels and yticklabels parameters to set the labels of the axes
 # using the fmt parameter to set the format of the values in the cells to get 100 instead of 1e+02 shows the values as percentages
+# using the cbar_kws parameter to set the label of the color bar
 sns.heatmap(data_zones_efficiency, vmin=60, vmax=100, annot=True, cmap='Oranges_r', xticklabels=['Left', 'Center', 'Right'], yticklabels=['Top', 'Center', 'Bottom'], fmt=".2f", cbar_kws={'label': 'Efficiency (%)'})
 # using the title function to set the title of the plot
 plt.title('Efficiency by Zone')
@@ -62,6 +63,8 @@ print(data_zones_penalties)
 # using the annot parameter to show the values of the cells
 # using the cmap parameter to set the color map
 # using the xticklabels and yticklabels parameters to set the labels of the axes
+# using the fmt parameter to set the format of the values in the cells to get 100 instead of 1e+02 shows the values as percentages
+# using the cbar_kws parameter to set the label of the color bar
 sns.heatmap(data_zones_penalties, annot=True, cmap='Blues', xticklabels=['Left', 'Center', 'Right'], yticklabels=['Top', 'Center', 'Bottom'], fmt=".2f", cbar_kws={'label': 'Penalties (%)'})
 # using the title function to set the title of the plot
 plt.title('Penalties by Zone')
@@ -80,10 +83,14 @@ data_penalties_efficiency = data_penalties['Efficiency']
 
 #* STEP 7: Data Visualization bar plot of efficiency by penalty number
 
-# set the figure size to avoid overlapping values
+# set the figure size to avoid overlapping values on the bars
 plt.figure(figsize=(12, 7))
 
 # creates a bar plot with the efficiency by penalty number
+# kind='bar' sets the type of plot to a bar plot
+# color='skyblue' sets the color of the bars to sky blue
+# edgecolor='black' sets the color of the edges of the bars to black
+# width=0.8 sets the width of the bars to 0.8 so they do not overlap
 ax = data_penalties_efficiency.plot(kind='bar', color='skyblue', edgecolor='black', width=0.8)
 # sets the labels of the axes and the title of the plot
 plt.ylabel('Efficiency (%)')
@@ -91,7 +98,12 @@ plt.xlabel('Penalty Number')
 plt.title('Efficiency by Penalty Number')
 
 # add value labels on top of each bar
+# for each bar in the plot
 for p in ax.patches:
+    # add the value of the bar on top of it
+    # using the get_x() and get_width() functions to get the position of the bar
+    # using the get_height() function to get the value of the bar
+    # using the annotate function to add the value on top of the bar
     ax.annotate(f'{p.get_height():.2f}%', (p.get_x() + p.get_width() / 2., p.get_height()), 
                 ha='center', va='center', xytext=(0, 10), textcoords='offset points')
 
