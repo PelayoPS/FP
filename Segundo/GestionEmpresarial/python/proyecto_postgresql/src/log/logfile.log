@@ -1,0 +1,33 @@
+2024-11-14 14:14:13,043 - ERROR - Error al configurar la base de datos
+2024-11-14 14:14:16,541 - DEBUG - Este es un mensaje de depuración
+2024-11-14 14:14:16,541 - INFO - Este es un mensaje informativo
+2024-11-14 14:14:16,541 - WARNING - Este es un mensaje de advertencia
+2024-11-14 14:14:16,541 - ERROR - Este es un mensaje de error
+2024-11-14 14:14:16,541 - CRITICAL - Este es un mensaje crítico
+2024-11-14 14:14:41,894 - INFO - Base de datos configurada correctamente
+2024-11-14 14:23:04,383 - INFO - Base de datos configurada correctamente
+2024-11-14 14:23:55,664 - INFO - Base de datos configurada correctamente
+2024-11-14 14:24:56,247 - INFO - Conexión a la base de datos establecida
+2024-11-14 14:25:29,796 - INFO - Conexión a la base de datos establecida
+2024-11-14 14:26:35,905 - INFO - Conexión a la base de datos establecida
+2024-11-14 14:26:52,474 - ERROR - Conexión a la base de datos establecida
+2024-11-14 14:27:34,464 - INFO - Conexión a la base de datos establecida
+2024-11-14 14:27:34,464 - INFO - Exportando tablas a CSV...
+2024-11-14 14:28:05,458 - INFO - Conexión a la base de datos establecida
+2024-11-14 14:28:05,458 - INFO - Exportando tablas a CSV...
+2024-11-14 14:29:07,005 - INFO - Conexión a la base de datos establecida
+2024-11-14 14:29:07,005 - INFO - Exportando tablas a CSV...
+2024-11-14 14:29:07,032 - INFO - Tablas exportadas correctamente
+2024-11-14 14:29:07,033 - INFO - Proceso finalizado correctamente
+2024-11-14 14:30:23,147 - INFO - Conexión a la base de datos establecida
+2024-11-14 14:30:23,147 - INFO - Exportando tablas a CSV...
+2024-11-14 14:30:23,187 - INFO - Tablas exportadas correctamente
+2024-11-14 14:30:23,187 - INFO - Proceso finalizado correctamente
+2024-11-14 14:30:58,617 - INFO - Conexión a la base de datos establecida
+2024-11-14 14:30:58,617 - INFO - Exportando tablas a CSV...
+2024-11-14 14:30:58,643 - ERROR - Error al exportar las tablas a CSV: list index out of range
+2024-11-14 14:31:14,784 - INFO - Conexión a la base de datos establecida
+2024-11-14 14:31:14,784 - INFO - Exportando tablas a CSV...
+2024-11-14 14:31:14,811 - ERROR - Error al exportar las tablas a CSV: list assignment index out of range
+2024-11-14 14:32:06,331 - INFO - Conexión a la base de datos establecida
+2024-11-14 14:32:06,331 - INFO - Exportando tablas a CSV...
