@@ -4,8 +4,13 @@ from datetime import date
 import src.log.logger as logger
 import src.data.export_database as export_database
 
-
 def main():
+    """
+    Función principal de la aplicación.
+
+    Configura el logger, solicita las credenciales de la base de datos al usuario,
+    configura la base de datos y exporta las tablas a archivos CSV.
+    """
     my_logger = logger.log_setup()
     # Variables de configuración
     user1 = input("Introduce el nombre de usuario de la base de datos: ")
@@ -27,9 +32,6 @@ def main():
         else:
             my_logger.info(message)
             my_logger.info("Proceso finalizado correctamente")
-    
-    
-        
 
 if __name__ == "__main__":
     main()
