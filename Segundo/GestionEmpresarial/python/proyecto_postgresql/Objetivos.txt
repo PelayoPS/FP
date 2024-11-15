@@ -1,0 +1,15 @@
+Objetivo del proyecto:
+- Estudio de python utilizando la base de datos postgresql.
+- Creación de un manual de usuario y un manual de instalación(librerías y entornos):
+    -. Instalación de python.
+    -. Instalación de postgresql.
+- Creación de un manual técnico:
+    -. Creación de una base de datos.
+    -. Creación de tablas.
+    -. Inserción de datos.
+    -. Consultas.
+    -. Actualización de datos.
+    -. Persistencia.
+    -. Librerías y funciones usadas.
+    -. Requisitos funcionales.
+    -. Bibliografía.

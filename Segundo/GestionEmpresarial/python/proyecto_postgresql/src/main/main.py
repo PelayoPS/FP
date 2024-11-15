@@ -23,6 +23,12 @@ def main():
         return
     else:
         my_logger.info(message)
+        # !TODO
+        # Load gui module
+
+        # After gui module runs and its closed we can save the data to the database using a list
+
+
         # Exportar tablas a CSV
         my_logger.info("Exportando tablas a CSV...")
         result, message = export_database.export_all_tables_to_csv(user1, password1)
