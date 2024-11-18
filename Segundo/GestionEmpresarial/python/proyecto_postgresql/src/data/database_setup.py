@@ -1,6 +1,7 @@
 
 import psycopg2
 
+
 def setup(user1, password1):
     
     # Comprueba si la base de datos ya existe
