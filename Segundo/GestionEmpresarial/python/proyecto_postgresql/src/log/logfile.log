@@ -107,3 +107,9 @@
 2024-11-18 10:55:10,904 - INFO - Exportando tablas a CSV...
 2024-11-18 10:55:10,944 - INFO - Tablas exportadas correctamente
 2024-11-18 10:55:10,944 - INFO - Proceso finalizado correctamente
+2024-11-18 11:53:14,970 - INFO - Conexión a la base de datos establecida
+2024-11-18 11:53:14,970 - INFO - Cargando interfaz gráfica...
+2024-11-18 11:53:23,569 - INFO - Datos guardados: Usuario: p, Tareas: 1, Tareas Completadas: 1, Día: Lunes
+2024-11-18 11:53:32,178 - INFO - Exportando tablas a CSV...
+2024-11-18 11:53:32,212 - INFO - Tablas exportadas correctamente
+2024-11-18 11:53:32,212 - INFO - Proceso finalizado correctamente
