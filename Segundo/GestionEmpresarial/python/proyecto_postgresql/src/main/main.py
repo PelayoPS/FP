@@ -3,6 +3,8 @@ import src.data.database_setup as database_setup
 from datetime import date
 import src.log.logger as logger
 import src.data.export_database as export_database
+import tkinter as tk
+from src.interface.gui import App
 
 def main():
     """
@@ -23,11 +25,12 @@ def main():
         return
     else:
         my_logger.info(message)
-        # !TODO
-        # Load gui module
-
-        # After gui module runs and its closed we can save the data to the database using a list
-
+        # Cargar el módulo de la interfaz gráfica
+        my_logger.info("Cargando interfaz gráfica...")
+        root = tk.Tk()
+        app = App(root, my_logger)
+        root.mainloop()
+        # Después de que la interfaz gráfica se cierre, podemos guardar los datos en la base de datos usando una lista
 
         # Exportar tablas a CSV
         my_logger.info("Exportando tablas a CSV...")
