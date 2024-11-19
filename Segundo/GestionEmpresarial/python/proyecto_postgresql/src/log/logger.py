@@ -1,4 +1,5 @@
 import logging
+import os
 
 def log_setup():
     """
@@ -16,11 +17,18 @@ def log_setup():
     # Nivel de los mensajes que se van a mostrar
     logger.setLevel(logging.DEBUG)
 
+    # Crear el directorio de logs si no existe
+    log_dir = os.path.join(os.path.dirname(__file__), 'logs')
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+    
+
     # Formato del logger
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 
     # Handler para guardar en archivo
-    file_handler = logging.FileHandler('src/log/logfile.log', encoding='utf-8')
+    log_file = os.path.join(log_dir, 'logfile.log')
+    file_handler = logging.FileHandler(log_file, encoding='utf-8')
     # Asignar el formato al handler
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
@@ -39,12 +47,6 @@ def log_setup():
         }
 
         def emit(self, record):
-            """
-            Emite un registro de log con colores.
-
-            Args:
-                record (logging.LogRecord): El registro de log a emitir.
-            """
             try:
                 message = self.format(record)
                 color = self.COLORS.get(record.levelname, '\033[0m')
@@ -58,12 +60,3 @@ def log_setup():
     logger.addHandler(console_handler)
 
     return logger
-
-# Ejemplo de uso
-if __name__ == "__main__":
-    logger = log_setup()
-    logger.debug("Este es un mensaje de depuración")
-    logger.info("Este es un mensaje informativo")
-    logger.warning("Este es un mensaje de advertencia")
-    logger.error("Este es un mensaje de error")
-    logger.critical("Este es un mensaje crítico")
