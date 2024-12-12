@@ -1,8 +1,6 @@
 package src.logica;
 
 import java.util.List;
-import java.io.*;
-
 import src.excepciones.AutorNoEncontradoException;
 import src.excepciones.LibroNoEncontradoException;
 import src.excepciones.PersistenciaException;
@@ -10,17 +8,26 @@ import src.excepciones.PrestamoNoEncontradoException;
 import src.modelo.Autor;
 import src.modelo.Libro;
 import src.modelo.Prestamo;
-import src.persistencia.PrestamoPersistencia;
+import src.persistencia.Persistencia;
 
+/**
+ * Servicio de biblioteca que gestiona autores, libros y préstamos.
+ */
 public class BibliotecaService {
     private AutorService autorService;
     private LibroService libroService;
     private PrestamoService prestamoService;
+    private Persistencia persistencia;
 
+    /**
+     * Constructor de BibliotecaService.
+     * Inicializa los servicios de autor, libro, préstamo y persistencia.
+     */
     public BibliotecaService() {
         autorService = new AutorService();
         libroService = new LibroService();
         prestamoService = new PrestamoService();
+        persistencia = new Persistencia();
     }
 
     /**
@@ -82,7 +89,7 @@ public class BibliotecaService {
      * Busca un autor por su ID.
      *
      * @param id el ID del autor
-     * @return un Optional que contiene el autor si se encuentra, o vacío si no
+     * @return el autor encontrado
      * @throws AutorNoEncontradoException si el autor no se encuentra
      * @throws PersistenciaException      si ocurre un error al buscar el autor
      */
@@ -94,7 +101,7 @@ public class BibliotecaService {
      * Busca un libro por su ID.
      *
      * @param id el ID del libro
-     * @return un Optional que contiene el libro si se encuentra, o vacío si no
+     * @return el libro encontrado
      * @throws PersistenciaException      si ocurre un error al buscar el libro
      * @throws LibroNoEncontradoException si el libro no se encuentra
      */
@@ -156,5 +163,24 @@ public class BibliotecaService {
         return libroService.listarLibros();
     }
 
+    /**
+     * Exporta toda la información de la base de datos a un archivo CSV.
+     *
+     * @param filePath la ruta del archivo CSV
+     * @throws PersistenciaException si ocurre un error al exportar los datos
+     */
+    public void exportarDatosCSV(String filePath) throws PersistenciaException {
+        persistencia.exportarDatosCSV(filePath);
+    }
+
+    /**
+     * Importa todos los registros almacenados en un archivo CSV a la base de datos.
+     *
+     * @param filePath la ruta del archivo CSV
+     * @throws PersistenciaException si ocurre un error al importar los datos
+     */
+    public void importarDatosCSV(String filePath) throws PersistenciaException {
+        persistencia.importarDatosCSV(filePath);
+    }
 
 }

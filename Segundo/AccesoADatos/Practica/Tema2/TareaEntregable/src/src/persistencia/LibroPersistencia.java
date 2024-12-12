@@ -11,10 +11,8 @@ import java.util.List;
  * Clase que maneja la persistencia de objetos de tipo Libro.
  */
 public class LibroPersistencia implements IPersistencia<Libro> {
-    private Persistencia persistencia;
 
     public LibroPersistencia() {
-        persistencia = new Persistencia();
     }
 
     @Override

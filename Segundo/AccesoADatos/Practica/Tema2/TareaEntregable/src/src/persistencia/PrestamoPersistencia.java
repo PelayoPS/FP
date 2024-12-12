@@ -8,10 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PrestamoPersistencia implements IPersistencia<Prestamo> {
-    private Persistencia persistencia;
 
     public PrestamoPersistencia() {
-        persistencia = new Persistencia();
     }
 
     @Override

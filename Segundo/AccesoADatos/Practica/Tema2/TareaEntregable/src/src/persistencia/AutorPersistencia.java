@@ -11,10 +11,8 @@ import java.util.List;
  * Clase que maneja la persistencia de objetos de tipo Autor.
  */
 public class AutorPersistencia implements IPersistencia<Autor> {
-    private Persistencia persistencia;
 
     public AutorPersistencia() {
-        persistencia = new Persistencia();
     }
 
     @Override

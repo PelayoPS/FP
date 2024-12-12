@@ -1,8 +1,14 @@
 package src.persistencia;
 
 import java.io.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import src.excepciones.PersistenciaException;
 
 /**
  * Clase que maneja la persistencia de objetos en archivos.
@@ -10,48 +16,93 @@ import java.util.List;
 public class Persistencia {
 
     /**
-     * Guarda un objeto en el archivo especificado.
+     * Exporta toda la información de la base de datos a un archivo CSV.
      *
-     * @param objeto el objeto a guardar
-     * @param filePath la ruta del archivo donde se guardará el objeto
-     * @param <T> el tipo del objeto
+     * @param filePath la ruta del archivo CSV
+     * @throws PersistenciaException si ocurre un error al exportar los datos
      */
-    public <T> void guardarObjeto(T objeto, String filePath) {
-        List<T> objetos = listarObjetos(filePath);
-        objetos.add(objeto);
-        guardarObjetosEnArchivo(objetos, filePath);
-    }
+    public void exportarDatosCSV(String filePath) throws PersistenciaException {
+        try (Connection conn = DatabaseConnection.getInstance().getConnection();
+             Statement stmt = conn.createStatement();
+             PrintWriter writer = new PrintWriter(new FileWriter(filePath))) {
 
-    /**
-     * Lista todos los objetos almacenados en el archivo especificado.
-     *
-     * @param filePath la ruta del archivo de donde se leerán los objetos
-     * @param <T> el tipo de los objetos
-     * @return una lista de objetos leídos del archivo
-     */
-    public <T> List<T> listarObjetos(String filePath) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filePath))) {
-            return (List<T>) ois.readObject();
-        } catch (FileNotFoundException e) {
-            return new ArrayList<>();
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-            return new ArrayList<>();
+            // Exportar autores
+            ResultSet rs = stmt.executeQuery("SELECT * FROM autores");
+            writer.println("ID,Nombre,FechaNacimiento,Nacionalidad");
+            while (rs.next()) {
+                writer.printf("%d,%s,%s,%s%n",
+                        rs.getInt("id"),
+                        rs.getString("nombre"),
+                        rs.getString("fecha_nacimiento"),
+                        rs.getString("nacionalidad"));
+            }
+
+            // Exportar libros
+            rs = stmt.executeQuery("SELECT * FROM libros");
+            writer.println("\nID,Titulo,Genero,Anio,AutorID");
+            while (rs.next()) {
+                writer.printf("%d,%s,%s,%d,%d%n",
+                        rs.getInt("id"),
+                        rs.getString("titulo"),
+                        rs.getString("genero"),
+                        rs.getInt("anio"),
+                        rs.getInt("autor_id"));
+            }
+
+            // Exportar prestamos
+            rs = stmt.executeQuery("SELECT * FROM prestamos");
+            writer.println("\nID,LibroID,FechaPrestamo,FechaDevolucion");
+            while (rs.next()) {
+                writer.printf("%d,%d,%s,%s%n",
+                        rs.getInt("id"),
+                        rs.getInt("libro_id"),
+                        rs.getString("fecha_prestamo"),
+                        rs.getString("fecha_devolucion"));
+            }
+
+        } catch (SQLException | IOException e) {
+            throw new PersistenciaException("Error al exportar datos a CSV", e);
         }
     }
 
     /**
-     * Guarda una lista de objetos en el archivo especificado.
+     * Importa todos los registros almacenados en un archivo CSV a la base de datos.
      *
-     * @param objetos la lista de objetos a guardar
-     * @param filePath la ruta del archivo donde se guardarán los objetos
-     * @param <T> el tipo de los objetos
+     * @param filePath la ruta del archivo CSV
+     * @throws PersistenciaException si ocurre un error al importar los datos
      */
-    public <T> void guardarObjetosEnArchivo(List<T> objetos, String filePath) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filePath))) {
-            oos.writeObject(objetos);
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void importarDatosCSV(String filePath) throws PersistenciaException {
+        try (Connection conn = DatabaseConnection.getInstance().getConnection();
+             Statement stmt = conn.createStatement();
+             BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+
+            String line;
+            // Importar autores
+            reader.readLine(); // Saltar la cabecera
+            while ((line = reader.readLine()) != null && !line.isEmpty()) {
+                String[] fields = line.split(",");
+                stmt.executeUpdate(String.format("INSERT INTO autores (id, nombre, fecha_nacimiento, nacionalidad) VALUES (%d, '%s', '%s', '%s')",
+                        Integer.parseInt(fields[0]), fields[1], fields[2], fields[3]));
+            }
+
+            // Importar libros
+            reader.readLine(); // Saltar la cabecera
+            while ((line = reader.readLine()) != null && !line.isEmpty()) {
+                String[] fields = line.split(",");
+                stmt.executeUpdate(String.format("INSERT INTO libros (id, titulo, genero, anio, autor_id) VALUES (%d, '%s', '%s', %d, %d)",
+                        Integer.parseInt(fields[0]), fields[1], fields[2], Integer.parseInt(fields[3]), Integer.parseInt(fields[4])));
+            }
+
+            // Importar prestamos
+            reader.readLine(); // Saltar la cabecera
+            while ((line = reader.readLine()) != null && !line.isEmpty()) {
+                String[] fields = line.split(",");
+                stmt.executeUpdate(String.format("INSERT INTO prestamos (id, libro_id, fecha_prestamo, fecha_devolucion) VALUES (%d, %d, '%s', '%s')",
+                        Integer.parseInt(fields[0]), Integer.parseInt(fields[1]), fields[2], fields[3]));
+            }
+
+        } catch (SQLException | IOException e) {
+            throw new PersistenciaException("Error al importar datos desde CSV", e);
         }
     }
 }
