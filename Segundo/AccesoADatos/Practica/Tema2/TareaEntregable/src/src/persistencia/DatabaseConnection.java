@@ -8,15 +8,19 @@ public class DatabaseConnection {
     private static DatabaseConnection instance;
     private Connection connection;
 
-    private DatabaseConnection(String url, String user, String password) throws SQLException {
+    public DatabaseConnection(String url, String user, String password) throws SQLException {
         try {
+            // Cargar el driver JDBC de MySQL
+            Class.forName("com.mysql.cj.jdbc.Driver");
             this.connection = DriverManager.getConnection(url, user, password);
+        } catch (ClassNotFoundException e) {
+            throw new SQLException("Error al cargar el driver JDBC de MySQL", e);
         } catch (SQLException e) {
             throw new SQLException("Error al conectar a la base de datos", e);
         }
     }
 
-    public static DatabaseConnection getInstance()  {
+    public static DatabaseConnection getInstance() {
         if (instance == null) {
             throw new IllegalStateException("DatabaseConnection no ha sido inicializado");
         }

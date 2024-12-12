@@ -46,7 +46,7 @@ public class BibliotecaApp {
      */
     public void iniciar() {
         try {
-            DatabaseConnection.getInstance(dbUrl, dbUser, dbPassword);
+            new DatabaseConnection(dbUrl, dbUser, dbPassword);
         } catch (SQLException e) {
             Logger.logError("Error al conectar a la base de datos: " + e.getMessage());
             System.out.println("Error al conectar a la base de datos.");
@@ -91,7 +91,7 @@ public class BibliotecaApp {
     }
 
     private void mostrarInformacionBaseDeDatos() {
-        try (Connection conn = DatabaseConnection.getInstance(dbUrl, dbUser, dbPassword).getConnection()) {
+        try (Connection conn = DatabaseConnection.getInstance().getConnection()) {
             DatabaseMetaData metaData = conn.getMetaData();
             String[] types = {"TABLE"};
             ResultSet tables = metaData.getTables(null, null, "%", types);
