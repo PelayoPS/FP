@@ -23,7 +23,7 @@ public class LibroPersistenciaTest {
     public void testGuardarLibro() {
         Autor autor = new Autor(1, "Autor Nombre", "01/01/1970", "Nacionalidad");
         Libro libro = new Libro(1, "Titulo", "Genero", 2021, autor);
-        assertDoesNotThrow(() -> libroPersistencia.guardarLibro(libro));
+        assertDoesNotThrow(() -> libroPersistencia.guardar(libro));
     }
 
     @Test
@@ -31,8 +31,8 @@ public class LibroPersistenciaTest {
         Autor autor = new Autor(1, "Autor Nombre", "01/01/1970", "Nacionalidad");
         Libro libro = new Libro(1, "Titulo", "Genero", 2021, autor);
         try {
-            libroPersistencia.guardarLibro(libro);
-            List<Libro> libros = libroPersistencia.listarLibros();
+            libroPersistencia.guardar(libro);
+            List<Libro> libros = libroPersistencia.listar();
             assertNotNull(libros);
             assertFalse(libros.isEmpty());
             assertEquals(1, libros.get(0).getId());
@@ -46,11 +46,11 @@ public class LibroPersistenciaTest {
         Autor autor = new Autor(1, "Autor Nombre", "01/01/1970", "Nacionalidad");
         Libro libro = new Libro(1, "Titulo", "Genero", 2021, autor);
         try {
-            libroPersistencia.guardarLibro(libro);
-            Libro libroObtenido = libroPersistencia.obtenerLibroPorId(1);
-            assertTrue(libroObtenido != null);
-            assertEquals(1, libroObtenido != null ? libroObtenido.getId() : 0);
-        } catch (Exception e) {
+            libroPersistencia.guardar(libro);
+            Libro libroObtenido = libroPersistencia.obtenerPorId(1);
+            assertNotNull(libroObtenido);
+            assertEquals(1, libroObtenido.getId());
+        } catch (PersistenciaException e) {
             fail("No se esperaba una excepción: " + e.getMessage());
         }
     }
@@ -60,12 +60,12 @@ public class LibroPersistenciaTest {
         Autor autor = new Autor(1, "Autor Nombre", "01/01/1970", "Nacionalidad");
         Libro libro = new Libro(1, "Titulo", "Genero", 2021, autor);
         try {
-            libroPersistencia.guardarLibro(libro);
-            boolean eliminado = libroPersistencia.eliminarLibro(1);
+            libroPersistencia.guardar(libro);
+            boolean eliminado = libroPersistencia.eliminar(1);
             assertTrue(eliminado);
-            List<Libro> libros = libroPersistencia.listarLibros();
+            List<Libro> libros = libroPersistencia.listar();
             assertTrue(libros.isEmpty());
-        } catch (Exception e) {
+        } catch (PersistenciaException e) {
             fail("No se esperaba una excepción: " + e.getMessage());
         }
     }

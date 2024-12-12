@@ -21,15 +21,15 @@ public class AutorPersistenciaTest {
     @Test
     public void testGuardarAutor() {
         Autor autor = new Autor(1, "Nombre", "01/01/1970", "Nacionalidad");
-        assertDoesNotThrow(() -> autorPersistencia.guardarAutor(autor));
+        assertDoesNotThrow(() -> autorPersistencia.guardar(autor));
     }
 
     @Test
     public void testListarAutores() {
         Autor autor = new Autor(1, "Nombre", "01/01/1970", "Nacionalidad");
         try {
-            autorPersistencia.guardarAutor(autor);
-            List<Autor> autores = autorPersistencia.listarAutores();
+            autorPersistencia.guardar(autor);
+            List<Autor> autores = autorPersistencia.listar();
             assertNotNull(autores);
             assertFalse(autores.isEmpty());
             assertEquals(1, autores.get(0).getId());
@@ -42,11 +42,11 @@ public class AutorPersistenciaTest {
     public void testObtenerAutorPorId() {
         Autor autor = new Autor(1, "Nombre", "01/01/1970", "Nacionalidad");
         try {
-            autorPersistencia.guardarAutor(autor);
-            Autor autorObtenido = autorPersistencia.obtenerAutorPorId(1);
-            assertTrue(autorObtenido != null);
-            assertEquals(1, autorObtenido != null ? autorObtenido.getId() : 0);
-        } catch (Exception e) {
+            autorPersistencia.guardar(autor);
+            Autor autorObtenido = autorPersistencia.obtenerPorId(1);
+            assertNotNull(autorObtenido);
+            assertEquals(1, autorObtenido.getId());
+        } catch (PersistenciaException e) {
             fail("No se esperaba una excepción: " + e.getMessage());
         }
     }
@@ -55,12 +55,12 @@ public class AutorPersistenciaTest {
     public void testEliminarAutor() {
         Autor autor = new Autor(1, "Nombre", "01/01/1970", "Nacionalidad");
         try {
-            autorPersistencia.guardarAutor(autor);
-            boolean eliminado = autorPersistencia.eliminarAutor(1);
+            autorPersistencia.guardar(autor);
+            boolean eliminado = autorPersistencia.eliminar(1);
             assertTrue(eliminado);
-            List<Autor> autores = autorPersistencia.listarAutores();
+            List<Autor> autores = autorPersistencia.listar();
             assertTrue(autores.isEmpty());
-        } catch (Exception e) {
+        } catch (PersistenciaException e) {
             fail("No se esperaba una excepción: " + e.getMessage());
         }
     }

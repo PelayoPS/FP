@@ -7,10 +7,11 @@ import src.excepciones.PersistenciaException;
 import src.excepciones.PrestamoNoEncontradoException;
 import src.modelo.Libro;
 import src.modelo.Prestamo;
+import src.persistencia.IPersistencia;
 import src.persistencia.PrestamoPersistencia;
 
 public class PrestamoService {
-    private PrestamoPersistencia persistencia;
+    private IPersistencia<Prestamo> persistencia;
     private int id = 1;
 
     public PrestamoService() {
@@ -25,9 +26,9 @@ public class PrestamoService {
      * @throws PersistenciaException si ocurre un error al registrar el préstamo
      */
     public Prestamo registrarPrestamo(Libro libro) throws PersistenciaException {
-        id = persistencia.listarPrestamos().size() + 1;
+        id = persistencia.listar().size() + 1;
         Prestamo prestamo = new Prestamo(id, libro, new Date(), null);
-        persistencia.guardarPrestamo(prestamo);
+        persistencia.guardar(prestamo);
         return prestamo;
     }
 
@@ -40,13 +41,13 @@ public class PrestamoService {
      * @throws PrestamoNoEncontradoException si el préstamo no se encuentra
      */
     public boolean devolverLibro(int idPrestamo) throws PersistenciaException, PrestamoNoEncontradoException {
-        if (persistencia.obtenerPrestamoPorId(idPrestamo) == null) {
+        if (persistencia.obtenerPorId(idPrestamo) == null) {
             return false;
         } else {
-            Prestamo prestamo = persistencia.obtenerPrestamoPorId(idPrestamo);
+            Prestamo prestamo = persistencia.obtenerPorId(idPrestamo);
             if (prestamo != null && prestamo.getFechaDevolucion() == null) {
                 prestamo.setFechaDevolucion(new Date());
-                persistencia.actualizarPrestamo(prestamo);
+                persistencia.actualizar(prestamo);
                 return true;
             }
         }
@@ -61,6 +62,6 @@ public class PrestamoService {
      * @throws PersistenciaException si ocurre un error al listar los préstamos
      */
     public List<Prestamo> listarPrestamos() throws PersistenciaException {
-        return persistencia.listarPrestamos();
+        return persistencia.listar();
     }
 }

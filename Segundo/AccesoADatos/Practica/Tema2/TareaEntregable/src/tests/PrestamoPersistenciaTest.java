@@ -26,7 +26,7 @@ public class PrestamoPersistenciaTest {
         Autor autor = new Autor(1, "Autor Nombre", "01/01/1970", "Nacionalidad");
         Libro libro = new Libro(1, "Titulo", "Genero", 2021, autor);
         Prestamo prestamo = new Prestamo(1, libro, new Date(), null);
-        assertDoesNotThrow(() -> prestamoPersistencia.guardarPrestamo(prestamo));
+        assertDoesNotThrow(() -> prestamoPersistencia.guardar(prestamo));
     }
 
     @Test
@@ -35,8 +35,8 @@ public class PrestamoPersistenciaTest {
         Libro libro = new Libro(1, "Titulo", "Genero", 2021, autor);
         Prestamo prestamo = new Prestamo(1, libro, new Date(), null);
         try {
-            prestamoPersistencia.guardarPrestamo(prestamo);
-            List<Prestamo> prestamos = prestamoPersistencia.listarPrestamos();
+            prestamoPersistencia.guardar(prestamo);
+            List<Prestamo> prestamos = prestamoPersistencia.listar();
             assertNotNull(prestamos);
             assertFalse(prestamos.isEmpty());
             assertEquals(1, prestamos.get(0).getId());
@@ -51,9 +51,9 @@ public class PrestamoPersistenciaTest {
         Libro libro = new Libro(1, "Titulo", "Genero", 2021, autor);
         Prestamo prestamo = new Prestamo(1, libro, new Date(), null);
         try {
-            prestamoPersistencia.guardarPrestamo(prestamo);
-            Prestamo prestamoObtenido = prestamoPersistencia.obtenerPrestamoPorId(1);
-            assertTrue(prestamoObtenido != null);
+            prestamoPersistencia.guardar(prestamo);
+            Prestamo prestamoObtenido = prestamoPersistencia.obtenerPorId(1);
+            assertNotNull(prestamoObtenido);
             assertEquals(1, prestamoObtenido.getId());
         } catch (PersistenciaException e) {
             fail("No se esperaba una excepción: " + e.getMessage());
@@ -66,13 +66,13 @@ public class PrestamoPersistenciaTest {
         Libro libro = new Libro(1, "Titulo", "Genero", 2021, autor);
         Prestamo prestamo = new Prestamo(1, libro, new Date(), null);
         try {
-            prestamoPersistencia.guardarPrestamo(prestamo);
-            Prestamo prestamoObtenido = prestamoPersistencia.obtenerPrestamoPorId(1);
-            assertTrue(prestamoObtenido != null);
+            prestamoPersistencia.guardar(prestamo);
+            Prestamo prestamoObtenido = prestamoPersistencia.obtenerPorId(1);
+            assertNotNull(prestamoObtenido);
             prestamoObtenido.setFechaDevolucion(new Date());
-            prestamoPersistencia.actualizarPrestamo(prestamoObtenido);
-            Prestamo prestamoActualizado = prestamoPersistencia.obtenerPrestamoPorId(1);
-            assertTrue(prestamoActualizado != null);
+            prestamoPersistencia.actualizar(prestamoObtenido);
+            Prestamo prestamoActualizado = prestamoPersistencia.obtenerPorId(1);
+            assertNotNull(prestamoActualizado);
             assertNotNull(prestamoActualizado.getFechaDevolucion());
         } catch (PersistenciaException e) {
             fail("No se esperaba una excepción: " + e.getMessage());

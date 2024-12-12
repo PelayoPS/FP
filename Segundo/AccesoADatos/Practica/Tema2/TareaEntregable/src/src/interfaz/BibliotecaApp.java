@@ -1,14 +1,22 @@
 package src.interfaz;
 
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import src.log.Logger;
+import src.persistencia.DatabaseConnection;
 
 public class BibliotecaApp {
     private final AutorUI autorUI;
     private final LibroUI libroUI;
     private final PrestamoUI prestamoUI;
     private final Scanner scanner;
+    private String dbUrl;
+    private String dbUser;
+    private String dbPassword;
 
     /**
      * Constructor de la clase BibliotecaApp.
@@ -19,6 +27,16 @@ public class BibliotecaApp {
         libroUI = new LibroUI();
         prestamoUI = new PrestamoUI();
         scanner = new Scanner(System.in);
+        pedirCredencialesBaseDeDatos();
+    }
+
+    private void pedirCredencialesBaseDeDatos() {
+        System.out.print("Ingrese la URL de la base de datos: ");
+        dbUrl = scanner.nextLine();
+        System.out.print("Ingrese el usuario de la base de datos: ");
+        dbUser = scanner.nextLine();
+        System.out.print("Ingrese la contraseña de la base de datos: ");
+        dbPassword = scanner.nextLine();
     }
 
     /**
@@ -27,6 +45,14 @@ public class BibliotecaApp {
      * usuario.
      */
     public void iniciar() {
+        try {
+            DatabaseConnection.getInstance(dbUrl, dbUser, dbPassword);
+        } catch (SQLException e) {
+            Logger.logError("Error al conectar a la base de datos: " + e.getMessage());
+            System.out.println("Error al conectar a la base de datos.");
+            return;
+        }
+
         int opcion;
         do {
             mostrarMenuPrincipal();
@@ -38,6 +64,7 @@ public class BibliotecaApp {
                 case 2 -> libroUI.gestionarLibros();
                 case 3 -> prestamoUI.gestionarPrestamos();
                 case 4 -> Logger.mostrarLogs();
+                case 5 -> mostrarInformacionBaseDeDatos();
                 case 0 -> {
                     Logger.logInfo("Saliendo de la aplicación");
                     System.out.println("Saliendo de la aplicación...");
@@ -58,8 +85,30 @@ public class BibliotecaApp {
         System.out.println("2. Gestión de Libros");
         System.out.println("3. Gestión de Préstamos");
         System.out.println("4. Ver logs");
+        System.out.println("5. Mostrar información de la base de datos");
         System.out.println("0. Salir");
         System.out.print("Seleccione una opción: ");
+    }
+
+    private void mostrarInformacionBaseDeDatos() {
+        try (Connection conn = DatabaseConnection.getInstance(dbUrl, dbUser, dbPassword).getConnection()) {
+            DatabaseMetaData metaData = conn.getMetaData();
+            String[] types = {"TABLE"};
+            ResultSet tables = metaData.getTables(null, null, "%", types);
+            while (tables.next()) {
+                String tableName = tables.getString("TABLE_NAME");
+                System.out.println("Tabla: " + tableName);
+                ResultSet columns = metaData.getColumns(null, null, tableName, "%");
+                while (columns.next()) {
+                    String columnName = columns.getString("COLUMN_NAME");
+                    String columnType = columns.getString("TYPE_NAME");
+                    System.out.println("  Columna: " + columnName + " - Tipo: " + columnType);
+                }
+            }
+        } catch (SQLException e) {
+            Logger.logError("Error al mostrar la información de la base de datos: " + e.getMessage());
+            System.out.println("Error al mostrar la información de la base de datos.");
+        }
     }
 
     /**

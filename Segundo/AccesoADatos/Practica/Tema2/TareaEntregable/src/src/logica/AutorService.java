@@ -30,7 +30,7 @@ public class AutorService {
      */
     public Autor agregarAutor(int id, String nombre, String fechaNacimiento, String nacionalidad) throws PersistenciaException {
         Autor autor = new Autor(id, nombre, fechaNacimiento, nacionalidad);
-        persistencia.guardarAutor(autor);
+        persistencia.guardar(autor);
         return autor;
     }
 
@@ -42,7 +42,7 @@ public class AutorService {
      * @throws AutorNoEncontradoException si el autor no se encuentra
      */
     public Autor buscarAutorPorId(int id) throws AutorNoEncontradoException, PersistenciaException {
-        return persistencia.obtenerAutorPorId(id);
+        return persistencia.obtenerPorId(id);
     }
 
     /**
@@ -52,7 +52,7 @@ public class AutorService {
      * @throws PersistenciaException si ocurre un error al listar los autores
      */
     public List<Autor> listarAutores() throws PersistenciaException {
-        return persistencia.listarAutores();
+        return persistencia.listar();
     }
 
     /**
@@ -63,6 +63,6 @@ public class AutorService {
      * @throws AutorNoEncontradoException si el autor no se encuentra
      */
     public boolean eliminarAutor(int id) throws AutorNoEncontradoException, PersistenciaException {
-        return persistencia.eliminarAutor(id);
+        return persistencia.eliminar(id);
     }
 }

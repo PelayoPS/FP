@@ -29,7 +29,7 @@ public class LibroService {
     public Libro agregarLibro(int id, String titulo, String genero, int anio, Autor autor)
             throws PersistenciaException {
         Libro libro = new Libro(id, titulo, genero, anio, autor);
-        persistencia.guardarLibro(libro);
+        persistencia.guardar(libro);
         return libro;
     }
 
@@ -43,7 +43,7 @@ public class LibroService {
      * @throws LibroNoEncontradoException si el libro no se encuentra
      */
     public Libro buscarLibroPorId(int id) throws PersistenciaException, LibroNoEncontradoException {
-        return persistencia.obtenerLibroPorId(id);
+        return persistencia.obtenerPorId(id);
     }
 
     /**
@@ -54,7 +54,7 @@ public class LibroService {
      * @throws LibroNoEncontradoException si el libro no se encuentra
      */
     public List<Libro> listarLibros() throws PersistenciaException, LibroNoEncontradoException {
-        return persistencia.listarLibros();
+        return persistencia.listar();
     }
 
     /**
@@ -66,6 +66,6 @@ public class LibroService {
      * @throws PersistenciaException      si ocurre un error al eliminar el libro
      */
     public boolean eliminarLibro(int id) throws LibroNoEncontradoException, PersistenciaException {
-        return persistencia.eliminarLibro(id);
+        return persistencia.eliminar(id);
     }
 }
