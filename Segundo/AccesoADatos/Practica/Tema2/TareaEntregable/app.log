@@ -78,3 +78,15 @@
 [2024-12-13 09:17:53] [INFO] Tabla Prestamo creada con éxito
 [2024-12-13 09:17:53] [INFO] Todas las tablas se han creado con éxito
 [2024-12-13 09:17:59] [INFO] Datos exportados a CSV con éxito en el directorio: data
+[2024-12-13 09:29:31] [INFO] Guardando autor: Autor{id=1, nombre='Nombre', fechaNacimiento='01/01/1970', nacionalidad='Nacionalidad'}
+[2024-12-13 09:29:31] [ERROR] Error al conectar a la base de datos: The url cannot be null
+[2024-12-13 09:29:31] [ERROR] Error al guardar el autor: Error al conectar a la base de datos
+[2024-12-13 09:29:31] [INFO] Guardando autor: Autor{id=1, nombre='Nombre', fechaNacimiento='01/01/1970', nacionalidad='Nacionalidad'}
+[2024-12-13 09:29:31] [ERROR] Error al conectar a la base de datos: The url cannot be null
+[2024-12-13 09:29:31] [ERROR] Error al guardar el autor: Error al conectar a la base de datos
+[2024-12-13 09:29:31] [INFO] Guardando autor: Autor{id=1, nombre='Nombre', fechaNacimiento='01/01/1970', nacionalidad='Nacionalidad'}
+[2024-12-13 09:29:31] [ERROR] Error al conectar a la base de datos: The url cannot be null
+[2024-12-13 09:29:31] [ERROR] Error al guardar el autor: Error al conectar a la base de datos
+[2024-12-13 09:29:31] [INFO] Guardando autor: Autor{id=1, nombre='Nombre', fechaNacimiento='01/01/1970', nacionalidad='Nacionalidad'}
+[2024-12-13 09:29:31] [ERROR] Error al conectar a la base de datos: The url cannot be null
+[2024-12-13 09:29:31] [ERROR] Error al guardar el autor: Error al conectar a la base de datos
