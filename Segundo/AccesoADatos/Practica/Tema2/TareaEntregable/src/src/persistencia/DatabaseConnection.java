@@ -1,5 +1,7 @@
 package src.persistencia;
 
+import src.log.Logger;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -14,15 +16,19 @@ public class DatabaseConnection {
             Class.forName("com.mysql.cj.jdbc.Driver");
             this.connection = DriverManager.getConnection(url, user, password);
         } catch (ClassNotFoundException e) {
+            Logger.logError("Error al cargar el driver JDBC de MySQL: " + e.getMessage());
             throw new SQLException("Error al cargar el driver JDBC de MySQL", e);
         } catch (SQLException e) {
+            Logger.logError("Error al conectar a la base de datos: " + e.getMessage());
             throw new SQLException("Error al conectar a la base de datos", e);
         }
     }
 
-    public static DatabaseConnection getInstance() {
+    public static DatabaseConnection getInstance(String url, String user, String password) throws SQLException {
         if (instance == null) {
-            throw new IllegalStateException("DatabaseConnection no ha sido inicializado");
+            instance = new DatabaseConnection(url, user, password);
+        } else if (instance.getConnection().isClosed()) {
+            instance = new DatabaseConnection(url, user, password);
         }
         return instance;
     }

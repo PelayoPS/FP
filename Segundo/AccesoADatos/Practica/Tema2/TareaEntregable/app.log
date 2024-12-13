@@ -10,3 +10,71 @@
 [2024-12-12 21:00:14] [INFO] Mostrar logs
 [2024-12-12 21:20:05] [INFO] Aplicación arrancada
 [2024-12-12 21:20:05] [ERROR] Error al conectar a la base de datos: Error al conectar a la base de datos
+[2024-12-13 08:39:23] [INFO] Aplicación arrancada
+[2024-12-13 08:39:45] [ERROR] DatabaseConnection no ha sido inicializado
+[2024-12-13 08:39:46] [ERROR] DatabaseConnection no ha sido inicializado
+[2024-12-13 08:41:34] [INFO] Aplicación arrancada
+[2024-12-13 08:41:57] [ERROR] DatabaseConnection no ha sido inicializado
+[2024-12-13 08:51:17] [INFO] Aplicación arrancada
+[2024-12-13 08:51:20] [ERROR] Error al listar los autores
+[2024-12-13 08:51:36] [ERROR] Error al guardar el autor
+[2024-12-13 08:52:29] [ERROR] Error al listar los autores
+[2024-12-13 09:03:26] [INFO] Aplicación arrancada
+[2024-12-13 09:05:41] [INFO] Aplicación arrancada
+[2024-12-13 09:05:42] [INFO] Creando tabla Autor
+[2024-12-13 09:05:42] [INFO] Tabla Autor creada exitosamente
+[2024-12-13 09:05:42] [INFO] Tabla Libro creada con éxito
+[2024-12-13 09:05:42] [INFO] Tabla Prestamo creada con éxito
+[2024-12-13 09:05:42] [INFO] Todas las tablas se han creado con éxito
+[2024-12-13 09:07:50] [INFO] Aplicación arrancada
+[2024-12-13 09:07:50] [INFO] Creando tabla Autor
+[2024-12-13 09:07:50] [INFO] Tabla Autor creada exitosamente
+[2024-12-13 09:07:50] [INFO] Tabla Libro creada con éxito
+[2024-12-13 09:07:50] [INFO] Tabla Prestamo creada con éxito
+[2024-12-13 09:07:50] [INFO] Todas las tablas se han creado con éxito
+[2024-12-13 09:08:03] [INFO] Guardando autor: Autor{id=1, nombre='Pelayo', fechaNacimiento='09/10/2001', nacionalidad='Espa�a'}
+[2024-12-13 09:08:03] [INFO] Autor guardado exitosamente: Autor{id=1, nombre='Pelayo', fechaNacimiento='09/10/2001', nacionalidad='Espa�a'}
+[2024-12-13 09:08:03] [INFO] Autor agregado: Autor{id=1, nombre='Pelayo', fechaNacimiento='09/10/2001', nacionalidad='Espa�a'}
+[2024-12-13 09:08:34] [INFO] Listando autores
+[2024-12-13 09:08:34] [INFO] Autores listados exitosamente
+[2024-12-13 09:08:34] [INFO] Listado de autores.
+[2024-12-13 09:09:28] [INFO] Aplicación arrancada
+[2024-12-13 09:09:28] [INFO] Creando tabla Autor
+[2024-12-13 09:09:28] [INFO] Tabla Autor creada exitosamente
+[2024-12-13 09:09:28] [INFO] Tabla Libro creada con éxito
+[2024-12-13 09:09:28] [INFO] Tabla Prestamo creada con éxito
+[2024-12-13 09:09:28] [INFO] Todas las tablas se han creado con éxito
+[2024-12-13 09:09:36] [ERROR] Error al exportar datos a CSV: Table 'biblioteca.autores' doesn't exist
+[2024-12-13 09:09:36] [ERROR] Error al exportar datos: Error al exportar datos a CSV
+[2024-12-13 09:09:53] [INFO] Datos importados desde CSV con éxito: test.csv
+[2024-12-13 09:10:42] [INFO] Aplicación arrancada
+[2024-12-13 09:10:42] [INFO] Creando tabla Autor
+[2024-12-13 09:10:42] [INFO] Tabla Autor creada exitosamente
+[2024-12-13 09:10:42] [INFO] Tabla Libro creada con éxito
+[2024-12-13 09:10:42] [INFO] Tabla Prestamo creada con éxito
+[2024-12-13 09:10:42] [INFO] Todas las tablas se han creado con éxito
+[2024-12-13 09:10:44] [INFO] Listando autores
+[2024-12-13 09:10:44] [INFO] Autores listados exitosamente
+[2024-12-13 09:10:44] [INFO] Listado de autores.
+[2024-12-13 09:11:08] [ERROR] Error al exportar datos a CSV: Table 'biblioteca.autores' doesn't exist
+[2024-12-13 09:11:08] [ERROR] Error al exportar datos: Error al exportar datos a CSV
+[2024-12-13 09:11:18] [ERROR] Error al exportar datos a CSV: Table 'biblioteca.autores' doesn't exist
+[2024-12-13 09:11:18] [ERROR] Error al exportar datos: Error al exportar datos a CSV
+[2024-12-13 09:11:32] [ERROR] Error al exportar datos a CSV: Table 'biblioteca.autores' doesn't exist
+[2024-12-13 09:11:32] [ERROR] Error al exportar datos: Error al exportar datos a CSV
+[2024-12-13 09:14:50] [INFO] Aplicación arrancada
+[2024-12-13 09:14:50] [INFO] Creando tabla Autor
+[2024-12-13 09:14:50] [INFO] Tabla Autor creada exitosamente
+[2024-12-13 09:14:50] [INFO] Tabla Libro creada con éxito
+[2024-12-13 09:14:50] [INFO] Tabla Prestamo creada con éxito
+[2024-12-13 09:14:50] [INFO] Todas las tablas se han creado con éxito
+[2024-12-13 09:15:00] [ERROR] Error al exportar datos a CSV: data\Autor.csv (The system cannot find the path specified)
+[2024-12-13 09:15:00] [ERROR] Error al exportar datos: Error al exportar datos a CSV
+[2024-12-13 09:15:11] [INFO] Datos exportados a CSV con éxito en el directorio: data
+[2024-12-13 09:17:53] [INFO] Aplicación arrancada
+[2024-12-13 09:17:53] [INFO] Creando tabla Autor
+[2024-12-13 09:17:53] [INFO] Tabla Autor creada exitosamente
+[2024-12-13 09:17:53] [INFO] Tabla Libro creada con éxito
+[2024-12-13 09:17:53] [INFO] Tabla Prestamo creada con éxito
+[2024-12-13 09:17:53] [INFO] Todas las tablas se han creado con éxito
+[2024-12-13 09:17:59] [INFO] Datos exportados a CSV con éxito en el directorio: data

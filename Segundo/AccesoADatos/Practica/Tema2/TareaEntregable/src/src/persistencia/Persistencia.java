@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import src.excepciones.PersistenciaException;
+import src.interfaz.BibliotecaApp;
+import src.log.Logger;
 
 /**
  * Clase que maneja la persistencia de objetos en archivos.
@@ -16,52 +18,80 @@ import src.excepciones.PersistenciaException;
 public class Persistencia {
 
     /**
-     * Exporta toda la información de la base de datos a un archivo CSV.
+     * Exporta toda la información de la base de datos a archivos CSV separados.
      *
-     * @param filePath la ruta del archivo CSV
+     * @param directoryPath la ruta del directorio donde se guardarán los archivos CSV
      * @throws PersistenciaException si ocurre un error al exportar los datos
      */
-    public void exportarDatosCSV(String filePath) throws PersistenciaException {
-        try (Connection conn = DatabaseConnection.getInstance().getConnection();
-             Statement stmt = conn.createStatement();
-             PrintWriter writer = new PrintWriter(new FileWriter(filePath))) {
+    public void exportarDatosCSV(String directoryPath) throws PersistenciaException {
+        try (Connection conn = DatabaseConnection.getInstance(
+                BibliotecaApp.dbUrl, BibliotecaApp.dbUser, BibliotecaApp.dbPassword
+        ).getConnection();
+             Statement stmt = conn.createStatement()) {
+
+            // Eliminar archivos CSV existentes
+            eliminarArchivoSiExiste(directoryPath + "/Autor.csv");
+            eliminarArchivoSiExiste(directoryPath + "/Libro.csv");
+            eliminarArchivoSiExiste(directoryPath + "/Prestamo.csv");
 
             // Exportar autores
-            ResultSet rs = stmt.executeQuery("SELECT * FROM autores");
-            writer.println("ID,Nombre,FechaNacimiento,Nacionalidad");
-            while (rs.next()) {
-                writer.printf("%d,%s,%s,%s%n",
-                        rs.getInt("id"),
-                        rs.getString("nombre"),
-                        rs.getString("fecha_nacimiento"),
-                        rs.getString("nacionalidad"));
+            try (PrintWriter writer = new PrintWriter(new FileWriter(directoryPath + "/Autor.csv"))) {
+                ResultSet rs = stmt.executeQuery("SELECT * FROM Autor");
+                writer.println("ID,Nombre,FechaNacimiento,Nacionalidad");
+                while (rs.next()) {
+                    writer.printf("%d,%s,%s,%s%n",
+                            rs.getInt("id"),
+                            rs.getString("nombre"),
+                            rs.getString("fechaNacimiento"),
+                            rs.getString("nacionalidad"));
+                }
             }
 
             // Exportar libros
-            rs = stmt.executeQuery("SELECT * FROM libros");
-            writer.println("\nID,Titulo,Genero,Anio,AutorID");
-            while (rs.next()) {
-                writer.printf("%d,%s,%s,%d,%d%n",
-                        rs.getInt("id"),
-                        rs.getString("titulo"),
-                        rs.getString("genero"),
-                        rs.getInt("anio"),
-                        rs.getInt("autor_id"));
+            try (PrintWriter writer = new PrintWriter(new FileWriter(directoryPath + "/Libro.csv"))) {
+                ResultSet rs = stmt.executeQuery("SELECT * FROM Libro");
+                writer.println("ID,Titulo,Genero,Anio,AutorID");
+                while (rs.next()) {
+                    writer.printf("%d,%s,%s,%d,%d%n",
+                            rs.getInt("id"),
+                            rs.getString("titulo"),
+                            rs.getString("genero"),
+                            rs.getInt("anio"),
+                            rs.getInt("autor_id"));
+                }
             }
 
             // Exportar prestamos
-            rs = stmt.executeQuery("SELECT * FROM prestamos");
-            writer.println("\nID,LibroID,FechaPrestamo,FechaDevolucion");
-            while (rs.next()) {
-                writer.printf("%d,%d,%s,%s%n",
-                        rs.getInt("id"),
-                        rs.getInt("libro_id"),
-                        rs.getString("fecha_prestamo"),
-                        rs.getString("fecha_devolucion"));
+            try (PrintWriter writer = new PrintWriter(new FileWriter(directoryPath + "/Prestamo.csv"))) {
+                ResultSet rs = stmt.executeQuery("SELECT * FROM Prestamo");
+                writer.println("ID,LibroID,FechaPrestamo,FechaDevolucion");
+                while (rs.next()) {
+                    writer.printf("%d,%d,%s,%s%n",
+                            rs.getInt("id"),
+                            rs.getInt("libro_id"),
+                            rs.getDate("fechaPrestamo"),
+                            rs.getDate("fechaDevolucion"));
+                }
             }
 
+            Logger.logInfo("Datos exportados a CSV con éxito en el directorio: " + directoryPath);
         } catch (SQLException | IOException e) {
+            Logger.logError("Error al exportar datos a CSV: " + e.getMessage());
             throw new PersistenciaException("Error al exportar datos a CSV", e);
+        }
+    }
+
+    /**
+     * Elimina un archivo si ya existe.
+     *
+     * @param filePath la ruta del archivo a eliminar
+     */
+    private void eliminarArchivoSiExiste(String filePath) {
+        File file = new File(filePath);
+        if (file.exists()) {
+            if (!file.delete()) {
+                Logger.logWarning("No se pudo eliminar el archivo existente: " + filePath);
+            }
         }
     }
 
@@ -72,7 +102,9 @@ public class Persistencia {
      * @throws PersistenciaException si ocurre un error al importar los datos
      */
     public void importarDatosCSV(String filePath) throws PersistenciaException {
-        try (Connection conn = DatabaseConnection.getInstance().getConnection();
+        try (Connection conn = DatabaseConnection.getInstance(
+                BibliotecaApp.dbUrl, BibliotecaApp.dbUser, BibliotecaApp.dbPassword
+        ).getConnection();
              Statement stmt = conn.createStatement();
              BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
 
@@ -100,8 +132,9 @@ public class Persistencia {
                 stmt.executeUpdate(String.format("INSERT INTO prestamos (id, libro_id, fecha_prestamo, fecha_devolucion) VALUES (%d, %d, '%s', '%s')",
                         Integer.parseInt(fields[0]), Integer.parseInt(fields[1]), fields[2], fields[3]));
             }
-
+            Logger.logInfo("Datos importados desde CSV con éxito: " + filePath);
         } catch (SQLException | IOException e) {
+            Logger.logError("Error al importar datos desde CSV: " + e.getMessage());
             throw new PersistenciaException("Error al importar datos desde CSV", e);
         }
     }

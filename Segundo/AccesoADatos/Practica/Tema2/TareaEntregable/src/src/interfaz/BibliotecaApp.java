@@ -7,7 +7,10 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import src.log.Logger;
+import src.persistencia.AutorPersistencia;
 import src.persistencia.DatabaseConnection;
+import src.persistencia.LibroPersistencia;
+import src.persistencia.PrestamoPersistencia;
 import src.logica.BibliotecaService;
 import src.excepciones.PersistenciaException;
 
@@ -20,10 +23,9 @@ public class BibliotecaApp {
     private final PrestamoUI prestamoUI;
     private final Scanner scanner;
     private final BibliotecaService bibliotecaService;
-    private String dbUrl;
-    private String dbUser;
-    private String dbPassword;
-
+    public static String dbUrl;
+    public static String dbUser;
+    public static String dbPassword;
     /**
      * Constructor de la clase BibliotecaApp.
      * Inicializa las interfaces de usuario y el escáner.
@@ -61,6 +63,8 @@ public class BibliotecaApp {
             System.out.println("Error al conectar a la base de datos.");
             return;
         }
+
+        crearTablas(); // Llamada al nuevo método para crear las tablas
 
         int opcion;
         do {
@@ -104,17 +108,17 @@ public class BibliotecaApp {
 
     /**
      * Muestra información de la base de datos.
-     * Lista las tablas y columnas de la base de datos.
+     * Lista las tablas y columnas de la base de datos "biblioteca".
      */
     private void mostrarInformacionBaseDeDatos() {
-        try (Connection conn = DatabaseConnection.getInstance().getConnection()) {
+        try (Connection conn = DatabaseConnection.getInstance(dbUrl, dbUser, dbPassword).getConnection()) {
             DatabaseMetaData metaData = conn.getMetaData();
             String[] types = {"TABLE"};
-            ResultSet tables = metaData.getTables(null, null, "%", types);
+            ResultSet tables = metaData.getTables("biblioteca", null, "%", types);
             while (tables.next()) {
                 String tableName = tables.getString("TABLE_NAME");
                 System.out.println("Tabla: " + tableName);
-                ResultSet columns = metaData.getColumns(null, null, tableName, "%");
+                ResultSet columns = metaData.getColumns("biblioteca", null, tableName, "%");
                 while (columns.next()) {
                     String columnName = columns.getString("COLUMN_NAME");
                     String columnType = columns.getString("TYPE_NAME");
@@ -154,6 +158,22 @@ public class BibliotecaApp {
         } catch (PersistenciaException e) {
             Logger.logError("Error al importar datos: " + e.getMessage());
             System.out.println("Error al importar datos.");
+        }
+    }
+
+    /**
+     * Crea las tablas en la base de datos utilizando las clases de persistencia.
+     */
+    private void crearTablas() {
+        try {
+            new AutorPersistencia().crearTabla();
+            new LibroPersistencia().crearTabla();
+            new PrestamoPersistencia().crearTabla();
+            Logger.logInfo("Todas las tablas se han creado con éxito");
+            System.out.println("Todas las tablas se han creado con éxito.");
+        } catch (PersistenciaException e) {
+            Logger.logError("Error al crear las tablas: " + e.getMessage());
+            System.out.println("Error al crear las tablas.");
         }
     }
 
