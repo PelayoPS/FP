@@ -1,0 +1,288 @@
+@startuml uml
+
+skinparam class {
+    BackgroundColor<<modelo>> LightBlue
+    BackgroundColor<<excepciones>> LightCoral
+    BackgroundColor<<logica>> LightGreen
+    BackgroundColor<<persistencia>> LightGoldenrodYellow
+    BackgroundColor<<interfaz>> LightSalmon
+    BackgroundColor<<log>> LightGray
+    BorderColor Black
+    ArrowColor Black
+}
+
+package src.modelo <<modelo>> {
+    class Autor {
+        int id
+        String nombre
+        String fechaNacimiento
+        String nacionalidad
+        +Autor(int id, String nombre, String fechaNacimiento, String nacionalidad)
+        +int getId()
+        +void setId(int id)
+        +String getNombre()
+        +void setNombre(String nombre)
+        +String getFechaNacimiento()
+        +void setFechaNacimiento(String fechaNacimiento)
+        +String getNacionalidad()
+        +void setNacionalidad(String nacionalidad)
+        +String toString()
+    }
+
+    class Libro {
+        int id
+        String titulo
+        String genero
+        int anio
+        Autor autor
+        +Libro(int id, String titulo, String genero, int anio, Autor autor)
+        +int getId()
+        +void setId(int id)
+        +String getTitulo()
+        +void setTitulo(String titulo)
+        +String getGenero()
+        +void setGenero(String genero)
+        +int getAnio()
+        +void setAnio(int anio)
+        +Autor getAutor()
+        +void setAutor(Autor autor)
+        +String toString()
+    }
+
+    class Prestamo {
+        int id
+        Libro libro
+        Date fechaPrestamo
+        Date fechaDevolucion
+        +Prestamo(int id, Libro libro, Date fechaPrestamo, Date fechaDevolucion)
+        +int getId()
+        +void setId(int id)
+        +Libro getLibro()
+        +void setLibro(Libro libro)
+        +Date getFechaPrestamo()
+        +void setFechaPrestamo(Date fechaPrestamo)
+        +Date getFechaDevolucion()
+        +void setFechaDevolucion(Date fechaDevolucion)
+        +String toString()
+    }
+}
+
+package src.excepciones <<excepciones>> {
+    class AutorNoEncontradoException extends Exception {
+        +AutorNoEncontradoException(String mensaje)
+    }
+
+    class AutorRepetidoException extends Exception {
+        +AutorRepetidoException(String mensaje)
+    }
+
+    class LibroNoEncontradoException extends Exception {
+        +LibroNoEncontradoException(String mensaje)
+    }
+
+    class PersistenciaException extends Exception {
+        +PersistenciaException(String mensaje, Throwable causa)
+        +PersistenciaException(String mensaje)
+    }
+
+    class PrestamoNoEncontradoException extends Exception {
+        +PrestamoNoEncontradoException(String mensaje)
+    }
+}
+
+package src.logica <<logica>> {
+    class AutorService {
+        AutorPersistencia persistencia
+        +AutorService()
+        +Autor agregarAutor(int id, String nombre, String fechaNacimiento, String nacionalidad) throws PersistenciaException
+        +Autor buscarAutorPorId(int id) throws AutorNoEncontradoException, PersistenciaException
+        +List<Autor> listarAutores() throws PersistenciaException
+        +boolean eliminarAutor(int id) throws AutorNoEncontradoException, PersistenciaException
+    }
+
+    class LibroService {
+        LibroPersistencia persistencia
+        +LibroService()
+        +Libro agregarLibro(int id, String titulo, String genero, int anio, Autor autor) throws PersistenciaException
+        +Libro buscarLibroPorId(int id) throws PersistenciaException, LibroNoEncontradoException
+        +List<Libro> listarLibros() throws PersistenciaException, LibroNoEncontradoException
+        +boolean eliminarLibro(int id) throws LibroNoEncontradoException, PersistenciaException
+    }
+
+    class PrestamoService {
+        IPersistencia<Prestamo> persistencia
+        int id
+        +PrestamoService()
+        +Prestamo registrarPrestamo(Libro libro) throws PersistenciaException
+        +boolean devolverLibro(int idPrestamo) throws PersistenciaException, PrestamoNoEncontradoException
+        +List<Prestamo> listarPrestamos() throws PersistenciaException
+    }
+
+    class BibliotecaService {
+        AutorService autorService
+        LibroService libroService
+        PrestamoService prestamoService
+        Persistencia persistencia
+        +BibliotecaService()
+        +Autor agregarAutor(int id, String nombre, String fechaNacimiento, String nacionalidad) throws PersistenciaException
+        +Libro agregarLibro(int id, String titulo, String genero, int anio, Autor autor) throws PersistenciaException
+        +boolean eliminarAutor(int id) throws AutorNoEncontradoException, PersistenciaException
+        +boolean eliminarLibro(int id) throws LibroNoEncontradoException, PersistenciaException
+        +Autor buscarAutorPorId(int id) throws AutorNoEncontradoException, PersistenciaException
+        +Libro buscarLibroPorId(int id) throws PersistenciaException, LibroNoEncontradoException
+        +List<Prestamo> listarPrestamos() throws PersistenciaException
+        +Prestamo registrarPrestamo(Libro libro) throws PersistenciaException
+        +boolean devolverLibro(int idPrestamo) throws PersistenciaException, PrestamoNoEncontradoException
+        +List<Autor> listarAutores() throws PersistenciaException
+        +List<Libro> listarLibros() throws PersistenciaException, LibroNoEncontradoException
+        +void exportarDatosCSV(String filePath) throws PersistenciaException
+        +void importarDatosCSV(String filePath) throws PersistenciaException
+    }
+}
+
+package src.persistencia <<persistencia>> {
+    interface IPersistencia<T> {
+        +void guardar(T objeto) throws PersistenciaException
+        +List<T> listar() throws PersistenciaException
+        +T obtenerPorId(int id) throws PersistenciaException
+        +boolean actualizar(T objeto) throws PersistenciaException
+        +boolean eliminar(int id) throws PersistenciaException
+    }
+
+    class AutorPersistencia implements IPersistencia {
+        +AutorPersistencia()
+        +void guardar(Autor autor) throws PersistenciaException
+        +List<Autor> listar() throws PersistenciaException
+        +Autor obtenerPorId(int id) throws PersistenciaException
+        +boolean actualizar(Autor autor) throws PersistenciaException
+        +boolean eliminar(int id) throws PersistenciaException
+        +void crearTabla() throws PersistenciaException
+    }
+
+    class LibroPersistencia implements IPersistencia {
+        +LibroPersistencia()
+        +void guardar(Libro libro) throws PersistenciaException
+        +List<Libro> listar() throws PersistenciaException
+        +Libro obtenerPorId(int id) throws PersistenciaException
+        +boolean actualizar(Libro libro) throws PersistenciaException
+        +boolean eliminar(int id) throws PersistenciaException
+        +void crearTabla() throws PersistenciaException
+    }
+
+    class PrestamoPersistencia implements IPersistencia {
+        +PrestamoPersistencia()
+        +void guardar(Prestamo prestamo) throws PersistenciaException
+        +List<Prestamo> listar() throws PersistenciaException
+        +Prestamo obtenerPorId(int id) throws PersistenciaException
+        +boolean actualizar(Prestamo prestamo) throws PersistenciaException
+        +boolean eliminar(int id) throws PersistenciaException
+        +void crearTabla() throws PersistenciaException
+    }
+
+    class Persistencia {
+        +void exportarDatosCSV(String directoryPath) throws PersistenciaException
+        +void importarDatosCSV(String filePath) throws PersistenciaException
+    }
+
+    class DatabaseConnection {
+        Connection connection
+        +DatabaseConnection(String url, String user, String password) throws SQLException
+        +static DatabaseConnection getInstance(String url, String user, String password) throws SQLException
+        +Connection getConnection()
+    }
+}
+
+package src.interfaz <<interfaz>> {
+    class BibliotecaApp {
+        AutorUI autorUI
+        LibroUI libroUI
+        PrestamoUI prestamoUI
+        Scanner scanner
+        BibliotecaService bibliotecaService
+        static String dbUrl
+        static String dbUser
+        static String dbPassword
+        +BibliotecaApp()
+        +void iniciar()
+        +void mostrarMenuPrincipal()
+        +void mostrarInformacionBaseDeDatos()
+        +void exportarDatos()
+        +void importarDatos()
+        +void crearTablas()
+        +static void main(String[] args)
+    }
+
+    class AutorUI {
+        BibliotecaService bibliotecaService
+        Scanner scanner
+        +AutorUI()
+        +void gestionarAutores()
+        +void mostrarMenuAutor()
+        +void agregarAutor()
+        +void listarAutores()
+        +void eliminarAutor()
+    }
+
+    class LibroUI {
+        BibliotecaService bibliotecaService
+        Scanner scanner
+        +LibroUI()
+        +void gestionarLibros()
+        +void mostrarMenuLibro()
+        +void agregarLibro()
+        +void listarLibros()
+        +void eliminarLibro()
+    }
+
+    class PrestamoUI {
+        BibliotecaService bibliotecaService
+        Scanner scanner
+        +PrestamoUI()
+        +void gestionarPrestamos()
+        +void mostrarMenuPrestamo()
+        +void registrarPrestamo()
+        +void listarPrestamos()
+        +void devolverLibro()
+    }
+}
+
+package src.log <<log>> {
+    class Logger {
+        +static void logInfo(String message)
+        +static void logWarning(String message)
+        +static void logError(String message)
+        +static void mostrarLogs()
+    }
+
+    class LogManager {
+        enum LogLevel { INFO, WARN, ERROR }
+        static LogLevel currentLogLevel
+        +static void setLogLevel(LogLevel logLevel)
+        +static void logInfo(String message)
+        +static void logWarning(String message)
+        +static void logError(String message)
+    }
+}
+
+src.modelo.Autor --> src.modelo.Libro : autor
+src.modelo.Libro --> src.modelo.Prestamo : libro
+src.logica.AutorService --> src.persistencia.AutorPersistencia : persistencia
+src.logica.LibroService --> src.persistencia.LibroPersistencia : persistencia
+src.logica.PrestamoService --> src.persistencia.IPersistencia : persistencia
+src.logica.BibliotecaService --> src.logica.AutorService : autorService
+src.logica.BibliotecaService --> src.logica.LibroService : libroService
+src.logica.BibliotecaService --> src.logica.PrestamoService : prestamoService
+src.logica.BibliotecaService --> src.persistencia.Persistencia : persistencia
+src.persistencia.AutorPersistencia --> src.persistencia.DatabaseConnection : getInstance
+src.persistencia.LibroPersistencia --> src.persistencia.DatabaseConnection : getInstance
+src.persistencia.PrestamoPersistencia --> src.persistencia.DatabaseConnection : getInstance
+src.persistencia.Persistencia --> src.persistencia.DatabaseConnection : getInstance
+src.interfaz.BibliotecaApp --> src.interfaz.AutorUI : autorUI
+src.interfaz.BibliotecaApp --> src.interfaz.LibroUI : libroUI
+src.interfaz.BibliotecaApp --> src.interfaz.PrestamoUI : prestamoUI
+src.interfaz.BibliotecaApp --> src.logica.BibliotecaService : bibliotecaService
+src.interfaz.AutorUI --> src.logica.BibliotecaService : bibliotecaService
+src.interfaz.LibroUI --> src.logica.BibliotecaService : bibliotecaService
+src.interfaz.PrestamoUI --> src.logica.BibliotecaService : bibliotecaService
+
+@enduml
