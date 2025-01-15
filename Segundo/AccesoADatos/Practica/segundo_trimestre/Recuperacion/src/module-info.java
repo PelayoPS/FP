@@ -5,4 +5,5 @@
  * 
  */
 module Recuperacion {
+	requires junit;
 }
