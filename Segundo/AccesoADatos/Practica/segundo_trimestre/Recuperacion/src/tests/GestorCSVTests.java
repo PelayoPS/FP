@@ -15,11 +15,19 @@ import org.junit.Test;
 import logica.Empleado;
 import persistencia.GestorCSV;
 
+/**
+ * Clase de pruebas unitarias para la clase GestorCSV.
+ */
 public class GestorCSVTests {
 
     private GestorCSV gestorCSV;
     private String rutaArchivo;
 
+    /**
+     * Configura el entorno de prueba antes de cada test.
+     * 
+     * @throws IOException Si ocurre un error al crear el archivo de prueba.
+     */
     @Before
     public void setUp() throws IOException {
         gestorCSV = new GestorCSV();
@@ -27,6 +35,11 @@ public class GestorCSVTests {
         crearArchivoDePrueba();
     }
 
+    /**
+     * Crea un archivo de prueba con datos de empleados.
+     * 
+     * @throws IOException Si ocurre un error al escribir en el archivo.
+     */
     private void crearArchivoDePrueba() throws IOException {
         List<String> lineas = new ArrayList<>();
         lineas.add("1,Juan,Perez,M,PE,30000");
@@ -38,6 +51,9 @@ public class GestorCSVTests {
         }
     }
 
+    /**
+     * Prueba la lectura de empleados desde un archivo CSV.
+     */
     @Test
     public void testLeerEmpleados() {
         List<Empleado> empleados = gestorCSV.leerEmpleados(rutaArchivo);
@@ -46,6 +62,11 @@ public class GestorCSVTests {
         assertEquals("Ana", empleados.get(1).getNombre());
     }
 
+    /**
+     * Prueba la escritura de empleados en un archivo CSV.
+     * 
+     * @throws IOException Si ocurre un error al escribir en el archivo.
+     */
     @Test
     public void testEscribirEmpleados() throws IOException {
         List<Empleado> empleados = new ArrayList<>();
@@ -57,6 +78,11 @@ public class GestorCSVTests {
         assertEquals("Luis", empleadosLeidos.get(0).getNombre());
     }
 
+    /**
+     * Prueba la verificación de un archivo CSV.
+     * 
+     * @throws IOException Si ocurre un error al escribir en el archivo.
+     */
     @Test
     public void testVerificarArchivo() throws IOException {
         // Crear un archivo con líneas inválidas
@@ -72,6 +98,9 @@ public class GestorCSVTests {
         assertEquals("Juan", empleados.get(0).getNombre());
     }
 
+    /**
+     * Limpia el entorno de prueba después de cada test.
+     */
     @After
     public void tearDown() {
         File file = new File(rutaArchivo);
