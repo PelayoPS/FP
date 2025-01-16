@@ -3,4 +3,5 @@ module your.module.name {
     exports persistencia;
     exports tests;
 	requires org.junit.jupiter.api;
+	requires java.sql;
 }
