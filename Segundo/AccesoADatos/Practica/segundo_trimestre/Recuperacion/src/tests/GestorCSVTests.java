@@ -1,6 +1,8 @@
 package tests;
 
-import static org.junit.Assert.*;
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -8,9 +10,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import logica.Empleado;
 import persistencia.GestorCSV;
@@ -28,7 +30,7 @@ public class GestorCSVTests {
      * 
      * @throws IOException Si ocurre un error al crear el archivo de prueba.
      */
-    @Before
+    @BeforeAll
     public void setUp() throws IOException {
         gestorCSV = new GestorCSV();
         rutaArchivo = "test_empleados.csv";
@@ -101,7 +103,7 @@ public class GestorCSVTests {
     /**
      * Limpia el entorno de prueba después de cada test.
      */
-    @After
+    @AfterAll
     public void tearDown() {
         File file = new File(rutaArchivo);
         if (file.exists()) {

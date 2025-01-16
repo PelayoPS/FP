@@ -1,12 +1,14 @@
 package tests;
 
-import static org.junit.Assert.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import logica.Empleado;
 import logica.Nominas;
@@ -23,7 +25,7 @@ public class NominaTests {
     /**
      * Configura el entorno de prueba antes de cada test.
      */
-    @Before
+    @BeforeAll
     public void setUp() {
         List<Empleado> empleados = new ArrayList<>();
         empleado1 = new Empleado(1, "Juan", "Perez", 'M', "PE", 30000);

@@ -1,8 +1,11 @@
 package tests;
 
-import static org.junit.Assert.*;
 
-import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
 import logica.Empleado;
 
 /**
