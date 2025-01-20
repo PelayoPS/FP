@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import logica.Empleado;
+import modelo.Empleado;
 
 /**
  * Clase de pruebas unitarias para la clase Empleado.

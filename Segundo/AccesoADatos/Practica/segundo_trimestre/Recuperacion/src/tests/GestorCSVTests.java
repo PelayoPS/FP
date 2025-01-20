@@ -14,7 +14,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import logica.Empleado;
+import modelo.Empleado;
 import persistencia.GestorCSV;
 
 /**

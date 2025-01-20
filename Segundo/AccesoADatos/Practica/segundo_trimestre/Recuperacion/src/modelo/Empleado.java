@@ -1,4 +1,4 @@
-package logica;
+package modelo;
 
 /**
  * Clase que representa a un empleado.

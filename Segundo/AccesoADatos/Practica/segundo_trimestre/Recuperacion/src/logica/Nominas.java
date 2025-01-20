@@ -2,6 +2,8 @@ package logica;
 
 import java.util.List;
 
+import modelo.Empleado;
+
 /**
  * Clase que gestiona las nóminas de los empleados.
  */

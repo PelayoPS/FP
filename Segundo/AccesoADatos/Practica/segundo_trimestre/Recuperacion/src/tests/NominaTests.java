@@ -10,8 +10,8 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import logica.Empleado;
 import logica.Nominas;
+import modelo.Empleado;
 
 /**
  * Clase de pruebas unitarias para la clase Nominas.
