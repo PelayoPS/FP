@@ -1,48 +1,45 @@
-package logic.slash.commands.user_related;
+package bot.slash.commands.moderation;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import logic.slash.commands.ICommand;
+import bot.listenners.slash.SlashCmdListenner;
+import bot.slash.commands.ICommand;
+
+import java.util.ArrayList;
+
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.SlashCommandInteraction;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 
-public class Avatar implements ICommand {
+
+public class UserInfo implements ICommand {
 
     // attributes
 
-    private String name = "avatar";
+    private String name = "userinfo";
 
-    private String description = "Shows the avatar of the user it was executed on.";
+    private String description = "Get information about a user.";
 
     private List<OptionData> options = new ArrayList<>();
 
     /**
-     * Constructor de la clase Avatar
+     * Constructor de la clase UserInfo
      */
-    public Avatar() {
+    public UserInfo() {
         // añade la opción de usuario
-        options.add(new OptionData(OptionType.USER, "user", "The user to get the avatar from, if no user proveded shows self avatar.").setRequired(false));
+        options.add(new OptionData(OptionType.USER, "user", "The user to get information about.").setRequired(false));
     }
 
     /**
-     * Método que ejecuta el comando de avatar
+     * Método que ejecuta el comando de userinfo
      * 
      * @param SlashCommandInteraction event evento de interacción de comando de
      *                                barra
      */
     @Override
     public void handle(SlashCommandInteraction event) {
-        // comprobar si se ha proporcionado un usuario
-        if (event.getOption("user") != null) {
-            // enviar el avatar del usuario en formato png
-            event.reply(event.getOption("user").getAsUser().getEffectiveAvatarUrl()
-                    + "?size=1024").queue();
-        } else {
-            // enviar el avatar del usuario que ejecutó el comando en formato png
-            event.reply(event.getUser().getEffectiveAvatarUrl()+ "?size=1024").queue();
-        }
+        //!TODO: implementar
     }
 
     // getters
@@ -68,15 +65,14 @@ public class Avatar implements ICommand {
     }
 
     /**
-     * Método que devuelve las opciones del comando
+     * Método que devuelve la lista de opciones del comando
      * 
-     * @return List<OptionData> opciones del comando
+     * @return List<OptionData> lista de opciones del comando
      */
     @Override
     public List<OptionData> getOptions() {
         return options;
     }
-
 
     // setters
 
@@ -101,13 +97,12 @@ public class Avatar implements ICommand {
     }
 
     /**
-     * Método que establece las opciones del comando
+     * Método que establece la lista de opciones del comando
      * 
-     * @param List<Option> options opciones del comando
+     * @param List<OptionData> options lista de opciones del comando
      */
     @Override
     public void setOptions(List<OptionData> options) {
         this.options = options;
     }
-    
 }

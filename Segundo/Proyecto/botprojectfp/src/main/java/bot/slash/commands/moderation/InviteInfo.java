@@ -1,9 +1,9 @@
-package logic.slash.commands.moderation;
+package bot.slash.commands.moderation;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import logic.slash.commands.ICommand;
+import bot.slash.commands.ICommand;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.interactions.commands.SlashCommandInteraction;

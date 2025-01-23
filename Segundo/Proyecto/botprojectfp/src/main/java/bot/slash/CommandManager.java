@@ -1,12 +1,11 @@
-package logic.slash;
+package bot.slash;
 
 import java.util.EventListener;
 import java.util.HashMap;
 import java.util.Map;
 
+import bot.slash.commands.ICommand;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-
-import logic.slash.commands.ICommand;
 
 /**
  * Clase que gestiona los comandos de barra Guarda un mapa con los comandos y su

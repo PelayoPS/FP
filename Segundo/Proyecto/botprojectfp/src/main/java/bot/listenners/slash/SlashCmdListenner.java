@@ -1,8 +1,8 @@
-package logic.listenners.slash;
+package bot.listenners.slash;
 
 import org.jetbrains.annotations.NonNls;
 
-import logic.slash.CommandManager;
+import bot.slash.CommandManager;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 

@@ -1,4 +1,4 @@
-package logic.listenners.ai_chat;
+package bot.listenners.ai_chat;
 
 import org.jetbrains.annotations.NonNls;
 

@@ -1,0 +1,17 @@
+<AnchorPane xmlns:fx="http://javafx.com/fxml">
+    <VBox>
+        <Button text="Start Bot" onAction="#startBot"/>
+        <Button text="Stop Bot" onAction="#stopBot"/>
+        <TabPane>
+            <Tab text="Logs">
+                <TextArea fx:id="logArea" editable="false"/>
+            </Tab>
+            <Tab text="Modules">
+                <VBox>
+                    <CheckBox text="Moderation"/>
+                    <CheckBox text="XP System"/>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </VBox>
+</AnchorPane>

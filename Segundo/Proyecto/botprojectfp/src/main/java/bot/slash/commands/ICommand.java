@@ -1,4 +1,4 @@
-package logic.slash.commands;
+package bot.slash.commands;
 
 import java.util.ArrayList;
 import java.util.List;

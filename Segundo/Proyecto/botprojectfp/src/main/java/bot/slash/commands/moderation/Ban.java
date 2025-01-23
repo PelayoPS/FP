@@ -1,10 +1,10 @@
-package logic.slash.commands.moderation;
+package bot.slash.commands.moderation;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import logic.slash.commands.ICommand;
+import bot.slash.commands.ICommand;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.SlashCommandInteraction;

@@ -1,10 +1,10 @@
-package logic.slash.commands.owner_only;
+package bot.slash.commands.owner_only;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import logic.listenners.ai_chat.GeminiClient;
-import logic.slash.commands.ICommand;
+import bot.listenners.ai_chat.GeminiClient;
+import bot.slash.commands.ICommand;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.SlashCommandInteraction;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;

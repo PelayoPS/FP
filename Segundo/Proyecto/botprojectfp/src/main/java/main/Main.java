@@ -2,16 +2,16 @@ package main;
 
 import java.util.Scanner;
 
-import logic.listenners.ai_chat.GeminiClient;
-import logic.listenners.ai_chat.aiChat;
-import logic.listenners.slash.SlashCmdListenner;
-import logic.slash.CommandManager;
-import logic.slash.commands.ICommand;
-import logic.slash.commands.moderation.Ban;
-import logic.slash.commands.moderation.InviteInfo;
-import logic.slash.commands.moderation.Kick;
-import logic.slash.commands.owner_only.OnwerSendAiText;
-import logic.slash.commands.user_related.Avatar;
+import bot.listenners.ai_chat.GeminiClient;
+import bot.listenners.ai_chat.aiChat;
+import bot.listenners.slash.SlashCmdListenner;
+import bot.slash.CommandManager;
+import bot.slash.commands.ICommand;
+import bot.slash.commands.moderation.Ban;
+import bot.slash.commands.moderation.InviteInfo;
+import bot.slash.commands.moderation.Kick;
+import bot.slash.commands.owner_only.OnwerSendAiText;
+import bot.slash.commands.user_related.Avatar;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
