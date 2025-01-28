@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>me.pelayo.botprojectfp</groupId>
   <artifactId>botprojectfp</artifactId>
-  <version>0.0.4-SNAPSHOT</version>
+  <version>0.0.9-SNAPSHOT</version>
   <name>BotProjectFP</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

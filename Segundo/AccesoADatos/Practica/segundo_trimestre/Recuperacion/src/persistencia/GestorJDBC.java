@@ -18,7 +18,7 @@ public class GestorJDBC {
 
     public GestorJDBC() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		con = DriverManager.getConnection("jdbc:mysql://localhost/ventas", "root", "root");
+		con = DriverManager.getConnection("jdbc:mysql://localhost/ventas", "root", "1041");
 		System.out.println("Base conectada ");
 	}
 

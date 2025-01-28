@@ -15,4 +15,8 @@ public class XPModule {
         }
         return false;
     }
+
+    public void addXP(String userId, int amount) {
+        // TODO: Add XP to the user and save it to the database
+    }
 }
