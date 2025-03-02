@@ -2,7 +2,17 @@
 /.gradle/*
 /Segundo/AccesoADatos/Practica/segundo_trimestre/netbeans/JavaAplication/nbproject/private/
 /Segundo/AccesoADatos/Practica/segundo_trimestre/netbeans/JavaAplication/build/
+<<<<<<< HEAD
 /Segundo/AccesoADatos/Practica/segundo_trimestre/netbeans/tarea_tiendaJPA/tarea_tiendaJPA/Tarea_Tienda/build/
 /Segundo/AccesoADatos/Practica/segundo_trimestre/netbeans/tarea_tiendaJPA/tarea_tiendaJPA/Tarea_Tienda/nbproject/private/
 /Segundo/AccesoADatos/Practica/segundo_trimestre/netbeans/Tarea_Tienda/build/
 /Segundo/AccesoADatos/Practica/segundo_trimestre/netbeans/Tarea_Tienda/nbproject/private/
+=======
+/Segundo/AccesoADatos/Practica/segundo_trimestre/netbeans/databasetest/nbproject/private/
+/Segundo/AccesoADatos/Practica/segundo_trimestre/netbeans/databasetest/target/
+/Segundo/AccesoADatos/Practica/segundo_trimestre/netbeans/mavenproject1/target/
+/Segundo/AccesoADatos/Practica/segundo_trimestre/netbeans/jpatest/nbproject/private/
+/Segundo/AccesoADatos/Practica/segundo_trimestre/netbeans/examen/nbproject/private/
+/Segundo/AccesoADatos/Practica/segundo_trimestre/netbeans/examen/build/
+/Segundo/AccesoADatos/Practica/segundo_trimestre/netbeans/examen/dist/
+>>>>>>> 8e5be63 (update)
