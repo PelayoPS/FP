@@ -1,13 +1,13 @@
 package modelo;
 
-public class Campeon {
+public class Jugador {
     private String nombre;
     private String rol;
 
-    public Campeon() {
+    public Jugador() {
     }
 
-    public Campeon(String nombre, String rol) {
+    public Jugador(String nombre, String rol) {
         this.nombre = nombre;
         this.rol = rol;
     }
@@ -30,6 +30,6 @@ public class Campeon {
 
     @Override
     public String toString() {
-        return "Campeon [nombre=" + nombre + ", rol=" + rol + "]";
+        return "Jugador [nombre=" + nombre + ", rol=" + rol + "]";
     }
 }

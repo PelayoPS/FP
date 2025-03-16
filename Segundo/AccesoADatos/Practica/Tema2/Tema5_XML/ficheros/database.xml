@@ -1,47 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<LigaLoL>
-    <Equipos>
-        <Equipo id="1">
-            <Nombre>Equipo1</Nombre>
-            <Region>Europa</Region>
-            <Jugadores>
-                <Jugador id="101" capitan="true">
-                    <Nombre>Jugador1</Nombre>
-                    <Rango>Diamante</Rango>
-                </Jugador>
-                <Jugador id="102">
-                    <Nombre>Jugador2</Nombre>
-                    <Rango>Platino</Rango>
-                </Jugador>
-            </Jugadores>
-        </Equipo>
-
-        <Equipo id="2">
-            <Nombre>Equipo2</Nombre>
-            <Region>América</Region>
-            <Jugadores>
-                <Jugador id="103" capitan="true">
-                    <Nombre>Storm</Nombre>
-                    <Rango>Maestro</Rango>
-                </Jugador>
-            </Jugadores>
-        </Equipo>
-    </Equipos>
-
-    <Campeones>
-        <Campeon id="201">
-            <Nombre>Ahri</Nombre>
-            <Rol>Mago</Rol>
-        </Campeon>
-        <Campeon id="202">
-            <Nombre>Lee Sin</Nombre>
-            <Rol>Luchador</Rol>
-        </Campeon>
-    </Campeones>
-
-    <Jugar>
-        <Relacion jugador_id="101" campeon_id="201" rol="Mid" liderazgo="Alto"/>
-        <Relacion jugador_id="102" campeon_id="202" rol="Jungla"/>
-        <Relacion jugador_id="103" campeon_id="201" rol="Mid" liderazgo="Alto"/> 
-    </Jugar>
-</LigaLoL>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<league_of_legends>
+    <equipos>
+        <equipo nombre="TSM">
+            <jugador>
+                <nombre>Bjergsen</nombre>
+                <rol>Mid Laner</rol>
+            </jugador>
+            <jugador>
+                <nombre>Doublelift</nombre>
+                <rol>ADC</rol>
+            </jugador>
+        </equipo>
+        <equipo nombre="Cloud9">
+            <jugador>
+                <nombre>Perkz</nombre>
+                <rol>Mid Laner</rol>
+            </jugador>
+            <jugador>
+                <nombre>Zven</nombre>
+                <rol>ADC</rol>
+            </jugador>
+        </equipo>
+        <equipo nombre="" />
+        <equipo nombre="" />
+    </equipos>
+    <campeones>
+        <campeon nombre="Ahri">
+            <rol>Mid Laner</rol>
+        </campeon>
+        <campeon nombre="Ashe">
+            <rol>ADC</rol>
+        </campeon>
+    </campeones>
+    <partidas>
+        <partida>
+            <equipo>TSM</equipo>
+            <oponente>Cloud9</oponente>
+            <resultado>Ganado</resultado>
+        </partida>
+        <partida>
+            <equipo>Cloud9</equipo>
+            <oponente>TSM</oponente>
+            <resultado>Perdido</resultado>
+        </partida>
+    </partidas>
+</league_of_legends>
