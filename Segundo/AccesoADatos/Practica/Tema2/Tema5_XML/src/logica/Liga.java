@@ -15,6 +15,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import modelo.Campeon;
+import modelo.Equipo;
+import modelo.Partida;
+import modelo.Jugador;
+
 public class Liga {
     private List<Equipo> equipos;
     private List<Campeon> campeones;

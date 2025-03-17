@@ -7,7 +7,7 @@ import java.util.Scanner;
 import modelo.Campeon;
 import modelo.Equipo;
 import modelo.Jugador;
-import modelo.Liga;
+import logica.Liga;
 import modelo.Partida;
 
 public class Main {

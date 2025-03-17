@@ -1,1 +1,45 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><league_of_legends><equipos><equipo nombre="TSM"><jugador><nombre>Bjergsen</nombre><rol>Mid Laner</rol></jugador><jugador><nombre>Doublelift</nombre><rol>ADC</rol></jugador></equipo><equipo nombre="Cloud9"><jugador><nombre>Perkz</nombre><rol>Mid Laner</rol></jugador><jugador><nombre>Zven</nombre><rol>ADC</rol></jugador></equipo><equipo nombre=""/><equipo nombre=""/><equipo nombre="Madlions"/></equipos><campeones><campeon nombre="Ahri"><rol>Mid Laner</rol></campeon><campeon nombre="Ashe"><rol>ADC</rol></campeon></campeones><partidas><partida><equipo>TSM</equipo><oponente>Cloud9</oponente><resultado>Ganado</resultado></partida><partida><equipo>Cloud9</equipo><oponente>TSM</oponente><resultado>Perdido</resultado></partida></partidas></league_of_legends>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<league_of_legends>
+    <equipos>
+        <equipo nombre="TSM">
+            <jugador>
+                <nombre>Bjergsen</nombre>
+                <rol>Mid Laner</rol>
+            </jugador>
+            <jugador>
+                <nombre>Doublelift</nombre>
+                <rol>ADC</rol>
+            </jugador>
+        </equipo>
+        <equipo nombre="Cloud9">
+            <jugador>
+                <nombre>Perkz</nombre>
+                <rol>Mid Laner</rol>
+            </jugador>
+            <jugador>
+                <nombre>Zven</nombre>
+                <rol>ADC</rol>
+            </jugador>
+        </equipo>
+    </equipos>
+    <campeones>
+        <campeon nombre="Ahri">
+            <rol>Mid Laner</rol>
+        </campeon>
+        <campeon nombre="Ashe">
+            <rol>ADC</rol>
+        </campeon>
+    </campeones>
+    <partidas>
+        <partida>
+            <equipo>TSM</equipo>
+            <oponente>Cloud9</oponente>
+            <resultado>Ganado</resultado>
+        </partida>
+        <partida>
+            <equipo>Cloud9</equipo>
+            <oponente>TSM</oponente>
+            <resultado>Perdido</resultado>
+        </partida>
+    </partidas>
+</league_of_legends>
