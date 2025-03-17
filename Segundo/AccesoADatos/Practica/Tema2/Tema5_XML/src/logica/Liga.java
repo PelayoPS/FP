@@ -1,4 +1,4 @@
-package modelo;
+package logica;
 
 import java.io.File;
 import java.util.ArrayList;
