@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<league_of_legends>
+<league_of_legends version="1.0" fecha_actualizacion="2023-05-15">
     <equipos>
-        <equipo nombre="TSM">
+        <!-- Equipos existentes -->
+        <equipo nombre="TSM" num_jugadores="2">
             <jugador>
                 <nombre>Bjergsen</nombre>
                 <rol>Mid Laner</rol>
@@ -11,7 +12,7 @@
                 <rol>ADC</rol>
             </jugador>
         </equipo>
-        <equipo nombre="Cloud9">
+        <equipo nombre="Cloud9" num_jugadores="2">
             <jugador>
                 <nombre>Perkz</nombre>
                 <rol>Mid Laner</rol>
@@ -21,16 +22,82 @@
                 <rol>ADC</rol>
             </jugador>
         </equipo>
+        
+        <!-- Nuevo equipo con datos completos -->
+        <equipo nombre="Fnatic" num_jugadores="3">
+            <jugador>
+                <nombre>Rekkles</nombre>
+                <rol>ADC</rol>
+            </jugador>
+            <jugador>
+                <nombre>Caps</nombre>
+                <rol>Mid Laner</rol>
+            </jugador>
+            <jugador>
+                <nombre>Bwipo</nombre>
+                <rol>Top Laner</rol>
+            </jugador>
+        </equipo>
+        
+        <!-- Equipo con jugador que tiene datos incompletos (falta rol) -->
+        <equipo nombre="G2 Esports" num_jugadores="2">
+            <jugador>
+                <nombre>Jankos</nombre>
+                <rol>Jungler</rol>
+            </jugador>
+            <jugador>
+                <nombre>Wunder</nombre>
+                <!-- Falta el elemento rol para probar validación -->
+            </jugador>
+        </equipo>
+        
+        <!-- Equipo sin nombre (para probar validación de atributos) -->
+        <equipo num_jugadores="1">
+            <jugador>
+                <nombre>Faker</nombre>
+                <rol>Mid Laner</rol>
+            </jugador>
+        </equipo>
+        
+        <!-- Equipo duplicado para probar advertencias -->
+        <equipo nombre="TSM" num_jugadores="1">
+            <jugador>
+                <nombre>Spica</nombre>
+                <rol>Jungler</rol>
+            </jugador>
+        </equipo>
     </equipos>
+    
     <campeones>
-        <campeon nombre="Ahri">
+        <!-- Campeones existentes -->
+        <campeon nombre="Ahri" tipo_rol="Mid Laner">
             <rol>Mid Laner</rol>
         </campeon>
-        <campeon nombre="Ashe">
+        <campeon nombre="Ashe" tipo_rol="ADC">
             <rol>ADC</rol>
         </campeon>
+        
+        <!-- Nuevos campeones con datos completos -->
+        <campeon nombre="Lee Sin" tipo_rol="Jungler">
+            <rol>Jungler</rol>
+        </campeon>
+        <campeon nombre="Darius" tipo_rol="Top Laner">
+            <rol>Top Laner</rol>
+        </campeon>
+        
+        <!-- Campeón sin rol (para probar validación) -->
+        <campeon nombre="Yasuo">
+            <!-- Falta el elemento rol para probar validación -->
+        </campeon>
+        
+        <!-- Campeón sin nombre (para probar validación de atributos) -->
+        <campeon tipo_rol="Support">
+            <rol>Support</rol>
+        </campeon>
     </campeones>
+    
     <partidas>
+        <!-- Partidas existentes -->
         <partida>
             <equipo>TSM</equipo>
             <oponente>Cloud9</oponente>
@@ -40,6 +107,31 @@
             <equipo>Cloud9</equipo>
             <oponente>TSM</oponente>
             <resultado>Perdido</resultado>
+        </partida>
+        <partida>
+            <equipo>Fnatic</equipo>
+            <oponente>G2 Esports</oponente>
+            <resultado>Empate</resultado>
+        </partida>
+        
+        <partida>
+            <equipo>TSM</equipo>
+            <oponente>Fnatic</oponente>
+            <resultado>Victoria</resultado> <!-- Debería ser Ganado, Perdido o Empate -->
+        </partida>
+        
+        <!-- Partida con datos incompletos (falta resultado) -->
+        <partida>
+            <equipo>G2 Esports</equipo>
+            <oponente>Cloud9</oponente>
+            <!-- Falta el elemento resultado para probar validación -->
+        </partida>
+        
+        <!-- Partida con referencia a equipo inexistente -->
+        <partida>
+            <equipo>SKT T1</equipo> <!-- Equipo que no existe en la lista -->
+            <oponente>TSM</oponente>
+            <resultado>Ganado</resultado>
         </partida>
     </partidas>
 </league_of_legends>

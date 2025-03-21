@@ -9,24 +9,57 @@ import modelo.Equipo;
 import modelo.Jugador;
 import logica.Liga;
 import modelo.Partida;
+import logs.Logger;
 
+/**
+ * Clase principal que implementa la interfaz de usuario para la gestión de una
+ * liga de League of Legends.
+ * Permite gestionar equipos, campeones, partidas y ver logs del sistema.
+ * 
+ * Esta clase maneja todas las interacciones con el usuario a través de un menú
+ * por consola
+ * y coordina las operaciones con la capa de lógica de negocio.
+ * 
+ * @author PelayoPS
+ * @version 1.0
+ */
 public class Main {
     private static Liga liga;
     private static Scanner scanner = new Scanner(System.in);
+    private static Logger logger;
 
+    /**
+     * Punto de entrada principal de la aplicación.
+     * Inicializa el sistema, carga los datos desde XML y presenta el menú
+     * principal.
+     * 
+     * @param args Argumentos de línea de comando (no utilizados)
+     */
     public static void main(String[] args) {
+        // Inicializar el logger
+        logger = Logger.getInstance();
+
         // Ruta al archivo XML
-        String rutaXML = "datos.xml";
+        String rutaXML = "ficheros/database.xml";
         File file = new File(rutaXML);
 
         // Verificar si el archivo existe
         if (!file.exists()) {
+            logger.error("El archivo " + rutaXML + " no existe.");
             System.out.println("El archivo " + rutaXML + " no existe.");
             System.out.println("Comprueba la ruta y vuelve a intentarlo.");
             return;
         }
 
         liga = new Liga(rutaXML);
+
+        // Configurar un Runtime Shutdown Hook para guardar datos en caso de cierre
+        // inesperado
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            logger.info("Guardando datos antes de cerrar...");
+            liga.guardarXML();
+        }));
+
         int opcion;
 
         do {
@@ -43,10 +76,17 @@ public class Main {
                 case 3:
                     gestionPartidas();
                     break;
+                case 4:
+                    mostrarLogs();
+                    break;
                 case 0:
-                    System.out.println("Saliendo del programa...");
+                    logger.info("Guardando datos y saliendo del programa...");
+                    System.out.println("Guardando datos y saliendo del programa...");
+                    // Asegurar que los datos se guarden en el archivo al salir
+                    liga.guardarXML();
                     break;
                 default:
+                    logger.warning("Opción no válida seleccionada: " + opcion);
                     System.out.println("Opción no válida. Inténtelo de nuevo.");
             }
         } while (opcion != 0);
@@ -54,15 +94,23 @@ public class Main {
         scanner.close();
     }
 
-    // Menús y gestiones
+    /**
+     * Muestra el menú principal de la aplicación con todas las opciones
+     * disponibles.
+     */
     private static void mostrarMenuPrincipal() {
         System.out.println("\n===== GESTIÓN DE LEAGUE OF LEGENDS =====");
         System.out.println("1. Gestión de Equipos");
         System.out.println("2. Gestión de Campeones");
         System.out.println("3. Gestión de Partidas");
+        System.out.println("4. Ver Logs del Sistema");
         System.out.println("0. Salir");
     }
 
+    /**
+     * Gestiona las operaciones relacionadas con equipos, incluyendo visualización,
+     * búsqueda, creación, actualización y eliminación de equipos.
+     */
     private static void gestionEquipos() {
         int opcion;
 
@@ -105,6 +153,10 @@ public class Main {
         } while (opcion != 0);
     }
 
+    /**
+     * Gestiona las operaciones relacionadas con los jugadores de un equipo
+     * específico.
+     */
     private static void gestionJugadores() {
         System.out.println("\n===== GESTIÓN DE JUGADORES =====");
         mostrarEquipos();
@@ -145,6 +197,11 @@ public class Main {
         } while (opcion != 0);
     }
 
+    /**
+     * Muestra la lista de jugadores de un equipo específico.
+     * 
+     * @param equipo El equipo del cual se mostrarán los jugadores
+     */
     private static void mostrarJugadores(Equipo equipo) {
         List<Jugador> jugadores = equipo.getJugadores();
 
@@ -159,6 +216,11 @@ public class Main {
         }
     }
 
+    /**
+     * Añade un nuevo jugador a un equipo específico.
+     * 
+     * @param equipo El equipo al cual se añadirá el jugador
+     */
     private static void añadirJugador(Equipo equipo) {
         String nombre = leerString("Ingrese el nombre del jugador: ");
         String rol = leerString("Ingrese el rol del jugador: ");
@@ -169,6 +231,11 @@ public class Main {
         System.out.println("Jugador añadido correctamente.");
     }
 
+    /**
+     * Elimina un jugador de un equipo específico.
+     * 
+     * @param equipo El equipo del cual se eliminará el jugador
+     */
     private static void eliminarJugador(Equipo equipo) {
         mostrarJugadores(equipo);
 
@@ -186,6 +253,11 @@ public class Main {
         }
     }
 
+    /**
+     * Gestiona las operaciones relacionadas con campeones, incluyendo
+     * visualización,
+     * búsqueda, creación, actualización y eliminación de campeones.
+     */
     private static void gestionCampeones() {
         int opcion;
 
@@ -224,6 +296,10 @@ public class Main {
         } while (opcion != 0);
     }
 
+    /**
+     * Gestiona las operaciones relacionadas con partidas, incluyendo visualización,
+     * creación, actualización y eliminación de partidas.
+     */
     private static void gestionPartidas() {
         int opcion;
 
@@ -258,7 +334,92 @@ public class Main {
         } while (opcion != 0);
     }
 
+    /**
+     * Muestra los logs del sistema, permitiendo al usuario filtrar por tipo de log
+     * (error, advertencia, información) o limpiar los logs.
+     */
+    private static void mostrarLogs() {
+        System.out.println("\n===== LOGS DEL SISTEMA =====");
+        System.out.println("1. Ver todos los logs");
+        System.out.println("2. Ver logs de error");
+        System.out.println("3. Ver logs de advertencia");
+        System.out.println("4. Ver logs de información");
+        System.out.println("5. Limpiar logs");
+        System.out.println("0. Volver al menú principal");
+
+        int opcion = leerEntero("Ingrese una opción: ");
+
+        switch (opcion) {
+            case 1:
+                System.out.println("\n=== TODOS LOS LOGS ===");
+                System.out.println(logger.getColoredLogs());
+                break;
+            case 2:
+                mostrarLogsFiltrados("ERROR");
+                break;
+            case 3:
+                mostrarLogsFiltrados("WARNING");
+                break;
+            case 4:
+                mostrarLogsFiltrados("INFO");
+                break;
+            case 5:
+                System.out.println("¿Está seguro de que desea limpiar todos los logs? (S/N)");
+                String confirmacion = scanner.nextLine().trim().toUpperCase();
+                if (confirmacion.equals("S")) {
+                    logger.clearLogs();
+                    logger.info("Logs limpiados correctamente");
+                    System.out.println("Logs limpiados correctamente.");
+                }
+                break;
+            case 0:
+                break;
+            default:
+                System.out.println("Opción no válida. Inténtelo de nuevo.");
+        }
+    }
+
+    /**
+     * Muestra los logs filtrados por tipo (error, advertencia, información).
+     * 
+     * @param tipo El tipo de log a mostrar
+     */
+    private static void mostrarLogsFiltrados(String tipo) {
+        System.out.println("\n=== LOGS DE " + tipo + " ===");
+        try {
+            List<String> logs = logger.readAllLogs();
+            boolean encontrado = false;
+
+            for (String log : logs) {
+                if (log.contains(tipo)) {
+                    encontrado = true;
+                    // Determinar color apropiado
+                    String colorCode = "";
+                    if (tipo.equals("ERROR")) {
+                        colorCode = "\u001B[31m"; // Rojo
+                    } else if (tipo.equals("WARNING")) {
+                        colorCode = "\u001B[33m"; // Amarillo
+                    } else if (tipo.equals("INFO")) {
+                        colorCode = "\u001B[32m"; // Verde
+                    }
+
+                    System.out.println(colorCode + log + "\u001B[0m");
+                }
+            }
+
+            if (!encontrado) {
+                System.out.println("No hay logs de tipo " + tipo);
+            }
+        } catch (Exception e) {
+            System.out.println("Error al leer los logs: " + e.getMessage());
+        }
+    }
+
     // Métodos de Equipos
+    /**
+     * Muestra la lista de equipos registrados en la liga.
+     * Si no hay equipos, informa al usuario.
+     */
     private static void mostrarEquipos() {
         List<Equipo> equipos = liga.getEquipos();
 
@@ -275,6 +436,10 @@ public class Main {
         }
     }
 
+    /**
+     * Busca un equipo por su nombre y muestra su información.
+     * Si el equipo no se encuentra, informa al usuario.
+     */
     private static void buscarEquipo() {
         String nombre = leerString("Ingrese el nombre del equipo a buscar: ");
 
@@ -294,6 +459,10 @@ public class Main {
         }
     }
 
+    /**
+     * Añade un nuevo equipo a la liga.
+     * Si el equipo ya existe, informa al usuario.
+     */
     private static void añadirEquipo() {
         String nombre = leerString("Ingrese el nombre del nuevo equipo: ");
 
@@ -308,6 +477,10 @@ public class Main {
         System.out.println("Equipo añadido correctamente.");
     }
 
+    /**
+     * Actualiza la información de un equipo existente.
+     * Si el equipo no se encuentra, informa al usuario.
+     */
     private static void actualizarEquipo() {
         mostrarEquipos();
 
@@ -330,6 +503,10 @@ public class Main {
         System.out.println("Equipo actualizado correctamente.");
     }
 
+    /**
+     * Elimina un equipo de la liga.
+     * Si el equipo no se encuentra, informa al usuario.
+     */
     private static void eliminarEquipo() {
         mostrarEquipos();
 
@@ -343,6 +520,10 @@ public class Main {
     }
 
     // Métodos de Campeones
+    /**
+     * Muestra la lista de campeones registrados en la liga.
+     * Si no hay campeones, informa al usuario.
+     */
     private static void mostrarCampeones() {
         List<Campeon> campeones = liga.getCampeones();
 
@@ -359,6 +540,10 @@ public class Main {
         }
     }
 
+    /**
+     * Busca un campeón por su nombre y muestra su información.
+     * Si el campeón no se encuentra, informa al usuario.
+     */
     private static void buscarCampeon() {
         String nombre = leerString("Ingrese el nombre del campeón a buscar: ");
 
@@ -374,6 +559,10 @@ public class Main {
         System.out.println("Rol: " + campeon.getRol());
     }
 
+    /**
+     * Añade un nuevo campeón a la liga.
+     * Si el campeón ya existe, informa al usuario.
+     */
     private static void añadirCampeon() {
         String nombre = leerString("Ingrese el nombre del nuevo campeón: ");
 
@@ -390,6 +579,10 @@ public class Main {
         System.out.println("Campeón añadido correctamente.");
     }
 
+    /**
+     * Actualiza la información de un campeón existente.
+     * Si el campeón no se encuentra, informa al usuario.
+     */
     private static void actualizarCampeon() {
         mostrarCampeones();
 
@@ -417,6 +610,10 @@ public class Main {
         System.out.println("Campeón actualizado correctamente.");
     }
 
+    /**
+     * Elimina un campeón de la liga.
+     * Si el campeón no se encuentra, informa al usuario.
+     */
     private static void eliminarCampeon() {
         mostrarCampeones();
 
@@ -430,6 +627,10 @@ public class Main {
     }
 
     // Métodos de Partidas
+    /**
+     * Muestra la lista de partidas registradas en la liga.
+     * Si no hay partidas, informa al usuario.
+     */
     private static void mostrarPartidas() {
         List<Partida> partidas = liga.getPartidas();
 
@@ -449,6 +650,10 @@ public class Main {
         }
     }
 
+    /**
+     * Añade una nueva partida a la liga.
+     * Si la partida ya existe, informa al usuario.
+     */
     private static void añadirPartida() {
         mostrarEquipos();
 
@@ -462,6 +667,10 @@ public class Main {
         System.out.println("Partida añadida correctamente.");
     }
 
+    /**
+     * Actualiza la información de una partida existente.
+     * Si la partida no se encuentra, informa al usuario.
+     */
     private static void actualizarPartida() {
         mostrarPartidas();
 
@@ -502,6 +711,10 @@ public class Main {
         System.out.println("Partida actualizada correctamente.");
     }
 
+    /**
+     * Elimina una partida de la liga.
+     * Si la partida no se encuentra, informa al usuario.
+     */
     private static void eliminarPartida() {
         mostrarPartidas();
 
@@ -524,7 +737,13 @@ public class Main {
         }
     }
 
-    // Métodos de utilidad
+    /**
+     * Lee un valor entero desde la entrada estándar, con validación y manejo de
+     * errores.
+     * 
+     * @param mensaje El mensaje a mostrar al usuario antes de la lectura
+     * @return El número entero ingresado por el usuario
+     */
     private static int leerEntero(String mensaje) {
         int entero = 0;
         boolean valido = false;
@@ -542,6 +761,12 @@ public class Main {
         return entero;
     }
 
+    /**
+     * Lee una cadena de texto desde la entrada estándar.
+     * 
+     * @param mensaje El mensaje a mostrar al usuario antes de la lectura
+     * @return La cadena ingresada por el usuario
+     */
     private static String leerString(String mensaje) {
         System.out.print(mensaje);
         return scanner.nextLine();

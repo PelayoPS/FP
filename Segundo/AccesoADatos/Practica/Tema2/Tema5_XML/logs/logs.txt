@@ -1,0 +1,787 @@
+[2025-03-21 11:38:42] INFO: Logs limpiados correctamente
+[2025-03-21 11:39:09] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 11:39:09] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 11:39:09] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 11:39:09] INFO: Documento XML parseado correctamente
+[2025-03-21 11:39:09] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 11:39:09] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 11:39:09] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 11:39:09] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 11:39:09] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 11:39:09] INFO: === Estadísticas de carga XML ====
+[2025-03-21 11:39:09] INFO: Equipos cargados: 5
+[2025-03-21 11:39:09] INFO: Jugadores cargados: 9
+[2025-03-21 11:39:09] INFO: Campeones cargados: 5
+[2025-03-21 11:39:09] INFO: Partidas cargadas: 4
+[2025-03-21 11:39:09] INFO: Errores de formato: 4
+[2025-03-21 11:39:09] INFO: =================================
+[2025-03-21 11:39:09] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 11:39:09] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 11:39:09] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 11:39:09] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 11:39:09] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 11:39:09] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 11:39:09] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 11:39:09] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 11:39:09] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 11:39:09] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 11:39:09] INFO: 
+Advertencias (2):
+[2025-03-21 11:39:09] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 11:39:09] WARNING: 2. Campeón duplicado encontrado: 'Ahri'
+[2025-03-21 11:39:09] INFO: 
+Errores de formato XML (2):
+[2025-03-21 11:39:09] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 11:39:09] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:05:26] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:05:26] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:05:26] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:05:26] INFO: Documento XML parseado correctamente
+[2025-03-21 12:05:27] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:05:27] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:05:27] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:05:27] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:05:27] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:05:27] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:05:27] INFO: Equipos cargados: 5
+[2025-03-21 12:05:27] INFO: Jugadores cargados: 9
+[2025-03-21 12:05:27] INFO: Campeones cargados: 5
+[2025-03-21 12:05:27] INFO: Partidas cargadas: 4
+[2025-03-21 12:05:27] INFO: Errores de formato: 4
+[2025-03-21 12:05:27] INFO: =================================
+[2025-03-21 12:05:27] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:05:27] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:05:27] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:05:27] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:05:27] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:05:27] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:05:27] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:05:27] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:05:27] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:05:27] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:05:27] INFO: 
+Advertencias (2):
+[2025-03-21 12:05:27] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:05:27] WARNING: 2. Campeón duplicado encontrado: 'Ahri'
+[2025-03-21 12:05:27] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:05:27] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:05:27] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:05:54] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:05:54] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:05:54] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:05:54] INFO: Equipos guardados: 5
+[2025-03-21 12:05:54] INFO: Jugadores guardados: 9
+[2025-03-21 12:05:54] INFO: Campeones guardados: 5
+[2025-03-21 12:05:54] INFO: Partidas guardadas: 4
+[2025-03-21 12:05:54] INFO: Errores de validación: 0
+[2025-03-21 12:05:54] INFO: ===================================
+[2025-03-21 12:06:37] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:06:37] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:06:37] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:06:37] INFO: Documento XML parseado correctamente
+[2025-03-21 12:06:37] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:06:37] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:06:37] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:06:37] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:06:37] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:06:37] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:06:37] INFO: Equipos cargados: 5
+[2025-03-21 12:06:37] INFO: Jugadores cargados: 9
+[2025-03-21 12:06:37] INFO: Campeones cargados: 5
+[2025-03-21 12:06:37] INFO: Partidas cargadas: 4
+[2025-03-21 12:06:37] INFO: Errores de formato: 4
+[2025-03-21 12:06:37] INFO: =================================
+[2025-03-21 12:06:37] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:06:37] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:06:37] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:06:37] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:06:37] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:06:37] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:06:37] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:06:37] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:06:37] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:06:37] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:06:37] INFO: 
+Advertencias (2):
+[2025-03-21 12:06:37] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:06:37] WARNING: 2. Campeón duplicado encontrado: 'Ahri'
+[2025-03-21 12:06:37] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:06:37] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:06:37] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:07:11] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:07:11] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:07:11] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:07:11] INFO: Equipos guardados: 5
+[2025-03-21 12:07:11] INFO: Jugadores guardados: 9
+[2025-03-21 12:07:11] INFO: Campeones guardados: 5
+[2025-03-21 12:07:11] INFO: Partidas guardadas: 4
+[2025-03-21 12:07:11] INFO: Errores de validación: 0
+[2025-03-21 12:07:11] INFO: ===================================
+[2025-03-21 12:08:10] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:08:10] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:08:10] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:08:10] INFO: Documento XML parseado correctamente
+[2025-03-21 12:08:10] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:08:10] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:08:10] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:08:10] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:08:10] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:08:10] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:08:10] INFO: Equipos cargados: 5
+[2025-03-21 12:08:10] INFO: Jugadores cargados: 9
+[2025-03-21 12:08:10] INFO: Campeones cargados: 5
+[2025-03-21 12:08:10] INFO: Partidas cargadas: 4
+[2025-03-21 12:08:10] INFO: Errores de formato: 4
+[2025-03-21 12:08:10] INFO: =================================
+[2025-03-21 12:08:10] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:08:10] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:08:10] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:08:10] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:08:10] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:08:10] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:08:10] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:08:10] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:08:10] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:08:10] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:08:10] INFO: 
+Advertencias (2):
+[2025-03-21 12:08:10] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:08:10] WARNING: 2. Campeón duplicado encontrado: 'Ahri'
+[2025-03-21 12:08:10] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:08:10] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:08:10] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:08:35] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:08:35] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:08:35] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:08:35] INFO: Equipos guardados: 5
+[2025-03-21 12:08:35] INFO: Jugadores guardados: 9
+[2025-03-21 12:08:35] INFO: Campeones guardados: 5
+[2025-03-21 12:08:35] INFO: Partidas guardadas: 4
+[2025-03-21 12:08:35] INFO: Errores de validación: 0
+[2025-03-21 12:08:35] INFO: ===================================
+[2025-03-21 12:09:21] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:09:21] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:09:21] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:09:21] INFO: Documento XML parseado correctamente
+[2025-03-21 12:09:21] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:09:21] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:09:21] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:09:21] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:09:21] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:09:21] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:09:21] INFO: Equipos cargados: 5
+[2025-03-21 12:09:21] INFO: Jugadores cargados: 9
+[2025-03-21 12:09:21] INFO: Campeones cargados: 5
+[2025-03-21 12:09:21] INFO: Partidas cargadas: 4
+[2025-03-21 12:09:21] INFO: Errores de formato: 4
+[2025-03-21 12:09:21] INFO: =================================
+[2025-03-21 12:09:21] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:09:21] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:09:21] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:09:21] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:09:21] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:09:21] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:09:21] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:09:21] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:09:21] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:09:21] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:09:21] INFO: 
+Advertencias (2):
+[2025-03-21 12:09:21] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:09:21] WARNING: 2. Campeón duplicado encontrado: 'Ahri'
+[2025-03-21 12:09:21] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:09:21] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:09:21] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:09:27] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:09:27] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:09:27] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:09:27] INFO: Equipos guardados: 5
+[2025-03-21 12:09:27] INFO: Jugadores guardados: 9
+[2025-03-21 12:09:27] INFO: Campeones guardados: 5
+[2025-03-21 12:09:27] INFO: Partidas guardadas: 4
+[2025-03-21 12:09:27] INFO: Errores de validación: 0
+[2025-03-21 12:09:27] INFO: ===================================
+[2025-03-21 12:10:07] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:10:08] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:10:08] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:10:08] INFO: Documento XML parseado correctamente
+[2025-03-21 12:10:08] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:10:08] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:10:08] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:10:08] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:10:08] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:10:08] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:10:08] INFO: Equipos cargados: 5
+[2025-03-21 12:10:08] INFO: Jugadores cargados: 9
+[2025-03-21 12:10:08] INFO: Campeones cargados: 5
+[2025-03-21 12:10:08] INFO: Partidas cargadas: 4
+[2025-03-21 12:10:08] INFO: Errores de formato: 4
+[2025-03-21 12:10:08] INFO: =================================
+[2025-03-21 12:10:08] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:10:08] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:10:08] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:10:08] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:10:08] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:10:08] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:10:08] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:10:08] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:10:08] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:10:08] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:10:08] INFO: 
+Advertencias (2):
+[2025-03-21 12:10:08] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:10:08] WARNING: 2. Campeón duplicado encontrado: 'Ahri'
+[2025-03-21 12:10:08] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:10:08] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:10:08] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:10:14] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:10:14] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:10:14] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:10:14] INFO: Equipos guardados: 5
+[2025-03-21 12:10:14] INFO: Jugadores guardados: 9
+[2025-03-21 12:10:14] INFO: Campeones guardados: 5
+[2025-03-21 12:10:14] INFO: Partidas guardadas: 4
+[2025-03-21 12:10:14] INFO: Errores de validación: 0
+[2025-03-21 12:10:14] INFO: ===================================
+[2025-03-21 12:10:19] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:10:19] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:10:19] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:10:20] INFO: Documento XML parseado correctamente
+[2025-03-21 12:10:20] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:10:20] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:10:20] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:10:20] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:10:20] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:10:20] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:10:20] INFO: Equipos cargados: 5
+[2025-03-21 12:10:20] INFO: Jugadores cargados: 9
+[2025-03-21 12:10:20] INFO: Campeones cargados: 5
+[2025-03-21 12:10:20] INFO: Partidas cargadas: 4
+[2025-03-21 12:10:20] INFO: Errores de formato: 4
+[2025-03-21 12:10:20] INFO: =================================
+[2025-03-21 12:10:20] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:10:20] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:10:20] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:10:20] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:10:20] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:10:20] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:10:20] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:10:20] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:10:20] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:10:20] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:10:20] INFO: 
+Advertencias (2):
+[2025-03-21 12:10:20] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:10:20] WARNING: 2. Campeón duplicado encontrado: 'Ahri'
+[2025-03-21 12:10:20] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:10:20] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:10:20] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:10:33] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:10:33] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:10:33] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:10:33] INFO: Equipos guardados: 5
+[2025-03-21 12:10:33] INFO: Jugadores guardados: 9
+[2025-03-21 12:10:33] INFO: Campeones guardados: 5
+[2025-03-21 12:10:33] INFO: Partidas guardadas: 4
+[2025-03-21 12:10:33] INFO: Errores de validación: 0
+[2025-03-21 12:10:33] INFO: ===================================
+[2025-03-21 12:10:41] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:10:41] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:10:41] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:10:41] INFO: Documento XML parseado correctamente
+[2025-03-21 12:10:41] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:10:41] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:10:41] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:10:41] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:10:41] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:10:41] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:10:41] INFO: Equipos cargados: 5
+[2025-03-21 12:10:41] INFO: Jugadores cargados: 9
+[2025-03-21 12:10:41] INFO: Campeones cargados: 5
+[2025-03-21 12:10:41] INFO: Partidas cargadas: 4
+[2025-03-21 12:10:41] INFO: Errores de formato: 4
+[2025-03-21 12:10:41] INFO: =================================
+[2025-03-21 12:10:41] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:10:41] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:10:41] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:10:41] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:10:41] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:10:41] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:10:41] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:10:41] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:10:41] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:10:41] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:10:41] INFO: 
+Advertencias (2):
+[2025-03-21 12:10:41] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:10:41] WARNING: 2. Campeón duplicado encontrado: 'Ahri'
+[2025-03-21 12:10:41] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:10:41] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:10:41] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:11:57] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:11:57] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:11:57] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:11:57] INFO: Equipos guardados: 5
+[2025-03-21 12:11:57] INFO: Jugadores guardados: 9
+[2025-03-21 12:11:57] INFO: Campeones guardados: 5
+[2025-03-21 12:11:57] INFO: Partidas guardadas: 4
+[2025-03-21 12:11:57] INFO: Errores de validación: 0
+[2025-03-21 12:11:57] INFO: ===================================
+[2025-03-21 12:12:23] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:12:23] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:12:23] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:12:23] INFO: Documento XML parseado correctamente
+[2025-03-21 12:12:23] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:12:23] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:12:23] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:12:23] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:12:23] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:12:23] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:12:23] INFO: Equipos cargados: 5
+[2025-03-21 12:12:23] INFO: Jugadores cargados: 9
+[2025-03-21 12:12:23] INFO: Campeones cargados: 4
+[2025-03-21 12:12:23] INFO: Partidas cargadas: 4
+[2025-03-21 12:12:23] INFO: Errores de formato: 4
+[2025-03-21 12:12:23] INFO: =================================
+[2025-03-21 12:12:23] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:12:23] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:12:23] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:12:23] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:12:23] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:12:23] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:12:23] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:12:23] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:12:23] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:12:23] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:12:23] INFO: 
+Advertencias (1):
+[2025-03-21 12:12:23] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:12:23] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:12:23] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:12:23] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:12:34] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:12:34] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:12:34] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:12:34] INFO: Equipos guardados: 5
+[2025-03-21 12:12:34] INFO: Jugadores guardados: 9
+[2025-03-21 12:12:34] INFO: Campeones guardados: 4
+[2025-03-21 12:12:34] INFO: Partidas guardadas: 4
+[2025-03-21 12:12:34] INFO: Errores de validación: 0
+[2025-03-21 12:12:34] INFO: ===================================
+[2025-03-21 12:12:37] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:12:37] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:12:37] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:12:37] INFO: Documento XML parseado correctamente
+[2025-03-21 12:12:37] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:12:37] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:12:37] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:12:37] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:12:37] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:12:37] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:12:37] INFO: Equipos cargados: 5
+[2025-03-21 12:12:37] INFO: Jugadores cargados: 9
+[2025-03-21 12:12:37] INFO: Campeones cargados: 4
+[2025-03-21 12:12:37] INFO: Partidas cargadas: 4
+[2025-03-21 12:12:37] INFO: Errores de formato: 4
+[2025-03-21 12:12:37] INFO: =================================
+[2025-03-21 12:12:37] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:12:37] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:12:37] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:12:37] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:12:37] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:12:37] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:12:37] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:12:37] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:12:37] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:12:37] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:12:37] INFO: 
+Advertencias (1):
+[2025-03-21 12:12:37] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:12:37] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:12:37] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:12:37] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:12:38] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:12:38] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:12:38] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:12:38] INFO: Equipos guardados: 5
+[2025-03-21 12:12:38] INFO: Jugadores guardados: 9
+[2025-03-21 12:12:38] INFO: Campeones guardados: 4
+[2025-03-21 12:12:38] INFO: Partidas guardadas: 4
+[2025-03-21 12:12:38] INFO: Errores de validación: 0
+[2025-03-21 12:12:38] INFO: ===================================
+[2025-03-21 12:14:04] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:14:04] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:14:04] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:14:04] INFO: Documento XML parseado correctamente
+[2025-03-21 12:14:04] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:14:04] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:14:04] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:14:04] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:14:04] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:14:04] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:14:04] INFO: Equipos cargados: 5
+[2025-03-21 12:14:04] INFO: Jugadores cargados: 9
+[2025-03-21 12:14:04] INFO: Campeones cargados: 4
+[2025-03-21 12:14:04] INFO: Partidas cargadas: 4
+[2025-03-21 12:14:04] INFO: Errores de formato: 4
+[2025-03-21 12:14:04] INFO: =================================
+[2025-03-21 12:14:04] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:14:04] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:14:04] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:14:04] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:14:04] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:14:04] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:14:04] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:14:04] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:14:04] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:14:04] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:14:04] INFO: 
+Advertencias (1):
+[2025-03-21 12:14:04] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:14:04] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:14:04] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:14:04] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:14:08] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:14:08] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:14:08] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:14:08] INFO: Equipos guardados: 5
+[2025-03-21 12:14:08] INFO: Jugadores guardados: 9
+[2025-03-21 12:14:08] INFO: Campeones guardados: 4
+[2025-03-21 12:14:08] INFO: Partidas guardadas: 4
+[2025-03-21 12:14:08] INFO: Errores de validación: 0
+[2025-03-21 12:14:08] INFO: ===================================
+[2025-03-21 12:14:49] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:14:49] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:14:49] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:14:49] INFO: Documento XML parseado correctamente
+[2025-03-21 12:14:49] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:14:49] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:14:49] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:14:49] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:14:49] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:14:49] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:14:49] INFO: Equipos cargados: 5
+[2025-03-21 12:14:49] INFO: Jugadores cargados: 9
+[2025-03-21 12:14:49] INFO: Campeones cargados: 4
+[2025-03-21 12:14:49] INFO: Partidas cargadas: 4
+[2025-03-21 12:14:49] INFO: Errores de formato: 4
+[2025-03-21 12:14:49] INFO: =================================
+[2025-03-21 12:14:49] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:14:49] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:14:49] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:14:49] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:14:49] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:14:49] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:14:49] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:14:49] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:14:49] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:14:49] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:14:49] INFO: 
+Advertencias (1):
+[2025-03-21 12:14:49] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:14:49] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:14:49] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:14:49] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:14:51] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:14:51] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:14:51] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:14:51] INFO: Equipos guardados: 5
+[2025-03-21 12:14:51] INFO: Jugadores guardados: 9
+[2025-03-21 12:14:51] INFO: Campeones guardados: 4
+[2025-03-21 12:14:51] INFO: Partidas guardadas: 4
+[2025-03-21 12:14:51] INFO: Errores de validación: 0
+[2025-03-21 12:14:51] INFO: ===================================
+[2025-03-21 12:15:00] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:15:01] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:15:01] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:15:01] INFO: Documento XML parseado correctamente
+[2025-03-21 12:15:01] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:15:01] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:15:01] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:15:01] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:15:01] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:15:01] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:15:01] INFO: Equipos cargados: 5
+[2025-03-21 12:15:01] INFO: Jugadores cargados: 9
+[2025-03-21 12:15:01] INFO: Campeones cargados: 4
+[2025-03-21 12:15:01] INFO: Partidas cargadas: 4
+[2025-03-21 12:15:01] INFO: Errores de formato: 4
+[2025-03-21 12:15:01] INFO: =================================
+[2025-03-21 12:15:01] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:15:01] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:15:01] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:15:01] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:15:01] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:15:01] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:15:01] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:15:01] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:15:01] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:15:01] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:15:01] INFO: 
+Advertencias (1):
+[2025-03-21 12:15:01] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:15:01] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:15:01] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:15:01] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:15:14] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:15:14] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:15:14] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:15:14] INFO: Equipos guardados: 5
+[2025-03-21 12:15:14] INFO: Jugadores guardados: 9
+[2025-03-21 12:15:14] INFO: Campeones guardados: 4
+[2025-03-21 12:15:14] INFO: Partidas guardadas: 4
+[2025-03-21 12:15:14] INFO: Errores de validación: 0
+[2025-03-21 12:15:14] INFO: ===================================
+[2025-03-21 12:15:35] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:15:35] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:15:35] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:15:35] INFO: Documento XML parseado correctamente
+[2025-03-21 12:15:35] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:15:35] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:15:35] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:15:35] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:15:35] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:15:35] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:15:35] INFO: Equipos cargados: 5
+[2025-03-21 12:15:35] INFO: Jugadores cargados: 9
+[2025-03-21 12:15:35] INFO: Campeones cargados: 4
+[2025-03-21 12:15:35] INFO: Partidas cargadas: 4
+[2025-03-21 12:15:35] INFO: Errores de formato: 4
+[2025-03-21 12:15:35] INFO: =================================
+[2025-03-21 12:15:35] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:15:35] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:15:35] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:15:35] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:15:35] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:15:35] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:15:35] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:15:35] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:15:35] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:15:35] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:15:35] INFO: 
+Advertencias (1):
+[2025-03-21 12:15:35] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:15:35] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:15:35] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:15:35] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:15:54] INFO: Guardando datos y saliendo del programa...
+[2025-03-21 12:15:54] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:15:54] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:15:54] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:15:54] INFO: Equipos guardados: 5
+[2025-03-21 12:15:54] INFO: Jugadores guardados: 9
+[2025-03-21 12:15:54] INFO: Campeones guardados: 4
+[2025-03-21 12:15:54] INFO: Partidas guardadas: 4
+[2025-03-21 12:15:54] INFO: Errores de validación: 0
+[2025-03-21 12:15:54] INFO: ===================================
+[2025-03-21 12:15:54] INFO: Guardando datos antes de cerrar...
+[2025-03-21 12:15:54] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:15:54] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:15:54] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:15:54] INFO: Equipos guardados: 5
+[2025-03-21 12:15:54] INFO: Jugadores guardados: 9
+[2025-03-21 12:15:54] INFO: Campeones guardados: 4
+[2025-03-21 12:15:54] INFO: Partidas guardadas: 4
+[2025-03-21 12:15:54] INFO: Errores de validación: 0
+[2025-03-21 12:15:54] INFO: ===================================
+[2025-03-21 12:16:00] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:16:00] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:16:00] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:16:00] INFO: Documento XML parseado correctamente
+[2025-03-21 12:16:00] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:16:00] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:16:00] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:16:00] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:16:00] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:16:00] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:16:00] INFO: Equipos cargados: 5
+[2025-03-21 12:16:00] INFO: Jugadores cargados: 9
+[2025-03-21 12:16:00] INFO: Campeones cargados: 4
+[2025-03-21 12:16:00] INFO: Partidas cargadas: 4
+[2025-03-21 12:16:00] INFO: Errores de formato: 4
+[2025-03-21 12:16:00] INFO: =================================
+[2025-03-21 12:16:00] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:16:00] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:16:00] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:16:00] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:16:00] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:16:00] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:16:00] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:16:00] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:16:00] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:16:00] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:16:00] INFO: 
+Advertencias (1):
+[2025-03-21 12:16:00] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:16:00] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:16:00] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:16:00] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:16:01] INFO: Guardando datos antes de cerrar...
+[2025-03-21 12:16:01] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:16:01] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:16:02] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:16:02] INFO: Equipos guardados: 5
+[2025-03-21 12:16:02] INFO: Jugadores guardados: 9
+[2025-03-21 12:16:02] INFO: Campeones guardados: 4
+[2025-03-21 12:16:02] INFO: Partidas guardadas: 4
+[2025-03-21 12:16:02] INFO: Errores de validación: 0
+[2025-03-21 12:16:02] INFO: ===================================
+[2025-03-21 12:16:16] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:16:16] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:16:16] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:16:16] INFO: Documento XML parseado correctamente
+[2025-03-21 12:16:16] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:16:16] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:16:16] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:16:16] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:16:16] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:16:16] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:16:16] INFO: Equipos cargados: 5
+[2025-03-21 12:16:16] INFO: Jugadores cargados: 9
+[2025-03-21 12:16:16] INFO: Campeones cargados: 4
+[2025-03-21 12:16:16] INFO: Partidas cargadas: 4
+[2025-03-21 12:16:16] INFO: Errores de formato: 4
+[2025-03-21 12:16:16] INFO: =================================
+[2025-03-21 12:16:16] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:16:16] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:16:16] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:16:16] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:16:16] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:16:16] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:16:16] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:16:16] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:16:16] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:16:16] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:16:16] INFO: 
+Advertencias (1):
+[2025-03-21 12:16:16] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:16:16] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:16:16] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:16:16] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:16:41] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:16:41] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:16:41] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:16:41] INFO: Equipos guardados: 5
+[2025-03-21 12:16:41] INFO: Jugadores guardados: 9
+[2025-03-21 12:16:41] INFO: Campeones guardados: 4
+[2025-03-21 12:16:41] INFO: Partidas guardadas: 4
+[2025-03-21 12:16:41] INFO: Errores de validación: 0
+[2025-03-21 12:16:41] INFO: ===================================
+[2025-03-21 12:18:06] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:18:06] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:18:06] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:18:06] INFO: Documento XML parseado correctamente
+[2025-03-21 12:18:06] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:18:06] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:18:06] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:18:06] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:18:06] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:18:06] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:18:06] INFO: Equipos cargados: 5
+[2025-03-21 12:18:06] INFO: Jugadores cargados: 9
+[2025-03-21 12:18:06] INFO: Campeones cargados: 4
+[2025-03-21 12:18:06] INFO: Partidas cargadas: 4
+[2025-03-21 12:18:06] INFO: Errores de formato: 4
+[2025-03-21 12:18:06] INFO: =================================
+[2025-03-21 12:18:06] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:18:06] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:18:06] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:18:06] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:18:06] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:18:06] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:18:06] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:18:06] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:18:06] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:18:06] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:18:06] INFO: 
+Advertencias (1):
+[2025-03-21 12:18:06] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:18:06] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:18:06] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:18:06] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:18:20] INFO: Guardando datos antes de cerrar...
+[2025-03-21 12:18:20] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:18:20] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:18:20] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:18:20] INFO: Equipos guardados: 5
+[2025-03-21 12:18:20] INFO: Jugadores guardados: 9
+[2025-03-21 12:18:20] INFO: Campeones guardados: 4
+[2025-03-21 12:18:20] INFO: Partidas guardadas: 4
+[2025-03-21 12:18:20] INFO: Errores de validación: 0
+[2025-03-21 12:18:20] INFO: ===================================
+[2025-03-21 12:19:00] INFO: Iniciando carga de datos desde ficheros/database.xml
+[2025-03-21 12:19:00] ERROR: Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:19:00] ERROR: Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:19:00] INFO: Documento XML parseado correctamente
+[2025-03-21 12:19:00] ERROR: Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:19:00] ERROR: Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:19:00] ERROR: Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:19:00] ERROR: Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:19:00] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:19:00] INFO: === Estadísticas de carga XML ====
+[2025-03-21 12:19:00] INFO: Equipos cargados: 5
+[2025-03-21 12:19:00] INFO: Jugadores cargados: 9
+[2025-03-21 12:19:00] INFO: Campeones cargados: 4
+[2025-03-21 12:19:00] INFO: Partidas cargadas: 4
+[2025-03-21 12:19:00] INFO: Errores de formato: 4
+[2025-03-21 12:19:00] INFO: =================================
+[2025-03-21 12:19:00] WARNING: Se encontraron errores durante la carga del XML
+[2025-03-21 12:19:00] INFO: 
+Errores de validación de datos (8):
+[2025-03-21 12:19:00] ERROR: 1. Equipo #6 sin nombre válido
+[2025-03-21 12:19:00] ERROR: 2. Error al cargar equipo #6: Equipo #6 sin nombre válido
+[2025-03-21 12:19:00] ERROR: 3. Equipo #7 sin nombre válido
+[2025-03-21 12:19:00] ERROR: 4. Error al cargar equipo #7: Equipo #7 sin nombre válido
+[2025-03-21 12:19:00] ERROR: 5. Equipo #8 sin nombre válido
+[2025-03-21 12:19:00] ERROR: 6. Error al cargar equipo #8: Equipo #8 sin nombre válido
+[2025-03-21 12:19:00] ERROR: 7. Equipo #9 sin nombre válido
+[2025-03-21 12:19:00] ERROR: 8. Error al cargar equipo #9: Equipo #9 sin nombre válido
+[2025-03-21 12:19:00] INFO: 
+Advertencias (1):
+[2025-03-21 12:19:00] WARNING: 1. Equipo duplicado encontrado: 'TSM'
+[2025-03-21 12:19:00] INFO: 
+Errores de formato XML (2):
+[2025-03-21 12:19:00] ERROR: 1. Error XML: Document is invalid: no grammar found.
+[2025-03-21 12:19:00] ERROR: 2. Error XML: Document root element "league_of_legends", must match DOCTYPE root "null".
+[2025-03-21 12:19:24] INFO: Guardando datos en ficheros/database.xml
+[2025-03-21 12:19:24] WARNING: Advertencia: Partida referencia a equipo(s) que no existe(n)
+[2025-03-21 12:19:24] INFO: === Estadísticas de guardado XML ====
+[2025-03-21 12:19:24] INFO: Equipos guardados: 5
+[2025-03-21 12:19:24] INFO: Jugadores guardados: 9
+[2025-03-21 12:19:24] INFO: Campeones guardados: 4
+[2025-03-21 12:19:24] INFO: Partidas guardadas: 4
+[2025-03-21 12:19:24] INFO: Errores de validación: 0
+[2025-03-21 12:19:24] INFO: ===================================
