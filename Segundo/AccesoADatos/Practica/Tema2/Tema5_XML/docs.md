@@ -41,7 +41,7 @@ El modelo entidad-relación (ER) del sistema se compone de las siguientes entida
   - Un **equipo** puede jugar múltiples **partidas** (1:N).
   - Un **campeón** puede ser jugado por múltiples **jugadores** en diferentes **partidas** (N:M).
 
-![alt text](image-1.png)
+![alt text](image.png)
 
 ### 2.2 DESCRIPCIÓN DE LOS CAMPOS
 
