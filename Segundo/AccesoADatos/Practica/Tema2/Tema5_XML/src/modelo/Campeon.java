@@ -1,8 +1,11 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Clase que representa un campeón en el juego League of Legends.
@@ -21,6 +24,8 @@ public class Campeon {
     private Date fechaLanzamiento;
     private List<String> habilidades;
     private boolean disponible;
+    private static final Set<String> ROLES_VALIDOS = new HashSet<>(
+            Arrays.asList("Top", "Jungle", "Mid", "ADC", "Support"));
 
     /**
      * Constructor por defecto que inicializa un campeón con valores aleatorios.
@@ -44,9 +49,19 @@ public class Campeon {
      * @param rol    Rol del campeón
      */
     public Campeon(String nombre, String rol) {
-        this();
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacío");
+        }
+        if (rol == null || !ROLES_VALIDOS.contains(rol)) {
+            throw new IllegalArgumentException("Rol inválido. Debe ser uno de: " + String.join(", ", ROLES_VALIDOS));
+        }
         this.nombre = nombre;
         this.rol = rol;
+        this.dificultad = Math.random() < 0.5 ? 1 : 10; // Dificultad aleatoria entre 1 y 10
+        this.poder = Math.round(Math.random() * 10000.0) / 100.0; // Poder aleatorio entre 0 y 100 con 2 decimales
+        this.fechaLanzamiento = new Date();
+        this.habilidades = new ArrayList<>();
+        this.disponible = true;
     }
 
     /**
@@ -102,8 +117,8 @@ public class Campeon {
      * @throws IllegalArgumentException Si el rol es nulo o vacío
      */
     public void setRol(String rol) throws IllegalArgumentException {
-        if (rol == null || rol.trim().isEmpty()) {
-            throw new IllegalArgumentException("El rol no puede estar vacío");
+        if (rol == null || !ROLES_VALIDOS.contains(rol)) {
+            throw new IllegalArgumentException("Rol inválido. Debe ser uno de: " + String.join(", ", ROLES_VALIDOS));
         }
         this.rol = rol;
     }

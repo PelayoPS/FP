@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<liga>
+    <!-- XML mal formado intencionalmente -->
+    <equipos>
+        <equipo>
+            <nombre>Equipo1</nombre>
+            <!-- Etiqueta de cierre faltante -->
+            <jugadores>
+                <jugador>
+                    <nombre>Jugador1
+                    <rol>Mid</rol>
+                </jugador>
+        </equipo>
+    <!-- Etiqueta mal cerrada -->
+    </equipos>
+    
+    <campeones>
+        <!-- Atributo sin comillas -->
+        <campeon id=1>
+            <nombre>Campeon1</nombre>
+            <rol>Top</rol>
+        </campeon>
+    </campeones>
+
+    <partidas>
+        <!-- Etiqueta no cerrada -->
+        <partida>
+            <equipo>Equipo1
+            <rival>Equipo2</rival>
+            <resultado>Ganado</resultado>
+    </partidas>
+</liga>

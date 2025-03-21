@@ -39,7 +39,7 @@ public class MainFrame extends JFrame {
      */
     public MainFrame() {
         // Cargar los datos desde el XML
-        liga = new Liga("ficheros/database.xml");
+        liga = new Liga("datos.xml", "ficheros/database.xml");
 
         // Configurar la ventana
         setTitle("League of Legends - Gestor de Datos");

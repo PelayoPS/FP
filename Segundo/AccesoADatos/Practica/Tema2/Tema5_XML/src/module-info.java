@@ -3,5 +3,6 @@
  */
 module Tema5_XML {
     requires java.xml;
-    requires java.desktop; // Para Swing y AWT
+    requires java.desktop;
+    requires org.junit.jupiter.api; // Para Swing y AWT
 }

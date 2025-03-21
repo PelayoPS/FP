@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<league_of_legends fecha_actualizacion="2025-03-21" version="1.0">
+<league_of_legends>
     <equipos>
-        <equipo nombre="TSM" num_jugadores="2">
+        <equipo nombre="TSM">
             <jugador>
                 <nombre>Bjergsen</nombre>
                 <rol>Mid Laner</rol>
@@ -11,7 +11,7 @@
                 <rol>ADC</rol>
             </jugador>
         </equipo>
-        <equipo nombre="Cloud9" num_jugadores="2">
+        <equipo nombre="Cloud9">
             <jugador>
                 <nombre>Perkz</nombre>
                 <rol>Mid Laner</rol>
@@ -21,7 +21,7 @@
                 <rol>ADC</rol>
             </jugador>
         </equipo>
-        <equipo nombre="Fnatic" num_jugadores="3">
+        <equipo nombre="Fnatic">
             <jugador>
                 <nombre>Rekkles</nombre>
                 <rol>ADC</rol>
@@ -35,13 +35,13 @@
                 <rol>Top Laner</rol>
             </jugador>
         </equipo>
-        <equipo nombre="G2 Esports" num_jugadores="1">
+        <equipo nombre="G2 Esports">
             <jugador>
                 <nombre>Jankos</nombre>
                 <rol>Jungler</rol>
             </jugador>
         </equipo>
-        <equipo nombre="TSM" num_jugadores="1">
+        <equipo nombre="TSM">
             <jugador>
                 <nombre>Spica</nombre>
                 <rol>Jungler</rol>
@@ -49,36 +49,33 @@
         </equipo>
     </equipos>
     <campeones>
-        <campeon nombre="Ahri" tipo_rol="Mid Laner">
-            <rol>Mid Laner</rol>
+        <campeon nombre="Ahri">
+            <rol>Mid</rol>
         </campeon>
-        <campeon nombre="Ashe" tipo_rol="ADC">
+        <campeon nombre="Ashe">
             <rol>ADC</rol>
         </campeon>
-        <campeon nombre="Lee Sin" tipo_rol="Jungler">
-            <rol>Jungler</rol>
-        </campeon>
-        <campeon nombre="Darius" tipo_rol="Top Laner">
-            <rol>Top Laner</rol>
+        <campeon nombre="Darius">
+            <rol>Top</rol>
         </campeon>
     </campeones>
     <partidas>
-        <partida id="0">
+        <partida>
             <equipo>TSM</equipo>
             <oponente>Cloud9</oponente>
             <resultado>Ganado</resultado>
         </partida>
-        <partida id="1">
+        <partida>
             <equipo>Cloud9</equipo>
             <oponente>TSM</oponente>
             <resultado>Perdido</resultado>
         </partida>
-        <partida id="2">
+        <partida>
             <equipo>Fnatic</equipo>
             <oponente>G2 Esports</oponente>
             <resultado>Empate</resultado>
         </partida>
-        <partida id="3">
+        <partida>
             <equipo>SKT T1</equipo>
             <oponente>TSM</oponente>
             <resultado>Ganado</resultado>

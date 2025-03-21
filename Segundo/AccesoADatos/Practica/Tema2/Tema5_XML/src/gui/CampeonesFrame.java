@@ -256,11 +256,11 @@ public class CampeonesFrame extends JFrame {
      */
     private Color getColorPorRol(String rol) {
         switch (rol.toLowerCase()) {
-            case "mid laner":
+            case "mid":
                 return new Color(153, 51, 255); // Morado
             case "adc":
                 return new Color(255, 102, 0); // Naranja
-            case "top laner":
+            case "top":
                 return new Color(204, 51, 0); // Rojo oscuro
             case "jungler":
                 return new Color(0, 153, 0); // Verde

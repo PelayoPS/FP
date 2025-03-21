@@ -70,8 +70,8 @@
     
     <campeones>
         <!-- Campeones existentes -->
-        <campeon nombre="Ahri" tipo_rol="Mid Laner">
-            <rol>Mid Laner</rol>
+        <campeon nombre="Ahri" tipo_rol="Mid">
+            <rol>Mid</rol>
         </campeon>
         <campeon nombre="Ashe" tipo_rol="ADC">
             <rol>ADC</rol>
@@ -81,8 +81,8 @@
         <campeon nombre="Lee Sin" tipo_rol="Jungler">
             <rol>Jungler</rol>
         </campeon>
-        <campeon nombre="Darius" tipo_rol="Top Laner">
-            <rol>Top Laner</rol>
+        <campeon nombre="Darius" tipo_rol="Top">
+            <rol>Top</rol>
         </campeon>
         
         <!-- Campeón sin rol (para probar validación) -->

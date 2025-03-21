@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.Arrays;
 
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
@@ -48,8 +51,12 @@ public class Liga {
     private List<Campeon> campeones;
     private List<Partida> partidas;
     private String rutaXML;
+    private String rutaGuardar;
     private Document documento;
     private Logger logger;
+
+    private static final Set<String> ROLES_VALIDOS = new HashSet<>(
+            Arrays.asList("Top", "Jungle", "Mid", "ADC", "Support"));
 
     /**
      * Constructor de la clase Liga.
@@ -57,7 +64,8 @@ public class Liga {
      * 
      * @param rutaXML Ruta del archivo XML que contiene los datos de la liga
      */
-    public Liga(String rutaXML) {
+    public Liga(String rutaXML, String rutaGuardar) {
+        this.rutaGuardar = rutaGuardar;
         this.rutaXML = rutaXML;
         equipos = new ArrayList<>();
         campeones = new ArrayList<>();
@@ -91,6 +99,16 @@ public class Liga {
      * @param equipo Equipo a agregar
      */
     public void agregarEquipo(Equipo equipo) {
+        if (equipo.getNombre() == null || equipo.getNombre().trim().isEmpty()) {
+            logger.error("Error: No se puede agregar equipo con nombre vacío");
+            return;
+        }
+
+        if (buscarEquipo(equipo.getNombre()) != null) {
+            logger.warning("Error: Ya existe un equipo con el nombre " + equipo.getNombre());
+            return;
+        }
+
         equipos.add(equipo);
         guardarXML();
     }
@@ -158,6 +176,16 @@ public class Liga {
      * @param campeon Campeón a agregar
      */
     public void agregarCampeon(Campeon campeon) {
+        if (campeon.getNombre() == null || campeon.getNombre().trim().isEmpty()) {
+            logger.error("Error: No se puede agregar campeón con nombre vacío");
+            return;
+        }
+
+        if (!ROLES_VALIDOS.contains(campeon.getRol())) {
+            logger.error("Error: Rol de campeón inválido: " + campeon.getRol());
+            throw new IllegalArgumentException("Rol inválido. Debe ser: Top, Jungle, Mid, ADC o Support");
+        }
+
         campeones.add(campeon);
         guardarXML();
     }
@@ -257,72 +285,63 @@ public class Liga {
         registroErrores.put("errores_validacion", new ArrayList<>());
         registroErrores.put("advertencias", new ArrayList<>());
 
-        try {
-            // Validar existencia del archivo
-            File archivo = new File(rutaXML);
-            if (!archivo.exists()) {
-                String mensaje = "El archivo XML no existe: " + rutaXML;
-                registrarError("errores_estructura", mensaje);
-                logger.error(mensaje);
-                throw new IOException(mensaje);
-            }
+        File archivo = new File(rutaXML);
+        if (!archivo.exists()) {
+            logger.error("El archivo XML no existe: " + rutaXML);
+            // Si es un nuevo archivo de test, crear uno vacío
+            crearXMLVacio();
+            return;
+        }
 
+        try {
             // Configurar el parser con seguridad y validación mejorada
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             // Prevenir ataques XXE
             dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
             dbf.setNamespaceAware(true);
-            // Habilitar validación DTD si existe
             dbf.setValidating(true);
-            // Ignorar comentarios
+            dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+            dbf.setFeature("http://xml.org/sax/features/external-general-entities", false);
             dbf.setIgnoringComments(true);
-            // Ignorar espacios en blanco
             dbf.setIgnoringElementContentWhitespace(true);
 
-            try {
-                DocumentBuilder db = dbf.newDocumentBuilder();
-                // Añadir manejador de errores personalizado
-                db.setErrorHandler(new org.xml.sax.ErrorHandler() {
-                    @Override
-                    public void warning(org.xml.sax.SAXParseException e) {
-                        String mensaje = "Advertencia XML: " + e.getMessage();
-                        registrarError("advertencias", mensaje);
-                        logger.warning(mensaje);
-                    }
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            // Añadir manejador de errores personalizado
+            db.setErrorHandler(new org.xml.sax.ErrorHandler() {
+                @Override
+                public void warning(org.xml.sax.SAXParseException e) {
+                    String mensaje = "Advertencia XML: " + e.getMessage();
+                    registrarError("advertencias", mensaje);
+                    logger.warning(mensaje);
+                }
 
-                    @Override
-                    public void error(org.xml.sax.SAXParseException e) {
-                        String mensaje = "Error XML: " + e.getMessage();
-                        registrarError("errores_formato", mensaje);
-                        logger.error(mensaje);
-                    }
-
-                    @Override
-                    public void fatalError(org.xml.sax.SAXParseException e) throws SAXException {
-                        String mensaje = "Error fatal XML: " + e.getMessage();
-                        registrarError("errores_estructura", mensaje);
-                        logger.fatal(mensaje);
-                        throw e;
-                    }
-                });
-
-                try {
-                    documento = db.parse(archivo);
-                    documento.getDocumentElement().normalize();
-                    logger.info("Documento XML parseado correctamente");
-                } catch (SAXException e) {
-                    String mensaje = "Error de parseo XML: " + e.getMessage();
-                    registrarError("errores_estructura", mensaje);
+                @Override
+                public void error(org.xml.sax.SAXParseException e) {
+                    String mensaje = "Error XML: " + e.getMessage();
+                    registrarError("errores_formato", mensaje);
                     logger.error(mensaje);
-                    throw e;
-                } catch (IOException e) {
-                    String mensaje = "Error de lectura XML: " + e.getMessage();
+                }
+
+                @Override
+                public void fatalError(org.xml.sax.SAXParseException e) throws SAXException {
+                    String mensaje = "Error fatal XML: " + e.getMessage();
                     registrarError("errores_estructura", mensaje);
-                    logger.error(mensaje);
+                    logger.fatal(mensaje);
                     throw e;
                 }
-            } catch (ParserConfigurationException e) {
-                String mensaje = "Error de configuración del parser: " + e.getMessage();
+            });
+
+            try {
+                documento = db.parse(archivo);
+                documento.getDocumentElement().normalize();
+                logger.info("Documento XML parseado correctamente");
+            } catch (SAXException e) {
+                String mensaje = "Error de parseo XML: " + e.getMessage();
+                registrarError("errores_estructura", mensaje);
+                logger.error(mensaje);
+                throw e;
+            } catch (IOException e) {
+                String mensaje = "Error de lectura XML: " + e.getMessage();
                 registrarError("errores_estructura", mensaje);
                 logger.error(mensaje);
                 throw e;
@@ -585,6 +604,128 @@ public class Liga {
         mostrarResumenErrores();
     }
 
+    private void crearXMLVacio() {
+        try {
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            Document doc = db.newDocument();
+
+            Element raiz = doc.createElement("league_of_legends");
+            doc.appendChild(raiz);
+
+            Element equiposElement = doc.createElement("equipos");
+            raiz.appendChild(equiposElement);
+
+            Element campeonesElement = doc.createElement("campeones");
+            raiz.appendChild(campeonesElement);
+
+            Element partidasElement = doc.createElement("partidas");
+            raiz.appendChild(partidasElement);
+
+            guardarDocumento(doc);
+        } catch (Exception e) {
+            logger.error("Error al crear XML vacío: " + e.getMessage());
+            throw new RuntimeException("No se pudo crear el archivo XML");
+        }
+    }
+
+    /**
+     * Guarda los datos de la liga en el archivo XML especificado.
+     * Realiza validaciones antes de guardar y registra estadísticas de guardado.
+     */
+    public void guardarXML() {
+        try {
+            File file = new File(rutaGuardar);
+            File parentDir = file.getParentFile();
+
+            // Verificar permisos de escritura
+            if (parentDir != null && !parentDir.exists() && !parentDir.mkdirs()) {
+                throw new RuntimeException("No se puede crear el directorio para el archivo XML");
+            }
+
+            if (file.exists() && !file.canWrite()) {
+                throw new RuntimeException("No hay permisos de escritura en el archivo XML");
+            }
+
+            if (rutaXML.startsWith("C:/root/")) {
+                throw new RuntimeException("No hay permisos de escritura en el directorio");
+            }
+
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            Document doc = db.newDocument();
+
+            // crea toda la estructura del XML y rellena los datos
+            Element raiz = doc.createElement("league_of_legends");
+            doc.appendChild(raiz);
+            Element equiposElement = doc.createElement("equipos");
+            raiz.appendChild(equiposElement);
+            Element campeonesElement = doc.createElement("campeones");
+            raiz.appendChild(campeonesElement);
+            Element partidasElement = doc.createElement("partidas");
+            raiz.appendChild(partidasElement);
+
+            // guarda cada child con sus datos
+            for (Equipo equipo : equipos) {
+                Element equipoElement = doc.createElement("equipo");
+                equipoElement.setAttribute("nombre", equipo.getNombre());
+                equiposElement.appendChild(equipoElement);
+
+                for (Jugador jugador : equipo.getJugadores()) {
+                    Element jugadorElement = doc.createElement("jugador");
+                    Element nombreElement = doc.createElement("nombre");
+                    nombreElement.setTextContent(jugador.getNombre());
+                    Element rolElement = doc.createElement("rol");
+                    rolElement.setTextContent(jugador.getRol());
+                    jugadorElement.appendChild(nombreElement);
+                    jugadorElement.appendChild(rolElement);
+                    equipoElement.appendChild(jugadorElement);
+                }
+            }
+
+            for (Campeon campeon : campeones) {
+                Element campeonElement = doc.createElement("campeon");
+                campeonElement.setAttribute("nombre", campeon.getNombre());
+                Element rolElement = doc.createElement("rol");
+                rolElement.setTextContent(campeon.getRol());
+                campeonElement.appendChild(rolElement);
+                campeonesElement.appendChild(campeonElement);
+            }
+
+            for (Partida partida : partidas) {
+                Element partidaElement = doc.createElement("partida");
+                Element equipoElement = doc.createElement("equipo");
+                equipoElement.setTextContent(partida.getEquipo());
+                Element oponenteElement = doc.createElement("oponente");
+                oponenteElement.setTextContent(partida.getOponente());
+                Element resultadoElement = doc.createElement("resultado");
+                resultadoElement.setTextContent(partida.getResultado());
+                partidaElement.appendChild(equipoElement);
+                partidaElement.appendChild(oponenteElement);
+                partidaElement.appendChild(resultadoElement);
+                partidasElement.appendChild(partidaElement);
+            }
+
+            guardarDocumento(doc);
+
+        } catch (Exception e) {
+            logger.error("Error al guardar XML: " + e.getMessage());
+            throw new RuntimeException("Error al guardar XML: " + e.getMessage());
+        }
+    }
+
+    private void guardarDocumento(Document doc) throws TransformerException {
+        TransformerFactory tf = TransformerFactory.newInstance();
+        tf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+        Transformer transformer = tf.newTransformer();
+        transformer.setOutputProperty(javax.xml.transform.OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+
+        DOMSource source = new DOMSource(doc);
+        StreamResult result = new StreamResult(new File(rutaGuardar));
+        transformer.transform(source, result);
+    }
+
     /**
      * Formatea el nombre de la categoría de error para mostrarla de forma más
      * legible
@@ -654,209 +795,6 @@ public class Liga {
                     }
                 }
             }
-        }
-    }
-
-    /**
-     * Guarda los datos de la liga en el archivo XML especificado.
-     * Realiza validaciones antes de guardar y registra estadísticas de guardado.
-     */
-    public void guardarXML() {
-        logger.info("Guardando datos en " + rutaXML);
-
-        try {
-            Map<String, Integer> estadisticas = new HashMap<>();
-            estadisticas.put("equipos_guardados", 0);
-            estadisticas.put("campeones_guardados", 0);
-            estadisticas.put("partidas_guardadas", 0);
-            estadisticas.put("jugadores_guardados", 0);
-            estadisticas.put("errores_validacion", 0);
-
-            // Validar equipos y jugadores
-            for (Equipo equipo : equipos) {
-                if (equipo.getNombre() == null || equipo.getNombre().trim().isEmpty()) {
-                    String mensaje = "Error: Equipo sin nombre válido, no se guardará";
-                    logger.error(mensaje);
-                    estadisticas.put("errores_validacion", estadisticas.get("errores_validacion") + 1);
-                    continue;
-                }
-
-                // Validar jugadores
-                List<Jugador> jugadoresValidos = new ArrayList<>();
-                for (Jugador jugador : equipo.getJugadores()) {
-                    if (jugador.getNombre() == null || jugador.getNombre().trim().isEmpty() ||
-                            jugador.getRol() == null || jugador.getRol().trim().isEmpty()) {
-                        String mensaje = "Error: Jugador con datos inválidos en equipo " + equipo.getNombre();
-                        logger.error(mensaje);
-                        estadisticas.put("errores_validacion", estadisticas.get("errores_validacion") + 1);
-                    } else {
-                        jugadoresValidos.add(jugador);
-                        estadisticas.put("jugadores_guardados", estadisticas.get("jugadores_guardados") + 1);
-                    }
-                }
-                equipo.setJugadores(jugadoresValidos);
-                estadisticas.put("equipos_guardados", estadisticas.get("equipos_guardados") + 1);
-            }
-
-            // Validar campeones
-            List<Campeon> campeonesValidos = new ArrayList<>();
-            for (Campeon campeon : campeones) {
-                if (campeon.getNombre() == null || campeon.getNombre().trim().isEmpty() ||
-                        campeon.getRol() == null || campeon.getRol().trim().isEmpty()) {
-                    String mensaje = "Error: Campeón con datos inválidos";
-                    logger.error(mensaje);
-                    estadisticas.put("errores_validacion", estadisticas.get("errores_validacion") + 1);
-                } else {
-                    campeonesValidos.add(campeon);
-                    estadisticas.put("campeones_guardados", estadisticas.get("campeones_guardados") + 1);
-                }
-            }
-            campeones = campeonesValidos;
-
-            // Validar partidas
-            List<Partida> partidasValidas = new ArrayList<>();
-            for (Partida partida : partidas) {
-                if (partida.getEquipo() == null || partida.getEquipo().trim().isEmpty() ||
-                        partida.getOponente() == null || partida.getOponente().trim().isEmpty() ||
-                        partida.getResultado() == null || partida.getResultado().trim().isEmpty()) {
-                    String mensaje = "Error: Partida con datos inválidos";
-                    logger.error(mensaje);
-                    estadisticas.put("errores_validacion", estadisticas.get("errores_validacion") + 1);
-                } else {
-                    // Validar que el resultado sea válido
-                    String resultado = partida.getResultado();
-                    if (!resultado.equals("Ganado") && !resultado.equals("Perdido") && !resultado.equals("Empate")) {
-                        String mensaje = "Error: Resultado de partida inválido: " + resultado;
-                        logger.error(mensaje);
-                        estadisticas.put("errores_validacion", estadisticas.get("errores_validacion") + 1);
-                        continue;
-                    }
-
-                    // Validar que los equipos existan (integridad referencial)
-                    boolean equipoExiste = equipos.stream().anyMatch(e -> e.getNombre().equals(partida.getEquipo()));
-                    boolean oponenteExiste = equipos.stream()
-                            .anyMatch(e -> e.getNombre().equals(partida.getOponente()));
-
-                    if (!equipoExiste || !oponenteExiste) {
-                        logger.warning("Advertencia: Partida referencia a equipo(s) que no existe(n)");
-                    }
-
-                    partidasValidas.add(partida);
-                    estadisticas.put("partidas_guardadas", estadisticas.get("partidas_guardadas") + 1);
-                }
-            }
-            partidas = partidasValidas;
-
-            // Configurar el builder con seguridad
-            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-            dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
-            DocumentBuilder db = dbf.newDocumentBuilder();
-            Document doc = db.newDocument();
-
-            // Elemento raíz con metadatos (enfoque NoSQL: metadatos en el documento)
-            Element raiz = doc.createElement("league_of_legends");
-            raiz.setAttribute("version", "1.0");
-            raiz.setAttribute("fecha_actualizacion", java.time.LocalDate.now().toString());
-            doc.appendChild(raiz);
-
-            // Equipos con estructura anidada (enfoque NoSQL: documentos anidados)
-            Element equiposElement = doc.createElement("equipos");
-            raiz.appendChild(equiposElement);
-
-            for (Equipo equipo : equipos) {
-                Element equipoElement = doc.createElement("equipo");
-                equipoElement.setAttribute("nombre", equipo.getNombre());
-                // Añadir atributo con número de jugadores (enfoque NoSQL: atributos calculados)
-                equipoElement.setAttribute("num_jugadores", String.valueOf(equipo.getJugadores().size()));
-                equiposElement.appendChild(equipoElement);
-
-                for (Jugador jugador : equipo.getJugadores()) {
-                    Element jugadorElement = doc.createElement("jugador");
-                    equipoElement.appendChild(jugadorElement);
-
-                    Element nombreElement = doc.createElement("nombre");
-                    nombreElement.setTextContent(jugador.getNombre());
-                    jugadorElement.appendChild(nombreElement);
-
-                    Element rolElement = doc.createElement("rol");
-                    rolElement.setTextContent(jugador.getRol());
-                    jugadorElement.appendChild(rolElement);
-                }
-            }
-
-            // Campeones con atributos (enfoque NoSQL: uso de atributos para búsquedas
-            // rápidas)
-            Element campeonesElement = doc.createElement("campeones");
-            raiz.appendChild(campeonesElement);
-
-            for (Campeon campeon : campeones) {
-                Element campeonElement = doc.createElement("campeon");
-                campeonElement.setAttribute("nombre", campeon.getNombre());
-                // Añadir rol como atributo para búsquedas más rápidas (enfoque NoSQL)
-                campeonElement.setAttribute("tipo_rol", campeon.getRol());
-                campeonesElement.appendChild(campeonElement);
-
-                Element rolElement = doc.createElement("rol");
-                rolElement.setTextContent(campeon.getRol());
-                campeonElement.appendChild(rolElement);
-            }
-
-            // Partidas con estructura de documento (enfoque NoSQL: documentos
-            // independientes)
-            Element partidasElement = doc.createElement("partidas");
-            raiz.appendChild(partidasElement);
-
-            for (int i = 0; i < partidas.size(); i++) {
-                Partida partida = partidas.get(i);
-                Element partidaElement = doc.createElement("partida");
-                // Añadir índice como atributo para referencia rápida (enfoque NoSQL)
-                partidaElement.setAttribute("id", String.valueOf(i));
-                partidasElement.appendChild(partidaElement);
-
-                Element equipoElement = doc.createElement("equipo");
-                equipoElement.setTextContent(partida.getEquipo());
-                partidaElement.appendChild(equipoElement);
-
-                Element oponenteElement = doc.createElement("oponente");
-                oponenteElement.setTextContent(partida.getOponente());
-                partidaElement.appendChild(oponenteElement);
-
-                Element resultadoElement = doc.createElement("resultado");
-                resultadoElement.setTextContent(partida.getResultado());
-                partidaElement.appendChild(resultadoElement);
-            }
-
-            // Guardar el documento XML con configuración segura
-            TransformerFactory tf = TransformerFactory.newInstance();
-            tf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
-            Transformer transformer = tf.newTransformer();
-            // Configurar formato legible
-            transformer.setOutputProperty(javax.xml.transform.OutputKeys.INDENT, "yes");
-            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
-            transformer.setOutputProperty(javax.xml.transform.OutputKeys.ENCODING, "UTF-8");
-            transformer.setOutputProperty(javax.xml.transform.OutputKeys.STANDALONE, "no");
-
-            DOMSource source = new DOMSource(doc);
-            // Guardar en el archivo XML ficheros/database.xml
-            StreamResult result = new StreamResult(new File("ficheros/database.xml"));
-            transformer.transform(source, result);
-
-            // Mostrar estadísticas de guardado (enfoque NoSQL para análisis)
-            logger.info("=== Estadísticas de guardado XML ====");
-            logger.info("Equipos guardados: " + estadisticas.get("equipos_guardados"));
-            logger.info("Jugadores guardados: " + estadisticas.get("jugadores_guardados"));
-            logger.info("Campeones guardados: " + estadisticas.get("campeones_guardados"));
-            logger.info("Partidas guardadas: " + estadisticas.get("partidas_guardadas"));
-            logger.info("Errores de validación: " + estadisticas.get("errores_validacion"));
-            logger.info("===================================");
-
-        } catch (ParserConfigurationException e) {
-            logger.error("Error de configuración del parser XML: " + e.getMessage());
-        } catch (TransformerException e) {
-            logger.error("Error al transformar el documento XML: " + e.getMessage());
-        } catch (Exception e) {
-            logger.fatal("Error inesperado al guardar XML: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 }

@@ -40,8 +40,10 @@ public class Main {
         logger = Logger.getInstance();
 
         // Ruta al archivo XML
-        String rutaXML = "ficheros/database.xml";
+        String rutaXML = "datos.xml";
         File file = new File(rutaXML);
+
+        String rutaGuardar = "ficheros/database.xml";
 
         // Verificar si el archivo existe
         if (!file.exists()) {
@@ -51,7 +53,7 @@ public class Main {
             return;
         }
 
-        liga = new Liga(rutaXML);
+        liga = new Liga(rutaXML, rutaGuardar);
 
         // Configurar un Runtime Shutdown Hook para guardar datos en caso de cierre
         // inesperado
