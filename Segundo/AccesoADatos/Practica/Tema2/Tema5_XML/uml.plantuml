@@ -1,0 +1,237 @@
+@startuml "Liga de League of Legends"
+
+' Estilo y configuración
+skinparam Dpi 5000
+skinparam roundCorner 0
+skinparam linetype ortho
+skinparam shadowing false
+skinparam monochrome false
+skinparam backgroundColor white
+
+skinparam class {
+    BackgroundColor #F8F9FA
+    ArrowColor #2C3E50
+    BorderColor #34495E
+    AttributeFontColor #2C3E50
+    AttributeFontSize 12
+    BorderThickness 1
+}
+
+skinparam package {
+    BackgroundColor #ECF0F1
+    BorderColor #95A5A6
+    BorderThickness 1
+}
+
+skinparam note {
+    BackgroundColor #FDEBD0
+    BorderColor #F39C12
+}
+
+' Paquetes
+package "modelo" {
+    class Equipo {
+        -nombre: String
+        -jugadores: List<Jugador>
+        +Equipo()
+        +Equipo(nombre: String)
+        +getNombre(): String
+        +setNombre(nombre: String): void
+        +getJugadores(): List<Jugador>
+        +setJugadores(jugadores: List<Jugador>): void
+        +agregarJugador(jugador: Jugador): void
+        +toString(): String
+    }
+
+    class Jugador {
+        -nombre: String
+        -rol: String
+        +Jugador()
+        +Jugador(nombre: String, rol: String)
+        +getNombre(): String
+        +setNombre(nombre: String): void
+        +getRol(): String
+        +setRol(rol: String): void
+        +toString(): String
+    }
+
+    class Campeon {
+        -nombre: String
+        -rol: String
+        -dificultad: int
+        -poder: double
+        -fechaLanzamiento: Date
+        -habilidades: List<String>
+        -disponible: boolean
+        -static ROLES_VALIDOS: Set<String>
+        +Campeon()
+        +Campeon(nombre: String, rol: String)
+        +Campeon(nombre: String, rol: String, dificultad: int, poder: double)
+        +getNombre(): String
+        +setNombre(nombre: String): void
+        +getRol(): String
+        +setRol(rol: String): void
+        +getDificultad(): int
+        +setDificultad(dificultad: int): void
+        +getPoder(): double
+        +setPoder(poder: double): void
+        +getFechaLanzamiento(): Date
+        +setFechaLanzamiento(fecha: Date): void
+        +getHabilidades(): List<String>
+        +setHabilidades(habilidades: List<String>): void
+        +agregarHabilidad(habilidad: String): void
+        +isDisponible(): boolean
+        +setDisponible(disponible: boolean): void
+        +toString(): String
+    }
+
+    class Partida {
+        -equipo: String
+        -rival: String
+        -resultado: String
+        +Partida()
+        +Partida(equipo: String, rival: String, resultado: String)
+        +getEquipo(): String
+        +setEquipo(equipo: String): void
+        +getRival(): String
+        +setRival(rival: String): void
+        +getResultado(): String
+        +setResultado(resultado: String): void
+        +toString(): String
+    }
+}
+
+package "logica" {
+    class Liga {
+        -equipos: List<Equipo>
+        -campeones: List<Campeon>
+        -partidas: List<Partida>
+        -logger: Logger
+        -gestorXML: GestorXML
+        -static ROLES_VALIDOS: Set<String>
+        +Liga(rutaXML: String, rutaGuardar: String)
+        +getEquipos(): List<Equipo>
+        +buscarEquipo(nombre: String): Equipo
+        +agregarEquipo(equipo: Equipo): void
+        +actualizarEquipo(equipoNuevo: Equipo): boolean
+        +eliminarEquipo(nombre: String): boolean
+        +getCampeones(): List<Campeon>
+        +buscarCampeon(nombre: String): Campeon
+        +agregarCampeon(campeon: Campeon): void
+        +actualizarCampeon(campeonNuevo: Campeon): boolean
+        +eliminarCampeon(nombre: String): boolean
+        +getPartidas(): List<Partida>
+        +agregarPartida(partida: Partida): void
+        +actualizarPartida(partidaNueva: Partida, index: int): boolean
+        +eliminarPartida(index: int): boolean
+        +guardarXML(): void
+    }
+}
+
+package "persistencia" {
+    class GestorXML {
+        -rutaXML: String
+        -rutaGuardar: String
+        -logger: Logger
+        +GestorXML(rutaXML: String, rutaGuardar: String)
+        +cargarXML(equipos: List<Equipo>, campeones: List<Campeon>, partidas: List<Partida>): void
+        +guardarXML(equipos: List<Equipo>, campeones: List<Campeon>, partidas: List<Partida>): void
+        -crearDocumento(): Document
+        -agregarEquiposXML(root: Element, equipos: List<Equipo>): void
+        -agregarCampeonesXML(root: Element, campeones: List<Campeon>): void
+        -agregarPartidasXML(root: Element, partidas: List<Partida>): void
+    }
+}
+
+package "logs" {
+    class Logger {
+        -instance: Logger
+        -dateFormat: SimpleDateFormat
+        -Logger()
+        +{static} getInstance(): Logger
+        +info(mensaje: String): void
+        +warning(mensaje: String): void
+        +error(mensaje: String): void
+    }
+}
+
+package "tests" {
+    class LigaTest {
+        -liga: Liga
+        -static TEST_XML_PATH: String
+        -static TEST_XML_PATH_BACKUP: String
+        +setUp(): void
+        +tearDown(): void
+        +testAgregarEquipo(): void
+        +testBuscarEquipoExistente(): void
+        +testBuscarEquipoInexistente(): void
+        +testActualizarEquipo(): void
+        +testEliminarEquipo(): void
+        +testAgregarCampeon(): void
+        +testBuscarCampeonExistente(): void
+        +testBuscarCampeonInexistente(): void
+        +testActualizarCampeon(): void
+        +testEliminarCampeon(): void
+        +testAgregarPartida(): void
+        +testActualizarPartida(): void
+        +testEliminarPartida(): void
+        +testActualizarPartidaIndiceInvalido(): void
+        +testEliminarPartidaIndiceInvalido(): void
+        +testAgregarEquipoNombreVacio(): void
+        +testAgregarEquipoDuplicado(): void
+        +testFormatoRolCampeonInvalido(): void
+        +testPersistenciaXML(): void
+    }
+}
+
+package "gui" {
+    class MainFrame {
+        -liga: Liga
+        -btnEquipos: JButton
+        -btnCampeones: JButton
+        -btnPartidas: JButton
+        -lblTitulo: JLabel
+        +MainFrame()
+        -inicializarComponentes(): void
+        -mostrarVentanaEquipos(): void
+        -mostrarVentanaCampeones(): void
+        -mostrarVentanaPartidas(): void
+        +{static} main(args: String[]): void
+    }
+
+    class EquiposFrame {
+        -liga: Liga
+        -equipos: List<Equipo>
+        +EquiposFrame(liga: Liga)
+    }
+
+    class CampeonesFrame {
+        -liga: Liga
+        -campeones: List<Campeon>
+        +CampeonesFrame(liga: Liga)
+    }
+
+    class PartidasFrame {
+        -liga: Liga
+        -partidas: List<Partida>
+        +PartidasFrame(liga: Liga)
+    }
+
+
+}
+
+' Relaciones
+Equipo "1" *-- "0..*" Jugador : contiene >
+Liga "1" o-- "0..*" Equipo : gestiona >
+Liga "1" o-- "0..*" Campeon : gestiona >
+Liga "1" o-- "0..*" Partida : gestiona >
+Liga "1" --> "1" GestorXML : utiliza >
+Liga "1" --> "1" Logger : utiliza >
+GestorXML "1" --> "1" Logger : utiliza >
+LigaTest "1" --> "1" Liga : prueba >
+MainFrame "1" --> "0..1" EquiposFrame : crea >
+MainFrame "1" --> "0..1" CampeonesFrame : crea >
+MainFrame "1" --> "0..1" PartidasFrame : crea >
+MainFrame "1" --> "1" Liga : usa >
+
+@enduml

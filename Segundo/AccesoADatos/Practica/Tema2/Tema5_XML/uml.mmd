@@ -1,0 +1,195 @@
+classDiagram
+
+%% Paquete modelo
+namespace modelo {
+    class Equipo {
+        -nombre: String
+        -jugadores: List~Jugador~
+        +Equipo()
+        +Equipo(nombre: String)
+        +getNombre() String
+        +setNombre(nombre: String) void
+        +getJugadores() List~Jugador~
+        +setJugadores(jugadores: List~Jugador~) void
+        +agregarJugador(jugador: Jugador) void
+        +toString() String
+    }
+
+    class Jugador {
+        -nombre: String
+        -rol: String
+        +Jugador()
+        +Jugador(nombre: String, rol: String)
+        +getNombre() String
+        +setNombre(nombre: String) void
+        +getRol() String
+        +setRol(rol: String) void
+        +toString() String
+    }
+
+    class Campeon {
+        -nombre: String
+        -rol: String
+        -dificultad: int
+        -poder: double
+        -fechaLanzamiento: Date
+        -habilidades: List~String~
+        -disponible: boolean
+        -ROLES_VALIDOS$: Set~String~
+        +Campeon()
+        +Campeon(nombre: String, rol: String)
+        +Campeon(nombre: String, rol: String, dificultad: int, poder: double)
+        +getNombre() String
+        +setNombre(nombre: String) void
+        +getRol() String
+        +setRol(rol: String) void
+        +getDificultad() int
+        +setDificultad(dificultad: int) void
+        +getPoder() double
+        +setPoder(poder: double) void
+        +getFechaLanzamiento() Date
+        +setFechaLanzamiento(fecha: Date) void
+        +getHabilidades() List~String~
+        +setHabilidades(habilidades: List~String~) void
+        +agregarHabilidad(habilidad: String) void
+        +isDisponible() boolean
+        +setDisponible(disponible: boolean) void
+        +toString() String
+    }
+
+    class Partida {
+        -equipo: String
+        -rival: String
+        -resultado: String
+        +Partida()
+        +Partida(equipo: String, rival: String, resultado: String)
+        +getEquipo() String
+        +setEquipo(equipo: String) void
+        +getRival() String
+        +setRival(rival: String) void
+        +getResultado() String
+        +setResultado(resultado: String) void
+        +toString() String
+    }
+}
+
+%% Paquete logica
+namespace logica {
+    class Liga {
+        -equipos: List~Equipo~
+        -campeones: List~Campeon~
+        -partidas: List~Partida~
+        -logger: Logger
+        -gestorXML: GestorXML
+        -ROLES_VALIDOS$: Set~String~
+        +Liga(rutaXML: String, rutaGuardar: String)
+        +getEquipos() List~Equipo~
+        +buscarEquipo(nombre: String) Equipo
+        +agregarEquipo(equipo: Equipo) void
+        +actualizarEquipo(equipoNuevo: Equipo) boolean
+        +eliminarEquipo(nombre: String) boolean
+        +getCampeones() List~Campeon~
+        +buscarCampeon(nombre: String) Campeon
+        +agregarCampeon(campeon: Campeon) void
+        +actualizarCampeon(campeonNuevo: Campeon) boolean
+        +eliminarCampeon(nombre: String) boolean
+        +getPartidas() List~Partida~
+        +agregarPartida(partida: Partida) void
+        +actualizarPartida(partidaNueva: Partida, index: int) boolean
+        +eliminarPartida(index: int) boolean
+        +guardarXML() void
+    }
+}
+
+%% Paquete persistencia
+namespace persistencia {
+    class GestorXML {
+        -rutaXML: String
+        -rutaGuardar: String
+        -logger: Logger
+        +GestorXML(rutaXML: String, rutaGuardar: String)
+        +cargarXML(equipos: List~Equipo~, campeones: List~Campeon~, partidas: List~Partida~) void
+        +guardarXML(equipos: List~Equipo~, campeones: List~Campeon~, partidas: List~Partida~) void
+        -crearDocumento() Document
+        -agregarEquiposXML(root: Element, equipos: List~Equipo~) void
+        -agregarCampeonesXML(root: Element, campeones: List~Campeon~) void
+        -agregarPartidasXML(root: Element, partidas: List~Partida~) void
+    }
+}
+
+%% Paquete logs
+namespace logs {
+    class Logger {
+        -instance: Logger
+        -dateFormat: SimpleDateFormat
+        -Logger()
+        +getInstance()$ Logger
+        +info(mensaje: String) void
+        +warning(mensaje: String) void
+        +error(mensaje: String) void
+    }
+}
+
+%% Paquete tests
+namespace tests {
+    class LigaTest {
+        -liga: Liga
+        -TEST_XML_PATH$: String
+        -TEST_XML_PATH_BACKUP$: String
+        +setUp() void
+        +tearDown() void
+        +testAgregarEquipo() void
+    }
+}
+
+%% Paquete gui
+namespace gui {
+    class MainFrame {
+        -liga: Liga
+        -btnEquipos: JButton
+        -btnCampeones: JButton
+        -btnPartidas: JButton
+        -lblTitulo: JLabel
+        +MainFrame()
+        -inicializarComponentes() void
+        -mostrarVentanaEquipos() void
+        -mostrarVentanaCampeones() void
+        -mostrarVentanaPartidas() void
+        +main(args: String[])$ void
+    }
+
+    class EquiposFrame {
+        -liga: Liga
+        -equipos: List~Equipo~
+        +EquiposFrame(liga: Liga)
+    }
+
+    class CampeonesFrame {
+        -liga: Liga
+        -campeones: List~Campeon~
+        +CampeonesFrame(liga: Liga)
+    }
+
+    class PartidasFrame {
+        -liga: Liga
+        -partidas: List~Partida~
+        +PartidasFrame(liga: Liga)
+    }
+}
+
+%% Relaciones con líneas rectas
+Equipo *-- Jugador : contiene >
+Liga o-- Equipo : gestiona >
+Liga o-- Campeon : gestiona >
+Liga o-- Partida : gestiona >
+Liga --> GestorXML : utiliza >
+Liga --> Logger : utiliza >
+GestorXML --> Logger : utiliza >
+LigaTest --> Liga : prueba >
+MainFrame --> EquiposFrame : crea >
+MainFrame --> CampeonesFrame : crea >
+MainFrame --> PartidasFrame : crea >
+MainFrame --> Liga : usa >
+
+%% Configuración del diagrama
+direction TB

@@ -1,45 +1,47 @@
-# DOCUMENTACIÓN DEL SISTEMA DE GESTIÓN DE LEAGUE OF LEGENDS
+<style>
+  .justify {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+</style>
+
+# <center>DOCUMENTACIÓN DEL SISTEMA DE GESTIÓN DE LEAGUE OF LEGENDS</center>
 
 ## 1. INTRODUCCIÓN: DESCRIPCIÓN DEL PROBLEMA
 
+<div class="justify">
+
 El proyecto consiste en un sistema de gestión de información para League of Legends, un popular videojuego de estrategia en línea. El sistema permite almacenar y manipular datos relacionados con los distintos elementos del juego:
 
-- Campeones: Los personajes jugables dentro del juego, cada uno con características únicas.
-- Jugadores: Usuarios que participan en el juego, cada uno con sus estadísticas personales.
-- Equipos: Agrupaciones de jugadores que compiten juntos en partidas.
-- Partidas: Enfrentamientos entre equipos con resultados y estadísticas asociadas.
+</div>
+
+<div class="justify">
+
+- **Campeones**: Los personajes jugables dentro del juego, cada uno con características únicas.
+- **Jugadores**: Usuarios que participan en el juego, cada uno con sus estadísticas personales.
+- **Equipos**: Agrupaciones de jugadores que compiten juntos en partidas.
+- **Partidas**: Enfrentamientos entre equipos con resultados y estadísticas asociadas.
+
+</div>
+
+<div class="justify">
 
 El problema principal que resuelve este sistema es la necesidad de gestionar grandes volúmenes de información relacionada con el ecosistema de League of Legends, permitiendo almacenar los datos en formato XML, consultarlos y actualizarlos cuando sea necesario. El sistema sigue un enfoque similar a NoSQL (aunque usando XML como formato de persistencia), con estructuras de documentos flexibles que permiten almacenar información jerárquica y relacionada.
 
+</div>
+
 ## 2. MODELO ENTIDAD-RELACIÓN
+El modelo entidad-relación (ER) del sistema se compone de las siguientes entidades y relaciones:
+- **Campeón**: Representa a los personajes jugables en el juego. Cada campeón tiene un nombre único, rol, dificultad, poder, fecha de lanzamiento, habilidades y un estado de disponibilidad.
+- **Jugador**: Representa a los usuarios que juegan el juego. Cada jugador tiene un nombre único, rol, nivel, experiencia, fecha de registro y un estado de actividad.
+- **Equipo**: Representa a los grupos de jugadores que compiten juntos. Cada equipo tiene un nombre único, una lista de jugadores, fecha de creación, número de victorias y derrotas.
+- **Partida**: Representa un enfrentamiento entre dos equipos. Cada partida tiene un equipo principal, un oponente, resultado, fecha, duración, estadísticas y puntuaciones de ambos equipos.
+- **Relaciones**:
+  - Un **jugador** puede pertenecer a un **equipo** (1:N).
+  - Un **equipo** puede jugar múltiples **partidas** (1:N).
+  - Un **campeón** puede ser jugado por múltiples **jugadores** en diferentes **partidas** (N:M).
 
-### 2.1 DIAGRAMA ENTIDAD-RELACIÓN
-
-```
-+-------------+          +-------------+
-|   CAMPEÓN   |          |   JUGADOR   |
-+-------------+          +-------------+
-| nombre (PK) |          | nombre (PK) |
-| rol         |          | rol         |
-| dificultad  |          | nivel       |
-| poder       |<---------| experiencia |
-| fecha       |     |    | fecha       |
-| habilidades |     |    | activo      |
-| disponible  |     |    +-------------+
-+-------------+     |           |
-                    |           |
-                    |    +------v------+          +-----------+
-                    |    |    EQUIPO   |          |  PARTIDA  |
-                    |    +-------------+          +-----------+
-                    |    | nombre (PK) |<---------| equipo    |
-                    +--->| jugadores   |          | oponente  |
-                         | fecha       |          | resultado |
-                         | victorias   |          | fecha     |
-                         | derrotas    |          | duración  |
-                         +-------------+          | stats     |
-                                                  | puntuación|
-                                                  +-----------+
-```
+![alt text](image-1.png)
 
 ### 2.2 DESCRIPCIÓN DE LOS CAMPOS
 
